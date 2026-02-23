@@ -27,7 +27,14 @@ export default function Home() {
   const fileInputRef = useRef(null);
   const loadingTimeoutRef = useRef(null);
   const itemTimeoutsRef = useRef(new Map());
-  const fallbackImageUrl = normalizeImageUrl('/img/KakaoTalk_20260212_102215461.png');
+  const fallbackImageUrls = [
+    '/img/KakaoTalk_20260212_102215461.png',
+    '/img/KakaoTalk_20260212_103222794.png',
+    '/img/KakaoTalk_20260212_103407279.png',
+    '/img/KakaoTalk_20260212_103504542.png'
+  ].map(normalizeImageUrl);
+  const getRandomFallbackImageUrl = () =>
+    fallbackImageUrls[Math.floor(Math.random() * fallbackImageUrls.length)];
  
   useEffect(() => {
     return () => {
@@ -68,7 +75,7 @@ export default function Home() {
               ? {
                   ...prevItem,
                   status: 'done',
-                  imageUrl: prevItem.imageUrl || fallbackImageUrl
+                  imageUrl: prevItem.imageUrl || getRandomFallbackImageUrl()
                 }
               : prevItem
           )
