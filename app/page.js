@@ -10,17 +10,24 @@ import initialGeneratedItems from './data/initialGeneratedItems.json';
 import samplePrompts from './data/samplePrompts.json';
 
 export default function Home() {
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+  const normalizeImageUrl = (url) => (url && url.startsWith('/img/') ? `${basePath}${url}` : url);
   const [title, setTitle] = useState('');
   const [isLoadingOpen, setIsLoadingOpen] = useState(false);
   const [tempImages, setTempImages] = useState([]);
   const [previewImageUrl, setPreviewImageUrl] = useState('');
   const [isConfirmReplaceOpen, setIsConfirmReplaceOpen] = useState(false);
   const [pendingSampleText, setPendingSampleText] = useState('');
-  const [generatedItems, setGeneratedItems] = useState(() => initialGeneratedItems);
+  const [generatedItems, setGeneratedItems] = useState(() =>
+    initialGeneratedItems.map((item) => ({
+      ...item,
+      imageUrl: normalizeImageUrl(item.imageUrl)
+    }))
+  );
   const fileInputRef = useRef(null);
   const loadingTimeoutRef = useRef(null);
   const itemTimeoutsRef = useRef(new Map());
-  const fallbackImageUrl = '/img/KakaoTalk_20260212_102215461.png';
+  const fallbackImageUrl = normalizeImageUrl('/img/KakaoTalk_20260212_102215461.png');
  
   useEffect(() => {
     return () => {
