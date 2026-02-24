@@ -10,22 +10,27 @@ import initialGeneratedItems from './data/initialGeneratedItems.json';
 import samplePrompts from './data/samplePrompts.json';
 
 export default function Home() {
+  // 이미지 URL이 상대경로인 경우 BASE_PATH를 붙여주는 함수 GitHub Pages에서 호스팅할 때 필요
   const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
   const normalizeImageUrl = (url) => (url && url.startsWith('/img/') ? `${basePath}${url}` : url);
-
-  const [inputText, setInputText] = useState('');
-  const [isLoadingOpen, setIsLoadingOpen] = useState(false);
-  const [tempImages, setTempImages] = useState([]);
-  const [detailImage, setDetailImage] = useState('');
-  const [isConfirmReplaceOpen, setIsConfirmReplaceOpen] = useState(false);
-  const [pendingSampleText, setPendingSampleText] = useState('');
-
+  
+  // 생성된 이미지 항목 상태 (초기값은 JSON 데이터에서 불러온 항목들로 설정)
   const [generatedItems, setGeneratedItems] = useState(() =>
     initialGeneratedItems.map((item) => ({
       ...item,
       imageUrl: normalizeImageUrl(item.imageUrl)
     }))
   );
+
+  const [inputText, setInputText] = useState('');
+  const [isLoadingOpen, setIsLoadingOpen] = useState(false);
+  
+  const [tempImages, setTempImages] = useState([]);
+  const [detailImage, setDetailImage] = useState('');
+  
+  // 입력 내용 변경 확인 모달 상태 및 대기 중인 텍스트 상태
+  const [isConfirmReplaceOpen, setIsConfirmReplaceOpen] = useState(false);
+  const [pendingSampleText, setPendingSampleText] = useState('');
 
   const fileInputRef = useRef(null);
   const loadingTimeoutRef = useRef(null);
@@ -74,7 +79,7 @@ export default function Home() {
       if (itemTimeoutsRef.current.has(item.id)) {
         return;
       }
-
+      
       const timeoutId = setTimeout(() => {
         setGeneratedItems((prev) =>
           prev.map((prevItem) =>
@@ -89,7 +94,7 @@ export default function Home() {
         );
         itemTimeoutsRef.current.delete(item.id);
       }, 10000);
-
+      
       itemTimeoutsRef.current.set(item.id, timeoutId);
     });
   }, [generatedItems]);
@@ -274,7 +279,6 @@ export default function Home() {
                 이미지 추가
               </button>
             </div>
-
             
             {/* 텍스트 예시 자동입력 버튼그룹 시작 */}
             <div className='flex flex-col gap-1.5 mt-4'>
@@ -290,7 +294,6 @@ export default function Home() {
               ))}
             </div>
             {/* 텍스트 예시 자동입력 버튼그룹 종료 */}
-
             <button
               className="w-full mt-4 p-4 bg-purple-600 hover:bg-purple-500 text-white text-xl font-semibold rounded-lg transition duration-200 shrink-0 letter-spacing cursor-pointer"
               onClick={handleGenerateImage}
