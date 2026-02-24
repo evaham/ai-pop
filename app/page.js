@@ -12,30 +12,37 @@ import samplePrompts from './data/samplePrompts.json';
 export default function Home() {
   const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
   const normalizeImageUrl = (url) => (url && url.startsWith('/img/') ? `${basePath}${url}` : url);
-  const [title, setTitle] = useState('');
+
+  const [inputText, setInputText] = useState('');
   const [isLoadingOpen, setIsLoadingOpen] = useState(false);
   const [tempImages, setTempImages] = useState([]);
   const [previewImageUrl, setPreviewImageUrl] = useState('');
   const [isConfirmReplaceOpen, setIsConfirmReplaceOpen] = useState(false);
   const [pendingSampleText, setPendingSampleText] = useState('');
+
   const [generatedItems, setGeneratedItems] = useState(() =>
     initialGeneratedItems.map((item) => ({
       ...item,
       imageUrl: normalizeImageUrl(item.imageUrl)
     }))
   );
+
   const fileInputRef = useRef(null);
   const loadingTimeoutRef = useRef(null);
   const itemTimeoutsRef = useRef(new Map());
+
+  // 목업용 랜덤 이미지용
   const fallbackImageUrls = [
     '/img/KakaoTalk_20260212_102215461.png',
     '/img/KakaoTalk_20260212_103222794.png',
     '/img/KakaoTalk_20260212_103407279.png',
     '/img/KakaoTalk_20260212_103504542.png'
   ].map(normalizeImageUrl);
-  const getRandomFallbackImageUrl = () =>
-    fallbackImageUrls[Math.floor(Math.random() * fallbackImageUrls.length)];
- 
+
+  // 목업용 랜덤으로 기본 이미지 URL 반환 함수
+  const getRandomFallbackImageUrl = () => fallbackImageUrls[Math.floor(Math.random() * fallbackImageUrls.length)];
+
+  // 컴포넌트 언마운트 시 모든 URL 객체 해제
   useEffect(() => {
     return () => {
       if (loadingTimeoutRef.current) {
@@ -45,6 +52,7 @@ export default function Home() {
     };
   }, [tempImages]);
 
+  // 컴포넌트 언마운트 시 모든 이미지 생성 타임아웃 정리
   useEffect(() => {
     return () => {
       itemTimeoutsRef.current.forEach((timeoutId) => {
@@ -57,7 +65,6 @@ export default function Home() {
   // 목업 기능 시작:
   // - 로딩 항목을 10초 후 완료 처리
   // - 이미지 URL이 없으면 기본 이미지를 채움
-
   useEffect(() => {
     generatedItems.forEach((item) => {
       if (item.status !== 'loading') {
@@ -86,12 +93,13 @@ export default function Home() {
       itemTimeoutsRef.current.set(item.id, timeoutId);
     });
   }, [generatedItems]);
-  // 목업 기능 끝
 
+  // 이미지 추가 버튼 클릭 시 파일 입력창 열기
   const handleImageButtonClick = () => {
     fileInputRef.current?.click();
   };
 
+  // 이미지 선택 시 URL 객체 생성하여 상태에 추가
   const handleImageChange = (event) => {
     const files = Array.from(event.target.files || []);
     if (files.length === 0) {
@@ -108,6 +116,7 @@ export default function Home() {
     event.target.value = '';
   };
 
+  // 이미지 삭제 시 URL 객체 해제 및 상태에서 제거
   const handleRemoveImage = (id) => {
     setTempImages((prev) => {
       const target = prev.find((image) => image.id === id);
@@ -118,34 +127,40 @@ export default function Home() {
     });
   };
 
+  // 이미지 미리보기 모달 열기
   const handleOpenPreview = (url) => {
     setPreviewImageUrl(url);
   };
 
+  // 이미지 미리보기 모달 닫기
   const handleClosePreview = () => {
     setPreviewImageUrl('');
   };
 
+  // 텍스트 예시 버튼 클릭 시 입력 내용 변경 확인 모달 열기 또는 바로 텍스트 변경
   const handleInsertSample = (text) => {
-    if (title.trim().length > 0) {
+    if (inputText.trim().length > 0) {
       setPendingSampleText(text);
       setIsConfirmReplaceOpen(true);
       return;
     }
-    setTitle(text);
+    setInputText(text);
   };
 
+  // 입력 내용 변경 확인 모달에서 변경하기 선택 시 텍스트 변경
   const handleConfirmReplace = () => {
-    setTitle(pendingSampleText);
+    setInputText(pendingSampleText);
     setPendingSampleText('');
     setIsConfirmReplaceOpen(false);
   };
 
+  // 입력 내용 변경 확인 모달에서 취소 선택 시 대기 중인 텍스트 초기화 및 모달 닫기
   const handleCancelReplace = () => {
     setPendingSampleText('');
     setIsConfirmReplaceOpen(false);
   };
 
+  // 타임아웃이 필요한 항목이 없어질 때 타임아웃 정리
   const formatTimestamp = (date) => {
     const month = String(date.getMonth() + 1).padStart(2, '0');
     const day = String(date.getDate()).padStart(2, '0');
@@ -154,8 +169,9 @@ export default function Home() {
     return `${month}-${day} ${hours}:${minutes}`;
   };
 
+  // AI 이미지 생성 버튼 클릭 시 로딩 상태 추가 및 3초 후 로딩 종료
   const handleGenerateImage = () => {
-    const trimmedTitle = title.trim();
+    const trimmedTitle = inputText.trim();
     if (!trimmedTitle) {
       return;
     }
@@ -174,7 +190,7 @@ export default function Home() {
 
     setGeneratedItems((prev) => [newItem, ...prev]);
     setIsLoadingOpen(true);
-    setTitle('');
+    setInputText('');
     if (loadingTimeoutRef.current) {
       clearTimeout(loadingTimeoutRef.current);
     }
@@ -206,8 +222,8 @@ export default function Home() {
             <h2 className={`font-semibold mb-3 text-gray-800`}>텍스트를 입력하여 이미지를 생성해보세요</h2>
             <div className="relative flex-1 flex flex-col rounded-xl border border-purple-200 bg-purple-50 px-2 py-2 shadow-sm transition-all duration-200 custom-scrollbar focus-within:ring-2 focus-within:ring-purple-500">
               <textarea
-                value={title}
-                onChange={(e) => setTitle(e.target.value)}
+                value={inputText}
+                onChange={(e) => setInputText(e.target.value)}
                 rows={2}
                 placeholder="생성 할 이미지를 설명하세요."
                 className="flex-1 w-full h-full resize-none bg-transparent text-gray-900 placeholder-gray-400 focus:outline-none"
@@ -284,7 +300,7 @@ export default function Home() {
         <div className='sm:col-span-2 flex flex-col gap-4 sm:overflow-hidden px-1.5 py-2'>
           <div className='flex-1 flex flex-col min-h-0 rounded-2xl shadow-md p-4 bg-white'>
             <h2 className='font-semibold mb-3 text-gray-800'>AI 이미지 보기</h2>
-            <div className='flex-1 sm:overflow-y-auto rounded-lg px-3 bg-gray-50 border inset-shadow-gray-200 custom-scrollbar' style={{ scrollbarColor: '#bfbfbf transparent' }}>
+            <div className='flex-1 sm:overflow-y-auto rounded-lg px-3 bg-gray-50 border border-gray-200 inset-shadow-gray-200 custom-scrollbar' style={{ scrollbarColor: '#bfbfbf transparent' }}>
               <ImageGenerationList items={generatedItems} onOpenPreview={handleOpenPreview} />
             </div>
           </div>

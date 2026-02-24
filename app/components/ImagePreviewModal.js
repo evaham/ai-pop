@@ -1,3 +1,5 @@
+// 이미지 미리보기 모달 컴포넌트
+
 'use client';
 
 export default function ImagePreviewModal({ imageUrl, onClose }) {

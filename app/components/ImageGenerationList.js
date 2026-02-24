@@ -1,3 +1,5 @@
+// AI 이미지 리스트 컴포넌트
+
 'use client';
 
 import SvgLoader from './SvgLoader';

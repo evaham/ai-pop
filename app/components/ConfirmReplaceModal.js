@@ -1,3 +1,5 @@
+// 입력 내용 변경 확인 모달 컴포넌트
+
 'use client';
 
 export default function ConfirmReplaceModal({ isOpen, onConfirm, onCancel }) {

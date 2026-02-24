@@ -1,3 +1,5 @@
+// 로딩 모달 컴포넌트
+
 'use client';
 
 import SvgLoader from './SvgLoader';

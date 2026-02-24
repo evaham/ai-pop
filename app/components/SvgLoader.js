@@ -1,4 +1,4 @@
-// SVG 로딩 이미지
+// SVG 로딩 이미지 컴포넌트
 'use client';
 
 export default function SvgLoader({ className = '' }) {
