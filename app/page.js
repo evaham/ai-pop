@@ -16,7 +16,7 @@ export default function Home() {
   const [inputText, setInputText] = useState('');
   const [isLoadingOpen, setIsLoadingOpen] = useState(false);
   const [tempImages, setTempImages] = useState([]);
-  const [previewImageUrl, setPreviewImageUrl] = useState('');
+  const [detailImage, setDetailImage] = useState('');
   const [isConfirmReplaceOpen, setIsConfirmReplaceOpen] = useState(false);
   const [pendingSampleText, setPendingSampleText] = useState('');
 
@@ -99,24 +99,24 @@ export default function Home() {
     fileInputRef.current?.click();
   };
 
-  // 이미지 선택 시 URL 객체 생성하여 상태에 추가
+  // 참고 이미지 등록
   const handleImageChange = (event) => {
     const files = Array.from(event.target.files || []);
     if (files.length === 0) {
       return;
     }
-
+    // 새로 선택된 파일들에 대해 URL 객체 생성
     const nextImages = files.map((file) => ({
       id: crypto.randomUUID(),
       name: file.name,
       url: URL.createObjectURL(file)
     }));
-
+    // 기존 이미지에 새로 선택된 이미지 추가
     setTempImages((prev) => [...prev, ...nextImages]);
+    // 파일 입력값 초기화하여 같은 파일을 다시 선택할 수 있도록 함
     event.target.value = '';
   };
-
-  // 이미지 삭제 시 URL 객체 해제 및 상태에서 제거
+  // 이미지 삭제
   const handleRemoveImage = (id) => {
     setTempImages((prev) => {
       const target = prev.find((image) => image.id === id);
@@ -127,14 +127,15 @@ export default function Home() {
     });
   };
 
-  // 이미지 미리보기 모달 열기
+
+  // 이미지 크게보기 모달 열기
   const handleOpenPreview = (url) => {
-    setPreviewImageUrl(url);
+    setDetailImage(url);
   };
 
-  // 이미지 미리보기 모달 닫기
+  // 이미지 크게보기 모달 닫기
   const handleClosePreview = () => {
-    setPreviewImageUrl('');
+    setDetailImage('');
   };
 
   // 텍스트 예시 버튼 클릭 시 입력 내용 변경 확인 모달 열기 또는 바로 텍스트 변경
@@ -169,17 +170,17 @@ export default function Home() {
     return `${month}-${day} ${hours}:${minutes}`;
   };
 
-  // AI 이미지 생성 버튼 클릭 시 로딩 상태 추가 및 3초 후 로딩 종료
+  // AI 이미지 생성 버튼 클릭
   const handleGenerateImage = () => {
+    // 입력값이 없거나 로딩 중이면 생성 방지
     const trimmedTitle = inputText.trim();
     if (!trimmedTitle) {
       return;
     }
-
     if (isLoadingOpen) {
       return;
     }
-
+    // 새로운 로딩 항목 추가
     const newItem = {
       id: crypto.randomUUID(),
       createdAt: formatTimestamp(new Date()),
@@ -187,13 +188,16 @@ export default function Home() {
       status: 'loading',
       imageUrl: ''
     };
-
+    // 새 항목을 가장 앞에 추가하여 최신 생성물이 상단에 오도록 함
     setGeneratedItems((prev) => [newItem, ...prev]);
+    // 로딩 모달 열기 및 입력 초기화
     setIsLoadingOpen(true);
     setInputText('');
+    // 3초 후 로딩 모달 닫기 (목업용)
     if (loadingTimeoutRef.current) {
       clearTimeout(loadingTimeoutRef.current);
     }
+    // 실제 API 연동 시에는 응답이 왔을 때 닫도록 변경 필요
     loadingTimeoutRef.current = setTimeout(() => {
       setIsLoadingOpen(false);
       loadingTimeoutRef.current = null;
@@ -307,10 +311,11 @@ export default function Home() {
         </div>
         {/* 이미지 생성 리스트 영역 종료*/}
       </div>
+
       {/* 로딩팝업 */}
       <LoadingModal isOpen={isLoadingOpen} onClose={() => setIsLoadingOpen(false)} />
       {/* 이미지 크게보기 팝업 */}
-      <ImagePreviewModal imageUrl={previewImageUrl} onClose={handleClosePreview} />
+      <ImagePreviewModal imageUrl={detailImage} onClose={handleClosePreview} />
       {/* 입력 내용 변경 확인 팝업 */}
       <ConfirmReplaceModal isOpen={isConfirmReplaceOpen} onConfirm={handleConfirmReplace} onCancel={handleCancelReplace} />
     </div>
