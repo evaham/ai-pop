@@ -240,7 +240,7 @@ export default function Home() {
         <div className="sm:col-span-2 flex flex-col gap-4 sm:overflow-hidden min-h-0 px-1.5 py-2">
           <div className={`flex-1 flex flex-col sm:overflow-y-auto rounded-2xl shadow-md p-4 bg-white`}>
             <h2 className={`font-semibold mb-3 text-gray-800`}>텍스트를 입력하여 이미지를 생성해보세요</h2>
-            <div className="relative flex-1 flex flex-col rounded-xl border border-purple-200 bg-purple-50 px-2 py-2 shadow-sm transition-all duration-200 focus-within:ring-2 focus-within:ring-purple-500">
+            <div className="overflow-hidden relative flex-1 flex flex-col rounded-xl border border-purple-200 bg-purple-50 px-2 py-2 shadow-sm transition-all duration-200 focus-within:ring-2 focus-within:ring-purple-500">
               <textarea
                 value={inputText}
                 onChange={(e) => setInputText(e.target.value)}
