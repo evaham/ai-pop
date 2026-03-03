@@ -250,7 +250,7 @@ export default function Home() {
               />
               {tempImages.length > 0 && (
                 <div className="-m-2 mt-0 bg-purple-100 border-t border-purple-200">
-                  <div className="p-2 flex flex-wrap gap-3">
+                  <div className="p-2 flex flex-wrap gap-2">
                     {tempImages.map((image) => (
                       <div key={image.id} className="relative h-16 w-16">
                         <div className="h-16 w-16 overflow-hidden rounded-lg border border-purple-200 bg-white">

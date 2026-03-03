@@ -20,7 +20,7 @@ export default function ImagePreviewModal({ imageUrl, onClose }) {
         onClick={(event) => event.stopPropagation()}
       >
         <div className="flex items-center justify-between border-b border-gray-200 px-4 py-3">
-          <div className="font-semibold text-gray-800">이미지 미리보기</div>
+          <div className="font-semibold text-gray-800">이미지 크게보기</div>
           <button
             type="button"
             className="rounded-md px-2 py-1 text-sm font-semibold text-gray-500 hover:text-gray-700 cursor-pointer"
