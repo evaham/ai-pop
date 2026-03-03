@@ -250,7 +250,7 @@ export default function Home() {
               />
               {tempImages.length > 0 && (
                 <div className="-m-2 mt-0 bg-purple-100 border-t border-purple-200">
-                  <div className="p-2 flex flex-wrap gap-2">
+                  <div className="p-2 flex flex-wrap gap-x-5 gap-y-3">
                     {tempImages.map((image) => (
                       <div key={image.id} className="relative h-16 w-16">
                         <div className="h-16 w-16 overflow-hidden rounded-lg border border-purple-200 bg-white">
@@ -258,7 +258,7 @@ export default function Home() {
                         </div>
                         <button
                           type="button"
-                          className="absolute right-1 top-1 flex items-center justify-center h-5 w-5 rounded-full bg-purple-600 text-xs font-semibold text-white shadow"
+                          className="absolute -right-2 -top-1 flex items-center justify-center h-5 w-5 rounded-full bg-gray-700 text-xs font-semibold text-white shadow cursor-pointer"
                           onClick={() => handleRemoveImage(image.id)}
                           aria-label="등록된 이미지 삭제"
                         >

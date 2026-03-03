@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
   <meta charSet="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -8,15 +7,13 @@
   <title>AI-POP - AI POP 이미지 생성 웹사이트</title>
   <meta name="description" content="AI POP 이미지 생성 웹사이트" />
 </head>
-
 <body class="antialiased">
   <div class="min-h-screen sm:h-screen overflow-y-auto sm:overflow-hidden flex flex-col p-4 md:px-6 transition-colors duration-300 bg-gray-100">
     <div class="max-w-7xl mx-auto w-full flex flex-col sm:h-full">
       <div class="relative flex flex-col items-center justify-between mb-1">
         <h1 class="flex items-baseline mt-0 text-2xl font-bold text-center text-gray-800">
           <div class="w-10 h-10 mr-2 text-xs">
-            <svg xmlns="http://www.w3.org/2000/svg" class="size-10" width="206" height="202" viewBox="0 0 206 202"
-              fill="none">
+            <svg xmlns="http://www.w3.org/2000/svg" class="size-10" width="206" height="202" viewBox="0 0 206 202" fill="none">
               <path d="M112.032 105.009C112.032 100.276 113.443 96.8167 116.265 94.6321C119.087 92.4475 122.409 91.3552 126.232 91.3552C130.055 91.3552 133.377 92.4475 136.199 94.6321C139.021 96.8167 140.432 100.276 140.432 105.009V201.813H112.032V105.009Z" fill="#AA3EFF"></path>
               <path d="M35.0897 102.688C36.4551 98.8647 38.7762 96.043 42.0531 94.2225C45.4209 92.311 48.9709 91.3552 52.7029 91.3552C56.1618 91.3552 59.4841 92.311 62.67 94.2225C65.9468 96.134 68.2224 98.9557 69.4968 102.688L105.133 201.813H75.0947L69.7699 184.882H34.6801L29.4918 201.813H0L35.0897 102.688ZM41.78 161.808H62.67L52.2933 127.81L41.78 161.808Z" fill="#AA3EFF"></path>
               <path d="M154.255 10.8412C155.633 7.11719 160.9 7.11718 162.278 10.8412L170.292 32.499C170.726 33.6698 171.649 34.5929 172.82 35.0261L194.477 43.0402C198.201 44.4183 198.201 49.6854 194.477 51.0635L172.82 59.0776C171.649 59.5108 170.726 60.4339 170.292 61.6047L162.278 83.2625C160.9 86.9865 155.633 86.9865 154.255 83.2625L146.241 61.6047C145.808 60.4339 144.885 59.5108 143.714 59.0776L122.056 51.0635C118.332 49.6854 118.332 44.4183 122.056 43.0402L143.714 35.0261C144.885 34.5929 145.808 33.6698 146.241 32.499L154.255 10.8412Z" fill="#AA3EFF"></path>
@@ -34,12 +31,12 @@
               <textarea rows="2" placeholder="생성 할 이미지를 설명하세요." class="flex-1 w-full h-full resize-none bg-transparent text-gray-900 placeholder-gray-400 focus:outline-none"></textarea>
               <!-- 이미지 추가 시 미리보기 -->
               <div class="-m-2 mt-0 bg-purple-100 border-t border-purple-200">
-                <div class="p-2 flex flex-wrap gap-2">
+                <div class="p-2 flex flex-wrap gap-x-5 gap-y-3">
                   <div class="relative h-16 w-16">
                     <div class="h-16 w-16 overflow-hidden rounded-lg border border-purple-200 bg-white">
                       <img alt="img_main.png" class="h-full w-full object-cover" src="">
                     </div>
-                    <button type="button" class="absolute right-1 top-1 flex items-center justify-center h-5 w-5 rounded-full bg-purple-600 text-xs font-semibold text-white shadow" aria-label="등록된 이미지 삭제">
+                    <button type="button" class="absolute -right-2 -top-1 flex items-center justify-center h-5 w-5 rounded-full bg-gray-700 text-xs font-semibold text-white shadow cursor-pointer" aria-label="등록된 이미지 삭제">
                       <svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px" fill="#fff">
                         <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"></path>
                       </svg>
