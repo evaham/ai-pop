@@ -1,7 +1,7 @@
 
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import ConfirmReplaceModal from './components/ConfirmReplaceModal';
 import ImageGenerationList from './components/ImageGenerationList';
 import ImagePreviewModal from './components/ImagePreviewModal';
@@ -12,7 +12,10 @@ import samplePrompts from './data/samplePrompts.json';
 export default function Home() {
   // 이미지 URL이 상대경로인 경우 BASE_PATH를 붙여주는 함수 GitHub Pages에서 호스팅할 때 필요
   const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
-  const normalizeImageUrl = (url) => (url && url.startsWith('/img/') ? `${basePath}${url}` : url);
+  const normalizeImageUrl = useCallback(
+    (url) => (url && url.startsWith('/img/') ? `${basePath}${url}` : url),
+    [basePath]
+  );
   
   // 생성된 이미지 항목 상태 (초기값은 JSON 데이터에서 불러온 항목들로 설정)
   const [generatedItems, setGeneratedItems] = useState(() =>
@@ -37,15 +40,22 @@ export default function Home() {
   const itemTimeoutsRef = useRef(new Map());
 
   // 목업용 랜덤 이미지용
-  const fallbackImageUrls = [
-    '/img/KakaoTalk_20260212_102215461.png',
-    '/img/KakaoTalk_20260212_103222794.png',
-    '/img/KakaoTalk_20260212_103407279.png',
-    '/img/KakaoTalk_20260212_103504542.png'
-  ].map(normalizeImageUrl);
+  const fallbackImageUrls = useMemo(
+    () =>
+      [
+        '/img/KakaoTalk_20260212_102215461.png',
+        '/img/KakaoTalk_20260212_103222794.png',
+        '/img/KakaoTalk_20260212_103407279.png',
+        '/img/KakaoTalk_20260212_103504542.png'
+      ].map(normalizeImageUrl),
+    [normalizeImageUrl]
+  );
 
   // 목업용 랜덤으로 기본 이미지 URL 반환 함수
-  const getRandomFallbackImageUrl = () => fallbackImageUrls[Math.floor(Math.random() * fallbackImageUrls.length)];
+  const getRandomFallbackImageUrl = useCallback(
+    () => fallbackImageUrls[Math.floor(Math.random() * fallbackImageUrls.length)],
+    [fallbackImageUrls]
+  );
 
   // 컴포넌트 언마운트 시 모든 URL 객체 해제
   useEffect(() => {
@@ -59,11 +69,12 @@ export default function Home() {
 
   // 컴포넌트 언마운트 시 모든 이미지 생성 타임아웃 정리
   useEffect(() => {
+    const timeouts = itemTimeoutsRef.current;
     return () => {
-      itemTimeoutsRef.current.forEach((timeoutId) => {
+      timeouts.forEach((timeoutId) => {
         clearTimeout(timeoutId);
       });
-      itemTimeoutsRef.current.clear();
+      timeouts.clear();
     };
   }, []);
 
@@ -97,7 +108,7 @@ export default function Home() {
       
       itemTimeoutsRef.current.set(item.id, timeoutId);
     });
-  }, [generatedItems]);
+  }, [generatedItems, getRandomFallbackImageUrl]);
 
   // 이미지 추가 버튼 클릭 시 파일 입력창 열기
   const handleImageButtonClick = () => {
@@ -227,9 +238,9 @@ export default function Home() {
       <div className="grid grid-cols-1 sm:grid-cols-4 gap-2 flex-1 sm:overflow-hidden">
         {/* 제어 패널 */}
         <div className="sm:col-span-2 flex flex-col gap-4 sm:overflow-hidden min-h-0 px-1.5 py-2">
-          <div className={`flex-1 flex flex-col sm:overflow-y-auto rounded-2xl shadow-md p-4 bg-white custom-scrollbar`} style={{ scrollbarColor: '#bfbfbf transparent' }}>
+          <div className={`flex-1 flex flex-col sm:overflow-y-auto rounded-2xl shadow-md p-4 bg-white`}>
             <h2 className={`font-semibold mb-3 text-gray-800`}>텍스트를 입력하여 이미지를 생성해보세요</h2>
-            <div className="relative flex-1 flex flex-col rounded-xl border border-purple-200 bg-purple-50 px-2 py-2 shadow-sm transition-all duration-200 custom-scrollbar focus-within:ring-2 focus-within:ring-purple-500">
+            <div className="relative flex-1 flex flex-col rounded-xl border border-purple-200 bg-purple-50 px-2 py-2 shadow-sm transition-all duration-200 focus-within:ring-2 focus-within:ring-purple-500">
               <textarea
                 value={inputText}
                 onChange={(e) => setInputText(e.target.value)}
@@ -307,7 +318,7 @@ export default function Home() {
         <div className='sm:col-span-2 flex flex-col gap-4 sm:overflow-hidden px-1.5 py-2'>
           <div className='flex-1 flex flex-col min-h-0 rounded-2xl shadow-md p-4 bg-white'>
             <h2 className='font-semibold mb-3 text-gray-800'>AI 이미지 보기</h2>
-            <div className='flex-1 sm:overflow-y-auto rounded-lg px-3 bg-gray-50 border border-gray-200 inset-shadow-gray-200 custom-scrollbar' style={{ scrollbarColor: '#bfbfbf transparent' }}>
+            <div className='flex-1 sm:overflow-y-auto rounded-lg px-3 bg-gray-50 border border-gray-200 inset-shadow-gray-200'>
               <ImageGenerationList items={generatedItems} onOpenPreview={handleOpenPreview} />
             </div>
           </div>
@@ -315,11 +326,11 @@ export default function Home() {
         {/* 이미지 생성 리스트 영역 종료*/}
       </div>
 
-      {/* 로딩팝업 */}
+      {/* 로딩 모달 */}
       <LoadingModal isOpen={isLoadingOpen} onClose={() => setIsLoadingOpen(false)} />
-      {/* 이미지 크게보기 팝업 */}
+      {/* 이미지 크게보기 모달 */}
       <ImagePreviewModal imageUrl={detailImage} onClose={handleClosePreview} />
-      {/* 입력 내용 변경 확인 팝업 */}
+      {/* 입력 내용 변경 모달 */}
       <ConfirmReplaceModal isOpen={isConfirmReplaceOpen} onConfirm={handleConfirmReplace} onCancel={handleCancelReplace} />
     </div>
   );
