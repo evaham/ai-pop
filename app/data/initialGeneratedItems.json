@@ -4,20 +4,29 @@
     "createdAt": "02-11 16:00",
     "prompt": "정육코너에서 사용할 소고기에 대한 POP를 만들어줘. 핵심 키워드는 고소함,마블링이야. 메인카피는 \"입안에서 살살 녹는 1등급 한우\" 클로즈업된 소고기 마블링과 고급스러운 금색 폰트로 꾸며줘",
     "status": "loading",
-    "imageUrl": ""
+    "imageUrl": "",
+    "imageUrl2": "",
+    "imageUrl3": "",
+    "imageUrl4": ""
   },
   {
     "id": "seed-2",
     "createdAt": "02-11 15:00",
     "prompt": "정육코너에서 사용할 소고기에 대한 POP를 만들어줘. 핵심 키워드는 고소함,마블링이야. 메인카피는 \"입안에서 살살 녹는 1등급 한우\" 클로즈업된 소고기 마블링과 고급스러운 금색 폰트로 꾸며줘",
     "status": "done",
-    "imageUrl": "/img/KakaoTalk_20260212_102215461.png"
+    "imageUrl": "/img/KakaoTalk_20260212_102215461.png",
+    "imageUrl2": "/img/KakaoTalk_20260212_102215461.png",
+    "imageUrl3": "/img/KakaoTalk_20260212_102215461.png",
+    "imageUrl4": "/img/KakaoTalk_20260212_102215461.png"
   },
   {
     "id": "seed-3",
     "createdAt": "02-11 14:00",
     "prompt": "정육코너에서 사용할 소고기에 대한 POP를 만들어줘. 핵심 키워드는 고소함,마블링이야. 메인카피는 \"입안에서 살살 녹는 1등급 한우\" 클로즈업된 소고기 마블링과 고급스러운 금색 폰트로 꾸며줘",
     "status": "done",
-    "imageUrl": "/img/KakaoTalk_20260212_103222794.png"
+    "imageUrl": "/img/KakaoTalk_20260212_103222794.png",
+    "imageUrl2": "/img/KakaoTalk_20260212_103222794.png",
+    "imageUrl3": "/img/KakaoTalk_20260212_103222794.png",
+    "imageUrl4": "/img/KakaoTalk_20260212_103222794.png"
   }
 ]
