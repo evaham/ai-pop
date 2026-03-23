@@ -18,7 +18,7 @@ export default function ImagePreviewModal({ detail, onClose }) {
       onClick={onClose}
     >
       <div
-        className="max-h-[85vh] w-[90%] max-w-3xl overflow-hidden rounded-2xl bg-white shadow-2xl"
+        className="max-h-[85vh] w-[90%] max-w-3xl overflow-y-auto overscroll-contain rounded-2xl bg-white shadow-2xl sm:overflow-hidden"
         onClick={(event) => event.stopPropagation()}
       >
         <div className="flex items-center justify-between border-b border-gray-200 px-4 py-3">
@@ -36,14 +36,13 @@ export default function ImagePreviewModal({ detail, onClose }) {
             <img src={imageUrl} alt="확대 이미지" className="max-h-[70vh] w-auto max-w-full object-contain" />
           </div>
           {/* 이미지 상세정보 */}
-          <div className="flex flex-1">
-            <div className="overflow-y-auto flex-1 flex flex-col gap-3 p-4 border border-slate-200 bg-white min-w-[220px]">
-              {/* 다운로드 버튼 등 추가 기능을 여기에 배치할 수 있습니다. */}
+          <div className="flex flex-1 sm:max-h-[75vh]">
+            <div className="overflow-y-auto flex-1 flex flex-col gap-3 p-4 sm:border-l sm:border-slate-200 bg-white min-w-[220px]">
               <button
                 type="button"
                 className="rounded-lg px-3 py-2 text-sm font-semibold text-white bg-slate-800 hover:bg-slate-700 transition cursor-pointer"
               >
-                다운로드
+                이미지 다운로드
               </button>
               <div className="flex flex-col gap-x-3 gap-y-2 text-sm">
                 <span className="text-slate-500">생성일</span>
