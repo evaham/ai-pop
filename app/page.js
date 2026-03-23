@@ -29,7 +29,7 @@ export default function Home() {
   const [isLoadingOpen, setIsLoadingOpen] = useState(false);
   
   const [tempImages, setTempImages] = useState([]);
-  const [detailImage, setDetailImage] = useState('');
+  const [detailImage, setDetailImage] = useState(null);
   
   // 입력 내용 변경 확인 모달 상태 및 대기 중인 텍스트 상태
   const [isConfirmReplaceOpen, setIsConfirmReplaceOpen] = useState(false);
@@ -79,8 +79,8 @@ export default function Home() {
   }, []);
 
   // 목업 기능 시작:
-  // - 로딩 항목을 10초 후 완료 처리
-  // - 이미지 URL이 없으면 기본 이미지를 채움
+  // - 로딩 항목을 5초 후 완료/실패 랜덤 처리
+  // - 완료 시 이미지 URL이 없으면 기본 이미지를 채움
   useEffect(() => {
     generatedItems.forEach((item) => {
       if (item.status !== 'loading') {
@@ -92,19 +92,23 @@ export default function Home() {
       }
       
       const timeoutId = setTimeout(() => {
+        const isSuccess = Math.random() < 0.7;
         setGeneratedItems((prev) =>
           prev.map((prevItem) =>
             prevItem.id === item.id
               ? {
                   ...prevItem,
-                  status: 'done',
-                  imageUrl: prevItem.imageUrl || getRandomFallbackImageUrl()
+                  status: isSuccess ? 'done' : 'failed',
+                  imageUrl: isSuccess ? getRandomFallbackImageUrl() : '',
+                  imageUrl2: isSuccess ? getRandomFallbackImageUrl() : '',
+                  imageUrl3: isSuccess ? getRandomFallbackImageUrl() : '',
+                  imageUrl4: isSuccess ? getRandomFallbackImageUrl() : ''
                 }
               : prevItem
           )
         );
         itemTimeoutsRef.current.delete(item.id);
-      }, 10000);
+      }, 5000);
       
       itemTimeoutsRef.current.set(item.id, timeoutId);
     });
@@ -145,13 +149,13 @@ export default function Home() {
 
 
   // 이미지 크게보기 모달 열기
-  const handleOpenPreview = (url) => {
-    setDetailImage(url);
+  const handleOpenPreview = (detail) => {
+    setDetailImage(detail);
   };
 
   // 이미지 크게보기 모달 닫기
   const handleClosePreview = () => {
-    setDetailImage('');
+    setDetailImage(null);
   };
 
   // 텍스트 예시 버튼 클릭 시 입력 내용 변경 확인 모달 열기 또는 바로 텍스트 변경
@@ -193,9 +197,8 @@ export default function Home() {
     if (!trimmedTitle) {
       return;
     }
-    if (isLoadingOpen) {
-      return;
-    }
+
+
     // 새로운 로딩 항목 추가
     const newItem = {
       id: crypto.randomUUID(),
@@ -222,32 +225,83 @@ export default function Home() {
 
   return (
     <div className="max-w-7xl mx-auto w-full flex flex-col sm:h-full">
-      <div className="relative flex flex-col items-center justify-between mb-1">
-        <h1 className={`flex items-baseline mt-0 text-2xl font-bold text-center text-gray-800`}>
-          <div className='w-10 h-10 mr-2 text-xs'>
-            <svg xmlns="http://www.w3.org/2000/svg" className='size-10' width="206" height="202" viewBox="0 0 206 202" fill="none">
+      <div className="relative grid grid-cols-2 sm:grid-cols-4 mb-2">
+        <h1 className={`flex items-baseline text-xl font-bold text-center text-gray-800 sm:col-span-1`}>
+          <div className='mr-1'>
+            <svg xmlns="http://www.w3.org/2000/svg" className='size-7' width="206" height="202" viewBox="0 0 206 202" fill="none">
             <path d="M112.032 105.009C112.032 100.276 113.443 96.8167 116.265 94.6321C119.087 92.4475 122.409 91.3552 126.232 91.3552C130.055 91.3552 133.377 92.4475 136.199 94.6321C139.021 96.8167 140.432 100.276 140.432 105.009V201.813H112.032V105.009Z" fill="#AA3EFF"/>
             <path d="M35.0897 102.688C36.4551 98.8647 38.7762 96.043 42.0531 94.2225C45.4209 92.311 48.9709 91.3552 52.7029 91.3552C56.1618 91.3552 59.4841 92.311 62.67 94.2225C65.9468 96.134 68.2224 98.9557 69.4968 102.688L105.133 201.813H75.0947L69.7699 184.882H34.6801L29.4918 201.813H0L35.0897 102.688ZM41.78 161.808H62.67L52.2933 127.81L41.78 161.808Z" fill="#AA3EFF"/>
             <path d="M154.255 10.8412C155.633 7.11719 160.9 7.11718 162.278 10.8412L170.292 32.499C170.726 33.6698 171.649 34.5929 172.82 35.0261L194.477 43.0402C198.201 44.4183 198.201 49.6854 194.477 51.0635L172.82 59.0776C171.649 59.5108 170.726 60.4339 170.292 61.6047L162.278 83.2625C160.9 86.9865 155.633 86.9865 154.255 83.2625L146.241 61.6047C145.808 60.4339 144.885 59.5108 143.714 59.0776L122.056 51.0635C118.332 49.6854 118.332 44.4183 122.056 43.0402L143.714 35.0261C144.885 34.5929 145.808 33.6698 146.241 32.499L154.255 10.8412Z" fill="#AA3EFF"/>
             <path d="M72.9826 36.505C74.3606 32.781 79.6278 32.781 81.0058 36.505L83.2435 42.5521C83.6767 43.7229 84.5998 44.646 85.7706 45.0792L91.8177 47.3169C95.5417 48.6949 95.5417 53.9621 91.8177 55.3401L85.7706 57.5777C84.5998 58.0109 83.6767 58.934 83.2435 60.1049L81.0058 66.1519C79.6278 69.8759 74.3606 69.8759 72.9826 66.1519L70.745 60.1049C70.3118 58.934 69.3887 58.0109 68.2178 57.5777L62.1708 55.3401C58.4468 53.9621 58.4468 48.6949 62.1708 47.3169L68.2178 45.0792C69.3887 44.646 70.3118 43.7229 70.745 42.5521L72.9826 36.505Z" fill="#AA3EFF"/>
             <path d="M175.642 122.054C177.02 118.33 182.287 118.33 183.665 122.054L185.903 128.101C186.336 129.272 187.259 130.195 188.43 130.628L194.477 132.866C198.201 134.244 198.201 139.511 194.477 140.889L188.43 143.127C187.259 143.56 186.336 144.483 185.903 145.654L183.665 151.701C182.287 155.425 177.02 155.425 175.642 151.701L173.404 145.654C172.971 144.483 172.048 143.56 170.877 143.127L164.83 140.889C161.106 139.511 161.106 134.244 164.83 132.866L170.877 130.628C172.048 130.195 172.971 129.272 173.404 128.101L175.642 122.054Z" fill="#AA3EFF"/>
             </svg>
-          </div>POP 생성하기
+          </div>
+          <span className='tracking-tight'>POP 생성하기</span>
         </h1>
+        <a href='https://naver.co.kr' target='_blank' rel='noreferrer' className='sm:col-span-1 ml-auto mt-auto px-2 py-0.5 rounded text-sm bg-slate-400'>온라인매뉴얼</a>
+        <div className='col-span-2 sm:col-span-2 relative flex ml-auto mt-auto py-1 px-2 rounded text-slate-700 font-bold'>
+          <button className='cursor-pointer'>
+            <svg xmlns="http://www.w3.org/2000/svg" className='size-6 mr-1 fill-slate-700' height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M482-160q-134 0-228-93t-94-227v-7l-64 64-56-56 160-160 160 160-56 56-64-64v7q0 100 70.5 170T482-240q26 0 51-6t49-18l60 60q-38 22-78 33t-82 11Zm278-161L600-481l56-56 64 64v-7q0-100-70.5-170T478-720q-26 0-51 6t-49 18l-60-60q38-22 78-33t82-11q134 0 228 93t94 227v7l64-64 56 56-160 160Z"/></svg>
+          </button>
+          <div className='group'>
+            <span className='mr-1'>가용TS :</span>
+            <span className='text-red-700'>9,899,555</span>
+            <span className='text-slate-400'>.0</span>
+            <div className='absolute top-10 right-0 hidden flex-col w-60 px-4 py-2 border border-slate-200 rounded-2xl text-base font-normal bg-white shadow group-hover:flex'>
+              <div>
+                <span className='mr-1'>가용TS :</span>
+                <span className='text-red-700'>9,899,555</span>
+                <span className='text-slate-400'>.0</span>
+              </div>
+              <div>
+                <span className='mr-1'>가용TS :</span>
+                <span className='text-red-700'>9,899,555</span>
+                <span className='text-slate-400'>.0</span>
+              </div>
+              <hr />
+              <div className='flex flex-col'>
+                <div className='mr-1'>TS머니 전용계좌</div>
+                <div className=''>기업은행 431-123456-78-900</div>
+                <div>
+                  <span>예금주 :</span>
+                  <span>투게더마트</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-4 gap-2 flex-1 sm:overflow-hidden">
         {/* 제어 패널 */}
-        <div className="sm:col-span-2 flex flex-col gap-4 sm:overflow-hidden min-h-0 px-1.5 py-2">
+        <div className="sm:col-span-2 flex flex-col gap-4 sm:overflow-hidden min-h-0 p-1.5">
           <div className={`flex-1 flex flex-col sm:overflow-y-auto rounded-2xl shadow-md p-4 bg-white`}>
-            <h2 className={`font-semibold mb-3 text-gray-800`}>텍스트를 입력하여 이미지를 생성해보세요</h2>
+            <div className='flex items-center mb-3'>
+            <h2 className={`font-semibold text-gray-800`}>
+              텍스트를 입력하여 이미지를 생성해보세요
+            </h2>
+            <div>
+              <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M513.5-254.5Q528-269 528-290t-14.5-35.5Q499-340 478-340t-35.5 14.5Q428-311 428-290t14.5 35.5Q457-240 478-240t35.5-14.5ZM442-394h74q0-33 7.5-52t42.5-52q26-26 41-49.5t15-56.5q0-56-41-86t-97-30q-57 0-92.5 30T342-618l66 26q5-18 22.5-39t53.5-21q32 0 48 17.5t16 38.5q0 20-12 37.5T506-526q-44 39-54 59t-10 73Zm38 314q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg>
+            </div>
+            </div>
+
             <div className="overflow-hidden relative flex-1 flex flex-col rounded-xl border border-purple-200 bg-purple-50 px-2 py-2 shadow-sm transition-all duration-200 focus-within:ring-2 focus-within:ring-purple-500">
+              {inputText.length === 0 && (
+                <div className="pointer-events-none absolute left-2 top-2 right-2 text-gray-400 whitespace-pre-wrap">
+                  {'생성 할 이미지를 설명하세요.\n자세한 설명은 더 좋은 퀄리티의 이미지를 얻을 수 있습니다.'}
+                </div>
+              )}
               <textarea
                 value={inputText}
                 onChange={(e) => setInputText(e.target.value)}
                 rows={2}
-                placeholder="생성 할 이미지를 설명하세요."
+                aria-label="이미지 생성 설명 입력"
                 className="flex-1 w-full h-full resize-none bg-transparent text-gray-900 placeholder-gray-400 focus:outline-none"
               />
+              <div className='text-right text-slate-400 text-sm'>
+                <span className='text-slate-800'>0</span> / <span>2000</span> Bytes
+              </div>
+
+
               {tempImages.length > 0 && (
                 <div className="-m-2 mt-0 bg-purple-100 border-t border-purple-200">
                   <div className="p-2 flex flex-wrap gap-x-5 gap-y-3">
@@ -272,7 +326,7 @@ export default function Home() {
             </div>
 
             {/* 참고이미지 등록 */}
-            <div className='mt-4'>
+            <div className='flex mt-4'>
               <input
                 ref={fileInputRef}
                 type="file"
@@ -289,6 +343,9 @@ export default function Home() {
                 <svg xmlns="http://www.w3.org/2000/svg" className="fill-purple-700" height="24px" viewBox="0 -960 960 960" width="24px" fill="#333"><path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"/></svg>
                 이미지 추가
               </button>
+              <div>
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M513.5-254.5Q528-269 528-290t-14.5-35.5Q499-340 478-340t-35.5 14.5Q428-311 428-290t14.5 35.5Q457-240 478-240t35.5-14.5ZM442-394h74q0-33 7.5-52t42.5-52q26-26 41-49.5t15-56.5q0-56-41-86t-97-30q-57 0-92.5 30T342-618l66 26q5-18 22.5-39t53.5-21q32 0 48 17.5t16 38.5q0 20-12 37.5T506-526q-44 39-54 59t-10 73Zm38 314q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg>
+              </div>
             </div>
             
             {/* 텍스트 예시 자동입력 버튼그룹 시작 */}
@@ -309,15 +366,18 @@ export default function Home() {
               className="w-full mt-4 p-4 bg-purple-600 hover:bg-purple-500 text-white text-xl font-semibold rounded-lg transition duration-200 shrink-0 letter-spacing cursor-pointer"
               onClick={handleGenerateImage}
             >
-              AI 이미지 생성하기
+              AI 이미지 생성 (500TS 차감)
             </button>
           </div>
         </div>
 
         {/* 이미지 생성 리스트 영역 시작*/}
-        <div className='sm:col-span-2 flex flex-col gap-4 sm:overflow-hidden px-1.5 py-2'>
+        <div className='sm:col-span-2 flex flex-col gap-4 sm:overflow-hidden p-1.5'>
           <div className='flex-1 flex flex-col min-h-0 rounded-2xl shadow-md p-4 bg-white'>
-            <h2 className='font-semibold mb-3 text-gray-800'>AI 이미지 보기</h2>
+              <h2 className='font-semibold mb-3 text-gray-800'>AI 이미지 보기</h2>
+              {/* <div>
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M513.5-254.5Q528-269 528-290t-14.5-35.5Q499-340 478-340t-35.5 14.5Q428-311 428-290t14.5 35.5Q457-240 478-240t35.5-14.5ZM442-394h74q0-33 7.5-52t42.5-52q26-26 41-49.5t15-56.5q0-56-41-86t-97-30q-57 0-92.5 30T342-618l66 26q5-18 22.5-39t53.5-21q32 0 48 17.5t16 38.5q0 20-12 37.5T506-526q-44 39-54 59t-10 73Zm38 314q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg>
+              </div> */}
             <div className='flex-1 sm:overflow-y-auto rounded-lg px-3 bg-gray-50 border border-gray-200 inset-shadow-gray-200'>
               <ImageGenerationList items={generatedItems} onOpenPreview={handleOpenPreview} />
             </div>
@@ -327,9 +387,9 @@ export default function Home() {
       </div>
 
       {/* 로딩 모달 */}
-      <LoadingModal isOpen={isLoadingOpen} onClose={() => setIsLoadingOpen(false)} />
+      {/* <LoadingModal isOpen={isLoadingOpen} onClose={() => setIsLoadingOpen(false)} /> */}
       {/* 이미지 크게보기 모달 */}
-      <ImagePreviewModal imageUrl={detailImage} onClose={handleClosePreview} />
+      <ImagePreviewModal detail={detailImage} onClose={handleClosePreview} />
       {/* 입력 내용 변경 모달 */}
       <ConfirmReplaceModal isOpen={isConfirmReplaceOpen} onConfirm={handleConfirmReplace} onCancel={handleCancelReplace} />
     </div>

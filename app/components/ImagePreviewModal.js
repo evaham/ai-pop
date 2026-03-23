@@ -2,10 +2,12 @@
 
 'use client';
 
-export default function ImagePreviewModal({ imageUrl, onClose }) {
-  if (!imageUrl) {
+export default function ImagePreviewModal({ detail, onClose }) {
+  if (!detail) {
     return null;
   }
+
+  const { imageUrl, createdAt, prompt } = detail;
 
   return (
     <div
@@ -29,9 +31,32 @@ export default function ImagePreviewModal({ imageUrl, onClose }) {
             <svg xmlns="http://www.w3.org/2000/svg" className="fill-gray-700" height="24px" viewBox="0 -960 960 960" width="24px" fill="#333"><path d="M256-213.85 213.85-256l224-224-224-224L256-746.15l224 224 224-224L746.15-704l-224 224 224 224L704-213.85l-224-224-224 224Z"/></svg>
           </button>
         </div>
-        <div className="flex max-h-[75vh] items-center justify-center bg-gray-50 p-4">
-          <img src={imageUrl} alt="확대 이미지" className="max-h-[70vh] w-auto max-w-full object-contain" />
+        <div className="flex flex-col sm:flex-row gap-2 bg-gray-50">
+          <div className="flex max-h-[75vh] items-center justify-center p-4">
+            <img src={imageUrl} alt="확대 이미지" className="max-h-[70vh] w-auto max-w-full object-contain" />
+          </div>
+          {/* 이미지 상세정보 */}
+          <div className="flex flex-1">
+            <div className="overflow-y-auto flex-1 flex flex-col gap-3 p-4 border border-slate-200 bg-white min-w-[220px]">
+              {/* 다운로드 버튼 등 추가 기능을 여기에 배치할 수 있습니다. */}
+              <button
+                type="button"
+                className="rounded-lg px-3 py-2 text-sm font-semibold text-white bg-slate-800 hover:bg-slate-700 transition cursor-pointer"
+              >
+                다운로드
+              </button>
+              <div className="flex flex-col gap-x-3 gap-y-2 text-sm">
+                <span className="text-slate-500">생성일</span>
+                <span className="font-medium text-slate-800">{createdAt || '-'}</span>
+                <span className="text-slate-500">프롬프트</span>
+                <span className="text-slate-700">{prompt || '-'}</span>
+                <span className="text-slate-500">보관기간</span>
+                <span className="text-slate-700">2024-04-30 까지</span>
+              </div>
+            </div>
+          </div>
         </div>
+
       </div>
     </div>
   );
