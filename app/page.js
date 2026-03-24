@@ -8,6 +8,7 @@ import ImagePreviewModal from './components/ImagePreviewModal';
 import LoadingModal from './components/LoadingModal';
 import initialGeneratedItems from './data/initialGeneratedItems.json';
 import samplePrompts from './data/samplePrompts.json';
+import ToolTip from './components/ToolTip';
 
 export default function Home() {
   // 이미지 URL이 상대경로인 경우 BASE_PATH를 붙여주는 함수 GitHub Pages에서 호스팅할 때 필요
@@ -236,35 +237,40 @@ export default function Home() {
             <path d="M175.642 122.054C177.02 118.33 182.287 118.33 183.665 122.054L185.903 128.101C186.336 129.272 187.259 130.195 188.43 130.628L194.477 132.866C198.201 134.244 198.201 139.511 194.477 140.889L188.43 143.127C187.259 143.56 186.336 144.483 185.903 145.654L183.665 151.701C182.287 155.425 177.02 155.425 175.642 151.701L173.404 145.654C172.971 144.483 172.048 143.56 170.877 143.127L164.83 140.889C161.106 139.511 161.106 134.244 164.83 132.866L170.877 130.628C172.048 130.195 172.971 129.272 173.404 128.101L175.642 122.054Z" fill="#AA3EFF"/>
             </svg>
           </div>
-          <span className='tracking-tight'>POP 생성하기</span>
+          <span className='text-gray-700 tracking-tight'>POP 생성하기</span>
         </h1>
-        <a href='https://naver.co.kr' target='_blank' rel='noreferrer' className='sm:col-span-1 ml-auto mt-auto px-2 py-0.5 rounded text-sm bg-slate-400'>온라인매뉴얼</a>
-        <div className='col-span-2 sm:col-span-2 relative flex ml-auto mt-auto py-1 px-2 rounded text-slate-700 font-bold'>
+        <a href='https://naver.co.kr' target='_blank' rel='noreferrer' className='sm:col-span-1 ml-auto mt-auto px-2 py-0.5 rounded text-sm bg-gray-600'>
+          온라인매뉴얼
+        </a>
+        <div className='col-span-2 sm:col-span-2 relative flex ml-auto mt-auto py-1 px-2 rounded text-gray-700 font-bold'>
           <button className='cursor-pointer'>
-            <svg xmlns="http://www.w3.org/2000/svg" className='size-6 mr-1 fill-slate-700' height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M482-160q-134 0-228-93t-94-227v-7l-64 64-56-56 160-160 160 160-56 56-64-64v7q0 100 70.5 170T482-240q26 0 51-6t49-18l60 60q-38 22-78 33t-82 11Zm278-161L600-481l56-56 64 64v-7q0-100-70.5-170T478-720q-26 0-51 6t-49 18l-60-60q38-22 78-33t82-11q134 0 228 93t94 227v7l64-64 56 56-160 160Z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" className='size-6 mr-1 fill-gray-700' height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M482-160q-134 0-228-93t-94-227v-7l-64 64-56-56 160-160 160 160-56 56-64-64v7q0 100 70.5 170T482-240q26 0 51-6t49-18l60 60q-38 22-78 33t-82 11Zm278-161L600-481l56-56 64 64v-7q0-100-70.5-170T478-720q-26 0-51 6t-49 18l-60-60q38-22 78-33t82-11q134 0 228 93t94 227v7l64-64 56 56-160 160Z"/></svg>
           </button>
-          <div className='group'>
-            <span className='mr-1'>가용TS :</span>
-            <span className='text-red-700'>9,899,555</span>
-            <span className='text-slate-400'>.0</span>
-            <div className='absolute top-10 right-0 hidden flex-col w-60 px-4 py-2 border border-slate-200 rounded-2xl text-base font-normal bg-white shadow group-hover:flex'>
-              <div>
-                <span className='mr-1'>가용TS :</span>
-                <span className='text-red-700'>9,899,555</span>
-                <span className='text-slate-400'>.0</span>
-              </div>
-              <div>
-                <span className='mr-1'>가용TS :</span>
-                <span className='text-red-700'>9,899,555</span>
-                <span className='text-slate-400'>.0</span>
-              </div>
-              <hr />
-              <div className='flex flex-col'>
-                <div className='mr-1'>TS머니 전용계좌</div>
-                <div className=''>기업은행 431-123456-78-900</div>
-                <div>
-                  <span>예금주 :</span>
-                  <span>투게더마트</span>
+          <div className='relative group'>
+            <span className='mr-1 text-gray-700'>가용TS :</span>
+            <span className='text-rose-600'>9,899,555</span>
+            <span className='text-gray-400'>.0</span>
+            {/* 툴팁 */}
+            <div className='absolute top-0 right-0 flex-col hidden group-hover:flex group-hover:pointer-events-auto z-50'>
+              <div className='w-64 mt-8 px-4 py-3 rounded-lg font-normal bg-gray-800 text-sm text-gray-300 shadow-md'>
+                <div className='flex'>
+                  <span className='mr-auto text-gray-300'>TS 머니 :</span>
+                  <span className='text-base text-rose-400'>9,899,555</span>
+                  <span className='text-base text-gray-400'>.0</span>
+                </div>
+                <div className='flex'>
+                  <span className='mr-auto text-gray-300'>TS 포인트 :</span>
+                  <span className='text-base text-cyan-400'>9,899,555</span>
+                  <span className='text-base text-gray-400'>.0</span>
+                </div>
+                <hr className='border-none bg-gray-500 h-px my-2' />
+                <div className='flex flex-col'>
+                  <div className='mr-1 text-gray-300'>TS머니 전용계좌</div>
+                  <div className='text-base text-cyan-400 font-bold'>기업은행 431-123456-78-900</div>
+                  <div className='flex'>
+                    <span className='mr-1 text-gray-300'>예금주 :</span>
+                    <span className='text-base text-gray-300'>투게더마트</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -276,12 +282,16 @@ export default function Home() {
         <div className="sm:col-span-2 flex flex-col gap-4 sm:overflow-hidden min-h-0 p-1.5">
           <div className={`flex-1 flex flex-col sm:overflow-y-auto rounded-2xl shadow-md p-4 bg-white`}>
             <div className='flex items-center mb-3'>
-            <h2 className={`font-semibold text-gray-800`}>
-              텍스트를 입력하여 이미지를 생성해보세요
-            </h2>
-            <div>
-              <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M513.5-254.5Q528-269 528-290t-14.5-35.5Q499-340 478-340t-35.5 14.5Q428-311 428-290t14.5 35.5Q457-240 478-240t35.5-14.5ZM442-394h74q0-33 7.5-52t42.5-52q26-26 41-49.5t15-56.5q0-56-41-86t-97-30q-57 0-92.5 30T342-618l66 26q5-18 22.5-39t53.5-21q32 0 48 17.5t16 38.5q0 20-12 37.5T506-526q-44 39-54 59t-10 73Zm38 314q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg>
-            </div>
+              <h2 className={`mr-2 text-gray-700 font-bold`}>
+                텍스트를 입력하여 이미지를 생성해보세요
+              </h2>
+              {/* 툴팁 */}
+              <ToolTip
+                content={<>생성을 원하는 이미지의 주제, 텍스트 등 상세히 적어주세요.<br />구체적일수록 의도에 가까운 이미지를 생성합니다.</>}
+                placement="bottom-left"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" className='size-6 fill-gray-500' height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M513.5-254.5Q528-269 528-290t-14.5-35.5Q499-340 478-340t-35.5 14.5Q428-311 428-290t14.5 35.5Q457-240 478-240t35.5-14.5ZM442-394h74q0-33 7.5-52t42.5-52q26-26 41-49.5t15-56.5q0-56-41-86t-97-30q-57 0-92.5 30T342-618l66 26q5-18 22.5-39t53.5-21q32 0 48 17.5t16 38.5q0 20-12 37.5T506-526q-44 39-54 59t-10 73Zm38 314q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg>
+              </ToolTip>
             </div>
 
             <div className="overflow-hidden relative flex-1 flex flex-col rounded-xl border border-purple-200 bg-purple-50 px-2 py-2 shadow-sm transition-all duration-200 focus-within:ring-2 focus-within:ring-purple-500">
@@ -297,8 +307,8 @@ export default function Home() {
                 aria-label="이미지 생성 설명 입력"
                 className="flex-1 w-full h-full resize-none bg-transparent text-gray-900 placeholder-gray-400 focus:outline-none"
               />
-              <div className='text-right text-slate-400 text-sm'>
-                <span className='text-slate-800'>0</span> / <span>2000</span> Bytes
+              <div className='text-right text-gray-400 text-sm'>
+                <span className='text-gray-800'>0</span> / <span>2000</span> Bytes
               </div>
 
 
@@ -312,7 +322,7 @@ export default function Home() {
                         </div>
                         <button
                           type="button"
-                          className="absolute -right-2 -top-1 flex items-center justify-center h-5 w-5 rounded-full bg-gray-700 text-xs font-semibold text-white shadow cursor-pointer"
+                          className="absolute -right-2 -top-1 flex items-center justify-center h-5 w-5 rounded-full bg-gray-700 text-xs font-bold text-white shadow cursor-pointer"
                           onClick={() => handleRemoveImage(image.id)}
                           aria-label="등록된 이미지 삭제"
                         >
@@ -326,7 +336,7 @@ export default function Home() {
             </div>
 
             {/* 참고이미지 등록 */}
-            <div className='flex mt-4'>
+            <div className='flex items-center mt-4'>
               <input
                 ref={fileInputRef}
                 type="file"
@@ -337,15 +347,19 @@ export default function Home() {
               />
               <button
                 type="button"
-                className='flex items-center px-4 py-2 rounded-lg bg-purple-100 text-purple-700 hover:bg-purple-200 transition cursor-pointer'
+                className='flex items-center mr-2 px-4 py-2 rounded-lg bg-purple-100 text-purple-700 hover:bg-purple-200 transition cursor-pointer'
                 onClick={handleImageButtonClick}
               >
                 <svg xmlns="http://www.w3.org/2000/svg" className="fill-purple-700" height="24px" viewBox="0 -960 960 960" width="24px" fill="#333"><path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"/></svg>
-                이미지 추가
+                <span className='mr-2'>이미지 추가</span>
               </button>
-              <div>
-                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M513.5-254.5Q528-269 528-290t-14.5-35.5Q499-340 478-340t-35.5 14.5Q428-311 428-290t14.5 35.5Q457-240 478-240t35.5-14.5ZM442-394h74q0-33 7.5-52t42.5-52q26-26 41-49.5t15-56.5q0-56-41-86t-97-30q-57 0-92.5 30T342-618l66 26q5-18 22.5-39t53.5-21q32 0 48 17.5t16 38.5q0 20-12 37.5T506-526q-44 39-54 59t-10 73Zm38 314q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg>
-              </div>
+              {/* 툴팁 */}
+              <ToolTip
+                content={<>참고하고 싶은 상품 사진이나 배경 이미지를 추가해 보세요.<br />해당 이미지의 구도나 스타일을 반영해 드립니다.</>}
+                placement="bottom-left"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" className='size-6 fill-gray-500' height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M513.5-254.5Q528-269 528-290t-14.5-35.5Q499-340 478-340t-35.5 14.5Q428-311 428-290t14.5 35.5Q457-240 478-240t35.5-14.5ZM442-394h74q0-33 7.5-52t42.5-52q26-26 41-49.5t15-56.5q0-56-41-86t-97-30q-57 0-92.5 30T342-618l66 26q5-18 22.5-39t53.5-21q32 0 48 17.5t16 38.5q0 20-12 37.5T506-526q-44 39-54 59t-10 73Zm38 314q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg>
+              </ToolTip>
             </div>
             
             {/* 텍스트 예시 자동입력 버튼그룹 시작 */}
@@ -363,10 +377,19 @@ export default function Home() {
             </div>
             {/* 텍스트 예시 자동입력 버튼그룹 종료 */}
             <button
-              className="w-full mt-4 p-4 bg-purple-600 hover:bg-purple-500 text-white text-xl font-semibold rounded-lg transition duration-200 shrink-0 letter-spacing cursor-pointer"
+              className="flex items-center justify-center w-full mt-4 p-4 bg-purple-600 **:fill-white hover:bg-purple-500 text-white rounded-lg transition duration-200 shrink-0 letter-spacing cursor-pointer
+                disabled:bg-gray-300 disabled:cursor-not-allowed disabled:**:fill-gray-500
+              "
               onClick={handleGenerateImage}
             >
-              AI 이미지 생성 (500TS 차감)
+              <span className='mr-2 text-xl font-bold'>AI 이미지 생성 (500TS 차감)</span>
+              {/* 툴팁 */}
+              <ToolTip
+                content={<>생성 버튼 클릭 시 500 TS가 선 차감됩니다.<br />생성에는 약 00초 소요되며, 실패 시 차감된 금액은 즉시 환불 처리됩니다.</>}
+                placement="bottom-left"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" className='size-6' height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M513.5-254.5Q528-269 528-290t-14.5-35.5Q499-340 478-340t-35.5 14.5Q428-311 428-290t14.5 35.5Q457-240 478-240t35.5-14.5ZM442-394h74q0-33 7.5-52t42.5-52q26-26 41-49.5t15-56.5q0-56-41-86t-97-30q-57 0-92.5 30T342-618l66 26q5-18 22.5-39t53.5-21q32 0 48 17.5t16 38.5q0 20-12 37.5T506-526q-44 39-54 59t-10 73Zm38 314q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg>
+              </ToolTip>
             </button>
           </div>
         </div>
@@ -374,11 +397,20 @@ export default function Home() {
         {/* 이미지 생성 리스트 영역 시작*/}
         <div className='sm:col-span-2 flex flex-col gap-4 sm:overflow-hidden p-1.5'>
           <div className='flex-1 flex flex-col min-h-0 rounded-2xl shadow-md p-4 bg-white'>
-              <h2 className='font-semibold mb-3 text-gray-800'>AI 이미지 보기</h2>
-              {/* <div>
-                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M513.5-254.5Q528-269 528-290t-14.5-35.5Q499-340 478-340t-35.5 14.5Q428-311 428-290t14.5 35.5Q457-240 478-240t35.5-14.5ZM442-394h74q0-33 7.5-52t42.5-52q26-26 41-49.5t15-56.5q0-56-41-86t-97-30q-57 0-92.5 30T342-618l66 26q5-18 22.5-39t53.5-21q32 0 48 17.5t16 38.5q0 20-12 37.5T506-526q-44 39-54 59t-10 73Zm38 314q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg>
-              </div> */}
-            <div className='flex-1 sm:overflow-y-auto rounded-lg px-3 bg-gray-50 border border-gray-200 inset-shadow-gray-200'>
+            <div className='flex items-center mb-3'>
+              <h2 className={`mr-2 text-gray-700 font-bold`}>
+                AI 이미지 보기
+              </h2>
+              {/* 툴팁 */}
+              <ToolTip
+                content={<>생성된 결과물이 이 곳에 표시됩니다.<br />크게보기를 통해 AI 이미지 상세정보 확인 및 다운로드 기능을 제공합니다.</>}
+                placement="bottom-left"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" className='size-6 fill-gray-500' height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M513.5-254.5Q528-269 528-290t-14.5-35.5Q499-340 478-340t-35.5 14.5Q428-311 428-290t14.5 35.5Q457-240 478-240t35.5-14.5ZM442-394h74q0-33 7.5-52t42.5-52q26-26 41-49.5t15-56.5q0-56-41-86t-97-30q-57 0-92.5 30T342-618l66 26q5-18 22.5-39t53.5-21q32 0 48 17.5t16 38.5q0 20-12 37.5T506-526q-44 39-54 59t-10 73Zm38 314q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg>
+              </ToolTip>
+
+            </div>
+            <div className='flex-1 sm:overflow-y-auto rounded-lg px-3 bg-gray-50'>
               <ImageGenerationList items={generatedItems} onOpenPreview={handleOpenPreview} />
             </div>
           </div>

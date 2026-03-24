@@ -21,8 +21,8 @@ export default function ImageGenerationList({ items, onOpenPreview }) {
   // 초기 데이터가 없을 때 보여줄 UI
   if (!items || items.length === 0) {
     return (
-      <div className="flex h-full flex-col items-center justify-center gap-2 pt-10 text-center text-gray-500">
-        <h1 className={`flex items-baseline text-4xl font-bold text-center text-gray-800`}>
+      <div className="flex h-full flex-col items-center justify-center gap-2 py-10 text-center text-gray-700">
+        <h1 className={`flex items-baseline sm:-mt-50 text-4xl font-bold text-center text-gray-800`}>
           <div className='mr-1'>
             <svg xmlns="http://www.w3.org/2000/svg" className='size-14' width="206" height="202" viewBox="0 0 206 202" fill="none">
             <path d="M112.032 105.009C112.032 100.276 113.443 96.8167 116.265 94.6321C119.087 92.4475 122.409 91.3552 126.232 91.3552C130.055 91.3552 133.377 92.4475 136.199 94.6321C139.021 96.8167 140.432 100.276 140.432 105.009V201.813H112.032V105.009Z" fill="#AA3EFF"/>
@@ -32,7 +32,7 @@ export default function ImageGenerationList({ items, onOpenPreview }) {
             <path d="M175.642 122.054C177.02 118.33 182.287 118.33 183.665 122.054L185.903 128.101C186.336 129.272 187.259 130.195 188.43 130.628L194.477 132.866C198.201 134.244 198.201 139.511 194.477 140.889L188.43 143.127C187.259 143.56 186.336 144.483 185.903 145.654L183.665 151.701C182.287 155.425 177.02 155.425 175.642 151.701L173.404 145.654C172.971 144.483 172.048 143.56 170.877 143.127L164.83 140.889C161.106 139.511 161.106 134.244 164.83 132.866L170.877 130.628C172.048 130.195 172.971 129.272 173.404 128.101L175.642 122.054Z" fill="#AA3EFF"/>
             </svg>
           </div>
-          <span className='tracking-tight'>POP</span>
+          <span className='text-gray-700 tracking-tight'>POP</span>
         </h1>
         <div className="text-lg">이미지를 생성해주세요!</div>
       </div>
@@ -43,17 +43,17 @@ export default function ImageGenerationList({ items, onOpenPreview }) {
     <ul className="flex flex-col divide-y divide-gray-200">
       {items.map((item) => (
         <li key={item.id} className="flex flex-col py-3">
-          <div className="text-gray-600 font-semibold">{item.createdAt}</div>
+          <div className="text-gray-600 font-bold">{item.createdAt}</div>
           <div className="flex flex-wrap items-center gap-2 text-sm text-gray-500 leading-tight">
             <span>
               {item.prompt && item.prompt.length > 60 && !expandedIds.has(item.id)
-                ? `${item.prompt.slice(0, 80)}...`
+                ? `${item.prompt.slice(0, 60)}...`
                 : item.prompt}
             </span>
-            {item.prompt && item.prompt.length > 80 && (
+            {item.prompt && item.prompt.length > 60 && (
               <button
                 type="button"
-                className="text-xs text-purple-700 hover:underline"
+                className="text-xs text-gray-800 underline cursor-pointer"
                 onClick={() => togglePrompt(item.id)}
               >
                 {expandedIds.has(item.id) ? '접기' : '내용전체보기'}
@@ -63,7 +63,7 @@ export default function ImageGenerationList({ items, onOpenPreview }) {
           {/* 로딩중 보여줄 UI */}
           {item.status === 'loading' && (
             <div className="flex flex-wrap gap-1 mt-2">
-              <div className="flex flex-col items-center mx-auto text-slate-600">
+              <div className="flex-1 flex flex-col items-center min-h-34 text-gray-600 bg-white p-4 rounded-lg border border-gray-200">
                 <svg xmlns="http://www.w3.org/2000/svg" className="svg-animation size-22" width="90" height="90" viewBox="0 0 348 342" fill="none">
                   <g>
                     <path d="M183.373 175.102C183.373 170.369 184.784 166.91 187.605 164.726C190.427 162.541 193.75 161.449 197.573 161.449C201.396 161.449 204.718 162.541 207.54 164.726C210.361 166.91 211.772 170.369 211.772 175.102V271.906H183.373V175.102Z" fill="#AA3EFF"/>
@@ -73,8 +73,10 @@ export default function ImageGenerationList({ items, onOpenPreview }) {
                   <path d="M144.323 106.599C145.701 102.875 150.969 102.875 152.347 106.599L154.584 112.646C155.018 113.817 155.941 114.74 157.111 115.173L163.159 117.41C166.883 118.788 166.883 124.056 163.158 125.434L157.111 127.671C155.941 128.105 155.018 129.028 154.584 130.198L152.347 136.246C150.969 139.97 145.701 139.97 144.323 136.246L142.086 130.198C141.653 129.028 140.729 128.105 139.559 127.671L133.512 125.434C129.788 124.056 129.788 118.788 133.512 117.41L139.559 115.173C140.729 114.74 141.653 113.817 142.086 112.646L144.323 106.599Z" fill="#AA3EFF"/>
                   <path d="M246.983 192.147C248.361 188.423 253.628 188.423 255.006 192.147L257.243 198.195C257.677 199.365 258.6 200.288 259.771 200.722L265.818 202.959C269.542 204.337 269.542 209.605 265.818 210.983L259.771 213.22C258.6 213.653 257.677 214.576 257.243 215.747L255.006 221.794C253.628 225.518 248.361 225.518 246.983 221.794L244.745 215.747C244.312 214.576 243.389 213.653 242.218 213.22L236.171 210.983C232.447 209.605 232.447 204.337 236.171 202.959L242.218 200.722C243.389 200.288 244.312 199.365 244.745 198.195L246.983 192.147Z" fill="#AA3EFF"/>
                 </svg>
-                <p className="">AI 이미지를 생성중입니다.</p>
-                <p>생성된 이미지는 이미지 클라우드에 자동 저장됩니다.</p>
+                <p className="text-center">
+                  <span>AI 이미지를 생성중입니다.</span><br />
+                  <span>생성된 이미지는 이미지 클라우드에 자동 저장됩니다.</span>
+                </p>
               </div>
             </div>
           )}
@@ -86,7 +88,7 @@ export default function ImageGenerationList({ items, onOpenPreview }) {
                   <div className="flex items-center justify-center w-full h-26 p-2">
                       <img src={imageUrl} alt="생성된 이미지" className="max-w-full max-h-full object-cover" />
                   </div>
-                  <div className="flex-1 flex items-center justify-center bg-purple-100 divide-x divide-purple-200">
+                  <div className="flex-1 flex items-center justify-center bg-purple-50 divide-x divide-purple-200">
                     <button
                       className="flex-1 py-1 text-sm text-purple-700 hover:bg-purple-200 transition cursor-pointer"
                       onClick={() =>
@@ -110,11 +112,12 @@ export default function ImageGenerationList({ items, onOpenPreview }) {
           {/* 실패시 보여줄 UI */}
           {item.status === 'failed' && (
             <div className="flex flex-wrap gap-1 mt-2">
-              <div className="flex flex-col items-center mx-auto text-slate-600">
-                <svg xmlns="http://www.w3.org/2000/svg" className="size-22 fill-slate-600" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="m40-120 440-760 440 760H40Zm138-80h604L480-720 178-200Zm330.5-51.5Q520-263 520-280t-11.5-28.5Q497-320 480-320t-28.5 11.5Q440-297 440-280t11.5 28.5Q463-240 480-240t28.5-11.5ZM440-360h80v-200h-80v200Zm40-100Z"/></svg>
-
-                <p>이미지 생성에 실패했습니다. 다시 시도해 주세요</p>
-                <p>차감된 TS는 즉시 환불되어, AI 이용현황에서 확인 가능합니다.</p>
+              <div className="flex-1 flex flex-col items-center min-h-34 text-gray-600 bg-white p-4 rounded-lg border border-gray-200">
+                <svg xmlns="http://www.w3.org/2000/svg" className="size-14 fill-gray-300" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="m40-120 440-760 440 760H40Zm138-80h604L480-720 178-200Zm330.5-51.5Q520-263 520-280t-11.5-28.5Q497-320 480-320t-28.5 11.5Q440-297 440-280t11.5 28.5Q463-240 480-240t28.5-11.5ZM440-360h80v-200h-80v200Zm40-100Z"/></svg>
+                <p className='mt-2 text-center leading-tight'>
+                  <span className=''>이미지 생성에 실패했습니다.<br />다시 시도해 주세요</span>
+                  <span className='block mt-2 text-sm border border-gray-100 rounded p-2 px-3 bg-gray-50'>차감된 TS는 즉시 환불되어, AI 이용현황에서 확인 가능합니다.</span>
+                </p>
               </div>
             </div>
           )}

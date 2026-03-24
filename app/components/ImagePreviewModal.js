@@ -11,7 +11,7 @@ export default function ImagePreviewModal({ detail, onClose }) {
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/60"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-gray-950/60"
       role="dialog"
       aria-modal="true"
       aria-label="이미지 크게보기"
@@ -37,20 +37,20 @@ export default function ImagePreviewModal({ detail, onClose }) {
           </div>
           {/* 이미지 상세정보 */}
           <div className="flex flex-1 sm:max-h-[75vh]">
-            <div className="overflow-y-auto flex-1 flex flex-col gap-3 p-4 sm:border-l sm:border-slate-200 bg-white min-w-[220px]">
+            <div className="overflow-y-auto flex-1 flex flex-col gap-3 p-4 sm:border-l sm:border-gray-200 bg-white min-w-[220px]">
               <button
                 type="button"
-                className="rounded-lg px-3 py-2 text-sm font-semibold text-white bg-slate-800 hover:bg-slate-700 transition cursor-pointer"
+                className="rounded-lg px-3 py-2 text-sm text-white bg-gray-800 hover:bg-gray-700 transition cursor-pointer"
               >
                 이미지 다운로드
               </button>
               <div className="flex flex-col gap-x-3 gap-y-2 text-sm">
-                <span className="text-slate-500">생성일</span>
-                <span className="font-medium text-slate-800">{createdAt || '-'}</span>
-                <span className="text-slate-500">프롬프트</span>
-                <span className="text-slate-700">{prompt || '-'}</span>
-                <span className="text-slate-500">보관기간</span>
-                <span className="text-slate-700">2024-04-30 까지</span>
+                <span className="text-gray-500">생성일</span>
+                <span className="font-medium text-gray-800">{createdAt || '-'}</span>
+                <span className="text-gray-500">프롬프트</span>
+                <span className="text-gray-700">{prompt || '-'}</span>
+                <span className="text-gray-500">보관기간</span>
+                <span className="text-gray-700">2024-04-30 까지</span>
               </div>
             </div>
           </div>
