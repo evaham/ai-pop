@@ -1,0 +1,98 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <title>
+
+  </title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link href="./ms_base_reset.css" rel="stylesheet" type="text/css">
+  <link href="./StyleSheet.css?20250807" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+  <form>
+    <!--//Loading -->
+    <div class="divLoading" style="display: none;">
+      <div class="bg_blackmask"></div>
+      <div class="progress"><span><img src="/TSMS/img/ajax-loader_2.gif" alt=""><em>... 잠시기다려주세요.</em></span></div>
+    </div>
+    <style type="text/css">
+      .free__btn {
+        border: 1px solid #9d9d9d;
+        background: #2c5aa7;
+        color: #fff;
+      }
+
+      .free__btn:hover {
+        background: #dfdfdf;
+        color: #333;
+      }
+    </style>
+    <div id="ucTopMenu_UPTabOuter">
+      <div class="tab_menu">
+        <div class="tabouter">
+          <ul id="ulTopMenu">
+            <li>
+              <a id="ucTopMenu_linkBiz" class="link_pagetitle" href="">일반문자</a>
+            </li>
+            <li>
+              <a id="ucTopMenu_linkRcs" class="link_pagetitle" href="javascript:__doPostBack('ucTopMenu$linkRcs','')">RCS</a>
+            </li>
+            <li class="yellow">
+              <a id="ucTopMenu_linkKakao" class="link_pagetitle" href="">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" style="margin-right:4px" viewBox="0 0 20 20" fill="none">
+                  <rect width="20" height="20" rx="1.76471" fill="#fae100"></rect>
+                  <ellipse cx="10" cy="9.11765" rx="6.76471" ry="5.58824" fill="#3C1E1E"></ellipse>
+                  <path d="M9.11765 14.1177L5.68235 17.4706L6.17647 15V13.5294L9.11765 10.1177Z" fill="#3C1E1E"></path>
+                </svg>친구톡
+              </a>
+            </li>
+            <li class="yellow">
+              <a id="ucTopMenu_linkKakaoAlimtalk" class="link_pagetitle" href="">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" style="margin-right:4px" viewBox="0 0 20 20" fill="none">
+                  <rect width="20" height="20" rx="1.76471" fill="#fae100"></rect>
+                  <ellipse cx="10" cy="9.11765" rx="6.76471" ry="5.58824" fill="#3C1E1E"></ellipse>
+                  <path d="M9.11765 14.1177L5.68235 17.4706L6.17647 15V13.5294L9.11765 10.1177Z" fill="#3C1E1E"></path>
+                </svg>알림톡
+              </a>
+            </li>
+            <li class="red">
+              <a id="ucTopMenu_linkWebLink" class="link_pagetitle" href="">모바일전단</a>
+            </li>
+            <li class="red">
+              <a id="ucTopMenu_linkOrder" class="link_pagetitle" href="">주문기능</a>
+            </li>
+            <li class="red">
+              <a id="ucTopMenu_linkGP" class="link_pagetitle" href="">공동구매</a>
+            </li>
+            <li class="red active" style="letter-spacing:-2px;">
+              <a id="ucTopMenu_linkCloud" class="link_pagetitle" href="">이미지클라우드</a>
+            </li>
+          </ul>
+        </div>
+        <div class="tabside">
+          <ul>
+            <li>
+              <a class="tabside__btn" href="#" style="letter-spacing:-1px;">온라인매뉴얼</a>
+            </li>
+            <li>
+              <a id="ucTopMenu_linkTS" class="tabside__btn" href="">충전안내</a>
+            </li>
+            <li>
+              <a id="ucTopMenu_linkReport" class="tabside__btn" href="">레포트</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!--// 하단 컨텐츠 UI 화면 -->
+    <div class="wrap_top" style="margin-top:0;">
+      <div class="tabcontents">
+        <iframe id="ifrmContent" name="ifrmContent" src="./imageCloud.html" frameborder="0" width="100%" height="100%"></iframe>
+      </div>
+    </div>
+    <!--// 하단 컨텐츠 UI 화면 종료 -->
+  </form>
+</body>
+</html>
