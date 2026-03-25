@@ -226,7 +226,7 @@ export default function Home() {
 
   return (
     <div className="max-w-7xl mx-auto w-full flex flex-col sm:h-full">
-      <div className="relative grid grid-cols-2 sm:grid-cols-4 mb-2">
+      <div className="relative grid grid-cols-2 sm:grid-cols-4 px-2 my-1">
         <h1 className={`flex items-baseline text-xl font-bold text-center text-gray-800 sm:col-span-1`}>
           <div className='mr-1'>
             <svg xmlns="http://www.w3.org/2000/svg" className='size-7' width="206" height="202" viewBox="0 0 206 202" fill="none">
@@ -239,7 +239,7 @@ export default function Home() {
           </div>
           <span className='text-gray-700 tracking-tight'>POP 생성하기</span>
         </h1>
-        <a href='https://naver.co.kr' target='_blank' rel='noreferrer' className='sm:col-span-1 ml-auto mt-auto px-2 py-0.5 rounded text-sm bg-gray-600'>
+        <a href='https://naver.co.kr' target='_blank' rel='noreferrer' className='sm:col-span-1 ml-auto mt-auto px-2 py-0.5 rounded text-sm text-gray-50 bg-gray-600'>
           온라인매뉴얼
         </a>
         <div className='col-span-2 sm:col-span-2 relative flex ml-auto mt-auto py-1 px-2 rounded text-gray-700 font-bold'>
@@ -277,9 +277,9 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-4 gap-2 flex-1 sm:overflow-hidden">
+      <div className="grid grid-cols-1 sm:grid-cols-4 gap-2 flex-1 p-2 sm:overflow-hidden">
         {/* 제어 패널 */}
-        <div className="sm:col-span-2 flex flex-col gap-4 sm:overflow-hidden min-h-0 p-1.5">
+        <div className="sm:col-span-2 flex flex-col gap-4 sm:overflow-hidden min-h-0 p-2 -m-2">
           <div className={`flex-1 flex flex-col sm:overflow-y-auto rounded-2xl shadow-md p-4 bg-white`}>
             <div className='flex items-center mb-3'>
               <h2 className={`mr-2 text-gray-700 font-bold`}>
@@ -382,7 +382,7 @@ export default function Home() {
               "
               onClick={handleGenerateImage}
             >
-              <span className='mr-2 text-xl font-bold'>AI 이미지 생성 (500TS 차감)</span>
+              <span className='mr-2 text-lg font-bold tracking-tight'>AI 이미지 생성 (500TS 차감)</span>
               {/* 툴팁 */}
               <ToolTip
                 content={<>생성 버튼 클릭 시 500 TS가 선 차감됩니다.<br />생성에는 약 00초 소요되며, 실패 시 차감된 금액은 즉시 환불 처리됩니다.</>}
@@ -395,7 +395,7 @@ export default function Home() {
         </div>
 
         {/* 이미지 생성 리스트 영역 시작*/}
-        <div className='sm:col-span-2 flex flex-col gap-4 sm:overflow-hidden p-1.5'>
+        <div className='sm:col-span-2 flex flex-col gap-4 sm:overflow-hidden min-h-0 p-2 -m-2'>
           <div className='flex-1 flex flex-col min-h-0 rounded-2xl shadow-md p-4 bg-white'>
             <div className='flex items-center mb-3'>
               <h2 className={`mr-2 text-gray-700 font-bold`}>
