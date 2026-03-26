@@ -33,7 +33,7 @@ export default function ConfirmReplaceModal({ isOpen, onConfirm, onCancel }) {
           </button>
           <button
             type="button"
-            className="rounded-md bg-purple-600 px-4 py-2 text-sm font-semibold text-white hover:bg-purple-500 cursor-pointer"
+            className="rounded-md bg-violet-600 px-4 py-2 text-sm font-semibold text-white hover:bg-violet-500 cursor-pointer"
             onClick={onConfirm}
           >
             변경하기
