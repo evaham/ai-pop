@@ -70,10 +70,10 @@
             <a href="" class="nav__link" style="letter-spacing: -0.03rem;">AI POP 전용</a>
             <ul class="nav__sublist">
               <li>
-                <a class="nav__sublink"href="">AI 이미지</a>
+                <a class="nav__sublink" href="javascript:void(0)" onclick="jsShowAiPopImages()">AI 이미지</a>
               </li>
               <li>
-                <a class="nav__sublink" href="">AI 이용현황</a>
+                <a class="nav__sublink" href="javascript:void(0)" onclick="jsShowAiUseData()">AI 이용현황</a>
               </li>
             </ul>
             <style>
@@ -96,7 +96,7 @@
       </div>
 
       <!-- AI POP 생성 이미지 -->
-      <div class="container" style="display: none;">
+      <div class="container" id="aiPopImages" style="display: none;">
         <div class="header" style="height: 67px; padding: 8px;">
           <div class="titbox">
             <p class="titbox__tit">
@@ -217,7 +217,7 @@
       </div>
 
       <!-- AI이용현황 -->
-      <div class="container">
+      <div class="container" id="aiUseData">
         <div class="header" style="height: 67px; padding: 8px;">
           <div class="titbox">
             <p class="titbox__tit">
@@ -237,12 +237,24 @@
 
           </div>
         </div>
-        <div class="contents" style="position: relative;">
-          <iframe id="ifrmContent" name="ifrmContent" style="position: absolute; inset: 0;" src="http://localhost:3000/aiPopUseData" frameborder="0" width="100%" height="100%"></iframe>
+        <div class="contents" style="position: relative; display: flex;">
+          <iframe id="ifrmContent" name="ifrmContent" style="flex:1; padding:0 10px;" src="http://localhost:3000/aiPopUseData" frameborder="0" width="100%" height="100%"></iframe>
+          <div class="pagination">
+            <div class="pagination__list maxviewsize">
+              <button class="pagination__btn  disabled" data-dt-idx="1"><span class="icon-arrow-left2 pagination__icon"></span></button>
+              <button class="pagination__btn  disabled" data-dt-idx="0"><span class="icon-arrow-left pagination__icon"></span></button>
+              <button class="pagination__btn  active" data-dt-idx="1">1</button>
+              <button class="pagination__btn " data-dt-idx="2">2</button>
+              <button class="pagination__btn " data-dt-idx="3">3</button>
+              <button class="pagination__btn " data-dt-idx="4">4</button>
+              <button class="pagination__btn " data-dt-idx="5">5</button>
+              <button class="pagination__btn  disabled" data-dt-idx="6"><span class="icon-arrow-right pagination__icon"></span></button>
+              <button class="pagination__btn " data-dt-idx="5"><span class="icon-arrow-right2 pagination__icon"></span></button>
+            </div>
+          </div>
+
         </div>
       </div>
-
-
 
     </div>
     <div class="layer layer__wrap clip" style="display:none;">
@@ -292,6 +304,28 @@
       var layer = document.querySelector('.layer.layer__wrap.js_event');
       if (layer) {
         layer.style.display = 'none';
+      }
+    }
+
+    function jsShowAiPopImages() {
+      var images = document.getElementById('aiPopImages');
+      var useData = document.getElementById('aiUseData');
+      if (images) {
+        images.style.display = 'flex';
+      }
+      if (useData) {
+        useData.style.display = 'none';
+      }
+    }
+
+    function jsShowAiUseData() {
+      var images = document.getElementById('aiPopImages');
+      var useData = document.getElementById('aiUseData');
+      if (images) {
+        images.style.display = 'none';
+      }
+      if (useData) {
+        useData.style.display = 'flex';
       }
     }
   </script>

@@ -49,7 +49,7 @@ export default function AiPopUseData() {
 
   return (
     <>
-      <div className="flex-1 relative flex flex-col px-4 bg-white">
+      <div className="flex-1 relative flex flex-col bg-white">
         <div className="flex flex-wrap gap-1 px-2 py-1.5 bg-gray-500/80 text-xs">
           <span className="flex items-center h-6.5 text-white">생성일</span>
           <input type="text" className="h-6.5 px-1 border border-gray-600/70 rounded-xs bg-white" />
@@ -119,64 +119,6 @@ export default function AiPopUseData() {
               </tbody>
             </table>
           </div>
-        </div>
-        <div className="pagination flex flex-col my-5 mt-auto">
-          <ul className="pagination__list flex gap-1 items-center mx-auto">
-            <li className="first paginate_button  disabled" data-dt-idx="1">
-              <a href="#pageLink" aria-disabled="true" className="flex items-center justify-center min-w-8 h-7 border border-gray-300 rounded-sm fill-gray-600 aria-disabled:border-gray-100 aria-disabled:bg-gray-100 aria-disabled:fill-gray-300 aria-disabled:pointer-events-none hover:border-blue-500">
-                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill=""><path d="M445-253.85 218.85-480 445-706.15 487.15-664 303.77-480l183.38 184L445-253.85Zm254 0L472.85-480 699-706.15 741.15-664 557.77-480l183.38 184L699-253.85Z"></path></svg>
-                <span className="sr-only">처음으로</span>
-              </a>
-            </li>
-            <li className="prev paginate_button  disabled" data-dt-idx="0">
-              <a href="#pageLink" aria-disabled="true" className="flex items-center justify-center min-w-8 h-7 border border-gray-300 rounded-sm fill-gray-600 aria-disabled:border-gray-100 aria-disabled:bg-gray-100 aria-disabled:fill-gray-300 aria-disabled:pointer-events-none hover:border-blue-500">
-                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill=""><path d="M560-253.85 333.85-480 560-706.15 602.15-664l-184 184 184 184L560-253.85Z"></path></svg>
-                <span className="sr-only">앞으로</span>
-              </a>
-            </li>
-            <li className="paginate_button  active" data-dt-idx="1">
-              <a href="#pageLink" aria-current="true" className="flex items-center justify-center min-w-7 h-7 px-1 border border-gray-300 rounded-sm fill-gray-600 aria-current:border-transparent aria-current:bg-blue-700/80 aria-current:font-bold aria-current:text-white aria-current:pointer-events-none hover:border-blue-500">1</a>
-            </li>
-            <li className="paginate_button " data-dt-idx="2">
-              <a href="#pageLink" aria-current="false" className="flex items-center justify-center min-w-7 h-7 px-1 border border-gray-300 rounded-sm fill-gray-600 aria-current:border-transparent aria-current:bg-blue-700/80 aria-current:font-bold aria-current:text-white aria-current:pointer-events-none hover:border-blue-500">2</a>
-            </li>
-            <li className="paginate_button " data-dt-idx="3">
-              <a href="#pageLink" aria-current="false" className="flex items-center justify-center min-w-7 h-7 px-1 border border-gray-300 rounded-sm fill-gray-600 aria-current:border-transparent aria-current:bg-blue-700/80 aria-current:font-bold aria-current:text-white aria-current:pointer-events-none hover:border-blue-500">3</a>
-            </li>
-            <li className="paginate_button " data-dt-idx="4">
-              <a href="#pageLink" aria-current="false" className="flex items-center justify-center min-w-7 h-7 px-1 border border-gray-300 rounded-sm fill-gray-600 aria-current:border-transparent aria-current:bg-blue-700/80 aria-current:font-bold aria-current:text-white aria-current:pointer-events-none hover:border-blue-500">4</a>
-            </li>
-            <li className="paginate_button " data-dt-idx="5">
-              <a href="#pageLink" aria-current="false" className="flex items-center justify-center min-w-7 h-7 px-1 border border-gray-300 rounded-sm fill-gray-600 aria-current:border-transparent aria-current:bg-blue-700/80 aria-current:font-bold aria-current:text-white aria-current:pointer-events-none hover:border-blue-500">5</a>
-            </li>
-            <li className="paginate_button " data-dt-idx="6">
-              <a href="#pageLink" aria-current="false" className="flex items-center justify-center min-w-7 h-7 px-1 border border-gray-300 rounded-sm fill-gray-600 aria-current:border-transparent aria-current:bg-blue-700/80 aria-current:font-bold aria-current:text-white aria-current:pointer-events-none hover:border-blue-500">6</a>
-            </li>
-            <li className="paginate_button " data-dt-idx="7">
-              <a href="#pageLink" aria-current="false" className="flex items-center justify-center min-w-7 h-7 px-1 border border-gray-300 rounded-sm fill-gray-600 aria-current:border-transparent aria-current:bg-blue-700/80 aria-current:font-bold aria-current:text-white aria-current:pointer-events-none hover:border-blue-500">7</a>
-            </li>
-            <li className="paginate_button " data-dt-idx="8">
-              <a href="#pageLink" aria-current="false" className="flex items-center justify-center min-w-7 h-7 px-1 border border-gray-300 rounded-sm fill-gray-600 aria-current:border-transparent aria-current:bg-blue-700/80 aria-current:font-bold aria-current:text-white aria-current:pointer-events-none hover:border-blue-500">8</a>
-            </li>
-            <li className="paginate_button " data-dt-idx="9">
-              <a href="#pageLink" aria-current="false" className="flex items-center justify-center min-w-7 h-7 px-1 border border-gray-300 rounded-sm fill-gray-600 aria-current:border-transparent aria-current:bg-blue-700/80 aria-current:font-bold aria-current:text-white aria-current:pointer-events-none hover:border-blue-500">9</a>
-            </li>
-            <li className="paginate_button " data-dt-idx="10">
-              <a href="#pageLink" aria-current="false" className="flex items-center justify-center min-w-7 h-7 px-1 border border-gray-300 rounded-sm fill-gray-600 aria-current:border-transparent aria-current:bg-blue-700/80 aria-current:font-bold aria-current:text-white aria-current:pointer-events-none hover:border-blue-500">10</a>
-            </li>
-            <li className="next paginate_button " data-dt-idx="11">
-              <a href="#pageLink" aria-disabled="false" className="flex items-center justify-center min-w-8 h-7 border border-gray-300 rounded-sm fill-gray-600 aria-disabled:border-gray-100 aria-disabled:bg-gray-100 aria-disabled:fill-gray-300 aria-disabled:pointer-events-none hover:border-blue-500">
-                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill=""><path d="m517.85-480-184-184L376-706.15 602.15-480 376-253.85 333.85-296l184-184Z"></path></svg>
-                <span className="sr-only">뒤로</span>
-              </a>
-            </li>
-            <li className="last paginate_button " data-dt-idx="245">
-              <a href="#pageLink" aria-disabled="false" className="flex items-center justify-center min-w-8 h-7 border border-gray-300 rounded-sm fill-gray-600 aria-disabled:border-gray-100 aria-disabled:bg-gray-100 aria-disabled:fill-gray-300 aria-disabled:pointer-events-none hover:border-blue-500">
-                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill=""><path d="M402.23-480 218.85-664 261-706.15 487.15-480 261-253.85 218.85-296l183.38-184Zm254 0L472.85-664 515-706.15 741.15-480 515-253.85 472.85-296l183.38-184Z"></path></svg>
-                <span className="sr-only">맨뒤로</span>
-              </a>
-            </li>
-          </ul>
         </div>
       </div>
     </>
