@@ -341,14 +341,15 @@ export default function Home() {
               </h2>
               {/* 툴팁 */}
               <ToolTip
-                content={<>생성을 원하는 이미지의 주제, 텍스트 등 상세히 적어주세요.<br />구체적일수록 의도에 가까운 이미지를 생성합니다.</>}
+                content={<>생성을 원하는 이미지의 주제, 텍스트 등 상세히 적어주세요.<br />구체적일수록 의도에 가까운 이미지를 생성합니다.<br />
+                추가 된 이미지의 구도나 스타일을 반영해 드립니다.</>}
                 placement="bottom-left"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" className='size-6 fill-gray-500' height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M513.5-254.5Q528-269 528-290t-14.5-35.5Q499-340 478-340t-35.5 14.5Q428-311 428-290t14.5 35.5Q457-240 478-240t35.5-14.5ZM442-394h74q0-33 7.5-52t42.5-52q26-26 41-49.5t15-56.5q0-56-41-86t-97-30q-57 0-92.5 30T342-618l66 26q5-18 22.5-39t53.5-21q32 0 48 17.5t16 38.5q0 20-12 37.5T506-526q-44 39-54 59t-10 73Zm38 314q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg>
               </ToolTip>
             </div>
 
-            <div className="overflow-hidden relative flex-1 flex flex-col min-h-30 rounded-xl border border-gray-200 bg-violet-50/50 px-2 py-2 inset-shadow-2xs transition-all duration-200 focus-within:ring-2 focus-within:ring-violet-300">
+            <div className="overflow-hidden relative flex-1 flex flex-col min-h-60 rounded-xl border border-gray-200 bg-violet-50/50 px-2 py-2 inset-shadow-2xs transition-all duration-200 focus-within:ring-2 focus-within:ring-violet-300">
               {inputText.length === 0 && (
                 <div className="pointer-events-none absolute left-2 top-2 right-2 text-gray-400 whitespace-pre-wrap">
                   {'생성 할 이미지를 설명하세요.\n자세한 설명은 더 좋은 퀄리티의 이미지를 얻을 수 있습니다.'}
@@ -361,11 +362,22 @@ export default function Home() {
                 aria-label="이미지 생성 설명 입력"
                 className="flex-1 w-full h-full resize-none bg-transparent text-gray-900 placeholder-gray-400 focus:outline-none"
               />
-              <div className='flex items-center text-right text-gray-400 text-sm'>
+              <div className='flex items-center min-h-7'>
                 {/* 이미지 추가2 */}
                 {tempImages.length === 0 && (
                   <div className='' ref={imageOptionsRef}>
-                    <button
+                    <input
+                      ref={fileInputRef}
+                      type="file"
+                      accept="image/*"
+                      className="hidden"
+                      onChange={handleImageChange}
+                    />
+                    <button type="button" onClick={handleImageButtonClick} className='flex items-center justify-center py-1 pl-1 px-3 rounded-full bg-violet-400/20 cursor-pointer hover:bg-violet-400/50 transition'>
+                      <svg xmlns="http://www.w3.org/2000/svg" className="size-5 fill-violet-600" height="24px" viewBox="0 -960 960 960" width="24px" fill="#333"><path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"/></svg>
+                      <span className='text-violet-600 font-normal tracking-tight'>이미지 추가</span>
+                    </button>
+                    {/* <button
                       type="button"
                       className='flex items-center justify-center p-2 rounded-full bg-violet-400/30 cursor-pointer hover:bg-violet-400/50 transition'
                       onClick={handleToggleImageOptions}
@@ -373,9 +385,9 @@ export default function Home() {
                       aria-controls="image-add-options"
                     >
                       <svg xmlns="http://www.w3.org/2000/svg" className="size-5 fill-violet-600" height="24px" viewBox="0 -960 960 960" width="24px" fill="#333"><path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"/></svg>
-                    </button>
-                    {/* 이미지 추가 옵션 */}
-                    {isImageOptionsOpen && (
+                    </button> */}
+
+                    {/* {isImageOptionsOpen && (
                       <div id="image-add-options" className='absolute bottom-0 left-10 p-1 w-50 rounded-lg bg-gray-800 text-gray-300 transition duration-200 ease-out'>
                         <div className='flex flex-col text-sm'>
                           <input
@@ -395,18 +407,18 @@ export default function Home() {
                           </button>
                         </div>
                       </div>
-                    )}
-
+                    )} */}
                   </div>
                 )}
-
-                <span className='ml-auto text-gray-800'>0</span> / <span>2000</span>&nbsp;Bytes
+                <div className='ml-auto text-xs text-gray-400'>
+                  <span className='ml-auto text-gray-800'>0</span> / <span>2000</span>&nbsp;Bytes
+                </div>
               </div>
 
               {/* 등록이미지 영역 */}
               {tempImages.length > 0 && (
                 <div className="-m-2 mt-0 bg-violet-100 border-t border-violet-200">
-                  <div className="p-2 flex flex-wrap gap-x-5 gap-y-3">
+                  <div className="flex items-center gap-x-5 gap-y-3 p-2">
                     {tempImages.map((image) => (
                       <div key={image.id} className="relative h-16 w-16">
                         <div className="h-16 w-16 overflow-hidden rounded-lg border border-violet-200 bg-white">
@@ -422,14 +434,19 @@ export default function Home() {
                         </button>
                       </div>
                     ))}
+                    <div className='w-full bg-violet-200 rounded px-4 py-2'>
+                      <p className='text-sm text-gray-700 tracking-tight'>
+                        참고하고 싶은 상품 사진이나 배경 이미지를 추가해 보세요.<br />해당 이미지의 구도나 스타일을 반영해 드립니다.
+                      </p>
+                    </div>
                   </div>
                 </div>
               )}
             </div>
 
             {/* 참고이미지 등록 */}
-            <div className='flex items-center mt-4 hidden'>
-              {/* <input
+            {/* <div className='flex items-center mt-4'>
+              <input
                 ref={fileInputRef}
                 type="file"
                 accept="image/*"
@@ -444,15 +461,14 @@ export default function Home() {
               >
                 <svg xmlns="http://www.w3.org/2000/svg" className="size-5 fill-violet-600" height="24px" viewBox="0 -960 960 960" width="24px" fill="#333"><path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"/></svg>
                 <span className='mr-2 tracking-tight'>이미지 추가</span>
-              </button> */}
-              {/* 툴팁 */}
-              {/* <ToolTip
+              </button>
+              <ToolTip
                 content={<>참고하고 싶은 상품 사진이나 배경 이미지를 추가해 보세요.<br />해당 이미지의 구도나 스타일을 반영해 드립니다.</>}
                 placement="bottom-left"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" className='size-6 fill-gray-500' height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M513.5-254.5Q528-269 528-290t-14.5-35.5Q499-340 478-340t-35.5 14.5Q428-311 428-290t14.5 35.5Q457-240 478-240t35.5-14.5ZM442-394h74q0-33 7.5-52t42.5-52q26-26 41-49.5t15-56.5q0-56-41-86t-97-30q-57 0-92.5 30T342-618l66 26q5-18 22.5-39t53.5-21q32 0 48 17.5t16 38.5q0 20-12 37.5T506-526q-44 39-54 59t-10 73Zm38 314q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg>
-              </ToolTip> */}
-            </div>
+              </ToolTip>
+            </div> */}
             
             
             {/* 텍스트 예시 자동입력 버튼그룹 시작 */}

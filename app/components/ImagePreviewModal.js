@@ -31,7 +31,7 @@ export default function ImagePreviewModal({ detail, onClose }) {
             <svg xmlns="http://www.w3.org/2000/svg" className="fill-gray-700" height="24px" viewBox="0 -960 960 960" width="24px" fill="#333"><path d="M256-213.85 213.85-256l224-224-224-224L256-746.15l224 224 224-224L746.15-704l-224 224 224 224L704-213.85l-224-224-224 224Z"/></svg>
           </button>
         </div>
-        <div className="flex flex-col sm:flex-row gap-2 bg-gray-50">
+        <div className="flex flex-col sm:flex-row bg-gray-50">
           <div className="flex max-h-[75vh] items-center justify-center p-4">
             <img src={imageUrl} alt="확대 이미지" className="max-h-[70vh] w-auto max-w-full object-contain" />
           </div>

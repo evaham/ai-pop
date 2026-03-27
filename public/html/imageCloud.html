@@ -5,8 +5,9 @@
 
   </title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <link href="./weblink_common.css" rel="stylesheet" type="text/css">
   <link href="./style.css" rel="stylesheet" type="text/css">
+  <link href="./weblink_common.css" rel="stylesheet" type="text/css">
+  
   <style>
     .search__btn--line {margin-top: 7px;width: 15px;height: 15px;background: url(../resources/img/ico_close.png) center center no-repeat;cursor: pointer;}
     .sidebar__logo{margin: 8.5px 0px; border-bottom:none;}
@@ -14,6 +15,7 @@
     .nav__list{border-top:1px solid #dee2e6;}
     .contents{margin-top: 10px;}
     .item__txtbox{height:50%;}
+    .item__txtbox{flex:1;}
     .optionbar__btn{padding:3px 5px; font-size:12px;}
     .optionbar__btn.active{background: #228be6;color:#fff; border:1px solid #228be6;}
   </style>
@@ -61,200 +63,140 @@
               </li>
             </ul>
           </li>
+          <li>
+            <hr style="outline: none; border: none; border-bottom: 1px solid rgba(0,0,0,0.1);" />
+          </li>
           <li class="active">
-            <a href="" class="nav__link">AI POP</a>
+            <a href="" class="nav__link" style="letter-spacing: -0.03rem;">AI POP 전용</a>
             <ul class="nav__sublist">
-              <li class="active">
-                <a class="nav__sublink" href="">AI POP</a>
-              </li>
               <li>
-                <a class="nav__sublink"href="">AI 이미지 관리</a>
+                <a class="nav__sublink"href="">AI 이미지</a>
               </li>
               <li>
                 <a class="nav__sublink" href="">AI 이용현황</a>
               </li>
             </ul>
+            <style>
+              .ai-pop-button{ position: relative; display:flex; width:100%; height:38px; margin-top: 10px; margin-bottom:10px;padding:4px 6px;border:1px solid #cdd4dc;border-radius:4px;background: #fafafa;color:#2f3a45;font-size:13px;font-weight:600;letter-spacing:-0.02rem;}
+              .ai-pop-button:hover{border-color:#475569;}
+            </style>
+            <button class="ai-pop-button" type="button" onclick="openAiPopPopup()">
+              <svg xmlns="http://www.w3.org/2000/svg" class='size-7 fill-violet-500' style="width:24px; height:24px;" width="206" height="202" viewBox="0 0 206 202" fill="#8b5cf6">
+              <path d="M112.032 105.009C112.032 100.276 113.443 96.8167 116.265 94.6321C119.087 92.4475 122.409 91.3552 126.232 91.3552C130.055 91.3552 133.377 92.4475 136.199 94.6321C139.021 96.8167 140.432 100.276 140.432 105.009V201.813H112.032V105.009Z"/>
+              <path d="M35.0897 102.688C36.4551 98.8647 38.7762 96.043 42.0531 94.2225C45.4209 92.311 48.9709 91.3552 52.7029 91.3552C56.1618 91.3552 59.4841 92.311 62.67 94.2225C65.9468 96.134 68.2224 98.9557 69.4968 102.688L105.133 201.813H75.0947L69.7699 184.882H34.6801L29.4918 201.813H0L35.0897 102.688ZM41.78 161.808H62.67L52.2933 127.81L41.78 161.808Z"/>
+              <path d="M154.255 10.8412C155.633 7.11719 160.9 7.11718 162.278 10.8412L170.292 32.499C170.726 33.6698 171.649 34.5929 172.82 35.0261L194.477 43.0402C198.201 44.4183 198.201 49.6854 194.477 51.0635L172.82 59.0776C171.649 59.5108 170.726 60.4339 170.292 61.6047L162.278 83.2625C160.9 86.9865 155.633 86.9865 154.255 83.2625L146.241 61.6047C145.808 60.4339 144.885 59.5108 143.714 59.0776L122.056 51.0635C118.332 49.6854 118.332 44.4183 122.056 43.0402L143.714 35.0261C144.885 34.5929 145.808 33.6698 146.241 32.499L154.255 10.8412Z"/>
+              <path d="M72.9826 36.505C74.3606 32.781 79.6278 32.781 81.0058 36.505L83.2435 42.5521C83.6767 43.7229 84.5998 44.646 85.7706 45.0792L91.8177 47.3169C95.5417 48.6949 95.5417 53.9621 91.8177 55.3401L85.7706 57.5777C84.5998 58.0109 83.6767 58.934 83.2435 60.1049L81.0058 66.1519C79.6278 69.8759 74.3606 69.8759 72.9826 66.1519L70.745 60.1049C70.3118 58.934 69.3887 58.0109 68.2178 57.5777L62.1708 55.3401C58.4468 53.9621 58.4468 48.6949 62.1708 47.3169L68.2178 45.0792C69.3887 44.646 70.3118 43.7229 70.745 42.5521L72.9826 36.505Z"/>
+              <path d="M175.642 122.054C177.02 118.33 182.287 118.33 183.665 122.054L185.903 128.101C186.336 129.272 187.259 130.195 188.43 130.628L194.477 132.866C198.201 134.244 198.201 139.511 194.477 140.889L188.43 143.127C187.259 143.56 186.336 144.483 185.903 145.654L183.665 151.701C182.287 155.425 177.02 155.425 175.642 151.701L173.404 145.654C172.971 144.483 172.048 143.56 170.877 143.127L164.83 140.889C161.106 139.511 161.106 134.244 164.83 132.866L170.877 130.628C172.048 130.195 172.971 129.272 173.404 128.101L175.642 122.054Z"/>
+              </svg>
+              <span style="margin-top: auto; margin-bottom: 2px; margin-left: 3px;">POP</span>
+              <svg xmlns="http://www.w3.org/2000/svg" style="margin:auto 0 auto auto" height="20px" viewBox="0 -960 960 960" width="20px" fill="#666"><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h560v-280h80v280q0 33-23.5 56.5T760-120H200Zm188-212-56-56 372-372H560v-80h280v280h-80v-144L388-332Z"/></svg>
+            </button>
           </li>
         </ul>
       </div>
 
-      <!-- AI POP만들기 -->
+      <!-- AI POP 생성 이미지 -->
       <div class="container" style="display: none;">
-        <div class="header" style="height: 67px;">
+        <div class="header" style="height: 67px; padding: 8px;">
           <div class="titbox">
-            <p class="titbox__tit">AI POP 생성</p>
-          </div>
-        </div>
-        <div class="contents" style="margin-top: 0;">
-          <div class="scrollwrap">
-            <div style="flex: 1; display: flex; flex-direction: column; padding: 0 2px 10px; background: #f3f4f6;">
-              <iframe id="frmForm" name="frmForm" width="100%" height="100%" frameborder="0" scrolling="no" 
-                src="https://evaham.github.io/ai-pop/"
-                style="flex: 1; overflow: hidden; position: relative; max-width: 1200px; height: 100%;"
-              ></iframe>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- AI 이미지관리 -->
-      <div class="container">
-        <div class="header" style="height: 67px;">
-          <div class="titbox">
-            <p class="titbox__tit">AI 이미지</p><a href="" style="border:1px solid #ddd">AI POP 제작하기</a>
+            <p class="titbox__tit">
+              <svg xmlns="http://www.w3.org/2000/svg" style="width:24px; height:24px; margin-top: -10px;" width="206" height="202" viewBox="0 0 206 202" fill="#8b5cf6">
+                <path d="M112.032 105.009C112.032 100.276 113.443 96.8167 116.265 94.6321C119.087 92.4475 122.409 91.3552 126.232 91.3552C130.055 91.3552 133.377 92.4475 136.199 94.6321C139.021 96.8167 140.432 100.276 140.432 105.009V201.813H112.032V105.009Z"/>
+                <path d="M35.0897 102.688C36.4551 98.8647 38.7762 96.043 42.0531 94.2225C45.4209 92.311 48.9709 91.3552 52.7029 91.3552C56.1618 91.3552 59.4841 92.311 62.67 94.2225C65.9468 96.134 68.2224 98.9557 69.4968 102.688L105.133 201.813H75.0947L69.7699 184.882H34.6801L29.4918 201.813H0L35.0897 102.688ZM41.78 161.808H62.67L52.2933 127.81L41.78 161.808Z"/>
+                <path d="M154.255 10.8412C155.633 7.11719 160.9 7.11718 162.278 10.8412L170.292 32.499C170.726 33.6698 171.649 34.5929 172.82 35.0261L194.477 43.0402C198.201 44.4183 198.201 49.6854 194.477 51.0635L172.82 59.0776C171.649 59.5108 170.726 60.4339 170.292 61.6047L162.278 83.2625C160.9 86.9865 155.633 86.9865 154.255 83.2625L146.241 61.6047C145.808 60.4339 144.885 59.5108 143.714 59.0776L122.056 51.0635C118.332 49.6854 118.332 44.4183 122.056 43.0402L143.714 35.0261C144.885 34.5929 145.808 33.6698 146.241 32.499L154.255 10.8412Z"/>
+                <path d="M72.9826 36.505C74.3606 32.781 79.6278 32.781 81.0058 36.505L83.2435 42.5521C83.6767 43.7229 84.5998 44.646 85.7706 45.0792L91.8177 47.3169C95.5417 48.6949 95.5417 53.9621 91.8177 55.3401L85.7706 57.5777C84.5998 58.0109 83.6767 58.934 83.2435 60.1049L81.0058 66.1519C79.6278 69.8759 74.3606 69.8759 72.9826 66.1519L70.745 60.1049C70.3118 58.934 69.3887 58.0109 68.2178 57.5777L62.1708 55.3401C58.4468 53.9621 58.4468 48.6949 62.1708 47.3169L68.2178 45.0792C69.3887 44.646 70.3118 43.7229 70.745 42.5521L72.9826 36.505Z"/>
+                <path d="M175.642 122.054C177.02 118.33 182.287 118.33 183.665 122.054L185.903 128.101C186.336 129.272 187.259 130.195 188.43 130.628L194.477 132.866C198.201 134.244 198.201 139.511 194.477 140.889L188.43 143.127C187.259 143.56 186.336 144.483 185.903 145.654L183.665 151.701C182.287 155.425 177.02 155.425 175.642 151.701L173.404 145.654C172.971 144.483 172.048 143.56 170.877 143.127L164.83 140.889C161.106 139.511 161.106 134.244 164.83 132.866L170.877 130.628C172.048 130.195 172.971 129.272 173.404 128.101L175.642 122.054Z"/>
+              </svg>              
+              <span style="margin-left: 2px;">
+                POP 생성 이미지
+              </span>
+            </p>
           </div>
         </div>
         <div class="contents">
-          <div class="optionbar">
+          <!-- <div class="optionbar">
             <button class="optionbar__btn active" data-type="idate" onclick="jsSearch()">최근등록순</button>
             <button class="optionbar__btn " data-type="name" onclick="jsSearch()">이름순</button>
-          </div>
+          </div> -->
           <div class="scrollwrap">
             <div class="itemlist maxviewsize">
               <div class="item" onmouseover="jsShowOption(this)" onmouseout="jsHideOption(this)">
-                <div class="item__bookmark">
-                  <span class="item__txt">#장바구니</span>
-                </div>
                 <div class="item__imgbox">
-                  <img src="http://file.2ms.kr/ImageEffect/20260318/20260318_174446_1383_Thumb.jpg" class="thumb__img">
+                  <img src="./img/KakaoTalk_20260212_102215461.png" class="thumb__img">
                 </div>
                 <div class="item__txtbox">
-                  <span class="item__txt">장바구니_할인</span>
+                  <span class="item__txt">보관기간 : 60일</span>
                 </div>
                 <div class="item__hoverbox">
-                  <span class="icon-star item__icon " style="height:160px;" onclick="jsFavorites(1383, 1001);"></span>
-                  <button class="item__hoverbtn"
-                    onclick="jsLargerView(1383, 'http://file.2ms.kr/ImageEffect/20260318/20260318_174446_1383.png', 'png', false)">크게보기</button>
-                  <button class="item__hoverbtn" onclick="jsSearchTag()">#장바구니</button>
+                  <button class="item__hoverbtn" onclick="jsShowView(this)">크게보기</button>
+                  <button class="item__hoverbtn">다운로드</button>
+                  <button class="item__hoverbtn" style="letter-spacing: -1px;">AI POP 연결</button>
                 </div>
-                <span class="icon-star item__icon " style="height:160px; top:8px;" onclick="jsFavorites(1383, 1001);"></span>
               </div>
               <div class="item" onmouseover="jsShowOption(this)" onmouseout="jsHideOption(this)">
-                <div class="item__bookmark">
-                  <span class="item__txt">#특가-할인</span>
-                </div>
                 <div class="item__imgbox">
-                  <img src="http://file.2ms.kr/ImageEffect/20250808/20250808_103604_1185_Thumb.jpg" class="thumb__img">
+                  <img src="./img/KakaoTalk_20260212_103222794.png" class="thumb__img">
                 </div>
                 <div class="item__txtbox">
-                  <span class="item__txt">특가-할인</span>
+                  <span class="item__txt">보관기간 : 60일</span>
                 </div>
                 <div class="item__hoverbox">
-                  <span class="icon-star item__icon " style="height:160px;" onclick="jsFavorites(1185, 1001);"></span>
-                  <button class="item__hoverbtn"
-                    onclick="jsLargerView(1185, 'http://file.2ms.kr/ImageEffect/20250808/20250808_103604_1185.png', 'png', false)">크게보기</button>
-                  <button class="item__hoverbtn" onclick="jsSearchTag()">#특가-할인</button>
+                  <button class="item__hoverbtn" onclick="jsShowView(this)">크게보기</button>
+                  <button class="item__hoverbtn">다운로드</button>
+                  <button class="item__hoverbtn" style="letter-spacing: -1px;">AI POP 연결</button>
                 </div>
-                <span class="icon-star item__icon " style="height:160px; top:8px;" onclick="jsFavorites(1185, 1001);"></span>
               </div>
               <div class="item" onmouseover="jsShowOption(this)" onmouseout="jsHideOption(this)">
-                <div class="item__bookmark">
-                  <span class="item__txt">#최저가</span>
-                </div>
                 <div class="item__imgbox">
                   <img src="http://file.2ms.kr/ImageEffect/20250808/20250808_103458_1184_Thumb.jpg" class="thumb__img">
                 </div>
                 <div class="item__txtbox">
-                  <span class="item__txt">최저가_할인</span>
+                  <span class="item__txt">보관기간 : 57일</span>
                 </div>
                 <div class="item__hoverbox">
-                  <span class="icon-star item__icon " style="height:160px;" onclick="jsFavorites(1184, 1001);"></span>
-              
-              
-              
-              
-                  <button class="item__hoverbtn"
-                    onclick="jsLargerView(1184, 'http://file.2ms.kr/ImageEffect/20250808/20250808_103458_1184.png', 'png', false)">크게보기</button>
-                  <button class="item__hoverbtn" onclick="jsSearchTag()">#최저가</button>
+                  <button class="item__hoverbtn" onclick="jsShowView(this)">크게보기</button>
+                  <button class="item__hoverbtn">다운로드</button>
+                  <button class="item__hoverbtn" style="letter-spacing: -1px;">AI POP 연결</button>
                 </div>
-                <span class="icon-star item__icon " style="height:160px; top:8px;" onclick="jsFavorites(1184, 1001);"></span>
               </div>
-              
-              
-              
               <div class="item" onmouseover="jsShowOption(this)" onmouseout="jsHideOption(this)">
-                <div class="item__bookmark">
-                  <span class="item__txt">#특가</span>
-                </div>
                 <div class="item__imgbox">
-              
-              
                   <img src="http://file.2ms.kr/ImageEffect/20250801/20250801_173803_1183_Thumb.jpg" class="thumb__img">
-              
-              
                 </div>
                 <div class="item__txtbox">
-                  <span class="item__txt">특가_할인</span>
+                  <span class="item__txt">보관기간 : 55일</span>
                 </div>
                 <div class="item__hoverbox">
-                  <span class="icon-star item__icon " style="height:160px;" onclick="jsFavorites(1183, 1001);"></span>
-              
-              
-              
-              
-                  <button class="item__hoverbtn"
-                    onclick="jsLargerView(1183, 'http://file.2ms.kr/ImageEffect/20250801/20250801_173803_1183.png', 'png', false)">크게보기</button>
-                  <button class="item__hoverbtn" onclick="jsSearchTag()">#특가</button>
+                  <button class="item__hoverbtn" onclick="jsShowView(this)">크게보기</button>
+                  <button class="item__hoverbtn">다운로드</button>
+                  <button class="item__hoverbtn" style="letter-spacing: -1px;">AI POP 연결</button>
                 </div>
-                <span class="icon-star item__icon " style="height:160px; top:8px;" onclick="jsFavorites(1183, 1001);"></span>
               </div>
-              
-              
-              
               <div class="item" onmouseover="jsShowOption(this)" onmouseout="jsHideOption(this)">
-                <div class="item__bookmark">
-                  <span class="item__txt">#결제</span>
-                </div>
                 <div class="item__imgbox">
-              
-              
                   <img src="http://file.2ms.kr/ImageEffect/20250723/20250723_100904_1166_Thumb.jpg" class="thumb__img">
-              
-              
                 </div>
                 <div class="item__txtbox">
-                  <span class="item__txt">결제_사용</span>
+                  <span class="item__txt">보관기간 : 53일</span>
                 </div>
                 <div class="item__hoverbox">
-                  <span class="icon-star item__icon " style="height:160px;" onclick="jsFavorites(1166, 1001);"></span>
-              
-              
-              
-              
-                  <button class="item__hoverbtn"
-                    onclick="jsLargerView(1166, 'http://file.2ms.kr/ImageEffect/20250723/20250723_100904_1166.png', 'png', false)">크게보기</button>
-                  <button class="item__hoverbtn" onclick="jsSearchTag()">#결제</button>
+                  <button class="item__hoverbtn" onclick="jsShowView(this)">크게보기</button>
+                  <button class="item__hoverbtn">다운로드</button>
+                  <button class="item__hoverbtn" style="letter-spacing: -1px;">AI POP 연결</button>
                 </div>
-                <span class="icon-star item__icon " style="height:160px; top:8px;" onclick="jsFavorites(1166, 1001);"></span>
               </div>
-              
-              
-              
               <div class="item" onmouseover="jsShowOption(this)" onmouseout="jsHideOption(this)">
-                <div class="item__bookmark">
-                  <span class="item__txt">#세일</span>
-                </div>
                 <div class="item__imgbox">
-              
-              
-                  <img src="http://file.2ms.kr/ImageEffect/20250626/20250626_173157_1137_Thumb.jpg" class="thumb__img">
-              
-              
+                  <img src="./img/KakaoTalk_20260212_103504542.png" class="thumb__img">
                 </div>
                 <div class="item__txtbox">
-                  <span class="item__txt">세일_할인</span>
+                  <span class="item__txt">보관기간 : 40일</span>
                 </div>
                 <div class="item__hoverbox">
-                  <span class="icon-star item__icon " style="height:160px;" onclick="jsFavorites(1137, 1001);"></span>
-              
-              
-              
-              
-                  <button class="item__hoverbtn"
-                    onclick="jsLargerView(1137, 'http://file.2ms.kr/ImageEffect/20250626/20250626_173157_1137.png', 'png', false)">크게보기</button>
-                  <button class="item__hoverbtn" onclick="jsSearchTag()">#세일</button>
+                  <button class="item__hoverbtn" onclick="jsShowView(this)">크게보기</button>
+                  <button class="item__hoverbtn">다운로드</button>
+                  <button class="item__hoverbtn" style="letter-spacing: -1px;">AI POP 연결</button>
                 </div>
-                <span class="icon-star item__icon " style="height:160px; top:8px;" onclick="jsFavorites(1137, 1001);"></span>
               </div>
             </div>
           </div>
@@ -274,8 +216,31 @@
         </div>
       </div>
 
+      <!-- AI이용현황 -->
+      <div class="container">
+        <div class="header" style="height: 67px; padding: 8px;">
+          <div class="titbox">
+            <p class="titbox__tit">
+              <svg xmlns="http://www.w3.org/2000/svg" style="width:24px; height:24px; margin-top: -10px;" width="206" height="202" viewBox="0 0 206 202" fill="#8b5cf6">
+                <path d="M112.032 105.009C112.032 100.276 113.443 96.8167 116.265 94.6321C119.087 92.4475 122.409 91.3552 126.232 91.3552C130.055 91.3552 133.377 92.4475 136.199 94.6321C139.021 96.8167 140.432 100.276 140.432 105.009V201.813H112.032V105.009Z"/>
+                <path d="M35.0897 102.688C36.4551 98.8647 38.7762 96.043 42.0531 94.2225C45.4209 92.311 48.9709 91.3552 52.7029 91.3552C56.1618 91.3552 59.4841 92.311 62.67 94.2225C65.9468 96.134 68.2224 98.9557 69.4968 102.688L105.133 201.813H75.0947L69.7699 184.882H34.6801L29.4918 201.813H0L35.0897 102.688ZM41.78 161.808H62.67L52.2933 127.81L41.78 161.808Z"/>
+                <path d="M154.255 10.8412C155.633 7.11719 160.9 7.11718 162.278 10.8412L170.292 32.499C170.726 33.6698 171.649 34.5929 172.82 35.0261L194.477 43.0402C198.201 44.4183 198.201 49.6854 194.477 51.0635L172.82 59.0776C171.649 59.5108 170.726 60.4339 170.292 61.6047L162.278 83.2625C160.9 86.9865 155.633 86.9865 154.255 83.2625L146.241 61.6047C145.808 60.4339 144.885 59.5108 143.714 59.0776L122.056 51.0635C118.332 49.6854 118.332 44.4183 122.056 43.0402L143.714 35.0261C144.885 34.5929 145.808 33.6698 146.241 32.499L154.255 10.8412Z"/>
+                <path d="M72.9826 36.505C74.3606 32.781 79.6278 32.781 81.0058 36.505L83.2435 42.5521C83.6767 43.7229 84.5998 44.646 85.7706 45.0792L91.8177 47.3169C95.5417 48.6949 95.5417 53.9621 91.8177 55.3401L85.7706 57.5777C84.5998 58.0109 83.6767 58.934 83.2435 60.1049L81.0058 66.1519C79.6278 69.8759 74.3606 69.8759 72.9826 66.1519L70.745 60.1049C70.3118 58.934 69.3887 58.0109 68.2178 57.5777L62.1708 55.3401C58.4468 53.9621 58.4468 48.6949 62.1708 47.3169L68.2178 45.0792C69.3887 44.646 70.3118 43.7229 70.745 42.5521L72.9826 36.505Z"/>
+                <path d="M175.642 122.054C177.02 118.33 182.287 118.33 183.665 122.054L185.903 128.101C186.336 129.272 187.259 130.195 188.43 130.628L194.477 132.866C198.201 134.244 198.201 139.511 194.477 140.889L188.43 143.127C187.259 143.56 186.336 144.483 185.903 145.654L183.665 151.701C182.287 155.425 177.02 155.425 175.642 151.701L173.404 145.654C172.971 144.483 172.048 143.56 170.877 143.127L164.83 140.889C161.106 139.511 161.106 134.244 164.83 132.866L170.877 130.628C172.048 130.195 172.971 129.272 173.404 128.101L175.642 122.054Z"/>
+              </svg>              
+              <span style="margin-left: 2px;">
+                POP 이용현황
+              </span>
+            </p>
+          </div>
+          <div>
 
-
+          </div>
+        </div>
+        <div class="contents" style="position: relative;">
+          <iframe id="ifrmContent" name="ifrmContent" style="position: absolute; inset: 0;" src="http://localhost:3000/aiPopUseData" frameborder="0" width="100%" height="100%"></iframe>
+        </div>
+      </div>
 
 
 
@@ -291,5 +256,79 @@
       </div>
     </div>
   </div>
+  <script type="text/javascript">
+    function openAiPopPopup() {
+      var width = 800;
+      var height = 600;
+      var screenX = typeof window.screenX !== 'undefined' ? window.screenX : window.screenLeft || 0;
+      var screenY = typeof window.screenY !== 'undefined' ? window.screenY : window.screenTop || 0;
+      var outerWidth = window.outerWidth || window.innerWidth;
+      var outerHeight = window.outerHeight || window.innerHeight;
+      var left = Math.max(0, Math.round(screenX + (outerWidth - width) / 2));
+      var top = Math.max(0, Math.round(screenY + (outerHeight - height) / 2));
+      window.open(
+        'https://evaham.github.io/ai-pop/',
+        'aiPop',
+        'width=' + width + ',height=' + height + ',left=' + left + ',top=' + top + ',noopener,noreferrer'
+      );
+    }
+
+    function jsShowView(button) {
+      var layer = document.querySelector('.layer.layer__wrap.js_event');
+      var layerImg = document.getElementById('layerImg');
+      if (button) {
+        var item = button.closest('.item');
+        var thumb = item ? item.querySelector('img.thumb__img') : null;
+        if (thumb && layerImg) {
+          layerImg.src = thumb.src;
+        }
+      }
+      if (layer) {
+        layer.style.display = 'block';
+      }
+    }
+
+    function jsHideView() {
+      var layer = document.querySelector('.layer.layer__wrap.js_event');
+      if (layer) {
+        layer.style.display = 'none';
+      }
+    }
+  </script>
+
+  <!-- 크게보기레이어팝업창 -->
+  <div class="layer layer__wrap js_event" style="display: none;" oncontextmenu="return false">
+    <div class="layer__bg"></div>
+    <div class="layer__box" style="width: 600px; height: auto;">
+      <div style="position: relative; display: flex; align-items: center; width: 100%; height: 57px; background: #fff; border-bottom: 1px solid #e5e7eb">
+        <div style="font-size: 14px; font-weight: 600; margin-left: 18px;">이미지 크게보기</div>
+        <a href="javascript:void(0)" class="layer__close" onclick="jsHideView()"><span class="icon-close"></span></a>
+      </div>
+      <div style="flex: 1; display: flex; height: 100%; ">
+        <div class="layer__imgbox" style="width: 340px; height: auto; margin: 0; padding:16px">
+          <img class="layer__img layer__pngback" src="./img/KakaoTalk_20260212_103407279.png" id="layerImg">
+        </div>
+        <div style="flex: 1; overflow-y: auto; display: flex; flex-direction: column; height: auto; padding: 16px; border-left: 1px solid #e5e7eb; background:#fff;">
+          <button style="height: 36px; border-radius: 8px; color: #ffffff; background-color: #1f2937; cursor: pointer; transition-property: color"
+          >이미지 다운로드</button>
+          <div style="display: flex; flex-direction: column; row-gap: 10px; padding: 20px 0;">
+            <span style="color: #6b7280;">생성일</span>
+            <span style="font-weight: 500; color: #1f2937;">03-27 13:45</span>
+            <span style="color: #6b7280;">프롬프트</span>
+            <span style="color: #374151;">간편식품 특가를 소개하는 배너를 만들어줘.
+              냉동볶음밥, 즉석국, 냉동만두 3종을 묶어서 보여주고, 메인 문구는 "3종 골라담기 2+1"로 해줘.
+              서브 문구는 "혼밥 필수템, 간편하게 맛있게"로 추가하고,
+              따뜻한 오렌지 그라데이션 배경과 아이콘 스타일 일러스트를 넣어줘.</span>
+            <span style="color: #6b7280;">보관기간</span>
+            <span style="color: #374151;">2024-04-30 까지</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+
 </body>
 </html>

@@ -90,7 +90,7 @@ export default function ImageGenerationList({ items, onOpenPreview }) {
                   </div>
                   <div className="flex-1 flex items-center justify-center px-1.5 pb-1.5 gap-1 divide-gray-200">
                     <button
-                      className="flex-1 h-full border border-gray-200 rounded text-sm text-gray-700 bg-gray-100 hover:bg-gray-200 hover:text-gray-700 tracking-tight transition cursor-pointer"
+                      className="flex-1 h-full border border-gray-200 rounded text-xs text-gray-700 font-medium bg-gray-100 hover:bg-gray-200 hover:text-gray-700 tracking-tight transition cursor-pointer"
                       onClick={() =>
                         onOpenPreview({
                           imageUrl,
@@ -101,7 +101,7 @@ export default function ImageGenerationList({ items, onOpenPreview }) {
                     >
                       크게보기
                     </button>
-                    <button className="flex-1 h-full border border-gray-200 rounded text-sm text-gray-700 bg-gray-100 hover:bg-gray-200 hover:text-gray-700 tracking-tight transition cursor-pointer">
+                    <button className="flex-1 h-full border border-gray-200 rounded text-xs text-gray-700 font-medium bg-gray-100 hover:bg-gray-200 hover:text-gray-700 tracking-tight transition cursor-pointer">
                       다운로드
                     </button>
                   </div>
