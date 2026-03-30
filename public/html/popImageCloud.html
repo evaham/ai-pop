@@ -50,6 +50,8 @@
               <div class="thumb__hovertd">
                 <a href="javascript:void(0)" class="thumb__btn">선택</a>
                 <a href="javascript:void(0)" class="thumb__btn" onclick="jsShowView(this)">크게보기</a>
+                <a href="javascript:void(0)" class="thumb__btn">다운로드</a>
+
               </div>
             </div>
             <img src="./img/KakaoTalk_20260212_103222794.png" style="display:none" />
@@ -67,6 +69,7 @@
               <div class="thumb__hovertd">
                 <a href="javascript:void(0)" class="thumb__btn">선택</a>
                 <a href="javascript:void(0)" class="thumb__btn" onclick="jsShowView(this)">크게보기</a>
+                <a href="javascript:void(0)" class="thumb__btn">다운로드</a>
               </div>
             </div>
             <img src="./img/KakaoTalk_20260212_103925_0.png" style="display:none" />
@@ -84,6 +87,7 @@
               <div class="thumb__hovertd">
                 <a href="javascript:void(0)" class="thumb__btn">선택</a>
                 <a href="javascript:void(0)" class="thumb__btn" onclick="jsShowView(this)">크게보기</a>
+                <a href="javascript:void(0)" class="thumb__btn">다운로드</a>
               </div>
             </div>
             <img src="./img/KakaoTalk_20260212_103407279.png" style="display:none" />
@@ -100,6 +104,7 @@
               <div class="thumb__hovertd">
                 <a href="javascript:void(0)" class="thumb__btn">선택</a>
                 <a href="javascript:void(0)" class="thumb__btn" onclick="jsShowView(this)">크게보기</a>
+                <a href="javascript:void(0)" class="thumb__btn">다운로드</a>
               </div>
             </div>
             <img src="./img/KakaoTalk_20260212_103715_0.png" style="display:none" />
@@ -113,6 +118,8 @@
               <div class="thumb__hovertd">
                 <a href="javascript:void(0)" class="thumb__btn">선택</a>
                 <a href="javascript:void(0)" class="thumb__btn" onclick="jsShowView(this)">크게보기</a>
+                <a href="javascript:void(0)" class="thumb__btn">다운로드</a>
+
               </div>
             </div>
             <img src="./img/KakaoTalk_20260212_103212_0.png" style="display:none" />
@@ -126,6 +133,7 @@
               <div class="thumb__hovertd">
                 <a href="javascript:void(0)" class="thumb__btn">선택</a>
                 <a href="javascript:void(0)" class="thumb__btn" onclick="jsShowView(this)">크게보기</a>
+                <a href="javascript:void(0)" class="thumb__btn">다운로드</a>
               </div>
             </div>
             <img src="./img/KakaoTalk_20260212_103155_0.png" style="display:none" />
@@ -191,11 +199,32 @@
   <div class="layer__wrap js_event" style="display:none;">
     <div class="layer__bg"></div>
     <div class="layer__box">
-      <div class="layer__imgbox">
-        <img class="layer__img" src="./img/KakaoTalk_20260212_103222794.png" id="layerImg" />
+      <div style="position: relative; display: flex; align-items: center; width: 100%; height: 57px; background: #fff; border-bottom: 1px solid #e5e7eb">
+        <div style="font-size: 14px; font-weight: 600; margin-left: 18px;">이미지 크게보기</div>
+        <a href="javascript:void(0)" class="layer__close" onclick="jsHideView()" style="text-decoration: none;"><span class="icon-close"></span></a>
       </div>
-      <a href="javascript:void(0)" class="layer__close" onclick="jsHideView(); return false;">닫기</a>
-      <a href="javascript:void(0)" class="layer__btn" id="layerBtn">선택</a>
+      <div style="flex: 1; display: flex; height: 100%; ">
+        <div class="layer__imgbox" style="width: 300px; height: auto; margin: 0; padding:16px">
+          <img class="layer__img layer__pngback" src="./img/KakaoTalk_20260212_103407279.png" id="layerImg">
+        </div>
+        <div style="flex: 1; overflow-y: auto; display: flex; flex-direction: column; height: auto; max-height: 485px; padding: 16px; border-left: 1px solid #e5e7eb; background:#fff;">
+          <div style="display: flex; gap: 8px;">
+            <button style="width:100%; height: 36px; border-radius: 8px; color: #ffffff; background-color: #1f2937; cursor: pointer; transition-property: color"
+            >이미지 다운로드</button>
+          </div>
+
+          <div style="display: flex; flex-direction: column; row-gap: 10px; padding: 20px 0; text-align: left;">
+            <span style="color: #6b7280;">생성일</span>
+            <span style="font-weight: 500; color: #1f2937;">03-27 13:45</span>
+            <span style="color: #6b7280;">프롬프트</span>
+            <span style="color: #374151;">간편식품 특가를 소개하는 배너를 만들어줘.
+              서브 문구는 "혼밥 필수템, 간편하게 맛있게"로 추가하고,
+            </span>
+            <span style="color: #6b7280;">보관기간</span>
+            <span style="color: #374151;">2024-04-30 까지</span>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
