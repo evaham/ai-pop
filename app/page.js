@@ -409,7 +409,14 @@ export default function Home() {
                     />
                     <button type="button" onClick={handleImageButtonClick} className='flex items-center justify-center py-1 pl-1 px-3 rounded-full bg-violet-400/20 cursor-pointer hover:bg-violet-400/50 transition'>
                       <svg xmlns="http://www.w3.org/2000/svg" className="size-5 fill-violet-600" height="24px" viewBox="0 -960 960 960" width="24px" fill="#333"><path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"/></svg>
-                      <span className='text-violet-600 font-normal tracking-tight'>이미지 추가</span>
+                      <span className='mr-1 text-violet-600 font-normal tracking-tight'>이미지 추가</span>
+                      {/* 툴팁 */}
+                      <ToolTip
+                        content={<>참고하고 싶은 상품 사진이나 배경 이미지를 추가해 보세요.<br />해당 이미지의 구도나 스타일을 반영해 드립니다.</>}
+                        placement="bottom-left"
+                      >
+                        <svg xmlns="http://www.w3.org/2000/svg" className='size-6 fill-black/60' height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M513.5-254.5Q528-269 528-290t-14.5-35.5Q499-340 478-340t-35.5 14.5Q428-311 428-290t14.5 35.5Q457-240 478-240t35.5-14.5ZM442-394h74q0-33 7.5-52t42.5-52q26-26 41-49.5t15-56.5q0-56-41-86t-97-30q-57 0-92.5 30T342-618l66 26q5-18 22.5-39t53.5-21q32 0 48 17.5t16 38.5q0 20-12 37.5T506-526q-44 39-54 59t-10 73Zm38 314q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg>
+                      </ToolTip>
                     </button>
                     {/* <button
                       type="button"
