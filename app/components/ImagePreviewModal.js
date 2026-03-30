@@ -2,7 +2,7 @@
 
 'use client';
 
-export default function ImagePreviewModal({ detail, onClose }) {
+export default function ImagePreviewModal({ detail, onClose, onRegisterImage }) {
   if (!detail) {
     return null;
   }
@@ -38,12 +38,24 @@ export default function ImagePreviewModal({ detail, onClose }) {
           {/* 이미지 상세정보 */}
           <div className="flex flex-1 sm:max-h-[75vh]">
             <div className="overflow-y-auto flex-1 flex flex-col gap-3 p-4 sm:border-l sm:border-gray-200 bg-white min-w-[220px]">
-              <button
-                type="button"
-                className="rounded-lg px-3 py-2 text-sm text-white bg-gray-800 hover:bg-gray-700 transition cursor-pointer"
-              >
-                이미지 다운로드
-              </button>
+              <div className="flex gap-2">
+                <button
+                  type="button"
+                  className="rounded-lg px-3 py-2 text-sm text-white bg-gray-800 hover:bg-gray-700 transition cursor-pointer"
+                  onClick={() => onRegisterImage?.(imageUrl)}
+                >
+                  AI 생성
+                </button>              
+                
+                <button
+                  type="button"
+                  className="rounded-lg px-3 py-2 text-sm text-white bg-gray-800 hover:bg-gray-700 transition cursor-pointer"
+                >
+                  이미지 다운로드
+                </button>
+              </div>
+
+
               <div className="flex flex-col gap-x-3 gap-y-2 text-sm">
                 <span className="text-gray-500">생성일</span>
                 <span className="font-medium text-gray-800">{createdAt || '-'}</span>

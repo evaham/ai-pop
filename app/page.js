@@ -213,6 +213,28 @@ export default function Home() {
     setDetailImage(null);
   };
 
+  const handleRegisterPreviewImage = (imageUrl) => {
+    if (!imageUrl) {
+      return;
+    }
+    setTempImages((prev) => {
+      prev.forEach((image) => {
+        if (image.url && image.url.startsWith('blob:')) {
+          URL.revokeObjectURL(image.url);
+        }
+      });
+      return [
+        {
+          id: crypto.randomUUID(),
+          name: 'ai-generated',
+          url: imageUrl
+        }
+      ];
+    });
+    setIsImageOptionsOpen(false);
+    setDetailImage(null);
+  };
+
   // 텍스트 예시 버튼 클릭 시 입력 내용 변경 확인 모달 열기 또는 바로 텍스트 변경
   const handleInsertSample = (text) => {
     if (inputText.trim().length > 0) {
@@ -221,6 +243,18 @@ export default function Home() {
       return;
     }
     setInputText(text);
+  };
+
+  const handleRetryPrompt = (prompt) => {
+    if (!prompt) {
+      return;
+    }
+    if (inputText.trim().length > 0) {
+      setPendingSampleText(prompt);
+      setIsConfirmReplaceOpen(true);
+      return;
+    }
+    setInputText(prompt);
   };
 
   // 입력 내용 변경 확인 모달에서 변경하기 선택 시 텍스트 변경
@@ -521,7 +555,11 @@ export default function Home() {
 
             </div>
             <div className='flex-1 sm:overflow-y-auto rounded-lg px-3 bg-gray-50 border border-gray-50'>
-              <ImageGenerationList items={generatedItems} onOpenPreview={handleOpenPreview} />
+              <ImageGenerationList
+                items={generatedItems}
+                onOpenPreview={handleOpenPreview}
+                onRetryPrompt={handleRetryPrompt}
+              />
             </div>
           </div>
         </div>
@@ -531,7 +569,11 @@ export default function Home() {
       {/* 로딩 모달 */}
       {/* <LoadingModal isOpen={isLoadingOpen} onClose={() => setIsLoadingOpen(false)} /> */}
       {/* 이미지 크게보기 모달 */}
-      <ImagePreviewModal detail={detailImage} onClose={handleClosePreview} />
+      <ImagePreviewModal
+        detail={detailImage}
+        onClose={handleClosePreview}
+        onRegisterImage={handleRegisterPreviewImage}
+      />
       {/* 입력 내용 변경 모달 */}
       <ConfirmReplaceModal isOpen={isConfirmReplaceOpen} onConfirm={handleConfirmReplace} onCancel={handleCancelReplace} />
     </div>

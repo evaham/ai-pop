@@ -1,60 +1,133 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
-const prompts = [
-  '여름 행사 배너 이미지 생성',
-  '신규 상품 소개 POP 디자인',
-  '주말 특가 프로모션 문구',
-  '신선식품 할인 배너 요청',
-  '간편식 모음 행사 이미지',
-  '타임세일 팝업 배너',
-  '봄 시즌 한정 이벤트',
-  '매장 오픈 프로모션',
-  '가격표 강조형 POP',
-  '배송비 무료 안내 이미지'
+const sampleItems = [
+  {
+    id: 1,
+    createdAt: '2024-03-27 13:45',
+    prompt: '여름 행사 배너 이미지 생성',
+    result: '생성완료',
+    tsMoney: -500,
+    tsPoint: 0
+  },
+  {
+    id: 2,
+    createdAt: '2024-03-27 14:10',
+    prompt: '신규 상품 소개 POP 디자인',
+    result: '생성완료',
+    tsMoney: -500,
+    tsPoint: 0
+  },
+  {
+    id: 3,
+    createdAt: '2024-03-28 09:02',
+    prompt: '주말 특가 프로모션 문구',
+    result: '생성실패',
+    tsMoney: -500,
+    tsPoint: 0
+  },
+  {
+    id: 4,
+    createdAt: '2024-03-28 11:22',
+    prompt: '간편식 모음 행사 이미지',
+    result: '생성완료',
+    tsMoney: 0,
+    tsPoint: -500
+  },
+  {
+    id: 5,
+    createdAt: '2024-03-29 10:05',
+    prompt: '타임세일 팝업 배너',
+    result: '생성완료',
+    tsMoney: -500,
+    tsPoint: 0
+  },
+  {
+    id: 6,
+    createdAt: '2024-03-29 12:30',
+    prompt: '봄 시즌 한정 이벤트',
+    result: '생성완료',
+    tsMoney: -500,
+    tsPoint: 0
+  },
+  {
+    id: 7,
+    createdAt: '2024-03-29 16:18',
+    prompt: '매장 오픈 프로모션',
+    result: '생성실패',
+    tsMoney: -500,
+    tsPoint: 0
+  },
+  {
+    id: 8,
+    createdAt: '2024-03-30 09:40',
+    prompt: '가격표 강조형 POP',
+    result: '생성완료',
+    tsMoney: 0,
+    tsPoint: -500
+  },
+  {
+    id: 9,
+    createdAt: '2024-03-30 11:55',
+    prompt: '배송비 무료 안내 이미지',
+    result: '생성완료',
+    tsMoney: 0,
+    tsPoint: -500
+  },
+  {
+    id: 10,
+    createdAt: '2024-03-30 13:20',
+    prompt: '신선식품 할인 배너 요청',
+    result: '생성완료',
+    tsMoney: -500,
+    tsPoint: 0
+  },
+  {
+    id: 11,
+    createdAt: '2024-03-30 15:05',
+    prompt: '간편식 모음 행사 이미지',
+    result: '생성실패',
+    tsMoney: 0,
+    tsPoint: -500
+  },
+  {
+    id: 12,
+    createdAt: '2024-03-30 16:42',
+    prompt: '주말 특가 프로모션 문구',
+    result: '생성완료',
+    tsMoney: -500,
+    tsPoint: 0
+  },
+  {
+    id: 13,
+    createdAt: '2024-03-30 18:10',
+    prompt: '여름 행사 배너 이미지 생성',
+    result: '생성완료',
+    tsMoney: 0,
+    tsPoint: -500
+  },
+  {
+    id: 14,
+    createdAt: '2024-03-30 19:30',
+    prompt: '가격표 강조형 POP',
+    result: '생성실패',
+    tsMoney: 0,
+    tsPoint: -500
+  }
 ];
 
-const results = ['생성완료', '실패'];
-const tsMoneyValues = [-300, -500, -700, -1000];
-const tsPointValues = [0, -200, -500, -1000];
-
-const getRandomItem = (items) => items[Math.floor(Math.random() * items.length)];
-const pad2 = (value) => String(value).padStart(2, '0');
-const randomDate = () => {
-  const year = 2024;
-  const month = Math.floor(Math.random() * 12) + 1;
-  const day = Math.floor(Math.random() * 28) + 1;
-  const hour = Math.floor(Math.random() * 24);
-  const minute = Math.floor(Math.random() * 60);
-  return `${year}-${pad2(month)}-${pad2(day)} ${pad2(hour)}:${pad2(minute)}`;
-};
-
-const generateItems = (count) =>
-  Array.from({ length: count }, (_, index) => ({
-    id: index + 1,
-    createdAt: randomDate(),
-    prompt: getRandomItem(prompts),
-    result: getRandomItem(results),
-    tsMoney: getRandomItem(tsMoneyValues),
-    tsPoint: getRandomItem(tsPointValues)
-  }));
-
 export default function AiPopUseData() {
-  const [items, setItems] = useState([]);
-
-  useEffect(() => {
-    setItems(generateItems(10));
-  }, []);
+  const [items] = useState(sampleItems);
 
   return (
     <>
       <div className="flex-1 relative flex flex-col bg-white">
         <div className="flex flex-wrap gap-1 px-2 py-1.5 bg-gray-500/80 text-xs">
           <span className="flex items-center h-6.5 text-white">생성일</span>
-          <input type="text" className="h-6.5 px-1 border border-gray-600/70 rounded-xs bg-white" />
+          <input type="text" className="w-26 h-6.5 px-1 border border-gray-600/70 rounded-xs bg-white" />
           <span className="flex items-center h-6.5 text-white">~</span>
-          <input type="text" className="h-6.5 px-1 border border-gray-600/70 rounded-xs bg-white" />
+          <input type="text" className="w-26 h-6.5 px-1 border border-gray-600/70 rounded-xs bg-white" />
           <button className="inline-flex items-center h-6.5 px-2.5 border border-gray-600 rounded-xs text-white bg-gray-500 inset-shadow-xs inset-shadow-white/50 active:bg-gray-700/80 active:inset-shadow-none hover:bg-gray-500/80 cursor-pointer">1개월</button>
           <button className="inline-flex items-center h-6.5 px-2.5 border border-gray-600 rounded-xs text-white bg-gray-500 inset-shadow-xs inset-shadow-white/50 active:bg-gray-700/80 active:inset-shadow-none hover:bg-gray-500/80 cursor-pointer">3개월</button>
           <button className="inline-flex items-center h-6.5 px-2.5 border border-gray-600 rounded-xs text-white bg-gray-500 inset-shadow-xs inset-shadow-white/50 active:bg-gray-700/80 active:inset-shadow-none hover:bg-gray-500/80 cursor-pointer">6개월</button>
@@ -108,12 +181,14 @@ export default function AiPopUseData() {
               <tbody className="[&_th,&_td]:px-1 [&_th,&_td]:py-0.5 [&_th,&_td]:border [&_th,&_td]:border-gray-300/70">
                 {items.map((item) => (
                   <tr key={item.id} className="bg-white hover:bg-blue-50">
-                    <td className="px-3 py-2">{item.id}</td>
-                    <td className="px-3 py-2">{item.createdAt}</td>
-                    <td className="px-3 py-2">{item.prompt}</td>
-                    <td className="px-3 py-2">{item.result}</td>
-                    <td className="px-3 py-2 text-right">{item.tsMoney}</td>
-                    <td className="px-3 py-2 text-right">{item.tsPoint}</td>
+                    <td className="px-3 py-2 text-gray-400 text-center">{item.id}</td>
+                    <td className="px-3 py-2 text-gray-400">{item.createdAt}</td>
+                    <td className="px-3 py-2 text-gray-700">{item.prompt}</td>
+                    <td className={`px-3 py-2 text-gray-700 ${item.result === '생성실패' ? 'text-rose-500' : ''}`}>
+                      {item.result}
+                    </td>
+                    <td className={`px-3 py-2 text-right text-blue-400 ${item.result === '생성실패' && item.tsMoney !== 0 ? 'text-rose-500 line-through' : ''}`}>{item.tsMoney}</td>
+                    <td className={`px-3 py-2 text-right text-blue-400 ${item.result === '생성실패' && item.tsPoint !== 0 ? 'text-rose-500 line-through' : ''}`}>{item.tsPoint}</td>
                   </tr>
                 ))}
               </tbody>

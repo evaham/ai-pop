@@ -24,6 +24,7 @@
 <body>
   <div id="app">
     <div class="wrap">
+      <!-- 사이드바 메뉴 -->
       <div class="sidebar">
         <a href=""
           class="sidebar__logo">
@@ -69,11 +70,11 @@
           <li class="active">
             <a href="" class="nav__link" style="letter-spacing: -0.03rem;">AI POP 전용</a>
             <ul class="nav__sublist">
-              <li>
-                <a class="nav__sublink" href="javascript:void(0)" onclick="jsShowAiPopImages()">AI 이미지</a>
+              <li class="active">
+                <a class="nav__sublink" id="navAiPopImages" href="javascript:void(0)" onclick="jsShowAiPopImages()">AI 이미지</a>
               </li>
               <li>
-                <a class="nav__sublink" href="javascript:void(0)" onclick="jsShowAiUseData()">AI 이용현황</a>
+                <a class="nav__sublink" id="navAiUseData" href="javascript:void(0)" onclick="jsShowAiUseData()">AI 이용현황</a>
               </li>
             </ul>
             <style>
@@ -94,6 +95,7 @@
           </li>
         </ul>
       </div>
+      <!-- 사이드바 메뉴 -->
 
       <!-- AI POP 생성 이미지 -->
       <div class="container" id="aiPopImages" style="display: none;">
@@ -130,7 +132,7 @@
                 <div class="item__hoverbox">
                   <button class="item__hoverbtn" onclick="jsShowView(this)">크게보기</button>
                   <button class="item__hoverbtn">다운로드</button>
-                  <button class="item__hoverbtn" style="letter-spacing: -1px;">AI POP 연결</button>
+                  <button class="item__hoverbtn" type="button" onclick="openAiPopPopup()" style="letter-spacing: -1px; ">AI 생성</button>
                 </div>
               </div>
               <div class="item" onmouseover="jsShowOption(this)" onmouseout="jsHideOption(this)">
@@ -143,12 +145,12 @@
                 <div class="item__hoverbox">
                   <button class="item__hoverbtn" onclick="jsShowView(this)">크게보기</button>
                   <button class="item__hoverbtn">다운로드</button>
-                  <button class="item__hoverbtn" style="letter-spacing: -1px;">AI POP 연결</button>
+                  <button class="item__hoverbtn" type="button" onclick="openAiPopPopup()" style="letter-spacing: -1px;">AI 생성</button>
                 </div>
               </div>
               <div class="item" onmouseover="jsShowOption(this)" onmouseout="jsHideOption(this)">
                 <div class="item__imgbox">
-                  <img src="http://file.2ms.kr/ImageEffect/20250808/20250808_103458_1184_Thumb.jpg" class="thumb__img">
+                  <img src="./img/KakaoTalk_20260212_103504542.png" class="thumb__img">
                 </div>
                 <div class="item__txtbox">
                   <span class="item__txt">보관기간 : 57일</span>
@@ -156,12 +158,12 @@
                 <div class="item__hoverbox">
                   <button class="item__hoverbtn" onclick="jsShowView(this)">크게보기</button>
                   <button class="item__hoverbtn">다운로드</button>
-                  <button class="item__hoverbtn" style="letter-spacing: -1px;">AI POP 연결</button>
+                  <button class="item__hoverbtn" type="button" onclick="openAiPopPopup()" style="letter-spacing: -1px;">AI 생성</button>
                 </div>
               </div>
               <div class="item" onmouseover="jsShowOption(this)" onmouseout="jsHideOption(this)">
                 <div class="item__imgbox">
-                  <img src="http://file.2ms.kr/ImageEffect/20250801/20250801_173803_1183_Thumb.jpg" class="thumb__img">
+                  <img src="./img/KakaoTalk_20260212_103504542.png" class="thumb__img">
                 </div>
                 <div class="item__txtbox">
                   <span class="item__txt">보관기간 : 55일</span>
@@ -169,12 +171,12 @@
                 <div class="item__hoverbox">
                   <button class="item__hoverbtn" onclick="jsShowView(this)">크게보기</button>
                   <button class="item__hoverbtn">다운로드</button>
-                  <button class="item__hoverbtn" style="letter-spacing: -1px;">AI POP 연결</button>
+                  <button class="item__hoverbtn" type="button" onclick="openAiPopPopup()" style="letter-spacing: -1px;">AI 생성</button>
                 </div>
               </div>
               <div class="item" onmouseover="jsShowOption(this)" onmouseout="jsHideOption(this)">
                 <div class="item__imgbox">
-                  <img src="http://file.2ms.kr/ImageEffect/20250723/20250723_100904_1166_Thumb.jpg" class="thumb__img">
+                  <img src="./img/KakaoTalk_20260212_103504542.png" class="thumb__img">
                 </div>
                 <div class="item__txtbox">
                   <span class="item__txt">보관기간 : 53일</span>
@@ -182,7 +184,7 @@
                 <div class="item__hoverbox">
                   <button class="item__hoverbtn" onclick="jsShowView(this)">크게보기</button>
                   <button class="item__hoverbtn">다운로드</button>
-                  <button class="item__hoverbtn" style="letter-spacing: -1px;">AI POP 연결</button>
+                  <button class="item__hoverbtn" type="button" onclick="openAiPopPopup()" style="letter-spacing: -1px;">AI 생성</button>
                 </div>
               </div>
               <div class="item" onmouseover="jsShowOption(this)" onmouseout="jsHideOption(this)">
@@ -195,7 +197,7 @@
                 <div class="item__hoverbox">
                   <button class="item__hoverbtn" onclick="jsShowView(this)">크게보기</button>
                   <button class="item__hoverbtn">다운로드</button>
-                  <button class="item__hoverbtn" style="letter-spacing: -1px;">AI POP 연결</button>
+                  <button class="item__hoverbtn" type="button" onclick="openAiPopPopup()" style="letter-spacing: -1px;">AI 생성</button>
                 </div>
               </div>
             </div>
@@ -307,6 +309,20 @@
       }
     }
 
+    function setAiPopSubActive(linkId) {
+      var items = document.querySelectorAll('.nav__list > li.active .nav__sublist > li');
+      items.forEach(function (item) {
+        item.classList.remove('active');
+      });
+      var link = document.getElementById(linkId);
+      if (link) {
+        var li = link.closest('li');
+        if (li) {
+          li.classList.add('active');
+        }
+      }
+    }
+
     function jsShowAiPopImages() {
       var images = document.getElementById('aiPopImages');
       var useData = document.getElementById('aiUseData');
@@ -316,6 +332,7 @@
       if (useData) {
         useData.style.display = 'none';
       }
+      setAiPopSubActive('navAiPopImages');
     }
 
     function jsShowAiUseData() {
@@ -327,7 +344,17 @@
       if (useData) {
         useData.style.display = 'flex';
       }
+      setAiPopSubActive('navAiUseData');
     }
+
+    document.addEventListener('DOMContentLoaded', function () {
+      var images = document.getElementById('aiPopImages');
+      if (images && images.style.display !== 'none') {
+        setAiPopSubActive('navAiPopImages');
+        return;
+      }
+      setAiPopSubActive('navAiUseData');
+    });
   </script>
 
   <!-- 크게보기레이어팝업창 -->
@@ -336,21 +363,25 @@
     <div class="layer__box" style="width: 600px; height: auto;">
       <div style="position: relative; display: flex; align-items: center; width: 100%; height: 57px; background: #fff; border-bottom: 1px solid #e5e7eb">
         <div style="font-size: 14px; font-weight: 600; margin-left: 18px;">이미지 크게보기</div>
-        <a href="javascript:void(0)" class="layer__close" onclick="jsHideView()"><span class="icon-close"></span></a>
+        <a href="javascript:void(0)" class="layer__close" onclick="jsHideView()" style="text-decoration: none;"><span class="icon-close"></span></a>
       </div>
       <div style="flex: 1; display: flex; height: 100%; ">
         <div class="layer__imgbox" style="width: 340px; height: auto; margin: 0; padding:16px">
           <img class="layer__img layer__pngback" src="./img/KakaoTalk_20260212_103407279.png" id="layerImg">
         </div>
-        <div style="flex: 1; overflow-y: auto; display: flex; flex-direction: column; height: auto; padding: 16px; border-left: 1px solid #e5e7eb; background:#fff;">
-          <button style="height: 36px; border-radius: 8px; color: #ffffff; background-color: #1f2937; cursor: pointer; transition-property: color"
-          >이미지 다운로드</button>
+        <div style="flex: 1; overflow-y: auto; display: flex; flex-direction: column; height: auto; max-height: 485px; padding: 16px; border-left: 1px solid #e5e7eb; background:#fff;">
+          <div style="display: flex; gap: 8px;">
+            <button style="width: 100%;; height: 36px; border-radius: 8px; color: #ffffff; background-color: #1f2937; cursor: pointer; transition-property: color"
+            type="button" onclick="openAiPopPopup()">AI 생성</button>
+            <button style="width:100%; height: 36px; border-radius: 8px; color: #ffffff; background-color: #1f2937; cursor: pointer; transition-property: color"
+            >이미지 다운로드</button>
+          </div>
+
           <div style="display: flex; flex-direction: column; row-gap: 10px; padding: 20px 0;">
             <span style="color: #6b7280;">생성일</span>
             <span style="font-weight: 500; color: #1f2937;">03-27 13:45</span>
             <span style="color: #6b7280;">프롬프트</span>
             <span style="color: #374151;">간편식품 특가를 소개하는 배너를 만들어줘.
-              냉동볶음밥, 즉석국, 냉동만두 3종을 묶어서 보여주고, 메인 문구는 "3종 골라담기 2+1"로 해줘.
               서브 문구는 "혼밥 필수템, 간편하게 맛있게"로 추가하고,
               따뜻한 오렌지 그라데이션 배경과 아이콘 스타일 일러스트를 넣어줘.</span>
             <span style="color: #6b7280;">보관기간</span>

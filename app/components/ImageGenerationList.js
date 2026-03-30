@@ -4,7 +4,7 @@
 
 import { useState } from 'react';
 
-export default function ImageGenerationList({ items, onOpenPreview }) {
+export default function ImageGenerationList({ items, onOpenPreview, onRetryPrompt }) {
   const [expandedIds, setExpandedIds] = useState(() => new Set());
 
   const togglePrompt = (id) => {
@@ -43,7 +43,17 @@ export default function ImageGenerationList({ items, onOpenPreview }) {
     <ul className="flex flex-col divide-y divide-gray-200">
       {items.map((item) => (
         <li key={item.id} className="flex flex-col py-3">
-          <div className="text-gray-700 font-bold">{item.createdAt}</div>
+          <div className="flex items-center gap-2 text-gray-700 font-bold">{item.createdAt}
+            {item.status === 'failed' && (
+              <button
+                type="button"
+                className="ml-1 rounded border border-violet-200 bg-violet-50 px-2 py-0.5 text-xs font-normal text-violet-600 hover:bg-violet-100"
+                onClick={() => onRetryPrompt?.(item.prompt)}
+              >
+                재시도
+              </button>
+            )}
+          </div>
           <div className="flex flex-wrap items-center gap-2 text-sm text-gray-500 leading-tight">
             <span>
               {item.prompt && item.prompt.length > 60 && !expandedIds.has(item.id)
