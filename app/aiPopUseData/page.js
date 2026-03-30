@@ -141,18 +141,18 @@ export default function AiPopUseData() {
             <option value="failure">실패</option>
           </select>
         </div>
-        <div className="flex items-center gap-4 pt-3.5 pb-2.5 text-sm">
-          <dl className="flex items-center text-gray-400">
-            <dt className="mr-2 before:content-['•'] before:mr-1 after:content-[':'] after:ml-1">누적 생성건수</dt>
+        <div className="flex items-center gap-3 pt-3.5 pb-2.5 text-sm">
+          <dl className="flex items-center text-gray-400 tracking-tight">
+            <dt className="mr-1 before:content-['•'] before:mr-1 after:content-[':'] after:ml-1">누적 생성건수</dt>
             <dd>123건</dd>
           </dl>
-          <dl className="flex items-center text-gray-400">
-            <dt className="mr-2 before:content-['•'] before:mr-1 after:content-[':'] after:ml-1">총 결제 TS머니</dt>
+          <dl className="flex items-center text-gray-400 tracking-tight">
+            <dt className="mr-1 before:content-['•'] before:mr-1 after:content-[':'] after:ml-1">총 결제 TS머니</dt>
             <dd>4,560</dd>
             <dd>.0</dd>
           </dl>
-          <dl className="flex items-center text-gray-400">
-            <dt className="mr-2 before:content-['•'] before:mr-1 after:content-[':'] after:ml-1">총 결제 TS포인트</dt>
+          <dl className="flex items-center text-gray-400 tracking-tight">
+            <dt className="mr-1 before:content-['•'] before:mr-1 after:content-[':'] after:ml-1">총 결제 TS포인트</dt>
             <dd>789,000</dd>
             <dd>.0</dd>
           </dl>

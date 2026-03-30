@@ -46,7 +46,6 @@ export default function ImagePreviewModal({ detail, onClose, onRegisterImage }) 
                 >
                   AI 생성
                 </button>              
-                
                 <button
                   type="button"
                   className="rounded-lg px-3 py-2 text-sm text-white bg-gray-800 hover:bg-gray-700 transition cursor-pointer"
@@ -54,8 +53,6 @@ export default function ImagePreviewModal({ detail, onClose, onRegisterImage }) 
                   이미지 다운로드
                 </button>
               </div>
-
-
               <div className="flex flex-col gap-x-3 gap-y-2 text-sm">
                 <span className="text-gray-500">생성일</span>
                 <span className="font-medium text-gray-800">{createdAt || '-'}</span>
