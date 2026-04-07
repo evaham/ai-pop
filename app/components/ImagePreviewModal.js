@@ -33,7 +33,7 @@ export default function ImagePreviewModal({ detail, onClose, onRegisterImage }) 
         </div>
         <div className="flex flex-col sm:flex-row bg-gray-50">
           <div className="flex max-h-[75vh] items-center justify-center p-4">
-            <img src={imageUrl} alt="확대 이미지" className="max-h-[70vh] w-auto max-w-full object-contain" />
+            <img src={imageUrl} alt="확대 이미지" className="max-h-[70vh] w-full max-w-full object-contain" />
           </div>
           {/* 이미지 상세정보 */}
           <div className="flex flex-1 sm:max-h-[75vh]">
@@ -64,7 +64,6 @@ export default function ImagePreviewModal({ detail, onClose, onRegisterImage }) 
             </div>
           </div>
         </div>
-
       </div>
     </div>
   );
