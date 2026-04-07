@@ -1,10 +1,71 @@
+@charset "UTF-8";
+
+/* Base reset for MFC WebView / IE9~11 */
 html,
 body {
   height: 100%;
 }
 
+html {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
 body {
+  min-height: 100%;
   margin: 0;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+menu,
+nav,
+section {
+  display: block;
+}
+
+img {
+  border: 0;                /* IE에서 테두리 제거 */
+  vertical-align: top;      /* IE에서 이미지 하단에 미세한 여백 제거 */
+  max-width: 100%;          /* 반응형 웹용 */
+  height: auto;             /* 반응형 웹용 */
+}
+
+.ai-pop,
+.ai-pop h1,
+.ai-pop h2,
+.ai-pop h3,
+.ai-pop h4,
+.ai-pop h5,
+.ai-pop h6,
+.ai-pop p,
+.ai-pop ul,
+.ai-pop ol,
+.ai-pop li,
+.ai-pop dl,
+.ai-pop dt,
+.ai-pop dd,
+.ai-pop blockquote,
+.ai-pop figure,
+.ai-pop fieldset,
+.ai-pop form,
+.ai-pop pre,
+.ai-pop table,
+.ai-pop th,
+.ai-pop td {
+  margin: 0;
+  padding: 0;
+}
+
+.ai-pop fieldset,
+.ai-pop img {
+  border: 0;
 }
 
 .ai-pop,
@@ -14,10 +75,41 @@ body {
 
 .ai-pop {
   font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.4;
   color: #111827;
   background: #f3f4f6;
+  word-wrap: break-word;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.ai-pop ul,
+.ai-pop ol {
+  list-style: none;
+}
+
+.ai-pop blockquote,
+.ai-pop q {
+  quotes: none;
+}
+
+.ai-pop blockquote:before,
+.ai-pop blockquote:after,
+.ai-pop q:before,
+.ai-pop q:after {
+  content: "";
+  content: none;
+}
+
+.ai-pop table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.ai-pop caption,
+.ai-pop th,
+.ai-pop legend {
+  text-align: left;
 }
 
 .ai-pop a {
@@ -28,18 +120,45 @@ body {
 .ai-pop img,
 .ai-pop svg {
   display: block;
+  border: 0;
+}
+
+.ai-pop img {
+  -ms-interpolation-mode: bicubic;
 }
 
 .ai-pop button,
 .ai-pop input,
+.ai-pop select,
 .ai-pop textarea {
+  margin: 0;
   font: inherit;
+  line-height: inherit;
   color: inherit;
+  vertical-align: middle;
   background: none;
   border: 0;
 }
 
-.ai-pop ul,
+.ai-pop button {
+  overflow: visible;
+  cursor: pointer;
+}
+
+.ai-pop select {
+  background-color: transparent;
+}
+
+.ai-pop textarea {
+  overflow: auto;
+  resize: vertical;
+}
+
+.ai-pop input::-ms-clear,
+.ai-pop input::-ms-reveal {
+  display: none;
+}
+
 .ai-pop p,
 .ai-pop h1,
 .ai-pop h2,
@@ -48,12 +167,10 @@ body {
   padding: 0;
 }
 
-.ai-pop ul {
-  list-style: none;
-}
-
 .ai-pop__page {
-  height: 100vh;
+  height: 100%;
+  min-height: 100%;
+  min-height: 100vh;
   overflow: hidden;
   overflow-y: auto;
   background: #f3f4f6;
@@ -69,7 +186,6 @@ body {
 .ai-pop__header {
   position: relative;
   margin: 4px 8px;
-  overflow: hidden;
 }
 
 .ai-pop__header:after,
@@ -82,12 +198,12 @@ body {
 }
 
 .ai-pop__title {
-  float: left;
-  width: 50%;
+  display: inline-block;
   font-size: 20px;
   font-weight: 700;
   color: #1f2937;
-  line-height: 1.2;
+  line-height: 1;
+  border: 1px solid ;
 }
 
 .ai-pop__logo {
@@ -136,7 +252,6 @@ body {
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 4px;
   padding: 2px 6px;
-  display: inline-block;
   cursor: pointer;
   transition: background-color 0.2s ease;
 }
@@ -146,8 +261,9 @@ body {
 }
 
 .ai-pop__token {
-  float: left;
-  width: 100%;
+  position: absolute;
+  right: 8px;
+  display: inline-block;
   text-align: right;
   margin-top: 4px;
   color: #374151;
@@ -290,7 +406,7 @@ body {
 
 .ai-pop__main {
   overflow: hidden;
-  margin: 0 -8px;
+  margin: 0;
 }
 
 .ai-pop__panel {
@@ -1102,10 +1218,7 @@ body {
     height: 100%;
   }
 
-  .ai-pop__title {
-    width: 25%;
-  }
-
+  
   .ai-pop__manual-link {
     width: 25%;
   }
