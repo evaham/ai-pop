@@ -211,8 +211,9 @@ p, h1, h2, h3 {
 
 .ai-pop__logo {
   display: inline-block;
-  width: 130px;
-  margin-right: 4px;
+  width: 100px;
+  margin-top: 8px;
+  margin-left: 4px;
   vertical-align: baseline;
 }
 
@@ -247,7 +248,7 @@ p, h1, h2, h3 {
 
 .ai-pop__token {
   position: absolute;
-  right: 8px;
+  right: 0px;
   display: inline-block;
   text-align: right;
   margin-top: 4px;
@@ -260,26 +261,36 @@ p, h1, h2, h3 {
   cursor: pointer;
   margin-right: 4px;
   vertical-align: middle;
+  background: #fff;
+  border: 1px solid #26499D;
+  border-radius: 4px;
+  height: 28px;
 }
 
 .ai-pop__token-info {
   display: inline-block;
   position: relative;
+  height: 28px;
   vertical-align: middle;
+  background: #EEF1F4;
+  border-radius: 4px;
+  padding: 4px 8px;
 }
 
 .ai-pop__token-label {
   margin-right: 4px;
   font-size: 14px;
-  color: #374151;
+  color: #6A737B;
 }
 
 .ai-pop__token-value {
-  color: #e11d48;
-  font-weight: 700;
+  color: #214091;
+  font-size: 14px;
+  font-weight: bold;
 }
 
 .ai-pop__token-decimal {
+  font-size: 14px;
   color: #9ca3af;
 }
 
@@ -296,20 +307,20 @@ p, h1, h2, h3 {
 
 .ai-pop__tooltip--token {
   top: 0;
-  right: 0;
+  left: 50%;
+  margin-left: -128px;
 }
 
 .ai-pop__tooltip--inline {
+  top:0;
+  left: 30px;
+}
+
+.ai-pop__tooltip--inline-right {
   left: 50%;
   bottom: 100%;
   margin-bottom: 8px;
   margin-left: -128px;
-}
-
-.ai-pop__tooltip--inline-right {
-  right: 0;
-  bottom: 100%;
-  margin-bottom: 8px;
 }
 
 .ai-pop__tooltip--inline .ai-pop__tooltip-card,
@@ -319,16 +330,18 @@ p, h1, h2, h3 {
 
 .ai-pop__tooltip--hint {
   top: 0;
-  right: 0;
+  left: 50%;
+  margin-left: -128px;
 }
 
 .ai-pop__tooltip-card {
   width: 256px;
   margin-top: 32px;
   padding: 12px 16px;
-  border-radius: 8px;
-  background: #1f2937;
-  color: #d1d5db;
+  border: 1px solid #26499D;
+  border-radius: 4px;
+  background: #fff;
+  color: #333;
   font-size: 14px;
 }
 
@@ -402,6 +415,7 @@ p, h1, h2, h3 {
   float: left;
   width: 50%;
   height: 100%;
+  position: relative;
 }
 
 .ai-pop__panel--scroll {
@@ -420,21 +434,20 @@ p, h1, h2, h3 {
 }
 
 .ai-pop__card-header {
-  margin-bottom: 12px;
+  /* margin-bottom: 4px; */
 }
 
 .ai-pop__card-title {
   display: inline-block;
-  margin-right: 8px;
   color: #333333;
   font-size: 16px;
-  letter-spacing: -0.025em;
+  vertical-align: top;
+  letter-spacing: -.6px;
 }
 
 .ai-pop__hint {
   display: inline-block;
   position: relative;
-  display: inline-block;
 }
 
 .ai-pop__hint--sm {
@@ -442,7 +455,7 @@ p, h1, h2, h3 {
 }
 
 .ai-pop__hint--inline {
-  margin-left: 4px;
+  margin-left: 0px;
 }
 
 .ai-pop__input-wrap {
@@ -451,23 +464,14 @@ p, h1, h2, h3 {
   border-radius: 4px;
   background: #FBFBFC;
   padding: 8px;
-  min-height: 160px;
+  min-height: 80px;
 }
-
-/* .ai-pop__input-placeholder {
-  position: absolute;
-  left: 8px;
-  top: 8px;
-  right: 8px;
-  color: #9ca3af;
-  white-space: pre-wrap;
-} */
 
 .ai-pop__textarea {
   display: block;
   width: 100%;
   height: 100%;
-  min-height: 160px;
+  min-height: 80px;
   border: 1px solid transparent;
   color: #111827;
   font-size: 14px;
@@ -493,23 +497,31 @@ p, h1, h2, h3 {
 }
 
 .ai-pop__image-add-btn {
-  display: block;
-  margin-top: 10px;
-  padding: 6px 12px;
+  display: inline-block;
+  height: 36px;
+  padding: 2px 8px;
   border: 1px solid #C6CDD4;
   border-radius: 4px;
+  font-size: 14px;
   background: #EEF3FF;
   color: #333333;
   cursor: pointer;
+  vertical-align: top;
   transition: background-color 0.2s ease;
 }
 
 .ai-pop__image-add-btn:hover {
   background: #F6F9FF;
 }
+.ai-pop__image-add-btn img {
+  display: inline-block;
+  margin-top: 2px;
+}
 
 .ai-pop__image-add-text {
-  margin-right: 4px;
+  display: inline-block;
+  margin-top: 2px;
+  vertical-align: top;
   font-weight: 400;
   letter-spacing: -0.025em;
 }
@@ -525,10 +537,8 @@ p, h1, h2, h3 {
 }
 
 .ai-pop__temp-images {
-  margin: -8px;
-  margin-top: 0;
+  margin-top: 4px;
   background: #fff;
-  border-top: 1px solid #ddd6fe;
 }
 
 .ai-pop__temp-title {
@@ -537,10 +547,6 @@ p, h1, h2, h3 {
   color: #6b7280;
 }
 
-.ai-pop__temp-list {
-  padding: 8px;
-  overflow: hidden;
-}
 
 .ai-pop__temp-item {
   display: inline-block;
@@ -549,19 +555,22 @@ p, h1, h2, h3 {
   vertical-align: top;
 }
 
-.ai-pop__thumb {
+li.ai-pop__thumb {
+  float: left;
   position: relative;
-  width: 64px;
-  height: 64px;
+  width: 54px;
+  height: 54px;
+  margin-right: 8px;
 }
 
 .ai-pop__thumb-image {
-  width: 64px;
-  height: 64px;
+  position: relative;
+  width: 54px;
+  height: 54px;
   overflow: hidden;
-  border-radius: 8px;
+  border-radius: 4px;
   border: 1px solid #ddd6fe;
-  background: #ffffff;
+  background: #E6EAED;
 }
 
 .ai-pop__thumb-img {
@@ -573,20 +582,15 @@ p, h1, h2, h3 {
 .ai-pop__thumb-remove {
   position: absolute;
   top: -4px;
-  right: -8px;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background: #374151;
-  color: #ffffff;
-  font-size: 12px;
-  line-height: 20px;
-  text-align: center;
+  right: -10px;
 }
 
-.ai-pop__thumb-remove.is-disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
+.ai-pop__thumb-remove-icon {
+  display: block;
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  padding: 0;
 }
 
 .ai-pop__temp-note {
@@ -639,7 +643,6 @@ p, h1, h2, h3 {
 
 .ai-pop__generate-btn {
   display: block;
-  width: 100%;
   margin-top: 16px;
   padding: 16px;
   background: #26499D;
@@ -650,6 +653,13 @@ p, h1, h2, h3 {
   transition: background-color 0.2s ease;
 }
 
+.ai-pop__generate-btn {
+  position: absolute;
+  left: 10px;
+  right: 0px;
+  bottom: 10px;
+  margin-top: 0;
+}
 .ai-pop__generate-btn:hover {
   background: #22428E;
 }
@@ -684,10 +694,10 @@ p, h1, h2, h3 {
 .ai-pop__panel--result .ai-pop__result-list,
 .ai-pop__panel--result .ai-pop__result-list--scroll {
   position: absolute;
-  top: 48px;
-  left: 16px;
-  right: 16px;
-  bottom: 16px;
+  top: 36px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
   height: auto;
   padding: 0 12px 16px;
   overflow-y: auto;
@@ -1214,10 +1224,6 @@ p, h1, h2, h3 {
    
   .ai-pop__manual-link {
     width: 25%;
-  }
-
-  .ai-pop__token {
-    width: 50%;
   }
 
   .ai-pop__panel {

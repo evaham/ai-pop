@@ -21,11 +21,6 @@
           온라인 매뉴얼
         </a>
         <div class="ai-pop__token">
-          <button class="ai-pop__refresh-btn" type="button" aria-label="새로고침">
-            <svg xmlns="http://www.w3.org/2000/svg" class="ai-pop__icon ai-pop__icon--md ai-pop__icon--gray" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3">
-              <path d="M482-160q-134 0-228-93t-94-227v-7l-64 64-56-56 160-160 160 160-56 56-64-64v7q0 100 70.5 170T482-240q26 0 51-6t49-18l60 60q-38 22-78 33t-82 11Zm278-161L600-481l56-56 64 64v-7q0-100-70.5-170T478-720q-26 0-51 6t-49 18l-60-60q38-22 78-33t82-11q134 0 228 93t94 227v7l64-64 56 56-160 160Z"></path>
-            </svg>
-          </button>
           <div class="ai-pop__token-info">
             <span class="ai-pop__token-label">가용TS :</span>
             <span class="ai-pop__token-value">9,899,555</span>
@@ -51,19 +46,20 @@
               </div>
             </div>
           </div>
-          
+          <button class="ai-pop__refresh-btn" type="button" aria-label="새로고침">
+            <img src="./img/img_sync_20x20.png" alt="새로고침" class="ai-pop__refresh-icon" />
+          </button>
+         
         </div>
       </div>
 
       <div class="ai-pop__main">
-        <div class="ai-pop__panel">
+        <!-- <div class="ai-pop__panel">
           <div class="ai-pop__card" style="padding-right: 0px;">
             <div class="ai-pop__card-header">
-              <div class="ai-pop__card-title">텍스트를 입력하여 이미지를 생성해보세요</div>
+              <div class="ai-pop__card-title">매장에 필요한 POP 이미지를 알려주세요</div>
               <div class="ai-pop__hint ai-pop__hint--sm">
-                <svg xmlns="http://www.w3.org/2000/svg" class="ai-pop__icon ai-pop__icon--md ai-pop__icon--slate" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3">
-                  <path d="M513.5-254.5Q528-269 528-290t-14.5-35.5Q499-340 478-340t-35.5 14.5Q428-311 428-290t14.5 35.5Q457-240 478-240t35.5-14.5ZM442-394h74q0-33 7.5-52t42.5-52q26-26 41-49.5t15-56.5q0-56-41-86t-97-30q-57 0-92.5 30T342-618l66 26q5-18 22.5-39t53.5-21q32 0 48 17.5t16 38.5q0 20-12 37.5T506-526q-44 39-54 59t-10 73Zm38 314q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"></path>
-                </svg>
+                <img src="./img/img_help_20x20.png" alt="도움말" />
                 <div class="ai-pop__tooltip ai-pop__tooltip--hint">
                   <div class="ai-pop__tooltip-card ai-pop__tooltip-card--left">
                     생성을 원하는 이미지의 주제, 텍스트 등 상세히 적어주세요.<br />
@@ -73,7 +69,6 @@
                 </div>
               </div>
             </div>
-
             <div class="ai-pop__input-wrap">
               <textarea id="textarea1" rows="2" class="ai-pop__textarea" placeholder="생성 할 이미지를 설명하세요. 자세한 설명은 더 좋은 퀄리티의 이미지를 얻을 수 있습니다."></textarea>
               <div class="ai-pop__input-footer">
@@ -81,41 +76,70 @@
                   <span id="byteCount" class="ai-pop__byte-count-value">128</span> / <span>2000</span>&nbsp;Bytes
                 </div>
               </div>
-              <div class="ai-pop__temp-images">
-                <div class="ai-pop__temp-title">추가된 이미지 (샘플)</div>
-                <div class="ai-pop__temp-list">
+            </div>
+            <div style="display: none;">
+              <div style="display: block; float: left; width: 140px; border: 1px solid #d1d5db;">
+                <span style="font-size: 14px; line-height: 1.2;">참고용 이미지</span><br />
+                <p style="font-size:12px; line-height: 1.2; margin: 0;">이미지의 구도나 스타일을 반영하여 이미지를 생성합니다.</p>
+              </div>
+              <div style="display: block; width: auto; border: 1px solid #d1d5db;">
+                <ul>
+                  <li>
                   <div class="ai-pop__thumb">
                     <div class="ai-pop__thumb-image">
                       <img src="./img/KakaoTalk_20260212_102215461.png" alt="참고 이미지" class="ai-pop__thumb-img" />
                     </div>
                     <button type="button" class="ai-pop__thumb-remove">
-                      <svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px" fill="#fff"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"></path></svg>
+                      <img src="./img/img_colse_20x20.png" alt="이미지 제거" class="ai-pop__thumb-remove-icon" />
                     </button>
                   </div>
-                </div>
+                  </li>
+                </ul>
               </div>
             </div>
-            <button id="button1" type="button" class="ai-pop__image-add-btn">
-              <svg xmlns="http://www.w3.org/2000/svg" class="ai-pop__icon ai-pop__icon--sm" height="24px" viewBox="0 -960 960 960" width="24px" fill="#333">
-                <path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"></path>
-              </svg>
-              <span class="ai-pop__image-add-text">이미지 추가</span>
-              <span class="ai-pop__hint ai-pop__hint--inline">
-                <svg xmlns="http://www.w3.org/2000/svg" class="ai-pop__icon ai-pop__icon--md ai-pop__icon--muted" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3">
-                  <path d="M513.5-254.5Q528-269 528-290t-14.5-35.5Q499-340 478-340t-35.5 14.5Q428-311 428-290t14.5 35.5Q457-240 478-240t35.5-14.5ZM442-394h74q0-33 7.5-52t42.5-52q26-26 41-49.5t15-56.5q0-56-41-86t-97-30q-57 0-92.5 30T342-618l66 26q5-18 22.5-39t53.5-21q32 0 48 17.5t16 38.5q0 20-12 37.5T506-526q-44 39-54 59t-10 73Zm38 314q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"></path>
-                </svg>
-                <div class="ai-pop__tooltip ai-pop__tooltip--inline">
-                  <div class="ai-pop__tooltip-card ai-pop__tooltip-card--left">
-                    참고하고 싶은 상품 사진이나 배경 이미지를 추가해 보세요.<br />
-                    해당 이미지의 구도나 스타일을 반영해 드립니다.
-                  </div>
-                </div>
-              </span>
-            </button>
 
+            <div style="position: relative; padding-top: 8px;">
+              <div class="ai-pop__temp-images">
+                <table>
+                  <tr>
+                    <td style="vertical-align: top;">
+                      <button id="button1" type="button" class="ai-pop__image-add-btn" >
+                        <span class="ai-pop__image-add-text">이미지 추가</span>
+                        <span class="ai-pop__hint ai-pop__hint--inline"s>
+                          <img src="./img/img_help_20x20.png" alt="도움말" />
+                          <div class="ai-pop__tooltip ai-pop__tooltip--inline">
+                            <div class="ai-pop__tooltip-card">
+                              참고하고 싶은 상품 사진이나 배경 이미지를 추가해 보세요.<br />
+                              해당 이미지의 구도나 스타일을 반영해 드립니다.
+                            </div>
+                          </div>
+                        </span>
+                      </button>
+                    </td>
+                    <td>
+                      <ul class="" style="margin-left: 10px; float: left;">
+                        <li class="ai-pop__thumb">
+                          <div class="ai-pop__thumb-image">
+                            <img src="./img/KakaoTalk_20260212_102215461.png" alt="참고 이미지" class="ai-pop__thumb-img" />
+                          </div>
+                          <button type="button" class="ai-pop__thumb-remove">
+                            <img src="./img/img_colse_20x20.png" alt="이미지 제거" class="ai-pop__thumb-remove-icon" />
+                          </button>
+                        </li>
+                        <li class="ai-pop__thumb">
+                          <div class="ai-pop__thumb-image" style="background: #fafafa">
+                            <img src="./img/img_noimage_20x20.png" alt="빈 이미지" class="" style="position: absolute; top: 50%; right: 50%; margin-top:-10px; margin-right:-10px;" />
+                          </div>
+                        </li>
+                      </ul>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+            <hr style="margin: 0; padding: 0; border:0; clear: both;" />
 
             <div id="sampleList" class="ai-pop__samples">
-              <div class="ai-pop__samples-title">예시 문구</div>
               <button type="button" class="ai-pop__sample-btn">
                 <svg xmlns="http://www.w3.org/2000/svg" class="ai-pop__icon ai-pop__icon--xs ai-pop__icon--violet" height="24px" viewBox="0 -960 960 960" width="24px" fill="#333"><path d="M281.5-281.5Q200-363 200-480t81.5-198.5Q363-760 480-760t198.5 81.5Q760-597 760-480t-81.5 198.5Q597-200 480-200t-198.5-81.5Z"></path></svg>
                 <span class="ai-pop__sample-text">마트 마감세일을 알리는 POP를 만들어줘.</span>
@@ -136,7 +160,188 @@
                   <path d="M513.5-254.5Q528-269 528-290t-14.5-35.5Q499-340 478-340t-35.5 14.5Q428-311 428-290t14.5 35.5Q457-240 478-240t35.5-14.5ZM442-394h74q0-33 7.5-52t42.5-52q26-26 41-49.5t15-56.5q0-56-41-86t-97-30q-57 0-92.5 30T342-618l66 26q5-18 22.5-39t53.5-21q32 0 48 17.5t16 38.5q0 20-12 37.5T506-526q-44 39-54 59t-10 73Zm38 314q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"></path>
                 </svg>
                 <div class="ai-pop__tooltip ai-pop__tooltip--inline-right">
+                  <div class="ai-pop__tooltip-card ai-pop__tooltip-card--left" style="font-weight: normal;">
+                    생성 버튼 클릭 시 500 TS가 선 차감됩니다.<br />
+                    생성에는 약 00초 소요되며, 실패 시 차감된 금액은 즉시 환불 처리됩니다.
+                  </div>
+                </div>
+              </span>
+            </button>
+          </div>
+        </div> -->
+
+        <div class="ai-pop__panel" style="width: 60%;">
+          <div class="ai-pop__card" style="padding-right: 0px;">
+            <!-- <div class="ai-pop__card-header">
+              <div class="ai-pop__card-title">매장에 필요한 POP 이미지를 알려주세요</div>
+              <div class="ai-pop__hint ai-pop__hint--sm">
+                <img src="./img/img_help_20x20.png" alt="도움말" />
+                <div class="ai-pop__tooltip ai-pop__tooltip--hint">
                   <div class="ai-pop__tooltip-card ai-pop__tooltip-card--left">
+                    생성을 원하는 이미지의 주제, 텍스트 등 상세히 적어주세요.<br />
+                    구체적일수록 의도에 가까운 이미지를 생성합니다.<br />
+                    추가 된 이미지의 구도나 스타일을 반영해 드립니다.
+                  </div>
+                </div>
+              </div>
+            </div> -->
+
+
+            <table style="width: 100%;">
+              <tr>
+                <td style="width: 70px; vertical-align: top; font-size: 14px;">
+                  <span style="">텍스트 입력</span>
+                </td>
+                <td colspan="2">
+                  <div class="ai-pop__input-wrap">
+                    <textarea id="textarea1" rows="2" class="ai-pop__textarea" placeholder="생성 할 이미지를 설명하세요. 자세한 설명은 더 좋은 퀄리티의 이미지를 얻을 수 있습니다."></textarea>
+                    <div class="ai-pop__input-footer">
+                      <div class="ai-pop__byte-count">
+                        <span id="byteCount" class="ai-pop__byte-count-value">128</span> / <span>2000</span>&nbsp;Bytes
+                      </div>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td style="vertical-align: top; font-size: 14px;">
+                  <span style="">참고 이미지</span>
+                </td>
+                <td style="width: 110px; vertical-align: top;">
+                  <button id="button1" type="button" class="ai-pop__image-add-btn" >
+                    <span class="ai-pop__image-add-text">이미지 추가</span>
+                    <span class="ai-pop__hint ai-pop__hint--inline"s>
+                      <img src="./img/img_help_20x20.png" alt="도움말" />
+                      <div class="ai-pop__tooltip ai-pop__tooltip--inline">
+                        <div class="ai-pop__tooltip-card">
+                          참고하고 싶은 상품 사진이나 배경 이미지를 추가해 보세요.<br />
+                          해당 이미지의 구도나 스타일을 반영해 드립니다.
+                        </div>
+                      </div>
+                    </span>
+                  </button>
+                </td>
+                <td style="vertical-align: top;">
+                  <ul>
+                    <li style="float: left;">
+                      <div class="ai-pop__thumb" style="position: relative;"> 
+                        <div class="ai-pop__thumb-image" style="">
+                          <img src="./img/KakaoTalk_20260212_102215461.png" alt="참고 이미지" class="ai-pop__thumb-img" />
+                        </div>
+                        <button type="button" class="ai-pop__thumb-remove">
+                          <img src="./img/img_colse_20x20.png" alt="이미지 제거" class="ai-pop__thumb-remove-icon" />
+                        </button>
+                      </div>
+                    </li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <td style="vertical-align: top; font-size: 14px; padding-top: 10px;">샘플 템플릿</td>
+                <td colspan="2" style="padding-top: 10px">
+                  <ul style="display: block;">
+                    <li style="display: inline-block; width: 80px">
+                      <div>
+                        <button type="button" class="ai-pop__sample-btn">
+                          <img src="./img/KakaoTalk_20260212_102215461.png" alt="예시" style="width: 80px;" />
+                        </button>
+                      </div>
+                    </li>
+                    <li style="display: inline-block; width: 80px">
+                      <div>
+                        <button type="button" class="ai-pop__sample-btn">
+                          <img src="./img/KakaoTalk_20260212_102215461.png" alt="예시" style="width: 80px;" />
+                        </button>
+                      </div>
+                    </li>
+                    <li style="display: inline-block; width: 80px">
+                      <div>
+                        <button type="button" class="ai-pop__sample-btn">
+                          <img src="./img/KakaoTalk_20260212_102215461.png" alt="예시" style="width: 80px;" />
+                        </button>
+                      </div>
+                    </li>
+                    <li style="display: inline-block; width: 80px">
+                      <div>
+                        <button type="button" class="ai-pop__sample-btn">
+                          <img src="./img/KakaoTalk_20260212_102215461.png" alt="예시" style="width: 80px;" />
+                        </button>
+                      </div>
+                    </li>
+                  </ul>
+                </td>
+              </tr>
+
+            </table>
+
+
+
+
+
+
+
+
+
+
+            <!-- <div class="ai-pop__input-wrap">
+              <textarea id="textarea1" rows="2" class="ai-pop__textarea" placeholder="생성 할 이미지를 설명하세요. 자세한 설명은 더 좋은 퀄리티의 이미지를 얻을 수 있습니다."></textarea>
+              <div class="ai-pop__input-footer">
+                <div class="ai-pop__byte-count">
+                  <span id="byteCount" class="ai-pop__byte-count-value">128</span> / <span>2000</span>&nbsp;Bytes
+                </div>
+              </div>
+            </div> -->
+            <!-- <div style="display: none;">
+              <div style="display: block; float: left; width: 140px; border: 1px solid #d1d5db;">
+                <span style="font-size: 14px; line-height: 1.2;">참고용 이미지</span><br />
+                <p style="font-size:12px; line-height: 1.2; margin: 0;">이미지의 구도나 스타일을 반영하여 이미지를 생성합니다.</p>
+              </div>
+              <div style="display: block; width: auto; border: 1px solid #d1d5db;">
+                <ul>
+                  <li>
+                  <div class="ai-pop__thumb" style="position: relative; display: inline-block;">
+                    <div class="ai-pop__thumb-image">
+                      <img src="./img/KakaoTalk_20260212_102215461.png" alt="참고 이미지" class="ai-pop__thumb-img" />
+                    </div>
+                    <button type="button" class="ai-pop__thumb-remove">
+                      <img src="./img/img_colse_20x20.png" alt="이미지 제거" class="ai-pop__thumb-remove-icon" />
+                    </button>
+                  </div>
+                  </li>
+                </ul>
+              </div>
+            </div> -->
+
+            <div style="position: relative; padding-top: 8px;">
+              <div class="ai-pop__temp-images">
+
+              </div>
+            </div>
+            <hr style="margin: 0; padding: 0; border:0; clear: both;" />
+
+            <div id="sampleList" class="ai-pop__samples">
+
+
+
+
+
+              <!-- <button type="button" class="ai-pop__sample-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" class="ai-pop__icon ai-pop__icon--xs ai-pop__icon--violet" height="24px" viewBox="0 -960 960 960" width="24px" fill="#333"><path d="M281.5-281.5Q200-363 200-480t81.5-198.5Q363-760 480-760t198.5 81.5Q760-597 760-480t-81.5 198.5Q597-200 480-200t-198.5-81.5Z"></path></svg>
+                <span class="ai-pop__sample-text">간편식품 특가를 소개하는 배너를 만들어줘.</span>
+              </button>
+              <button type="button" class="ai-pop__sample-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" class="ai-pop__icon ai-pop__icon--xs ai-pop__icon--violet" height="24px" viewBox="0 -960 960 960" width="24px" fill="#333"><path d="M281.5-281.5Q200-363 200-480t81.5-198.5Q363-760 480-760t198.5 81.5Q760-597 760-480t-81.5 198.5Q597-200 480-200t-198.5-81.5Z"></path></svg>
+                <span class="ai-pop__sample-text">정육코너에서 사용할 소고기에 대한 POP를 만들어줘.</span>
+              </button> -->
+            </div>
+            <button id="generateButton" class="ai-pop__generate-btn">
+              <span class="ai-pop__generate-text">AI 이미지 생성 (500TS 차감)</span>
+              <span class="ai-pop__hint ai-pop__hint--inline">
+                <svg xmlns="http://www.w3.org/2000/svg" class="ai-pop__icon ai-pop__icon--md" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3">
+                  <path d="M513.5-254.5Q528-269 528-290t-14.5-35.5Q499-340 478-340t-35.5 14.5Q428-311 428-290t14.5 35.5Q457-240 478-240t35.5-14.5ZM442-394h74q0-33 7.5-52t42.5-52q26-26 41-49.5t15-56.5q0-56-41-86t-97-30q-57 0-92.5 30T342-618l66 26q5-18 22.5-39t53.5-21q32 0 48 17.5t16 38.5q0 20-12 37.5T506-526q-44 39-54 59t-10 73Zm38 314q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"></path>
+                </svg>
+                <div class="ai-pop__tooltip ai-pop__tooltip--inline-right">
+                  <div class="ai-pop__tooltip-card ai-pop__tooltip-card--left" style="font-weight: normal;">
                     생성 버튼 클릭 시 500 TS가 선 차감됩니다.<br />
                     생성에는 약 00초 소요되며, 실패 시 차감된 금액은 즉시 환불 처리됩니다.
                   </div>
@@ -146,14 +351,12 @@
           </div>
         </div>
 
-        <div class="ai-pop__panel ai-pop__panel--result">
+        <div class="ai-pop__panel ai-pop__panel--result" style="width: 40%;">
           <div class="ai-pop__card">
             <div class="ai-pop__card-header">
               <div class="ai-pop__card-title">AI 이미지 보기</div>
               <div class="ai-pop__hint">
-                <svg xmlns="http://www.w3.org/2000/svg" class="ai-pop__icon ai-pop__icon--md ai-pop__icon--slate" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3">
-                  <path d="M513.5-254.5Q528-269 528-290t-14.5-35.5Q499-340 478-340t-35.5 14.5Q428-311 428-290t14.5 35.5Q457-240 478-240t35.5-14.5ZM442-394h74q0-33 7.5-52t42.5-52q26-26 41-49.5t15-56.5q0-56-41-86t-97-30q-57 0-92.5 30T342-618l66 26q5-18 22.5-39t53.5-21q32 0 48 17.5t16 38.5q0 20-12 37.5T506-526q-44 39-54 59t-10 73Zm38 314q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"></path>
-                </svg>
+                <img src="./img/img_help_20x20.png" alt="도움말" />
                 <div class="ai-pop__tooltip ai-pop__tooltip--hint">
                   <div class="ai-pop__tooltip-card ai-pop__tooltip-card--left">
                     생성된 결과물이 이 곳에 표시됩니다.<br />
@@ -164,14 +367,7 @@
             </div>
             <div id="generatedList" class="ai-pop__result-list ai-pop__result-list--scroll">
               <div class="ai-pop__result-section">
-                <div class="ai-pop__result-label">초기 안내</div>
                 <div class="ai-pop__empty-card">
-                  <h1 class="ai-pop__empty-title">
-                    <span class="ai-pop__logo ai-pop__logo--large">
-
-                    </span>
-                    <span class="ai-pop__empty-title-text">POP</span>
-                  </h1>
                   <div class="ai-pop__empty-subtitle">이미지를 생성해주세요!</div>
                   <div class="ai-pop__empty-note">생성된 결과물이 이곳에 표시됩니다.</div>
                 </div>
