@@ -1,0 +1,325 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI-POP - AI POP 이미지 생성 웹사이트</title>
+  <!-- <meta name="description" content="AI POP 이미지 생성 웹사이트" /> -->
+  <link rel="stylesheet" href="./ai-pop-ie11.css" />
+</head>
+<body class="ai-pop">
+  <div class="ai-pop__page">
+    <div class="ai-pop__container">
+      <div class="ai-pop__header">
+        <div class="ai-pop__title">
+          <div class="ai-pop__logo">
+            <img src="./img/aipop_logo.png" class="ai-pop__logo-icon" />
+          </div>
+        </div>
+        <a href="https://naver.co.kr" target="_blank" rel="noreferrer" class="ai-pop__manual-link" style="display: none;">
+          온라인 매뉴얼
+        </a>
+        <div class="ai-pop__token">
+          <div class="ai-pop__token-info">
+            <span class="ai-pop__token-label">가용TS :</span>
+            <span class="ai-pop__token-value">9,899,555</span>
+            <span class="ai-pop__token-decimal">.0</span>
+            <div class="ai-pop__tooltip ai-pop__tooltip--token">
+              <div class="ai-pop__tooltip-card">
+                <div class="ai-pop__tooltip-row">
+                  <span class="ai-pop__tooltip-label">TS 머니 :</span>
+                  <span class="ai-pop__tooltip-decimal">.0</span>
+                  <span class="ai-pop__tooltip-value ai-pop__tooltip-value--rose">9,899,555</span>
+                </div>
+                <div class="ai-pop__tooltip-row">
+                  <span class="ai-pop__tooltip-label">TS 포인트 :</span>
+                  <span class="ai-pop__tooltip-decimal">.0</span>
+                  <span class="ai-pop__tooltip-value ai-pop__tooltip-value--cyan">9,899,555</span>
+                </div>
+                <hr class="ai-pop__tooltip-separator" />
+                <div>
+                  <div class="ai-pop__tooltip-subtitle">TS머니 전용계좌</div>
+                  <div class="ai-pop__tooltip-account">기업은행 431-123456-78-900</div>
+                  <div class="ai-pop__tooltip-owner">예금주 : 투게더마트</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="ai-pop__refresh-btn" type="button" aria-label="새로고침">
+            <img src="./img/img_sync_20x20.png" alt="새로고침" class="ai-pop__refresh-icon" />
+          </button>
+         
+        </div>
+      </div>
+
+      <div class="ai-pop__main">
+        <div class="ai-pop__panel" style="width: 60%;">
+          <div class="ai-pop__card" style="padding-right: 0px;">
+            <table style="width: 100%;">
+              <tr>
+                <td>
+                  <div style="position: relative; margin-top: 0px; padding: 4px 0 0 0;">
+                    <div class="ai-pop__card-title" style="font-size: 14px; margin-bottom: 6px;">매장에 필요한 POP 이미지의 내용을 작성해주세요 </div>
+                    <div class="ai-pop__hint ai-pop__hint--sm" style="display: inline-block;">
+                      <img src="./img/img_help_20x20.png" alt="도움말" />
+                      <div class="ai-pop__tooltip ai-pop__tooltip--hint">
+                        <div class="ai-pop__tooltip-card ai-pop__tooltip-card--left">
+                          생성을 원하는 이미지의 주제, 텍스트 등 상세히 적어주세요.<br />
+                          구체적일수록 의도에 가까운 이미지를 생성합니다.<br />
+                          추가 된 이미지의 구도나 스타일을 반영해 드립니다.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="ai-pop__input-wrap">
+                    <textarea id="textarea1" rows="2" class="ai-pop__textarea" placeholder="생성 할 이미지를 설명하세요. 자세한 설명은 더 좋은 퀄리티의 이미지를 얻을 수 있습니다."></textarea>
+                    <div class="ai-pop__input-footer">
+                      <div class="ai-pop__byte-count">
+                        <span id="byteCount" class="ai-pop__byte-count-value">128</span> / <span>2000</span>&nbsp;Bytes
+                      </div>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td style="width: 110px; height: 70px; vertical-align: top; padding-top: 16px;">
+                  <button id="button1" type="button" class="ai-pop__image-add-btn" >
+                    <span class="ai-pop__image-add-text">이미지 추가</span>
+                    <span class="ai-pop__hint ai-pop__hint--inline"s>
+                      <img src="./img/img_help_20x20.png" alt="도움말" />
+                      <div class="ai-pop__tooltip ai-pop__tooltip--inline">
+                        <div class="ai-pop__tooltip-card" style="text-align: left;">
+                          참고하고 싶은 상품 사진이나 배경 이미지를 추가해 보세요.<br />
+                          해당 이미지의 구도나 스타일을 반영해 드립니다.
+                        </div>
+                      </div>
+                    </span>
+                  </button>
+                  <div class="ai-pop__thumb" style="display: inline-block; position: relative; "> 
+                    <div class="ai-pop__thumb-image">
+                      <img src="./img/KakaoTalk_20260212_102215461.png" alt="참고 이미지" class="ai-pop__thumb-img" />
+                    </div>
+                    <button type="button" class="ai-pop__thumb-remove">
+                      <img src="./img/img_colse_20x20.png" alt="이미지 제거" class="ai-pop__thumb-remove-icon" />
+                    </button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td style="padding-top: 10px">
+                  <div style="position: relative; margin-top: 10px; padding: 4px 0 0 0;">
+                    <div class="ai-pop__card-title" style="font-size: 14px; margin-bottom: 6px;">템플릿을 선택하여 매장에 필요한 POP를 만들 수 있습니다.</div>
+                  </div>
+                  <ul style="display: block;">
+                    <li style="position: relative; display: inline-block; width: 100px; height: 130px;">
+                      <div>
+                        <button type="button" class="ai-pop__sample-btn">
+                          <img src="./img/KakaoTalk_20260212_102215461.png" alt="예시" />
+                        </button>
+                      </div>
+                      <div>
+                      </div>
+                    </li>
+                    <li style="position: relative; display: inline-block; width: 100px; height: 130px;">
+                      <div>
+                        <button type="button" class="ai-pop__sample-btn">
+                          <img src="./img/KakaoTalk_20260212_103222794.png" alt="예시" />
+                        </button>
+                      </div>
+                    </li>
+                    <li style="position: relative; display: inline-block; width: 100px; height: 130px;">
+                      <div>
+                        <button type="button" class="ai-pop__sample-btn">
+                          <img src="./img/KakaoTalk_20260212_103407279.png" alt="예시" />
+                        </button>
+                      </div>
+                    </li>
+                    <li style="position: relative; display: inline-block; width: 100px; height: 130px; ">
+                      <div>
+                        <button type="button" class="ai-pop__sample-btn">
+                          <img src="./img/KakaoTalk_20260212_103504542.png" alt="예시" />
+                        </button>
+                      </div>
+                    </li>
+                  </ul>
+                </td>
+              </tr>
+            </table>
+
+
+            <div style="position: relative; padding-top: 8px;">
+              <div class="ai-pop__temp-images">
+
+              </div>
+            </div>
+            <hr style="margin: 0; padding: 0; border:0; clear: both;" />
+
+            <div style="position: absolute; left: 0px; right: 0px; bottom: 0px; margin-top: 0; padding:4px 0 10px 10px; background: #fff;">
+              <button id="generateButton" class="ai-pop__generate-btn" style="width: 100%;">
+                <span class="ai-pop__generate-text">AI 이미지 생성 (500TS 차감)</span>
+                <span class="ai-pop__hint ai-pop__hint--inline" style="vertical-align: top;">
+                  <img src="./img/img_help_24x24_white.png" alt="도움말" style="margin-top: 4px;" />
+                  <div class="ai-pop__tooltip ai-pop__tooltip--inline-right">
+                    <div class="ai-pop__tooltip-card ai-pop__tooltip-card--left" style="font-weight: normal;">
+                      생성 버튼 클릭 시 500 TS가 선 차감됩니다.<br />
+                      생성에는 약 00초 소요되며, 실패 시 차감된 금액은 즉시 환불 처리됩니다.
+                    </div>
+                  </div>
+                </span>
+              </button>
+
+            </div>
+
+          </div>
+        </div>
+
+        <div class="ai-pop__panel ai-pop__panel--result" style="width: 40%;">
+          <div class="ai-pop__card">
+            <div class="ai-pop__card-header">
+              <div class="ai-pop__card-title" style="font-size: 14px;">AI 이미지 보기</div>
+              <div class="ai-pop__hint">
+                <img src="./img/img_help_20x20.png" alt="도움말" />
+                <div class="ai-pop__tooltip ai-pop__tooltip--hint">
+                  <div class="ai-pop__tooltip-card ai-pop__tooltip-card--left">
+                    생성된 결과물이 이 곳에 표시됩니다.<br />
+                    크게보기를 통해 AI 이미지 상세정보 확인 및 다운로드 기능을 제공합니다.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="generatedList" class="ai-pop__result-list ai-pop__result-list--scroll">
+              <div class="ai-pop__result-section">
+                <div class="ai-pop__empty-card">
+                  <div class="ai-pop__empty-subtitle" style="font-size: 14px;">이미지를 생성해주세요!</div>
+                  <div class="ai-pop__empty-note">생성된 결과물이 이곳에 표시됩니다.</div>
+                </div>
+              </div>
+              <div class="ai-pop__result-section">
+                <div class="ai-pop__result-label" style="font-size: 14px;">샘플 결과</div>
+                <ul class="ai-pop__result-items">
+                  <li class="ai-pop__result-item">
+                    <div class="ai-pop__result-time">04-03 14:10</div>
+                    <div class="ai-pop__result-text">
+                      <span>마트 마감세일 POP를 만들어줘. 메인 카피는 "오늘 밤 9시까지 마감 특가".</span>
+                    </div>
+                    <div class="ai-pop__result-thumbs">
+                      <div class="ai-pop__loading-card">
+                        <img src="" />
+                        <p>
+                          <span style="font-weight: 500; font-size: 16px;">AI 이미지를 생성중입니다.</span><br />
+                          <span style="font-size: 14px;">생성된 이미지는 이미지 클라우드에 자동 저장됩니다.</span>
+                        </p>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="ai-pop__result-item">
+                    <div class="ai-pop__result-time">04-03 13:42</div>
+                    <div class="ai-pop__result-text">
+                      <span>간편식품 특가 배너. 메인 문구 "3종 골라담기 2+1".</span>
+                    </div>
+                    <div class="ai-pop__result-thumbs">
+                      <div class="ai-pop__image-card">
+                        <div class="ai-pop__image-card-media">
+                          <img src="./img/KakaoTalk_20260212_102215461.png" alt="생성된 이미지" class="ai-pop__image-card-img" />
+                        </div>
+                        <div class="ai-pop__image-card-actions">
+                          <button type="button" class="ai-pop__image-action">크게보기</button>
+                          <button type="button" class="ai-pop__image-action">다운로드</button>
+                        </div>
+                      </div>
+                      
+                      <div class="ai-pop__image-card">
+                        <div class="ai-pop__image-card-media">
+                          <img src="./img/KakaoTalk_20260212_103504542.png" alt="생성된 이미지" class="ai-pop__image-card-img" />
+                        </div>
+                        <div class="ai-pop__image-card-actions">
+                          <button type="button" class="ai-pop__image-action is-disabled" disabled>크게보기</button>
+                          <button type="button" class="ai-pop__image-action is-disabled" disabled>다운로드</button>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="ai-pop__result-item">
+                    <div class="ai-pop__result-time">
+                      04-03 12:25
+                      <button type="button" class="ai-pop__retry-btn">재시도</button>
+                    </div>
+                    <div class="ai-pop__result-text">
+                      <span>정육코너 소고기 POP. 메인카피 "입안에서 살살 녹는 1등급 한우".</span>
+                    </div>
+                    <div class="ai-pop__result-thumbs">
+                      <div class="ai-pop__error-card" style="text-align: center;">
+                        <img src="./img/img_warning_40x40.png" alt="생성 실패" class="ai-pop__error-icon" style="display: inline-block;" />
+                        <p style="margin-top:4px">
+                          <span style="font-size: 16px;">이미지 생성에 실패했습니다.<br />다시 시도해 주세요</span>
+                          <span class="ai-pop__error-note">차감된 TS는 즉시 환불되어, AI 이용현황에서 확인 가능합니다.</span>
+                        </p>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="ai-pop__modal is-hidden">
+    <div class="ai-pop__modal-bg"></div>
+    <div class="ai-pop__modal-card">
+      <h3 class="ai-pop__modal-subtitle" style="font-size: 14px;">입력된 내용을 변경할까요?</h3>
+      <p class="ai-pop__modal-note" style="font-size: 14px;">현재 입력된 내용이 삭제되고 예시 문구로 변경됩니다.</p>
+      <div class="ai-pop__confirm-actions">
+        <button id="confirmCancel" type="button" class="ai-pop__confirm-btn ai-pop__confirm-btn--cancel">취소</button>
+        <button id="confirmOk" type="button" class="ai-pop__confirm-btn ai-pop__confirm-btn--ok">변경하기</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="ai-pop__modal is-hidden">
+    <div class="ai-pop__modal-bg"></div>
+    <div class="ai-pop__modal-card ai-pop__modal-card--preview">
+      <div class="ai-pop__modal-header">
+        <button id="previewClose" type="button" class="ai-pop__modal-close">
+          <img src="./img/img_colse_20x20.png" alt="닫기" class="ai-pop__modal-close-icon" />
+        </button>
+      </div>
+      <div class="ai-pop__preview">
+        <div class="ai-pop__preview-content">
+          <table style="width: 100%;">
+            <tr>
+              <td style="text-align: center;">
+                <div style="display: inline-block; width: 300px; height: 400px; padding: 10px;">
+                  <img id="previewImage" src="./img/KakaoTalk_20260212_103407279.png" alt="확대 이미지" class="ai-pop__preview-image" style="border: 1px solid;" />
+                </div>
+              </td>
+              <td style="vertical-align: top; background: #fff;">
+                <div class="ai-pop__preview-sidebar" style="padding: 16px; max-height: 400px; overflow-y: auto;">
+                  <div class="ai-pop__preview-actions">
+                    <button type="button" style="display: inline-block; padding: 4px 8px; border: 1px solid #26499D; border-radius: 4px; font-size: 14px;">AI 생성</button>
+                    <button type="button" style="display: inline-block; padding: 4px 8px; border: 1px solid #26499D; border-radius: 4px; font-size: 14px;">이미지 다운로드</button>
+                  </div>
+                  <div class="ai-pop__preview-details">
+                    <span class="ai-pop__preview-details-label">생성일</span>
+                    <span style="display: inline-block; margin-top: 10px; margin-bottom: 20px;">
+                      04-13 09:26
+                    </span>
+                    <span class="ai-pop__preview-details-label">프롬프트</span>
+                    <span class="" style="display: inline-block; margin-top: 10px; margin-bottom: 20px;">
+                      간편식품 특가를 소개하는 배너를 만들어줘. 냉동볶음밥, 즉석국, 냉동만두 3종을 묶어서 보여주고, 메인 문구는 "3종 골라담기 2+1"로 해줘. 서브 문구는 "혼밥 필수템, 간편하게 맛있게"로 추가하고, 따뜻한 오렌지 그라데이션 배경과 아이콘 스타일 일러스트를 넣어줘.
+                    </span>
+                    <span class="ai-pop__preview-details-label">보관기간</span>
+                    <span style="display: inline-block; margin-top: 10px; margin-bottom: 20px;">2024-04-30 까지</span>
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
