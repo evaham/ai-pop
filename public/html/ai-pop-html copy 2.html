@@ -17,7 +17,7 @@
             <img src="./img/aipop_logo.png" class="ap__lgi" />
           </div>
         </div>
-        <a href="https://naver.co.kr" target="_blank" rel="noreferrer" class="ap__ml" style="display: none;">
+        <a href="https://naver.co.kr" target="_blank" rel="noreferrer" class="ap__ml ap__ml--hidden">
           온라인 매뉴얼
         </a>
         <div class="ap__tk">
@@ -54,14 +54,14 @@
       </div>
 
       <div class="ap__mn">
-        <div class="ap__pn" style="width: 60%;">
-          <div class="ap__cd" style="padding-right: 0px;">
-            <table style="width: 100%;">
+        <div class="ap__pn ap__pn--main">
+          <div class="ap__cd ap__cd--no-pr">
+            <table class="ap__tbl--full">
               <tr>
                 <td>
-                  <div style="position: relative; margin-top: 0px; padding: 4px 0 0 0;">
-                    <div class="ap__cdt" style="font-size: 14px; margin-bottom: 6px;">매장에 필요한 POP 이미지의 내용을 작성해주세요 </div>
-                    <div class="ap__hn ap__hn--sm" style="display: inline-block;">
+                  <div class="ap__blk">
+                    <div class="ap__cdt ap__cdt--sm ap__cdt--mb6">매장에 필요한 POP 이미지의 내용을 작성해주세요 </div>
+                    <div class="ap__hn ap__hn--sm">
                       <img src="./img/img_help_20x20.png" alt="도움말" />
                       <div class="ap__tt ap__tt--hn">
                         <div class="ap__ttc ap__ttc--l">
@@ -83,20 +83,20 @@
                 </td>
               </tr>
               <tr>
-                <td style="width: 110px; height: 70px; vertical-align: top; padding-top: 16px;">
+                <td class="ap__td--add">
                   <button id="button1" type="button" class="ap__iab" >
                     <span class="ap__iat">이미지 추가</span>
                     <span class="ap__hn ap__hn--in"s>
                       <img src="./img/img_help_20x20.png" alt="도움말" />
                       <div class="ap__tt ap__tt--in">
-                        <div class="ap__ttc" style="text-align: left;">
+                        <div class="ap__ttc ap__ttc--l">
                           참고하고 싶은 상품 사진이나 배경 이미지를 추가해 보세요.<br />
                           해당 이미지의 구도나 스타일을 반영해 드립니다.
                         </div>
                       </div>
                     </span>
                   </button>
-                  <div class="ap__th" style="display: inline-block; position: relative; "> 
+                  <div class="ap__th ap__th--ib"> 
                     <div class="ap__thm">
                       <img src="./img/KakaoTalk_20260212_102215461.png" alt="참고 이미지" class="ap__thi" />
                     </div>
@@ -107,12 +107,12 @@
                 </td>
               </tr>
               <tr>
-                <td style="padding-top: 10px">
-                  <div style="position: relative; margin-top: 10px; padding: 4px 0 0 0;">
-                    <div class="ap__cdt" style="font-size: 14px; margin-bottom: 6px;">템플릿을 선택하여 매장에 필요한 POP를 만들 수 있습니다.</div>
+                <td class="ap__td--pt10">
+                  <div class="ap__blk ap__blk--mt10">
+                    <div class="ap__cdt ap__cdt--sm ap__cdt--mb6">템플릿을 선택하여 매장에 필요한 POP를 만들 수 있습니다.</div>
                   </div>
-                  <ul style="display: block;">
-                    <li style="position: relative; display: inline-block; width: 100px; height: 130px;">
+                  <ul class="ap__tmpl-list">
+                    <li class="ap__tmpl-item">
                       <div>
                         <button type="button" class="ap__sb">
                           <img src="./img/KakaoTalk_20260212_102215461.png" alt="예시" />
@@ -121,21 +121,21 @@
                       <div>
                       </div>
                     </li>
-                    <li style="position: relative; display: inline-block; width: 100px; height: 130px;">
+                    <li class="ap__tmpl-item">
                       <div>
                         <button type="button" class="ap__sb">
                           <img src="./img/KakaoTalk_20260212_103222794.png" alt="예시" />
                         </button>
                       </div>
                     </li>
-                    <li style="position: relative; display: inline-block; width: 100px; height: 130px;">
+                    <li class="ap__tmpl-item">
                       <div>
                         <button type="button" class="ap__sb">
                           <img src="./img/KakaoTalk_20260212_103407279.png" alt="예시" />
                         </button>
                       </div>
                     </li>
-                    <li style="position: relative; display: inline-block; width: 100px; height: 130px; ">
+                    <li class="ap__tmpl-item">
                       <div>
                         <button type="button" class="ap__sb">
                           <img src="./img/KakaoTalk_20260212_103504542.png" alt="예시" />
@@ -148,20 +148,20 @@
             </table>
 
 
-            <div style="position: relative; padding-top: 8px;">
+            <div class="ap__blk ap__blk--pt8">
               <div class="ap__timg">
 
               </div>
             </div>
-            <hr style="margin: 0; padding: 0; border:0; clear: both;" />
+            <hr class="ap__hr--clear" />
 
-            <div style="position: absolute; left: 0px; right: 0px; bottom: 0px; margin-top: 0; padding:4px 0 10px 10px; background: #fff;">
-              <button id="generateButton" class="ap__gb" style="width: 100%;">
+            <div class="ap__footer">
+              <button id="generateButton" class="ap__gb ap__gb--full">
                 <span class="ap__gt">AI 이미지 생성 (500TS 차감)</span>
-                <span class="ap__hn ap__hn--in" style="vertical-align: top;">
-                  <img src="./img/img_help_24x24_white.png" alt="도움말" style="margin-top: 4px;" />
+                <span class="ap__hn ap__hn--in ap__hn--vt">
+                  <img src="./img/img_help_24x24_white.png" alt="도움말" class="ap__img--mt4" />
                   <div class="ap__tt ap__tt--inr">
-                    <div class="ap__ttc ap__ttc--l" style="font-weight: normal;">
+                    <div class="ap__ttc ap__ttc--l ap__ttc--normal">
                       생성 버튼 클릭 시 500 TS가 선 차감됩니다.<br />
                       생성에는 약 00초 소요되며, 실패 시 차감된 금액은 즉시 환불 처리됩니다.
                     </div>
@@ -174,10 +174,10 @@
           </div>
         </div>
 
-        <div class="ap__pn ap__pn--rs" style="width: 40%;">
+        <div class="ap__pn ap__pn--rs ap__pn--side">
           <div class="ap__cd">
             <div class="ap__cdh">
-              <div class="ap__cdt" style="font-size: 14px;">AI 이미지 보기</div>
+              <div class="ap__cdt ap__cdt--sm">AI 이미지 보기</div>
               <div class="ap__hn">
                 <img src="./img/img_help_20x20.png" alt="도움말" />
                 <div class="ap__tt ap__tt--hn">
@@ -191,12 +191,12 @@
             <div id="generatedList" class="ap__rl ap__rl--sc">
               <div class="ap__rs">
                 <div class="ap__ec">
-                  <div class="ap__est" style="font-size: 14px;">이미지를 생성해주세요!</div>
+                  <div class="ap__est ap__est--sm">이미지를 생성해주세요!</div>
                   <div class="ap__en">생성된 결과물이 이곳에 표시됩니다.</div>
                 </div>
               </div>
               <div class="ap__rs">
-                <div class="ap__rlb" style="font-size: 14px;">샘플 결과</div>
+                <div class="ap__rlb ap__rlb--sm">샘플 결과</div>
                 <ul class="ap__rits">
                   <li class="ap__rit">
                     <div class="ap__rt">04-03 14:10</div>
@@ -207,8 +207,8 @@
                       <div class="ap__ldc">
                         <img src="" />
                         <p>
-                          <span style="font-weight: 500; font-size: 16px;">AI 이미지를 생성중입니다.</span><br />
-                          <span style="font-size: 14px;">생성된 이미지는 이미지 클라우드에 자동 저장됩니다.</span>
+                          <span class="ap__txt-lg">AI 이미지를 생성중입니다.</span><br />
+                          <span class="ap__txt-md">생성된 이미지는 이미지 클라우드에 자동 저장됩니다.</span>
                         </p>
                       </div>
                     </div>
@@ -249,10 +249,10 @@
                       <span>정육코너 소고기 POP. 메인카피 "입안에서 살살 녹는 1등급 한우".</span>
                     </div>
                     <div class="ap__rth">
-                      <div class="ap__erc" style="text-align: center;">
-                        <img src="./img/img_warning_40x40.png" alt="생성 실패" class="ap__eri" style="display: inline-block;" />
-                        <p style="margin-top:4px">
-                          <span style="font-size: 16px;">이미지 생성에 실패했습니다.<br />다시 시도해 주세요</span>
+                      <div class="ap__erc ap__erc--center">
+                        <img src="./img/img_warning_40x40.png" alt="생성 실패" class="ap__eri ap__eri--ib" />
+                        <p class="ap__p--mt4">
+                          <span class="ap__txt-lg">이미지 생성에 실패했습니다.<br />다시 시도해 주세요</span>
                           <span class="ap__ern">차감된 TS는 즉시 환불되어, AI 이용현황에서 확인 가능합니다.</span>
                         </p>
                       </div>
@@ -269,8 +269,8 @@
   <div class="ap__md is-hidden">
     <div class="ap__mdb"></div>
     <div class="ap__mdc">
-      <h3 class="ap__mdst" style="font-size: 14px;">입력된 내용을 변경할까요?</h3>
-      <p class="ap__mdn" style="font-size: 14px;">현재 입력된 내용이 삭제되고 예시 문구로 변경됩니다.</p>
+      <h3 class="ap__mdst ap__mdst--sm">입력된 내용을 변경할까요?</h3>
+      <p class="ap__mdn ap__mdn--sm">현재 입력된 내용이 삭제되고 예시 문구로 변경됩니다.</p>
       <div class="ap__cfa">
         <button id="confirmCancel" type="button" class="ap__cfb ap__cfb--cn">취소</button>
         <button id="confirmOk" type="button" class="ap__cfb ap__cfb--ok">변경하기</button>
@@ -288,30 +288,30 @@
       </div>
       <div class="ap__pv">
         <div class="ap__pvc">
-          <table style="width: 100%;">
+          <table class="ap__tbl--full">
             <tr>
-              <td style="text-align: center;">
-                <div style="display: inline-block; width: 300px; height: 400px; padding: 10px;">
-                  <img id="previewImage" src="./img/KakaoTalk_20260212_103407279.png" alt="확대 이미지" class="ap__pvi" style="border: 1px solid;" />
+              <td class="ap__td--center">
+                <div class="ap__preview-box">
+                  <img id="previewImage" src="./img/KakaoTalk_20260212_103407279.png" alt="확대 이미지" class="ap__pvi ap__pvi--bd" />
                 </div>
               </td>
-              <td style="vertical-align: top; background: #fff;">
-                <div class="ap__pvs" style="padding: 16px; max-height: 400px; overflow-y: auto;">
+              <td class="ap__td--top-white">
+                <div class="ap__pvs ap__pvs--scroll">
                   <div class="ap__pva">
-                    <button type="button" style="display: inline-block; padding: 4px 8px; border: 1px solid #26499D; border-radius: 4px; font-size: 14px;">AI 생성</button>
-                    <button type="button" style="display: inline-block; padding: 4px 8px; border: 1px solid #26499D; border-radius: 4px; font-size: 14px;">이미지 다운로드</button>
+                    <button type="button" class="ap__pvbtn">AI 생성</button>
+                    <button type="button" class="ap__pvbtn">이미지 다운로드</button>
                   </div>
                   <div class="ap__pvd">
                     <span class="ap__pvdl">생성일</span>
-                    <span style="display: inline-block; margin-top: 10px; margin-bottom: 20px;">
+                    <span class="ap__txt-block">
                       04-13 09:26
                     </span>
                     <span class="ap__pvdl">프롬프트</span>
-                    <span class="" style="display: inline-block; margin-top: 10px; margin-bottom: 20px;">
+                    <span class="ap__txt-block">
                       간편식품 특가를 소개하는 배너를 만들어줘. 냉동볶음밥, 즉석국, 냉동만두 3종을 묶어서 보여주고, 메인 문구는 "3종 골라담기 2+1"로 해줘. 서브 문구는 "혼밥 필수템, 간편하게 맛있게"로 추가하고, 따뜻한 오렌지 그라데이션 배경과 아이콘 스타일 일러스트를 넣어줘.
                     </span>
                     <span class="ap__pvdl">보관기간</span>
-                    <span style="display: inline-block; margin-top: 10px; margin-bottom: 20px;">2024-04-30 까지</span>
+                    <span class="ap__txt-block">2024-04-30 까지</span>
                   </div>
                 </div>
               </td>

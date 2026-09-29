@@ -542,10 +542,10 @@ p, h1, h2, h3 {
 
 .ap__sb {
   display: block;
-  width: 100px; height: 130px;
+  width: 100px; height: 100%;
   padding: 10px;
   color: #4b5563;
-  border: 1px solid #e5e7eb;
+  /* border: 1px solid #e5e7eb; */
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.2s ease;
@@ -898,6 +898,188 @@ p, h1, h2, h3 {
   color: #6b7280;
   display: block;
   margin-bottom: 4px;
+}
+
+.ap__ml--hidden {
+  display: none;
+}
+
+.ap__pn--main {
+  width: 60%;
+}
+
+.ap__pn--side {
+  width: 40%;
+}
+
+.ap__cd--no-pr {
+  padding-right: 0px;
+}
+
+.ap__tbl--full {
+  width: 100%;
+}
+
+.ap__blk {
+  position: relative;
+  margin-top: 0px;
+  padding: 4px 0 0 0;
+}
+
+.ap__blk--mt10 {
+  margin-top: 10px;
+}
+
+.ap__blk--pt8 {
+  position: relative;
+  padding-top: 8px;
+}
+
+.ap__cdt--sm {
+  font-size: 14px;
+}
+
+.ap__cdt--mb6 {
+  margin-bottom: 6px;
+}
+
+.ap__hn--vt {
+  vertical-align: top;
+}
+
+.ap__ttc--normal {
+  font-weight: normal;
+}
+
+.ap__th--ib {
+  display: inline-block;
+  position: relative;
+}
+
+.ap__tmpl-list {
+  overflow: hidden;
+  display: block;
+  height: 130px;
+  border: 1px solid #C6CDD4;
+}
+
+.ap__tmpl-item {
+  position: relative;
+  display: inline-block;
+  width: 100px;
+  height: 130px;
+}
+
+.ap__gb--full {
+  width: 100%;
+}
+
+.ap__rlb--sm {
+  font-size: 14px;
+}
+
+.ap__est--sm {
+  font-size: 14px;
+}
+
+.ap__erc--center {
+  text-align: center;
+}
+
+.ap__eri--ib {
+  display: inline-block;
+}
+
+.ap__mdst--sm {
+  font-size: 14px;
+}
+
+.ap__mdn--sm {
+  font-size: 14px;
+}
+
+.ap__pvi--bd {
+  border: 1px solid;
+}
+
+.ap__pvs--scroll {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.ap__pvbtn {
+  display: inline-block;
+  padding: 4px 8px;
+  border: 1px solid #26499D;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.ap__txt-lg {
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.ap__txt-md {
+  font-size: 14px;
+}
+
+.ap__txt-block {
+  display: inline-block;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.ap__td--add {
+  width: 110px;
+  height: 70px;
+  vertical-align: top;
+  padding-top: 16px;
+}
+
+.ap__td--pt10 {
+  padding-top: 10px;
+}
+
+.ap__td--center {
+  text-align: center;
+}
+
+.ap__td--top-white {
+  vertical-align: top;
+  background: #fff;
+}
+
+.ap__preview-box {
+  display: inline-block;
+  width: 300px;
+  height: 400px;
+  padding: 10px;
+}
+
+.ap__img--mt4 {
+  margin-top: 4px;
+}
+
+.ap__p--mt4 {
+  margin-top: 4px;
+}
+
+.ap__hr--clear {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  clear: both;
+}
+
+.ap__footer {
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  margin-top: 0;
+  padding: 4px 0 10px 10px;
+  background: #fff;
 }
 
 

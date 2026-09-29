@@ -1,15 +1,4 @@
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata = {
   title: "AI-POP - AI POP 이미지 생성 웹사이트",
@@ -18,12 +7,30 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="ko">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <div className="min-h-screen sm:h-screen overflow-y-auto sm:overflow-hidden flex flex-col transition-colors duration-300 bg-gray-100">
-          {children}
+    <html lang="ko" className="h-full">
+      <body className={`w-full h-full bg-gray-50 antialiased`}>
+        <div className="page-shell">
+          <div className="page-content">
+            <div className="page-tabs">
+              <div className="tabs page-tab-inner" id="menuTab">
+                <ul className="level1 static">
+                  <li role="menuitem">
+                    <a className="level1 tab" href="/airequest_pop" >AI POP
+                      만들기</a>                </li>
+                  <li role="menuitem">
+                    <a className="level1 tab selected" href="/airequest">프라이스카드 만들기</a>
+                  </li>
+                  <li role="menuitem">
+                    <a className="level1 tab" href="/aiImage">AI이미지관리</a>
+                  </li>
+                  <li role="menuitem">
+                    <a className="level1 tab" href="/aiStatics">AI이용현황</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            {children}
+          </div>
         </div>
       </body>
     </html>
