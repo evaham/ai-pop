@@ -1,6 +1,8 @@
 'use client';
 
-import React, { useEffect } from 'react';
+import { useEffect } from "react";
+import resolveImageSrc from "../lib/resolveImageSrc";
+
 export default function PopSideContentsLayout({ children }) {
   useEffect(() => {
     const listeners = [];
@@ -145,30 +147,25 @@ export default function PopSideContentsLayout({ children }) {
     };
   }, []);
   return (
-    <div className="side-contents-layout p-0!">
+    <div className="side-contents-layout">
       <div className="pop-scroll">
-        {/* <!-- <div className="page-info-box">
-          자유형식 이미지를 생성하고 상품홍보 및 안내문을 만들 수 있습니다.
-        </div> --> */}
-
         {/* <!-- POP지형 설정 --> */}
         <div id="popBox" className="pop-group">
           {/* <!-- POP 레이아웃 --> */}
-
           {/* <!-- 1.유형선택 --> */}
           <div className="pop-box collapsed">
             <div className="pop-header">
               <div className="pop-icon">1</div>
               <div className="pop-header-content">
-                <div className="pop-title">유형선택</div>
+                <div className="pop-title">유형선택<span className="pop-optional blue">필수</span></div>
                 <div className="pop-description">디자인 유형과 방향을 선택하세요</div>
               </div>
               <div className="pop-selected-group">
                 <span className="pop-selected-item">상품홍보형</span>·<span className="pop-selected-item">가로형</span>
               </div>
               <div className="pop-toggle">
-                <span><svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px" fill="#666"><path d="M480-360 280-560h400L480-360Z"></path></svg></span>
-                <span><svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px" fill="#666"><path d="m280-400 200-200 200 200H280Z"></path></svg></span>
+                <span><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#666"><path d="M480-528 296-344l-56-56 240-240 240 240-56 56-184-184Z"/></svg></span>
+                <span><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#666"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg></span>
               </div>
             </div>
             <div className="pop-body" style={{maxHeight: '0px', opacity: 0}}>
@@ -176,12 +173,14 @@ export default function PopSideContentsLayout({ children }) {
                 <div className="pop-label">홍보유형</div>
                 <div className="pop-btn-group" role="tablist" aria-label="유형선택">
                   <button type="button" className="pop-btn selected">
-                    <span className="w-14 mb-2 -mr-4"><img src="./img_target.png" alt="아이콘"/></span>
+                    <span className="w-14 mb-2 -mr-4"><img src={resolveImageSrc('./img/img_target.png')} alt="아이콘"/></span>
                     상품 홍보형
+                    <span className="pop-btn-description">상품이나 가격을 강조하는 디자인</span>
                   </button>
                   <button type="button" className="pop-btn">
-                    <span className="w-16 mb-2"><img src="./img_speaker.png" alt="아이콘"/></span>
+                    <span className="w-16 mb-2"><img src={resolveImageSrc('./img/img_speaker.png')} alt="아이콘"/></span>
                     안내/공지형
+                    <span className="pop-btn-description">행사, 공지, 안내용 디자인</span>
                   </button>
                 </div>
                 <div className="pop-label">디자인 방향(규격)</div>
@@ -203,15 +202,15 @@ export default function PopSideContentsLayout({ children }) {
             <div className="pop-header">
               <div className="pop-icon">2</div>
               <div className="pop-header-content">
-                <div className="pop-title">스타일 선택<span className="pop-optional">샘플보기</span></div>
+                <div className="pop-title">스타일 선택</div>
                 <div className="pop-description">디자인 스타일을 선택하세요</div>
               </div>
               <div className="pop-selected-group">
                 <span className="pop-selected-item">미선택 (AI자동)</span>
               </div>
               <div className="pop-toggle">
-                <span><svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px" fill="#666"><path d="M480-360 280-560h400L480-360Z"></path></svg></span>
-                <span><svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px" fill="#666"><path d="m280-400 200-200 200 200H280Z"></path></svg></span>
+                <span><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#666"><path d="M480-528 296-344l-56-56 240-240 240 240-56 56-184-184Z"/></svg></span>
+                <span><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#666"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg></span>
               </div>
             </div>
             <div className="pop-body" style={{maxHeight: '0px', opacity: 0}}>
@@ -224,7 +223,7 @@ export default function PopSideContentsLayout({ children }) {
                     <div className="icon-check">
                       <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M382-221.91 135.91-468l75.66-75.65L382-373.22l366.43-366.43L824.09-664 382-221.91Z"></path></svg>
                     </div>
-                    <img src="./1001_20260819_140739510.jpg" alt="컬러 임펙트 스타일" loading="lazy"/>
+                    <img src={resolveImageSrc('./img/1001_20260819_140739510.jpg')} alt="컬러 임펙트 스타일" loading="lazy"/>
                     <div className="text-group">
                       <p>AI 추천</p>
                       <span>AI 추천으로 자동 생성</span>
@@ -234,7 +233,7 @@ export default function PopSideContentsLayout({ children }) {
                     <div className="icon-check">
                       <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M382-221.91 135.91-468l75.66-75.65L382-373.22l366.43-366.43L824.09-664 382-221.91Z"></path></svg>
                     </div>
-                    <img src="./1001_20260908_092928486.jpg" alt="쿨 &amp; 프레시 스타일" loading="lazy"/>
+                    <img src={resolveImageSrc('./img/1001_20260908_092928486.jpg')} alt="쿨 &amp; 프레시 스타일" loading="lazy"/>
                     <div className="text-group">
                       <p>신선 마켓</p>
                       <span>산지직송 신선식품 느낌</span>
@@ -244,6 +243,7 @@ export default function PopSideContentsLayout({ children }) {
                     <div className="icon-check">
                       <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M382-221.91 135.91-468l75.66-75.65L382-373.22l366.43-366.43L824.09-664 382-221.91Z"></path></svg>
                     </div>
+                    <img src={resolveImageSrc('./img/1001_20260819_140739510.jpg')} alt="컬러 임펙트 스타일" loading="lazy"/>
                     <div className="text-group">
                       <p>컬러 임펙트</p>
                       <span>색상 대비로 시선 집중</span>
@@ -318,12 +318,12 @@ export default function PopSideContentsLayout({ children }) {
             <div className="pop-header">
               <div className="pop-icon">3</div>
               <div className="pop-header-content">
-                <div className="pop-title">상품정보</div>
+                <div className="pop-title">상품정보<span className="pop-optional blue">필수</span></div>
                 <div className="pop-description">이미지에 들어갈 상품정보를 입력하세요.</div>
               </div>
               <div className="pop-toggle">
-                <span><svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px" fill="#666"><path d="M480-360 280-560h400L480-360Z"></path></svg></span>
-                <span><svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px" fill="#666"><path d="m280-400 200-200 200 200H280Z"></path></svg></span>
+                <span><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#666"><path d="M480-528 296-344l-56-56 240-240 240 240-56 56-184-184Z"/></svg></span>
+                <span><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#666"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg></span>
               </div>
             </div>
             <div className="pop-body" style={{maxHeight: '0px', opacity: 0}}>
@@ -357,11 +357,11 @@ export default function PopSideContentsLayout({ children }) {
                   <div className="pop-grid-th hidden" data-column="sprice">정상판매가</div>
                   <div className="pop-grid-th" data-column="dcprice">할인판매가</div>
                   <div className="pop-grid-th hidden" data-column="dcrate">할인율</div>
-                  <input type="text" className="workspace-excel" data-column="name" defaultValue="" data-sharkid="__0" />
-                  <input type="text" className="workspace-excel hidden" data-column="spec" defaultValue="" />
-                  <input type="text" className="workspace-excel hidden" data-column="sprice" defaultValue="" />
-                  <input type="text" className="workspace-excel" data-column="dcprice" defaultValue="" data-sharkid="__1" />
-                  <input type="text" className="workspace-excel hidden" data-column="dcrate" defaultValue="" />
+                  <input type="text" className="workspace-excel" data-column="name" />
+                  <input type="text" className="workspace-excel hidden" data-column="spec" />
+                  <input type="text" className="workspace-excel hidden" data-column="sprice" />
+                  <input type="text" className="workspace-excel" data-column="dcprice" />
+                  <input type="text" className="workspace-excel hidden" data-column="dcrate" />
                 </div>
 
                 <div className="pop-label">
@@ -381,27 +381,49 @@ export default function PopSideContentsLayout({ children }) {
               </div>
             </div>
           </div>
-          {/* <!-- 4.상품홍보형-추가 설명 및 참조 이미지 첨부 --> */}
+          {/* 안내·공지 내용 */}
           <div className="pop-box collapsed">
             <div className="pop-header">
-              <div className="pop-icon">4</div>
+              <div className="pop-icon">3</div>
               <div className="pop-header-content">
-                <div className="pop-title">추가 설명 및 참조 이미지 첨부<span className="pop-optional">선택</span></div>
-                <div className="pop-description">추가하고 싶은 내용을 입력하시면 이미지 생성에 반영됩니다.</div>
+                <div className="pop-title">안내·공지 내용</div>
+                <div className="pop-description">안내 공지용 타이틀과 내용을 입력하세요.</div>
               </div>
               <div className="pop-toggle">
-                <span><svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px" fill="#666"><path d="M480-360 280-560h400L480-360Z"></path></svg></span>
-                <span><svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px" fill="#666"><path d="m280-400 200-200 200 200H280Z"></path></svg></span>
+                <span><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#666"><path d="M480-528 296-344l-56-56 240-240 240 240-56 56-184-184Z"/></svg></span>
+                <span><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#666"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg></span>
               </div>
             </div>
             <div className="pop-body" style={{maxHeight: '0px', opacity: 0}}>
               {/* <!-- POP 추가설명 --> */}
               <div className="pop-fieldset">
-                <label className="pop-label">추가 설명 입력</label>
-                <textarea id="popExtra" className="pop-form-textarea" onKeyUp={(e) => window.jsGetByte && window.jsGetByte(e.currentTarget, 1000)} data-sharkid="__2"></textarea>
-                <div className="pop-form-text-byte">
-                  <span id="popExtraByte">0</span> / 1000 Bytes
-                </div>
+                <label className="pop-label">타이틀 입력<span className="pop-byte">0/100 bytes</span></label>
+                <textarea className="pop-form-textarea" rows={2} suppressHydrationWarning></textarea>
+                <label className="pop-label">내용 입력<span className="pop-byte">0/1000 bytes</span></label>
+                <textarea className="pop-form-textarea" rows={3} suppressHydrationWarning></textarea>
+              </div>
+            </div>
+          </div>
+
+          {/* <!-- 4.상품홍보형-추가 설명 및 참조 이미지 첨부 --> */}
+          <div className="pop-box collapsed">
+            <div className="pop-header">
+              <div className="pop-icon">4</div>
+              <div className="pop-header-content">
+                <div className="pop-title">추가 설명 및 참조 이미지 첨부</div>
+                <div className="pop-description">추가하고 싶은 내용을 입력하시면 이미지 생성에 반영됩니다.</div>
+              </div>
+              <div className="pop-toggle">
+                <span><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#666"><path d="M480-528 296-344l-56-56 240-240 240 240-56 56-184-184Z"/></svg></span>
+                <span><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#666"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg></span>
+              </div>
+            </div>
+            <div className="pop-body" style={{maxHeight: '0px', opacity: 0}}>
+              {/* <!-- POP 추가설명 --> */}
+              <div className="pop-fieldset">
+                <label className="pop-label">추가 설명 입력<span className="pop-byte">0/1000 Bytes</span></label>
+                <textarea id="popExtra" className="pop-form-textarea" rows={3}></textarea>
+
 
                 <label className="pop-label">참조 이미지 추가</label>
                 <div className="pop-upload-group">
@@ -444,15 +466,15 @@ export default function PopSideContentsLayout({ children }) {
             <div className="pop-header">
               <div className="pop-icon">5</div>
               <div className="pop-header-content">
-                <div className="pop-title">이미지 해상도 선택</div>
+                <div className="pop-title">이미지 해상도 선택<span className="pop-optional blue">필수</span></div>
                 <div className="pop-description">이미지의 크기를 선택하세요</div>
               </div>
               <div className="pop-selected-group">
                 <span className="pop-selected-item">모바일 화면용</span>
               </div>
               <div className="pop-toggle">
-                <span><svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px" fill="#666"><path d="M480-360 280-560h400L480-360Z"></path></svg></span>
-                <span><svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px" fill="#666"><path d="m280-400 200-200 200 200H280Z"></path></svg></span>
+                <span><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#666"><path d="M480-528 296-344l-56-56 240-240 240 240-56 56-184-184Z"/></svg></span>
+                <span><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#666"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg></span>
               </div>
             </div>
             <div className="pop-body" style={{maxHeight: '0px', opacity: 0}}>
@@ -460,7 +482,7 @@ export default function PopSideContentsLayout({ children }) {
                 {/* <!-- 모바일 --> */}
                 <div role="radiogroup" className="pop-radio-wrapper">
                   <label className="pop-radio-group" htmlFor="imageResolutionLow">
-                    <input id="imageResolutionLow" type="radio" name="imageResolution" defaultValue="low" data-sharkid="__3" />
+                    <input id="imageResolutionLow" type="radio" name="imageResolution" defaultValue="low" />
                     <div className="pop-radio-content">
                       <div className="pop-radio-title">모바일용 <span className="pop-radio-sub">(0.5K)</span></div>
                       <div className="pop-radio-description">448 * 592 px / 빠른 생성 및 모바일 · 웹 게시용</div>
@@ -469,7 +491,7 @@ export default function PopSideContentsLayout({ children }) {
                   </label>
                   {/* <!-- 일반용 --> */}
                   <label className="pop-radio-group" htmlFor="imageResolutionHigh">
-                    <input id="imageResolutionHigh" type="radio" name="imageResolution" defaultValue="medium" data-sharkid="__4" />
+                    <input id="imageResolutionHigh" type="radio" name="imageResolution" defaultValue="medium" />
                     <div className="pop-radio-content">
                       <div className="pop-radio-title">일반용 <span className="pop-radio-sub">(1K)</span></div>
                       <div className="pop-radio-description">1024 * 1354 px / 소형POP 및 일반 인쇄용</div>
@@ -479,7 +501,7 @@ export default function PopSideContentsLayout({ children }) {
 
                   {/* <!-- 고화질용 --> */}
                   <label className="pop-radio-group" htmlFor="imageResolutionUltra">
-                    <input id="imageResolutionUltra" type="radio" name="imageResolution" defaultValue="high" data-sharkid="__5" />
+                    <input id="imageResolutionUltra" type="radio" name="imageResolution" defaultValue="high" />
                     <div className="pop-radio-content">
                       <div className="pop-radio-title">고화질용 <span className="pop-radio-sub">(2K)</span></div>
                       <div className="pop-radio-description">2048 * 2708 px / AI이미지 및 선명한 인쇄용</div>
@@ -489,7 +511,7 @@ export default function PopSideContentsLayout({ children }) {
 
                   {/* <!-- 대형 포스터용 --> */}
                   <label className="pop-radio-group" htmlFor="imageResolutionPoster">
-                    <input id="imageResolutionPoster" type="radio" name="imageResolution" defaultValue="high" data-sharkid="__6" />
+                    <input id="imageResolutionPoster" type="radio" name="imageResolution" defaultValue="high" />
                     <div className="pop-radio-content">
                       <div className="pop-radio-title">대형 포스터용 <span className="pop-radio-sub">(4K)</span></div>
                       <div className="pop-radio-description">4096 * 5416 px / A3 포스터 및 고화질 인쇄용</div>
@@ -502,7 +524,11 @@ export default function PopSideContentsLayout({ children }) {
           </div>
         </div>
       </div>
-      <div className="pop-pay-wrapper flex flex-col items-center justify-center h-20 bg-white">
+      <div className="pop-pay-wrapper">
+        <div className="pop-pay-info">
+          <div className="pop-pay-info-item">차감예정 : <span>500 TS</span></div>
+          <div className="pop-pay-info-item">차감후 TS : <span>999,999</span><span>.0</span></div>
+        </div>
         <button type="button" className="pop-pay-button">
           <div>AI 이미지 생성 (500TS 차감)</div>
         </button>

@@ -18,7 +18,7 @@ export default function RootLayout({ children }) {
                     <a className="level1 tab" href="/airequest_pop" >AI POP
                       만들기</a>                </li>
                   <li role="menuitem">
-                    <a className="level1 tab selected" href="/airequest">프라이스카드 만들기</a>
+                    <a className="level1 tab selected" href="/airequest_pc">프라이스카드 만들기</a>
                   </li>
                   <li role="menuitem">
                     <a className="level1 tab" href="/aiImage">AI이미지관리</a>
