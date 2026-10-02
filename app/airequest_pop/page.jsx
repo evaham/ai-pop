@@ -28,15 +28,15 @@ export default function AirequestPop() {
         <PopSideContentsLayout/>
         
         <div className="main-contents-layout" style={{width: '924px'}}>
-          <div className="cre-contents">
-            <div className="cre-header">
-              <p className="cre-title">디자인 샘플보기</p>
-              <p className="cre-subtitle">마음에 드는 디자인을 선택하시면 옵션 선택에 반영됩니다.</p>
+          <div className="pop-sample-contents">
+            <div className="pop-sample-header">
+              <p className="pop-sample-title">디자인 샘플보기</p>
+              <p className="pop-sample-subtitle">마음에 드는 디자인을 선택하시면 옵션 선택에 반영됩니다.</p>
             </div>
-            <div className="cre-body">
-              <div className="cre-list-tit">상품홍보형 템플릿</div>
-              <div className="cre-list-wrapper" aria-label="상품홍보형 샘플">
-                <div className="cre-item-list">
+            <div className="pop-sample-body">
+              <div className="pop-sample-list-tit">상품홍보형 템플릿</div>
+              <div className="pop-sample-list-wrapper" aria-label="상품홍보형 샘플">
+                <div className="pop-sample-list">
                   {promoSamples.map((s, idx) => (
                     <div className="item" key={idx}>
                       <div className="item-description">{s.title}</div>
@@ -53,11 +53,11 @@ export default function AirequestPop() {
                   ))}
                 </div>
               </div>
-
+                  
               {/* <!-- 안내공지형 샘플 --> */}
-              <div className="cre-list-tit">안내/공지형 템플릿</div>
-              <div className="cre-list-wrapper" aria-label="안내공지형 샘플">
-                <div className="cre-item-list">
+              <div className="pop-sample-list-tit">안내/공지형 템플릿</div>
+              <div className="pop-sample-list-wrapper" aria-label="안내공지형 샘플">
+                <div className="pop-sample-list">
                   {noticeSamples.map((s, idx) => (
                     <div className="item" key={idx}>
                       <div className="item-description">{s.title}</div>
@@ -68,7 +68,7 @@ export default function AirequestPop() {
                         ))}
                       </div>
                       <div className="content">
-                        <img src={s.img} alt={s.alt} loading="lazy" />
+                        <img src={resolveImageSrc(s.img)} alt={s.alt} loading="lazy" />
                       </div>
                     </div>
                   ))}

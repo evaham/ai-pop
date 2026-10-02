@@ -1,3 +1,4 @@
+import Link from "next/link";
 import "./globals.css";
 
 export const metadata = {
@@ -8,23 +9,23 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="ko" className="h-full">
-      <body className={`w-full h-full bg-gray-50 antialiased`}>
+      <body className={`w-full h-full antialiased`}>
         <div className="page-shell">
           <div className="page-content">
             <div className="page-tabs">
               <div className="tabs page-tab-inner" id="menuTab">
                 <ul className="level1 static">
                   <li role="menuitem">
-                    <a className="level1 tab" href="/ai-pop/airequest_pop" >AI POP
-                      만들기</a>                </li>
-                  <li role="menuitem">
-                    <a className="level1 tab selected" href="/ai-pop/airequest_pc">프라이스카드 만들기</a>
+                    <Link href="/airequest_pop" className="level1 tab">AI POP 만들기</Link>
                   </li>
                   <li role="menuitem">
-                    <a className="level1 tab" href="/ai-pop/aiImage">AI이미지관리</a>
+                    <Link href="/airequest_pc" className="level1 tab">프라이스카드 만들기</Link>
                   </li>
                   <li role="menuitem">
-                    <a className="level1 tab" href="/ai-pop/aiStatics">AI이용현황</a>
+                    <Link href="/aiImage" className="level1 tab">AI이미지관리</Link>
+                  </li>
+                  <li role="menuitem">
+                    <Link href="/aiStatics" className="level1 tab">AI이용현황</Link>
                   </li>
                 </ul>
               </div>

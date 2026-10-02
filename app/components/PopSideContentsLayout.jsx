@@ -155,7 +155,7 @@ export default function PopSideContentsLayout({ children }) {
           {/* <!-- 1.유형선택 --> */}
           <div className="pop-box collapsed">
             <div className="pop-header">
-              <div className="pop-icon">1</div>
+              <div className="pop-icon-num">1</div>
               <div className="pop-header-content">
                 <div className="pop-title">유형선택<span className="pop-optional blue">필수</span></div>
                 <div className="pop-description">디자인 유형과 방향을 선택하세요</div>
@@ -173,12 +173,12 @@ export default function PopSideContentsLayout({ children }) {
                 <div className="pop-label">홍보유형</div>
                 <div className="pop-btn-group" role="tablist" aria-label="유형선택">
                   <button type="button" className="pop-btn selected">
-                    <span className="w-14 mb-2 -mr-4"><img src={resolveImageSrc('./img/img_target.png')} alt="아이콘"/></span>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C12.5523 2 13 2.44772 13 3C13 3.55228 12.5523 4 12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20C16.4183 20 20 16.4183 20 12C20 11.4477 20.4477 11 21 11C21.5523 11 22 11.4477 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2ZM12 6C12.5523 6 13 6.44772 13 7C13 7.55228 12.5523 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16C14.2091 16 16 14.2091 16 12C16 11.4477 16.4477 11 17 11C17.5523 11 18 11.4477 18 12C18 15.3137 15.3137 18 12 18C8.68629 18 6 15.3137 6 12C6 8.68629 8.68629 6 12 6ZM18.5713 2.10059C18.8474 2.1006 19.0712 2.32449 19.0713 2.60059V4.42969C19.0716 4.70553 19.2954 4.92866 19.5713 4.92871H21.3994C21.6754 4.92871 21.8992 5.15275 21.8994 5.42871V6.34375L20.0107 8.23242C19.6358 8.60719 19.1268 8.81824 18.5967 8.81836H16.5967L12.707 12.707C12.3165 13.0974 11.6835 13.0975 11.293 12.707C10.9027 12.3165 10.9026 11.6834 11.293 11.293L15.1826 7.4043V5.4043C15.1826 4.87411 15.3928 4.36526 15.7676 3.99023L17.6572 2.10059H18.5713Z"></path></svg>
                     상품 홍보형
                     <span className="pop-btn-description">상품이나 가격을 강조하는 디자인</span>
                   </button>
                   <button type="button" className="pop-btn">
-                    <span className="w-16 mb-2"><img src={resolveImageSrc('./img/img_speaker.png')} alt="아이콘"/></span>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M9 17C9 17 16 18 19 21H20C20.5523 21 21 20.5523 21 20V13.937C21.8626 13.715 22.5 12.9319 22.5 12C22.5 11.0681 21.8626 10.285 21 10.063V4C21 3.44772 20.5523 3 20 3H19C16 6 9 7 9 7H5C3.89543 7 3 7.89543 3 9V15C3 16.1046 3.89543 17 5 17H6L7 22H9V17ZM11 8.6612C11.6833 8.5146 12.5275 8.31193 13.4393 8.04373C15.1175 7.55014 17.25 6.77262 19 5.57458V18.4254C17.25 17.2274 15.1175 16.4499 13.4393 15.9563C12.5275 15.6881 11.6833 15.4854 11 15.3388V8.6612ZM5 9H9V15H5V9Z"></path></svg>
                     안내/공지형
                     <span className="pop-btn-description">행사, 공지, 안내용 디자인</span>
                   </button>
@@ -200,7 +200,7 @@ export default function PopSideContentsLayout({ children }) {
           {/* <!-- 2.상품홍보형-스타일선택 --> */}
           <div className="pop-box collapsed">
             <div className="pop-header">
-              <div className="pop-icon">2</div>
+              <div className="pop-icon-num">2</div>
               <div className="pop-header-content">
                 <div className="pop-title">스타일 선택</div>
                 <div className="pop-description">디자인 스타일을 선택하세요</div>
@@ -298,15 +298,19 @@ export default function PopSideContentsLayout({ children }) {
                 <div className="pop-label">강조 포인트</div>
                 <div className="pop-line-group">
                   <button type="button" className="pop-line-btn selected" data-label="가격강조" onClick={(e) => window.jsSelectLabel && window.jsSelectLabel(e.currentTarget)}>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M3.00488 6.99972L11.4502 1.36952C11.7861 1.14559 12.2237 1.14559 12.5596 1.36952L21.0049 6.99972V20.9997C21.0049 21.552 20.5572 21.9997 20.0049 21.9997H4.00488C3.4526 21.9997 3.00488 21.552 3.00488 20.9997V6.99972ZM5.00488 8.07009V19.9997H19.0049V8.07009L12.0049 3.40342L5.00488 8.07009ZM12.0049 10.9997C10.9003 10.9997 10.0049 10.1043 10.0049 8.99972C10.0049 7.89515 10.9003 6.99972 12.0049 6.99972C13.1095 6.99972 14.0049 7.89515 14.0049 8.99972C14.0049 10.1043 13.1095 10.9997 12.0049 10.9997Z"></path></svg>
                     가격강조
                   </button>
                   <button type="button" className="pop-line-btn" data-label="신선도 강조" onClick={(e) => window.jsSelectLabel && window.jsSelectLabel(e.currentTarget)}>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M20.998 3V5C20.998 14.6274 15.6255 19 8.99805 19L5.24077 18.9999C5.0786 19.912 4.99805 20.907 4.99805 22H2.99805C2.99805 20.6373 3.11376 19.3997 3.34381 18.2682C3.1133 16.9741 2.99805 15.2176 2.99805 13C2.99805 7.47715 7.4752 3 12.998 3C14.998 3 16.998 4 20.998 3ZM12.998 5C8.57977 5 4.99805 8.58172 4.99805 13C4.99805 13.3624 5.00125 13.7111 5.00759 14.0459C6.26198 12.0684 8.09902 10.5048 10.5019 9.13176L11.4942 10.8682C8.6393 12.4996 6.74554 14.3535 5.77329 16.9998L8.99805 17C15.0132 17 18.8692 13.0269 18.9949 5.38766C17.6229 5.52113 16.3481 5.436 14.7754 5.20009C13.6243 5.02742 13.3988 5 12.998 5Z"></path></svg>
                     신선도 강조
                   </button>
                   <button type="button" className="pop-line-btn" data-label="행사강조" onClick={(e) => window.jsSelectLabel && window.jsSelectLabel(e.currentTarget)}>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M15.0049 2.00281C17.214 2.00281 19.0049 3.79367 19.0049 6.00281C19.0049 6.73184 18.8098 7.41532 18.4691 8.00392L23.0049 8.00281V10.0028H21.0049V20.0028C21.0049 20.5551 20.5572 21.0028 20.0049 21.0028H4.00488C3.4526 21.0028 3.00488 20.5551 3.00488 20.0028V10.0028H1.00488V8.00281L5.54065 8.00392C5.19992 7.41532 5.00488 6.73184 5.00488 6.00281C5.00488 3.79367 6.79574 2.00281 9.00488 2.00281C10.2001 2.00281 11.2729 2.52702 12.0058 3.35807C12.7369 2.52702 13.8097 2.00281 15.0049 2.00281ZM11.0049 10.0028H5.00488V19.0028H11.0049V10.0028ZM19.0049 10.0028H13.0049V19.0028H19.0049V10.0028ZM9.00488 4.00281C7.90031 4.00281 7.00488 4.89824 7.00488 6.00281C7.00488 7.05717 7.82076 7.92097 8.85562 7.99732L9.00488 8.00281H11.0049V6.00281C11.0049 5.00116 10.2686 4.1715 9.30766 4.02558L9.15415 4.00829L9.00488 4.00281ZM15.0049 4.00281C13.9505 4.00281 13.0867 4.81869 13.0104 5.85355L13.0049 6.00281V8.00281H15.0049C16.0592 8.00281 16.923 7.18693 16.9994 6.15207L17.0049 6.00281C17.0049 4.89824 16.1095 4.00281 15.0049 4.00281Z"></path></svg>
                     행사강조
                   </button>
                   <button type="button" className="pop-line-btn" data-label="상품강조" onClick={(e) => window.jsSelectLabel && window.jsSelectLabel(e.currentTarget)}>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L21.5 6.5V17.5L12 23L2.5 17.5V6.5L12 1ZM5.49388 7.0777L12.0001 10.8444L18.5062 7.07774L12 3.311L5.49388 7.0777ZM4.5 8.81329V16.3469L11.0001 20.1101V12.5765L4.5 8.81329ZM13.0001 20.11L19.5 16.3469V8.81337L13.0001 12.5765V20.11Z"></path></svg>
                     상품강조
                   </button>
                 </div>
@@ -316,7 +320,7 @@ export default function PopSideContentsLayout({ children }) {
           {/* <!-- 3.상품홍보형-상품정보 --> */}
           <div className="pop-box collapsed">
             <div className="pop-header">
-              <div className="pop-icon">3</div>
+              <div className="pop-icon-num">3</div>
               <div className="pop-header-content">
                 <div className="pop-title">상품정보<span className="pop-optional blue">필수</span></div>
                 <div className="pop-description">이미지에 들어갈 상품정보를 입력하세요.</div>
@@ -351,17 +355,17 @@ export default function PopSideContentsLayout({ children }) {
                     행 비우기
                   </button>
                 </div>
-                <div id="popExcel" className="pop-grid-table" style={{gridTemplateRows: "repeat(2, 1fr)", gridTemplateColumns: "210px 90px", placeItems: "center"}}>
-                  <div className="pop-grid-th" data-column="name">상품명</div>
-                  <div className="pop-grid-th hidden" data-column="spec">규격</div>
-                  <div className="pop-grid-th hidden" data-column="sprice">정상판매가</div>
-                  <div className="pop-grid-th" data-column="dcprice">할인판매가</div>
-                  <div className="pop-grid-th hidden" data-column="dcrate">할인율</div>
-                  <input type="text" className="workspace-excel" data-column="name" />
-                  <input type="text" className="workspace-excel hidden" data-column="spec" />
-                  <input type="text" className="workspace-excel hidden" data-column="sprice" />
-                  <input type="text" className="workspace-excel" data-column="dcprice" />
-                  <input type="text" className="workspace-excel hidden" data-column="dcrate" />
+                <div id="popExcel" className="grid-table" style={{gridTemplateRows: "24px repeat(1, 36px)", gridTemplateColumns: "210px 90px", placeItems: "center"}}>
+                  <div className="grid-th" data-column="name">상품명</div>
+                  <div className="grid-th hidden" data-column="spec">규격</div>
+                  <div className="grid-th hidden" data-column="sprice">정상판매가</div>
+                  <div className="grid-th" data-column="dcprice">할인판매가</div>
+                  <div className="grid-th hidden" data-column="dcrate">할인율</div>
+                  <div className="grid-td"><input type="text" className="workspace-excel" data-column="name" suppressHydrationWarning /></div>
+                  <div className="grid-td hidden"><input type="text" className="workspace-excel" data-column="spec" suppressHydrationWarning /></div>
+                  <div className="grid-td hidden"><input type="text" className="workspace-excel" data-column="sprice" suppressHydrationWarning /></div>
+                  <div className="grid-td"><input type="text" className="workspace-excel" data-column="dcprice" suppressHydrationWarning /></div>
+                  <div className="grid-td hidden"><input type="text" className="workspace-excel" data-column="dcrate" suppressHydrationWarning /></div>
                 </div>
 
                 <div className="pop-label">
@@ -384,7 +388,7 @@ export default function PopSideContentsLayout({ children }) {
           {/* 안내·공지 내용 */}
           <div className="pop-box collapsed">
             <div className="pop-header">
-              <div className="pop-icon">3</div>
+              <div className="pop-icon-num">3</div>
               <div className="pop-header-content">
                 <div className="pop-title">안내·공지 내용</div>
                 <div className="pop-description">안내 공지용 타이틀과 내용을 입력하세요.</div>
@@ -408,7 +412,7 @@ export default function PopSideContentsLayout({ children }) {
           {/* <!-- 4.상품홍보형-추가 설명 및 참조 이미지 첨부 --> */}
           <div className="pop-box collapsed">
             <div className="pop-header">
-              <div className="pop-icon">4</div>
+              <div className="pop-icon-num">4</div>
               <div className="pop-header-content">
                 <div className="pop-title">추가 설명 및 참조 이미지 첨부</div>
                 <div className="pop-description">추가하고 싶은 내용을 입력하시면 이미지 생성에 반영됩니다.</div>
@@ -464,7 +468,7 @@ export default function PopSideContentsLayout({ children }) {
           {/* <!-- 5.상품홍보형-이미지해상도선택 --> */}
           <div className="pop-box collapsed">
             <div className="pop-header">
-              <div className="pop-icon">5</div>
+              <div className="pop-icon-num">5</div>
               <div className="pop-header-content">
                 <div className="pop-title">이미지 해상도 선택<span className="pop-optional blue">필수</span></div>
                 <div className="pop-description">이미지의 크기를 선택하세요</div>
@@ -524,10 +528,12 @@ export default function PopSideContentsLayout({ children }) {
           </div>
         </div>
       </div>
-      <div className="pop-pay-wrapper">
+      <div className="pop-pay-wrapper bg-white">
         <div className="pop-pay-info">
-          <div className="pop-pay-info-item">차감예정 : <span>500 TS</span></div>
-          <div className="pop-pay-info-item">차감후 TS : <span>999,999</span><span>.0</span></div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" fill="none"><path d="M13 5C13 6.10457 10.5376 7 7.5 7C4.46243 7 2 6.10457 2 5M13 5C13 3.89543 10.5376 3 7.5 3C4.46243 3 2 3.89543 2 5M13 5V9.45715C11.7785 9.82398 11 10.3789 11 11M2 5V17C2 18.1046 4.46243 19 7.5 19C8.82963 19 10.0491 18.8284 11 18.5429V11M2 9C2 10.1046 4.46243 11 7.5 11C8.82963 11 10.0491 10.8284 11 10.5429M2 13C2 14.1046 4.46243 15 7.5 15C8.82963 15 10.0491 14.8284 11 14.5429M22 11C22 12.1046 19.5376 13 16.5 13C13.4624 13 11 12.1046 11 11M22 11C22 9.89543 19.5376 9 16.5 9C13.4624 9 11 9.89543 11 11M22 11V19C22 20.1046 19.5376 21 16.5 21C13.4624 21 11 20.1046 11 19V11M22 15C22 16.1046 19.5376 17 16.5 17C13.4624 17 11 16.1046 11 15" stroke="#26499d" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+          <div className="pop-pay-info-item">보유<span>235,300</span> TS</div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#999"><path d="M1.99974 13.0001L1.9996 11.0002L18.1715 11.0002L14.2218 7.05044L15.636 5.63623L22 12.0002L15.636 18.3642L14.2218 16.9499L18.1716 13.0002L1.99974 13.0001Z"></path></svg>
+          <div className="pop-pay-info-item">차감후 <span>234,800</span>TS</div>
         </div>
         <button type="button" className="pop-pay-button">
           <div>AI 이미지 생성 (500TS 차감)</div>
