@@ -3,7 +3,7 @@
 import { useEffect } from "react";
 import resolveImageSrc from "../lib/resolveImageSrc";
 
-export default function PcSideContentsLayout({ children }) {
+export default function PcSideContentsLayout({ onOpenPopup }) {
   useEffect(() => {
     const listeners = [];
 
@@ -174,7 +174,7 @@ export default function PcSideContentsLayout({ children }) {
             <div className="pc-body" style={{maxHeight: '0px', opacity: 0}}>
               <div className="pc-fieldset">
                 {/* <div className="pc-label">템플릿 선택</div> */}
-                <button type="button" className="pc-template-btn">
+                <button type="button" className="pc-template-btn" onClick={onOpenPopup}>
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M4 5V19H20V7H11.5858L9.58579 5H4ZM12.4142 5H21C21.5523 5 22 5.44772 22 6V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3H10.4142L12.4142 5ZM10 10.5C10 11.3284 9.32843 12 8.5 12C7.67157 12 7 11.3284 7 10.5C7 9.67157 7.67157 9 8.5 9C9.32843 9 10 9.67157 10 10.5ZM18 17L14 11L7 17H18Z"></path></svg>
                   템플릿 전체 보기
                 </button>
@@ -202,19 +202,19 @@ export default function PcSideContentsLayout({ children }) {
               <div className="pc-fieldset">
                 <div className="pc-label">색상 테마</div>
                 <div className="pc-line-group">
-                  <button type="button" className="pc-line-btn yellow selected" data-label="노랑" onClick={(e) => window.jsSelectLabel && window.jsSelectLabel(e.currentTarget)}>
+                  <button type="button" className="pc-line-btn yellow selected">
                     노랑
                   </button>
-                  <button type="button" className="pc-line-btn" data-label="빨강" onClick={(e) => window.jsSelectLabel && window.jsSelectLabel(e.currentTarget)}>
+                  <button type="button" className="pc-line-btn">
                     빨강
                   </button>
-                  <button type="button" className="pc-line-btn" data-label="초록" onClick={(e) => window.jsSelectLabel && window.jsSelectLabel(e.currentTarget)}>
+                  <button type="button" className="pc-line-btn">
                     초록
                   </button>
-                  <button type="button" className="pc-line-btn" data-label="파랑" onClick={(e) => window.jsSelectLabel && window.jsSelectLabel(e.currentTarget)}>
+                  <button type="button" className="pc-line-btn">
                     파랑
                   </button>
-                  <button type="button" className="pc-line-btn" data-label="흰색" onClick={(e) => window.jsSelectLabel && window.jsSelectLabel(e.currentTarget)}>
+                  <button type="button" className="pc-line-btn">
                     흰색
                   </button>
                 </div>
@@ -238,13 +238,13 @@ export default function PcSideContentsLayout({ children }) {
               <div className="pc-fieldset">
                 <div className="pc-label">반복 디자인 설정<span>(최대 24개)</span></div>
                 <div className="flex gap-1 items-center">
-									<select id="selPricecardDirection" className="form-select" data-direction="portrait" onchange="jsSelectLayout(this)">
+									<select id="selPricecardDirection" className="form-select">
 										<option value="landscape">가로형</option>
-										<option value="portrait" selected="">세로형</option>
+										<option value="portrait" >세로형</option>
 									</select>
-									<input type="text" id="pricecardRowCount" data-row="3" className="form-input" style={{width: '40px', textAlign: 'right'}} oninput="this.value = this.value.replace(/[^0-9]/g, '')" onkeyup="jsSetLayout()" />
+									<input type="text" id="pricecardRowCount" data-row="3" className="form-input" />
 									행
-									<input type="text" id="pricecardColCount" data-col="2" className="form-input" style={{width: '40px', textAlign: 'right'}} oninput="this.value = this.value.replace(/[^0-9]/g, '')" onkeyup="jsSetLayout()" />
+									<input type="text" id="pricecardColCount" data-col="2" className="form-input" />
 									열
 								</div>
 
@@ -273,7 +273,7 @@ export default function PcSideContentsLayout({ children }) {
                 </div>
                 <div id="pricecardExcel" data-count="4" className="grid-table" style={{gridTemplateRows: '24px repeat(5, 36px)', gridTemplateColumns: '44px 210px 90px 90px 90px', placeItems: 'center'}}>
                   <div>
-                    <input type="checkbox" className="grid-check" id="pricecardAllRow" onclick="jsSelectAllRow(this)" />No
+                    <input type="checkbox" className="grid-check" id="pricecardAllRow" />No
                   </div>
                   <div className="grid-th">상품명</div>
                   <div className="grid-th">규격</div>

@@ -1,6 +1,5 @@
 'use client';
 import PopSideContentsLayout from '../components/PopSideContentsLayout';
-import TsMoney from '../components/TsMoney';
 import resolveImageSrc from "../lib/resolveImageSrc";
 
 
@@ -27,11 +26,16 @@ export default function AirequestPop() {
         {/* <!-- 왼쪽 화면 --> */}
         <PopSideContentsLayout/>
         
-        <div className="main-contents-layout" style={{width: '924px'}}>
-          <div className="pop-sample-contents">
+        <div className="main-contents-layout">
+          <div className="pop-sample-contents mx-auto" style={{width: '924px'}}>
             <div className="pop-sample-header">
               <p className="pop-sample-title">디자인 샘플보기</p>
               <p className="pop-sample-subtitle">마음에 드는 디자인을 선택하시면 옵션 선택에 반영됩니다.</p>
+              <div className="pop-sample-filter">
+                <button className="selected">전체</button>
+                <button>상품홍보형</button>
+                <button>안내공지형</button>
+              </div>
             </div>
             <div className="pop-sample-body">
               <div className="pop-sample-list-tit">상품홍보형 템플릿</div>
@@ -74,11 +78,9 @@ export default function AirequestPop() {
                   ))}
                 </div>
               </div>
-
             </div>
           </div>
         </div>
-        <TsMoney />
       </div>
   );
 }

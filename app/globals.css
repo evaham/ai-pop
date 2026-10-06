@@ -72,7 +72,6 @@ input:checked + .switch_slider:before { transform: translateX(-13px);  } */
 .popup-header { @apply text-[var(--text-primary)] font-bold text-lg border; }
 
 
-
 /* 레이어팝업 닫기 버튼 */
 .popup-close-btn { @apply absolute top-4 right-4 size-6 cursor-pointer;}
 .popup-close-btn svg { @apply w-full h-full fill-gray-500; }
@@ -98,11 +97,15 @@ input:checked + .switch_slider:before { transform: translateX(-13px);  } */
 
 /* 레이어팝업 내부 버튼 그룹 */
 .popup-content-buttons { @apply flex gap-1 mt-4; }
-.popup-content-buttons .line-btn {
+.popup-line-btn {
     font-weight: 600;
     border-color: #26499d;
     color: #26499d;
 }
+.popup-del-btn {@apply px-2 border border-gray-300 rounded cursor-pointer; }
+.popup-del-btn svg { @apply size-4 fill-red-700; }
+
+
 .popup-content-buttons .line-btn.retry {
     background-color: #dce9f5;
     transition: background-color 0.15s ease, border-color 0.15s ease;
@@ -114,7 +117,7 @@ input:checked + .switch_slider:before { transform: translateX(-13px);  } */
 
 
 .popup-content-templatebox {
-    @apply grid grid-cols-[1fr_1fr_1fr] gap-4 w-[990px] pt-4 pr-4 overflow-x-hidden overflow-y-auto scrollbar-gutter-stable;
+    @apply grid grid-cols-3 gap-4 w-[990px] pt-4 pr-4 overflow-x-hidden overflow-y-auto scrollbar-gutter-stable;
 }
 
 .popup-content-templatebox-frame {
@@ -312,28 +315,30 @@ input:checked + .switch_slider:before { transform: translateX(-13px);  } */
 
 
 
-/* ts머니&포인트 화면 */
-/* ts 머니 위치 */
-.ts-wrap { @apply w-80 shrink-0 p-4 bg-gray-50; }
-.ts-sticky { @apply sticky top-11 flex flex-col gap-4; }
-.ts-card { @apply flex flex-col gap-1 rounded-lg border border-gray-200 bg-white p-4 shadow-xs; }
+/* ts머니&포인트 헤더 */
+.tsmoney-info { @apply flex items-center ml-auto text-sm;}
+.tsmoney-info-btn { @apply flex items-center justify-center p-1 border border-transparent cursor-pointer; }
+.tsmoney-info-btn:hover { @apply border-gray-300 rounded bg-gray-50;}
+.tsmoney-info-btn svg { @apply size-4; }
+.tsmoney-info-amount { @apply ml-2 py-1 px-3 rounded text-gray-500 bg-blue-50 cursor-pointer; }
+.tsmoney-info-amount span { @apply text-red-600 }
+.tsmoney-info-detail { @apply absolute top-12 right-0; }
 
-/* ts머니 영역 스타일 */
-.ts-title { @apply flex items-center gap-2 text-[var(--text-primary)] text-base font-bold; }
-.ts-text-small { @apply text-sm font-medium; }
+/* ts 머니 박스 영역 */
+.ts-wrap { @apply w-80 shrink-0 p-4; }
+.ts-card { @apply flex flex-col gap-1 rounded-lg border border-gray-200 bg-white px-4 py-3 shadow; }
+.ts-hr { @apply my-2 border-dashed border-t border-gray-200; }
+.ts-title { @apply flex items-center gap-2 text-base font-bold; }
+.ts-info-box { @apply flex flex-col gap-1 py-2 px-4 rounded-lg bg-blue-50; }
+.ts-info-box-row { @apply flex justify-between items-center text-sm; }
 .ts-button { @apply flex items-center justify-center ml-2 p-1 border text-xs border-gray-300 rounded bg-gray-50; }
-.ts-info-box { @apply flex flex-col gap-1; }
-.ts-info-box > div { @apply flex justify-between items-center text-sm; }
-.ts-info-box .ts-info-box-left { @apply font-semibold; }
-.ts-info-box > dd { @apply text-gray-200; }
-.ts-info-box > dd > span { @apply text-gray-300; }
-.ts-inner-box { @apply bg-blue-700 text-white p-2; } 
-.ts-hr { @apply my-2 border-0 border-t border-gray-100; }
+.ts-bank{ @apply flex items-center gap-2 text-sm font-bold text-[#26499d]; }
+
+/* .ts-inner-box { @apply bg-blue-700 text-white p-2; } 
 .ts-hr-dashed { @apply my-2 border-0 border-t border-dashed border-gray-100; }
-.ts-bank{ @apply flex items-center gap-2 text-lg font-bold text-[#26499d]; }
 .ts-tel,.ts-fax { @apply flex ; }
 .ts-tel > span,.ts-fax > span { @apply ml-auto text-[var(--text-secondary)]; }
-.ts-copyright { @apply text-[var(--text-secondary)] text-sm; }
+.ts-copyright { @apply text-[var(--text-secondary)] text-sm; } */
 
 
 /* 이미지관리 */
@@ -1129,7 +1134,7 @@ input:checked + .workspace-switch-slider:before {
 
 /* 이미지 버튼 */
 .pop-style-group { @apply grid grid-cols-4 gap-2; }
-.pop-style-item { @apply relative overflow-hidden flex flex-col w-full h-40 ring-1 ring-gray-200 rounded bg-gray-50 cursor-pointer; }
+.pop-style-item { @apply relative overflow-hidden flex flex-col w-full h-34 ring-1 ring-gray-200 rounded bg-gray-50 cursor-pointer; }
 .pop-style-item .text-group { @apply relative flex flex-col mt-auto p-0.5 py-1 bg-white z-10; }
 .pop-style-item .text-group p { @apply mt-auto text-sm font-bold; }
 .pop-style-item .text-group span { @apply text-xs text-[var(--text-secondary)] leading-tight tracking-tight; }
@@ -1137,7 +1142,7 @@ input:checked + .workspace-switch-slider:before {
 .pop-style-item.selected { @apply ring-blue-500; }
 .pop-style-item.selected .text-group { @apply bg-blue-50 text-blue-700;}
 .pop-style-item.selected .icon-check { @apply inline; }
-.pop-style-item img { @apply absolute inset-0 w-full h-full object-cover; }
+.pop-style-item img { @apply absolute inset-0 w-full object-cover; }
 .icon-check { @apply hidden absolute top-1 right-1 size-5 rounded-full bg-blue-700 z-1; }
 .icon-check svg { @apply w-full h-full fill-white; }
 
@@ -1168,7 +1173,7 @@ input:checked + .workspace-switch-slider:before {
 .pop-form-textarea:focus { @apply outline-blue-500; }
 
 /* 업로드 */
-.pop-upload-group { @apply flex gap-1 p-2 rounded-xl bg-gray-50; }
+.pop-upload-group { @apply flex gap-1 p-2 rounded-xl bg-gray-100; }
 .pop-upload-preview { @apply flex items-center justify-center size-24 p-1 ring-1 ring-gray-300 rounded-xl bg-white cursor-pointer; }
 .pop-upload-preview svg { @apply fill-gray-500; }
 .pop-upload-preview img { @apply max-w-full max-h-full; }
@@ -1209,6 +1214,12 @@ input:checked + .workspace-switch-slider:before {
 .pop-sample-header { @apply flex flex-col; }
 .pop-sample-title { @apply text-lg font-bold; }
 .pop-sample-subtitle { @apply text-sm text-[var(--text-secondary)]; }
+.pop-sample-filter { @apply absolute top-4 right-5 flex gap-2 my-2 text-sm; }
+.pop-sample-filter button { @apply px-3 py-1.5 text-sm bg-slate-100 text-[var(--text-primary)] rounded-full cursor-pointer; }
+.pop-sample-filter button:hover { @apply bg-gray-300; }
+.pop-sample-filter button:active { @apply bg-gray-400; }
+.pop-sample-filter button.selected { @apply bg-[#26499d] text-white cursor-not-allowed; }
+
 .pop-sample-list-tit { @apply font-bold mt-3; }
 .pop-sample-body { @apply flex flex-col gap-2; }
 

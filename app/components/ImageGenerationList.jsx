@@ -38,7 +38,6 @@ export default function ImageGenerationList({ items, onOpenPreview, onRetryPromp
       </div>
     );
   }
-
   return (
     <ul className="flex flex-col divide-y divide-gray-200">
       {items.map((item) => (
