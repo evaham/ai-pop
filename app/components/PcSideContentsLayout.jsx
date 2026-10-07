@@ -178,7 +178,24 @@ export default function PcSideContentsLayout({ onOpenPopup }) {
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M4 5V19H20V7H11.5858L9.58579 5H4ZM12.4142 5H21C21.5523 5 22 5.44772 22 6V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3H10.4142L12.4142 5ZM10 10.5C10 11.3284 9.32843 12 8.5 12C7.67157 12 7 11.3284 7 10.5C7 9.67157 7.67157 9 8.5 9C9.32843 9 10 9.67157 10 10.5ZM18 17L14 11L7 17H18Z"></path></svg>
                   템플릿 전체 보기
                 </button>
+
+                <div id="selPricecardTemplate" className="flex gap-1" style={{flexWrap: 'wrap'}}>
+                  <div className="w-full">비슷한 형태의 템플릿</div>
+                  <button type="button" className="line-btn selected" style={{width: '112px', flexDirection: 'column'}}>
+                    <div className="pricecard-template-ellipsis">가격파괴</div>
+                    <div>(세로형,2×1)</div>
+                  </button>
+                  <button type="button" className="line-btn" style={{width: '112px', flexDirection: 'column'}}>
+                    <div className="pricecard-template-ellipsis"><span>[센터]</span>샘플</div>
+                    <div>(세로형,2×1)</div>
+                  </button>
+                  <button type="button" className="line-btn" style={{width: '112px', flexDirection: 'column'}}>
+                    <div className="pricecard-template-ellipsis"><span>[센터]</span>심플_노랑랑랑</div>
+                    <div>(세로형,2×1)</div>
+                  </button>
+								</div>
               </div>
+             
             </div>
           </div>
           {/* <!-- 2.색상테마 --> */}
@@ -238,13 +255,13 @@ export default function PcSideContentsLayout({ onOpenPopup }) {
               <div className="pc-fieldset">
                 <div className="pc-label">반복 디자인 설정<span>(최대 24개)</span></div>
                 <div className="flex gap-1 items-center">
-									<select id="selPricecardDirection" className="form-select">
+									<select id="selPricecardDirection" className="pc-select">
 										<option value="landscape">가로형</option>
 										<option value="portrait" >세로형</option>
 									</select>
-									<input type="text" id="pricecardRowCount" data-row="3" className="form-input" />
+									<input type="text" id="pricecardRowCount" data-row="3" className="pc-input" />
 									행
-									<input type="text" id="pricecardColCount" data-col="2" className="form-input" />
+									<input type="text" id="pricecardColCount" data-col="2" className="pc-input" />
 									열
 								</div>
 
