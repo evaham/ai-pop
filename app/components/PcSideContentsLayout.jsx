@@ -148,7 +148,7 @@ export default function PcSideContentsLayout({ onOpenPopup }) {
   }, []);
   return (
     <div className="side-contents-layout">
-      <div className="pc-scroll">
+      <div className="flex-1 small-scroll">
         {/* <!-- <div className="page-info-box">
           자유형식 이미지를 생성하고 상품홍보 및 안내문을 만들 수 있습니다.
         </div> --> */}
@@ -179,17 +179,17 @@ export default function PcSideContentsLayout({ onOpenPopup }) {
                   템플릿 전체 보기
                 </button>
 
-                <div id="selPricecardTemplate" className="flex gap-1" style={{flexWrap: 'wrap'}}>
-                  <div className="w-full">비슷한 형태의 템플릿</div>
-                  <button type="button" className="line-btn selected" style={{width: '112px', flexDirection: 'column'}}>
+                <div className="pc-label">비슷한 형태의 템플릿</div>
+                <div id="selPricecardTemplate" className="flex flex-wrap gap-2">
+                  <button type="button" className="pc-line-btn selected" style={{width: '112px', flexDirection: 'column'}}>
                     <div className="pricecard-template-ellipsis">가격파괴</div>
                     <div>(세로형,2×1)</div>
                   </button>
-                  <button type="button" className="line-btn" style={{width: '112px', flexDirection: 'column'}}>
+                  <button type="button" className="pc-line-btn" style={{width: '112px', flexDirection: 'column'}}>
                     <div className="pricecard-template-ellipsis"><span>[센터]</span>샘플</div>
                     <div>(세로형,2×1)</div>
                   </button>
-                  <button type="button" className="line-btn" style={{width: '112px', flexDirection: 'column'}}>
+                  <button type="button" className="pc-line-btn" style={{width: '112px', flexDirection: 'column'}}>
                     <div className="pricecard-template-ellipsis"><span>[센터]</span>심플_노랑랑랑</div>
                     <div>(세로형,2×1)</div>
                   </button>

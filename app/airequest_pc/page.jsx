@@ -47,7 +47,7 @@ export default function AiRequestPage() {
 
 							{/* 요소 추가/삭제 탭을 누르면 보여짐 */}
 							{activeTab === 'elements' && (
-								<div className="workspace-scroll">
+								<div className="flex-1 small-scroll">
 									<div className="workspace-flex-row gap-2">
 										<div className="workspace-title">요소 추가 / 삭제
 											<div className="workspace-help tooltip1" data-tooltip="· 텍스트 레이어를 더블클릭하시면 내용을 편집할 수 있습니다.
@@ -121,18 +121,19 @@ export default function AiRequestPage() {
 
 							{/* 속성편집 탭을 누르면 보여짐 */}
 							{activeTab === 'props' && (
-								<div className="workspace-scroll">
+								<div className="flex-1 small-scroll">
 									{/* <!-- 속성 편집 --> */}
 									<div className="workspace-flex-row gap-2">
 										<div className="workspace-title">속성 편집
 											{/* <!-- 편집모드 --> */}
-											<div className="workspace-switch" style={{marginLeft: "auto"}}>
-												<div className="workspace-help tooltip2" style={{marginRight: "-3px"}} data-tooltip="· 일괄모드
+											<div className="workspace-switch ml-auto">
+												<div className="workspace-help tooltip2" data-tooltip="· 일괄모드
 											: 첫번째 상품 편집창만 활성화되고, 첫번째 상품의 스타일이 모든 상품에 적용됩니다.
 											· 개별모드 
 											: 특정 상품의 레이어를 첫번째 상품의 스타일과 다르게 편집할 수 있습니다. 작업 내용이 해당 상품에만 적용됩니다.
 											· 개별모드로 전환한 후 편집창에서 편집하고 싶은 상품 영역을 더블클릭하시면 해당 상품의 편집창이 활성화되어 레이어 편집이 가능해집니다.
 											· 개별모드에서는 레이아웃 변경, 템플릿 사용, 상품 데이터 컬럼 선택 등이 제한됩니다.">
+													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22ZM11 15V17H13V15H11ZM13 13.3551C14.4457 12.9248 15.5 11.5855 15.5 10C15.5 8.067 13.933 6.5 12 6.5C10.302 6.5 8.88637 7.70919 8.56731 9.31346L10.5288 9.70577C10.6656 9.01823 11.2723 8.5 12 8.5C12.8284 8.5 13.5 9.17157 13.5 10C13.5 10.8284 12.8284 11.5 12 11.5C11.4477 11.5 11 11.9477 11 12.5V14H13V13.3551Z"></path></svg>
 												</div>
 												일괄편집
 												<label className="workspace-switch-check">
@@ -144,7 +145,8 @@ export default function AiRequestPage() {
 										</div>
 									</div>
 									<div className="workspace-box">
-										<div className="workspace-title">크기 및 위치</div>
+
+										<div className="workspace-box-title">크기 및 위치</div>
 										<div id="pricecardEditShape" className="workspace-grid-tbl">
 											{/* <!-- 크기정보 --> */}
 											<div className="workspace-grid-th">크기</div>
@@ -233,7 +235,7 @@ export default function AiRequestPage() {
 
 									{/* 텍스트 설정 */}
 									<div id="pricecardEditFont" className="workspace-box">
-										<div className="workspace-title">텍스트</div>
+										<div className="workspace-box-title">텍스트</div>
 										<div className="workspace-grid-tbl">
 											<div className="workspace-grid-th">내용</div>
 											<div className="workspace-grid-td">
@@ -312,7 +314,7 @@ export default function AiRequestPage() {
 							{/* <!-- 레이어 순서는 하단에 고정 --> */}
 							<div className="workspace-layer-sort">
 								<div className="workspace-title">레이어 순서<span className="workspace-sub-text">(위에 있는 요소가 앞에 표시됩니다.)</span></div>
-								<div className="workspace-grid-tbl">
+								<div className="workspace-grid-tbl my-1!">
 									<div className="workspace-grid-th flex-col gap-2">
 										<button type="button" className="workspace-line-btn w-full">
 											맨위로
@@ -328,7 +330,7 @@ export default function AiRequestPage() {
 										</button>
 									</div>
 									<div className="workspace-grid-td">
-										<div id="pricecardLayerOrder" className="workspace-layerbox">
+										<div id="pricecardLayerOrder" className="workspace-layerbox small-scroll">
 											<button type="button" className="workspace-layerbox-btn" onClick="jsSelectLayer2(this)">
 												<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M2 4C2 3.44772 2.44772 3 3 3H21C21.5523 3 22 3.44772 22 4V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V4ZM4 5V19H20V5H4ZM7 8H17V11H15V10H13V14H14.5V16H9.5V14H11V10H9V11H7V8Z"></path></svg>
 												텍스트

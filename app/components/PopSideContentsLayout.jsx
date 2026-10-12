@@ -148,7 +148,7 @@ export default function PopSideContentsLayout({ children }) {
   }, []);
   return (
     <div className="side-contents-layout">
-      <div className="pop-scroll">
+      <div className="flex-1 small-scroll">
         {/* <!-- POP지형 설정 --> */}
         <div id="popBox" className="pop-group">
           {/* <!-- POP 레이아웃 --> */}
