@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import "./globals.css";
+import "./ai_button.css";
 import TsMoney from "./components/TsMoney";
 
 
@@ -35,16 +36,19 @@ export default function RootLayout({ children }) {
               <div className="tabs page-tab-inner" id="menuTab">
                 <ul className="level1 static">
                   <li role="menuitem">
-                    <Link href="/airequest_pop" className="level1 tab">AI POP 만들기</Link>
+                    <Link href="/aiRequest_pop" className="level1 tab">AI POP 만들기</Link>
                   </li>
                   <li role="menuitem">
-                    <Link href="/airequest_pc" className="level1 tab">프라이스카드 만들기</Link>
+                    <Link href="/aiRequest_pc" className="level1 tab">프라이스카드 만들기</Link>
                   </li>
                   <li role="menuitem">
                     <Link href="/aiImage" className="level1 tab">AI이미지관리</Link>
                   </li>
                   <li role="menuitem">
                     <Link href="/aiStatics" className="level1 tab">AI이용현황</Link>
+                  </li>
+                  <li role="menuitem">
+                    <Link href="/uiView" className="level1 tab">UI 뷰</Link>
                   </li>
                 </ul>
                 <div className="tsmoney-info" ref={containerRef}>

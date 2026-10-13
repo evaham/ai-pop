@@ -76,7 +76,7 @@ export default function LayerPopupView ({ isOpen = true, onClose }) {
 				</div>
 			</div>
 			{/* <!-- 레이어2 --> */}
-			<div id="pricecardImageBox" className="popup-content-group hidden">
+			<div id="pricecardImageBox" className="popup-content-group">
 				<button type="button" className="popup-close-btn" onClick={handleClose}>
 					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M10.5859 12L2.79297 4.20706L4.20718 2.79285L12.0001 10.5857L19.793 2.79285L21.2072 4.20706L13.4143 12L21.2072 19.7928L19.793 21.2071L12.0001 13.4142L4.20718 21.2071L2.79297 19.7928L10.5859 12Z"></path></svg>
 				</button>
@@ -147,7 +147,7 @@ export default function LayerPopupView ({ isOpen = true, onClose }) {
 				</div>
 			</div>
 			{/* <!-- 레이어3 --> */}
-			<div id="pricecardTemplateBox" className="popup-content-group" style={{height:"800px"}}>
+			<div id="pricecardTemplateBox" className="popup-content-group hidden" style={{height:"800px"}}>
 				<button type="button" className="popup-close-btn" onClick={handleClose}>
 					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M10.5859 12L2.79297 4.20706L4.20718 2.79285L12.0001 10.5857L19.793 2.79285L21.2072 4.20706L13.4143 12L21.2072 19.7928L19.793 21.2071L12.0001 13.4142L4.20718 21.2071L2.79297 19.7928L10.5859 12Z"></path></svg>
 				</button>
@@ -157,7 +157,7 @@ export default function LayerPopupView ({ isOpen = true, onClose }) {
 				</div>
 
 
-				<div id="martTemplateBox" className="popup-content-templatebox">
+				<div id="martTemplateBox" className="popup-content-templatebox small-scroll hidden">
 					{templatebox.map((html, index) => (
 						<div style={{position:"relative"}} data-template={index}>
 							<div className="popup-content-templatebox-frame">
@@ -176,7 +176,7 @@ export default function LayerPopupView ({ isOpen = true, onClose }) {
 					))}
 				</div>
 
-				<div id="centerTemplateBox" className="popup-content-templatebox hidden">
+				<div id="centerTemplateBox" className="popup-content-templatebox small-scroll hidden">
 					{templatebox.map((html, index) => (
 						<div style={{position:"relative"}} data-template={index}>
 							<div className="popup-content-templatebox-frame">
@@ -194,10 +194,6 @@ export default function LayerPopupView ({ isOpen = true, onClose }) {
 						</div>
 					))}
 				</div>
-
-
-
-
 			</div>
 			{/* <!-- 레이어4 --> */}
 			<div id="pricecardFontBox" className="popup-content-group hidden">
@@ -206,7 +202,7 @@ export default function LayerPopupView ({ isOpen = true, onClose }) {
 				</button>
 				<div className="popup-content-title">글꼴 미리보기</div>
 				<div className="popup-content-text">원하신 글꼴을 선택하면 바로 적용됩니다.</div>
-				<div className="popup-content-fontbox">
+				<div className="popup-content-fontbox small-scroll">
 					{webFonts.map((f, idx) => (
 						<div className={f.className || undefined} key={f.name + idx}>
 							<div className="popup-font-name">{f.name}</div>

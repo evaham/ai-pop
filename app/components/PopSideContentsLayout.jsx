@@ -78,7 +78,7 @@ export default function PopSideContentsLayout({ children }) {
       groups.forEach(function (group) {
         const handler = function (e) {
           let target = e.target;
-          while (target && target !== group && !target.classList.contains('pop-line-btn')) {
+          while (target && target !== group && !target.classList.contains('c-btn-secondary')) {
             target = target.parentElement;
           }
           if (!target || target === group) return;
@@ -302,19 +302,19 @@ export default function PopSideContentsLayout({ children }) {
                 </div>
                 <div className="pop-label">강조 포인트</div>
                 <div className="pop-line-group">
-                  <button type="button" className="pop-line-btn selected" data-label="가격강조" onClick={(e) => window.jsSelectLabel && window.jsSelectLabel(e.currentTarget)}>
+                  <button type="button" className="c-btn-secondary selected" data-label="가격강조" onClick={(e) => window.jsSelectLabel && window.jsSelectLabel(e.currentTarget)}>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M3.00488 6.99972L11.4502 1.36952C11.7861 1.14559 12.2237 1.14559 12.5596 1.36952L21.0049 6.99972V20.9997C21.0049 21.552 20.5572 21.9997 20.0049 21.9997H4.00488C3.4526 21.9997 3.00488 21.552 3.00488 20.9997V6.99972ZM5.00488 8.07009V19.9997H19.0049V8.07009L12.0049 3.40342L5.00488 8.07009ZM12.0049 10.9997C10.9003 10.9997 10.0049 10.1043 10.0049 8.99972C10.0049 7.89515 10.9003 6.99972 12.0049 6.99972C13.1095 6.99972 14.0049 7.89515 14.0049 8.99972C14.0049 10.1043 13.1095 10.9997 12.0049 10.9997Z"></path></svg>
                     가격강조
                   </button>
-                  <button type="button" className="pop-line-btn" data-label="신선도 강조" onClick={(e) => window.jsSelectLabel && window.jsSelectLabel(e.currentTarget)}>
+                  <button type="button" className="c-btn-secondary" data-label="신선도 강조" onClick={(e) => window.jsSelectLabel && window.jsSelectLabel(e.currentTarget)}>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M20.998 3V5C20.998 14.6274 15.6255 19 8.99805 19L5.24077 18.9999C5.0786 19.912 4.99805 20.907 4.99805 22H2.99805C2.99805 20.6373 3.11376 19.3997 3.34381 18.2682C3.1133 16.9741 2.99805 15.2176 2.99805 13C2.99805 7.47715 7.4752 3 12.998 3C14.998 3 16.998 4 20.998 3ZM12.998 5C8.57977 5 4.99805 8.58172 4.99805 13C4.99805 13.3624 5.00125 13.7111 5.00759 14.0459C6.26198 12.0684 8.09902 10.5048 10.5019 9.13176L11.4942 10.8682C8.6393 12.4996 6.74554 14.3535 5.77329 16.9998L8.99805 17C15.0132 17 18.8692 13.0269 18.9949 5.38766C17.6229 5.52113 16.3481 5.436 14.7754 5.20009C13.6243 5.02742 13.3988 5 12.998 5Z"></path></svg>
                     신선도 강조
                   </button>
-                  <button type="button" className="pop-line-btn" data-label="행사강조" onClick={(e) => window.jsSelectLabel && window.jsSelectLabel(e.currentTarget)}>
+                  <button type="button" className="c-btn-secondary" data-label="행사강조" onClick={(e) => window.jsSelectLabel && window.jsSelectLabel(e.currentTarget)}>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M15.0049 2.00281C17.214 2.00281 19.0049 3.79367 19.0049 6.00281C19.0049 6.73184 18.8098 7.41532 18.4691 8.00392L23.0049 8.00281V10.0028H21.0049V20.0028C21.0049 20.5551 20.5572 21.0028 20.0049 21.0028H4.00488C3.4526 21.0028 3.00488 20.5551 3.00488 20.0028V10.0028H1.00488V8.00281L5.54065 8.00392C5.19992 7.41532 5.00488 6.73184 5.00488 6.00281C5.00488 3.79367 6.79574 2.00281 9.00488 2.00281C10.2001 2.00281 11.2729 2.52702 12.0058 3.35807C12.7369 2.52702 13.8097 2.00281 15.0049 2.00281ZM11.0049 10.0028H5.00488V19.0028H11.0049V10.0028ZM19.0049 10.0028H13.0049V19.0028H19.0049V10.0028ZM9.00488 4.00281C7.90031 4.00281 7.00488 4.89824 7.00488 6.00281C7.00488 7.05717 7.82076 7.92097 8.85562 7.99732L9.00488 8.00281H11.0049V6.00281C11.0049 5.00116 10.2686 4.1715 9.30766 4.02558L9.15415 4.00829L9.00488 4.00281ZM15.0049 4.00281C13.9505 4.00281 13.0867 4.81869 13.0104 5.85355L13.0049 6.00281V8.00281H15.0049C16.0592 8.00281 16.923 7.18693 16.9994 6.15207L17.0049 6.00281C17.0049 4.89824 16.1095 4.00281 15.0049 4.00281Z"></path></svg>
                     행사강조
                   </button>
-                  <button type="button" className="pop-line-btn" data-label="상품강조" onClick={(e) => window.jsSelectLabel && window.jsSelectLabel(e.currentTarget)}>
+                  <button type="button" className="c-btn-secondary" data-label="상품강조" onClick={(e) => window.jsSelectLabel && window.jsSelectLabel(e.currentTarget)}>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L21.5 6.5V17.5L12 23L2.5 17.5V6.5L12 1ZM5.49388 7.0777L12.0001 10.8444L18.5062 7.07774L12 3.311L5.49388 7.0777ZM4.5 8.81329V16.3469L11.0001 20.1101V12.5765L4.5 8.81329ZM13.0001 20.11L19.5 16.3469V8.81337L13.0001 12.5765V20.11Z"></path></svg>
                     상품강조
                   </button>
@@ -340,23 +340,23 @@ export default function PopSideContentsLayout({ children }) {
                 <div className="pop-label">상품 데이터 입력</div>
                 <div className="flex gap-1">
                   <div id="selPopColumn" className="pop-line-group">
-                    <button type="button" className="pop-line-btn selected" data-column="name">
+                    <button type="button" className="c-btn-secondary selected" data-column="name">
                       <span className="text-red-500">*</span>상품명
                     </button>
-                    <button type="button" className="pop-line-btn">
+                    <button type="button" className="c-btn-secondary">
                       규격
                     </button>
-                    <button type="button" className="pop-line-btn">
+                    <button type="button" className="c-btn-secondary">
                       정상판매가
                     </button>
-                    <button type="button" className="pop-line-btn selected" data-column="dcprice">
+                    <button type="button" className="c-btn-secondary selected" data-column="dcprice">
                       <span className="text-red-500">*</span>할인판매가
                     </button>
-                    <button type="button" className="pop-line-btn">
+                    <button type="button" className="c-btn-secondary">
                       할인율
                     </button>
                   </div>
-                  <button type="button" className="pop-line-btn" style={{marginLeft: 'auto'}}>
+                  <button type="button" className="c-btn-secondary" style={{marginLeft: 'auto'}}>
                     행 비우기
                   </button>
                 </div>
@@ -377,13 +377,13 @@ export default function PopSideContentsLayout({ children }) {
                   판매가 표시 단위
                 </div>
                 <div className="pop-line-group">
-                  <button type="button" className="pop-line-btn selected" data-column="name">
+                  <button type="button" className="c-btn-secondary selected" data-column="name">
                     AI 자동
                   </button>
-                  <button type="button" className="pop-line-btn" data-column="name">
+                  <button type="button" className="c-btn-secondary" data-column="name">
                     원(뒤)
                   </button>
-                  <button type="button" className="pop-line-btn" data-column="name">
+                  <button type="button" className="c-btn-secondary" data-column="name">
                     싯가
                   </button>
                 </div>
@@ -407,9 +407,9 @@ export default function PopSideContentsLayout({ children }) {
               {/* <!-- POP 추가설명 --> */}
               <div className="pop-fieldset">
                 <label className="pop-label">타이틀 입력<span className="pop-byte">0/100 bytes</span></label>
-                <textarea className="pop-form-textarea" rows={2} suppressHydrationWarning></textarea>
+                <textarea className="c-textarea" rows={2} suppressHydrationWarning></textarea>
                 <label className="pop-label">내용 입력<span className="pop-byte">0/1000 bytes</span></label>
-                <textarea className="pop-form-textarea" rows={3} suppressHydrationWarning></textarea>
+                <textarea className="c-textarea" rows={3} suppressHydrationWarning></textarea>
               </div>
             </div>
           </div>
@@ -431,7 +431,7 @@ export default function PopSideContentsLayout({ children }) {
               {/* <!-- POP 추가설명 --> */}
               <div className="pop-fieldset">
                 <label className="pop-label">추가 설명 입력<span className="pop-byte">0/1000 Bytes</span></label>
-                <textarea id="popExtra" className="pop-form-textarea" rows={3}></textarea>
+                <textarea id="popExtra" className="c-textarea" rows={3}></textarea>
 
 
                 <label className="pop-label">참조 이미지 추가</label>
@@ -450,9 +450,9 @@ export default function PopSideContentsLayout({ children }) {
                       <div>파일선택 버튼을 눌러 이미지를 업로드하세요.</div>
                       <div>[<span id="popAttachFileName"></span> / <span id="popAttachFileSize"></span>]</div>
                       <div className="flex gap-1 mt-2">
-                        <button type="button" className="pop-base-btn" onClick={() => document.getElementById('popFile')?.click()}>이미지
+                        <button type="button" className="c-btn" onClick={() => document.getElementById('popFile')?.click()}>이미지
                           변경</button>
-                        <button type="button" className="pop-base-btn" onClick={() => window.jsRemoveAttach && window.jsRemoveAttach()}>이미지 삭제</button>
+                        <button type="button" className="c-btn" onClick={() => window.jsRemoveAttach && window.jsRemoveAttach()}>이미지 삭제</button>
                       </div>
                     </div>
                   </div>
@@ -461,7 +461,7 @@ export default function PopSideContentsLayout({ children }) {
                       <div>파일선택 버튼을 눌러 이미지를 업로드하세요.</div>
                       <div>[jpg, png / 최대 2MB]</div>
                       <div className="flex gap-1 mt-2">
-                        <button type="button" className="pop-base-btn" onClick={() => document.getElementById('popFile')?.click()}>파일선택</button>
+                        <button type="button" className="c-btn" onClick={() => document.getElementById('popFile')?.click()}>파일선택</button>
                         <input type="file" id="popFile" accept=".jpg,.jpeg,.png" style={{color: 'transparent'}} onChange={() => window.jsPreviewAttach && window.jsPreviewAttach()} />
                       </div>
                     </div>
@@ -540,7 +540,7 @@ export default function PopSideContentsLayout({ children }) {
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#999"><path d="M1.99974 13.0001L1.9996 11.0002L18.1715 11.0002L14.2218 7.05044L15.636 5.63623L22 12.0002L15.636 18.3642L14.2218 16.9499L18.1716 13.0002L1.99974 13.0001Z"></path></svg>
           <div className="pop-pay-info-item">차감후 <span>234,800</span>TS</div>
         </div>
-        <button type="button" className="pop-pay-button">
+        <button type="button" className="c-btn-primary">
           <div>AI 이미지 생성 (500TS 차감)</div>
         </button>
       </div>

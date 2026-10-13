@@ -1,0 +1,93 @@
+@charset "UTF-8";
+@import "tailwindcss";
+
+
+
+/* 컬러칩 */
+:root {
+    --primary-50:  #F2F5FB;
+    --primary-100: #E3EAF7;
+    --primary-200: #C5D2EC;
+    --primary-300: #9DB2DD;
+    --primary-400: #6687C5;
+    --primary-500: #26499D;
+    --primary-600: #203F89;
+    --primary-700: #1B3574;
+    --primary-800: #172D60;
+    --primary-900: #12234B;
+    --border: #E1E6EE;
+    --text-primary: #1F2937;
+    --text-secondary: #718096;
+    --button-selected-bg: #26499d;
+    --button-selected-color: #ffffff;
+}
+
+/* 기본버튼 */
+.c-btn {@apply flex items-center justify-center gap-1 px-2 py-1 ring-1 ring-gray-300 rounded text-sm bg-gray-50 cursor-pointer transition; }
+.c-btn:hover { @apply bg-gray-100 no-underline; }
+.c-btn:active, .c-btn.selected { @apply bg-gray-200; }
+
+.c-btn-line { @apply flex items-center justify-center gap-1 px-2 py-1 ring-1 ring-gray-300 rounded text-sm cursor-pointer transition bg-transparent text-(--text-primary); }
+.c-btn-line:hover { @apply bg-(--primary-50); }
+.c-btn-line:active, .c-btn-line.selected { @apply bg-blue-50 ring-blue-500/90 text-blue-700; }
+
+
+/* 버튼종류 */
+.c-btn-primary { @apply flex items-center justify-center gap-1 px-2 py-1 ring-1 ring-(--primary-500) rounded text-sm text-white bg-(--primary-500) cursor-pointer transition; }
+.c-btn-primary:hover { @apply bg-(--primary-600); }
+.c-btn-primary:active, .c-btn-primary.selected { @apply bg-(--primary-600); }
+
+.c-btn-secondary { @apply flex items-center justify-center gap-1 px-2 py-1 ring-1 ring-gray-300 rounded text-sm text-(--text-primary) bg-white cursor-pointer transition; }
+.c-btn-secondary:hover { @apply ring-blue-400 cursor-pointer bg-(--primary-50); }
+.c-btn-secondary:active, .c-btn-secondary.selected { @apply bg-blue-50 ring-blue-500/90 text-blue-700; }
+
+.c-btn-tertiary { @apply flex items-center justify-center gap-1 px-2 py-1 ring-1 ring-transparent rounded text-sm bg-white cursor-pointer transition; }
+.c-btn-tertiary:hover { @apply bg-gray-100; }
+.c-btn-tertiary:active, .c-btn-tertiary.selected { @apply ring-gray-400 bg-gray-50; }
+
+/* 버튼종류 끝 */
+
+/* 버튼크기 */
+.c-btn-sm { @apply px-2 py-1 text-xs; }
+.c-btn-md { @apply px-2 py-1 text-sm; }
+.c-btn-lg { @apply px-4 py-2 text-lg; }
+/* 버튼크기 끝 */
+
+/* 아이콘 */
+.c-btn svg,
+.c-btn svg,
+.c-btn-primary svg,
+.c-btn-secondary svg,
+.c-btn-tertiary svg { @apply size-5; }
+
+
+.c-btn-icon:hover { @apply bg-(--primary-50); }
+.c-btn-icon:active, .c-btn-icon.selected { @apply bg-(--primary-100); }
+/* 버튼아이콘 끝 */
+/* disabled */
+.c-btn.disabled, 
+.c-btn-primary.disabled,
+.c-btn-secondary.disabled,
+.c-btn-tertiary.disabled,
+.c-btn-icon.disabled { @apply bg-gray-200 ring-gray-200 text-gray-500 cursor-not-allowed; }
+
+
+
+/* 입력폼 */
+.c-input { @apply inline-flex items-center justify-center min-h-7 px-2 py-1 ring-1 ring-gray-300 rounded text-sm bg-gray-50 cursor-text transition; }
+.c-input:focus { @apply ring-(--primary-500) outline-none; }
+.c-input[type="number"]::-webkit-inner-spin-button, 
+.c-input[type="number"]::-webkit-outer-spin-button { @apply appearance-none m-0; }
+
+.c-textarea { @apply inline-flex items-center justify-center min-h-7 px-2 py-1 ring-1 ring-gray-300 rounded text-sm bg-gray-50 cursor-text transition; }
+.c-textarea:focus { @apply ring-(--primary-500) outline-none; }
+
+/* .pop-form-textarea { @apply border border-gray-300 rounded-lg p-2 inset-shadow-2xs; }
+.pop-form-textarea { @apply border border-gray-300 rounded-lg p-2 inset-shadow-2xs; } */
+
+
+
+/* 입력폼 끝 */
+.c-select { @apply flex items-center justify-center px-2 py-1.25 ring-1 ring-gray-300 rounded text-sm bg-gray-50 cursor-pointer transition; }
+.c-select:focus { @apply ring-(--primary-500) outline-none; }
+/* 선택폼 끝 */

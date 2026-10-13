@@ -78,7 +78,7 @@ export default function PcSideContentsLayout({ onOpenPopup }) {
       groups.forEach(function (group) {
         const handler = function (e) {
           let target = e.target;
-          while (target && target !== group && !target.classList.contains('pop-line-btn')) {
+          while (target && target !== group && !target.classList.contains('c-btn-secondary')) {
             target = target.parentElement;
           }
           if (!target || target === group) return;
@@ -219,19 +219,19 @@ export default function PcSideContentsLayout({ onOpenPopup }) {
               <div className="pc-fieldset">
                 <div className="pc-label">색상 테마</div>
                 <div className="pc-line-group">
-                  <button type="button" className="pc-line-btn yellow selected">
+                  <button type="button" className="c-btn-secondary yellow selected">
                     노랑
                   </button>
-                  <button type="button" className="pc-line-btn">
+                  <button type="button" className="c-btn-secondary">
                     빨강
                   </button>
-                  <button type="button" className="pc-line-btn">
+                  <button type="button" className="c-btn-secondary">
                     초록
                   </button>
-                  <button type="button" className="pc-line-btn">
+                  <button type="button" className="c-btn-secondary">
                     파랑
                   </button>
-                  <button type="button" className="pc-line-btn">
+                  <button type="button" className="c-btn-secondary">
                     흰색
                   </button>
                 </div>
@@ -254,37 +254,37 @@ export default function PcSideContentsLayout({ onOpenPopup }) {
             <div className="pc-body" style={{maxHeight: '0px', opacity: 0}}>
               <div className="pc-fieldset">
                 <div className="pc-label">반복 디자인 설정<span>(최대 24개)</span></div>
-                <div className="flex gap-1 items-center">
+                <div className="flex gap-2 items-center">
 									<select id="selPricecardDirection" className="pc-select">
 										<option value="landscape">가로형</option>
 										<option value="portrait" >세로형</option>
 									</select>
-									<input type="text" id="pricecardRowCount" data-row="3" className="pc-input" />
+									<input type="text" id="pricecardRowCount" data-row="3" className="c-input w-10" />
 									행
-									<input type="text" id="pricecardColCount" data-col="2" className="pc-input" />
+									<input type="text" id="pricecardColCount" data-col="2" className="c-input w-10" />
 									열
 								</div>
 
                 <div className="pc-label">상품 데이터 입력</div>
                 <div className="flex gap-1">
                   <div id="selPopColumn" className="pc-line-group">
-                    <button type="button" className="pc-line-btn selected" data-column="name">
+                    <button type="button" className="c-btn-secondary selected" data-column="name">
                       <span className="text-red-500">*</span>상품명
                     </button>
-                    <button type="button" className="pc-line-btn">
+                    <button type="button" className="c-btn-secondary">
                       규격
                     </button>
-                    <button type="button" className="pc-line-btn">
+                    <button type="button" className="c-btn-secondary">
                       정상판매가
                     </button>
-                    <button type="button" className="pc-line-btn selected" data-column="dcprice">
+                    <button type="button" className="c-btn-secondary selected" data-column="dcprice">
                       <span className="text-red-500">*</span>할인판매가
                     </button>
-                    <button type="button" className="pc-line-btn">
+                    <button type="button" className="c-btn-secondary">
                       할인율
                     </button>
                   </div>
-                  <button type="button" className="pc-line-btn" style={{marginLeft: 'auto'}}>
+                  <button type="button" className="c-btn-secondary" style={{marginLeft: 'auto'}}>
                     행 비우기
                   </button>
                 </div>
@@ -330,13 +330,13 @@ export default function PcSideContentsLayout({ onOpenPopup }) {
                   판매가 표시 단위
                 </div>
                 <div className="pc-line-group">
-                  <button type="button" className="pc-line-btn selected" data-column="name">
-                    AI 자동
+                  <button type="button" className="c-btn-secondary selected" data-column="name">
+                    없음
                   </button>
-                  <button type="button" className="pc-line-btn" data-column="name">
+                  <button type="button" className="c-btn-secondary" data-column="name">
                     원(뒤)
                   </button>
-                  <button type="button" className="pc-line-btn" data-column="name">
+                  <button type="button" className="c-btn-secondary" data-column="name">
                     싯가
                   </button>
                 </div>

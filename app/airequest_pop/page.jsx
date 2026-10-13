@@ -3,7 +3,7 @@ import PopSideContentsLayout from '../components/PopSideContentsLayout';
 import resolveImageSrc from "../lib/resolveImageSrc";
 
 
-export default function AirequestPop() {
+export default function AiRequestPop() {
   const promoSamples = [
     { title: '신선 마켓', highlights: ['가격강조', '상품강조'], img: './img/그림2.png', alt: '샘플 이미지 1' },
     { title: '컬러 임펙트 스타일', highlights: ['가격강조', '상품강조'], img: './img/그림3.png', alt: '샘플 이미지 2' },
@@ -57,7 +57,6 @@ export default function AirequestPop() {
                   ))}
                 </div>
               </div>
-                  
               {/* <!-- 안내공지형 샘플 --> */}
               <div className="pop-sample-list-tit">안내/공지형 템플릿</div>
               <div className="pop-sample-list-wrapper" aria-label="안내공지형 샘플">
