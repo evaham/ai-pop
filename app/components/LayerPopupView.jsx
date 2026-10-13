@@ -1,5 +1,7 @@
 "use client";
 import React from "react";
+import resolveImageSrc from "../lib/resolveImageSrc";
+
 
 export default function LayerPopupView ({ isOpen = true, onClose }) {
 	const handleClose = () => {
@@ -62,15 +64,15 @@ export default function LayerPopupView ({ isOpen = true, onClose }) {
 					편집창의 활성화 된 레이어들을 템플릿으로 저장합니다.<br />
 					템플릿명에 작은따옴표는 사용할 수 없습니다.					
 				</div>
-				<input type="text" className="form-input" style={{marginTop:"8px" , width:"100%"}} id="pricecardTemplateTitle" />
+				<input type="text" className="c-input" style={{marginTop:"8px" , width:"100%"}} id="pricecardTemplateTitle" />
 				<div className="form-text-byte">
 					<span id="pricecardTemplateTitleByte">0</span> / 50 byte
 				</div>
-				<div className="popup-content-buttons justify-center">
-					<button type="button" id="btnTemplateUpdate" className="point-btn-blue">
+				<div className="popup-content-buttons mx-auto">
+					<button type="button" id="btnTemplateUpdate" className="c-btn-primary">
 						<div>현재 템플릿 수정하기</div>
 					</button>
-					<button type="button" id="btnTemplateInsert" className="point-btn-blue">
+					<button type="button" id="btnTemplateInsert" className="c-btn-primary">
 						<div>새 템플릿으로 저장하기</div>
 					</button>
 				</div>
@@ -83,15 +85,15 @@ export default function LayerPopupView ({ isOpen = true, onClose }) {
 				<div className="popup-content-title">이미지 생성 완료</div>
 				<hr className="popup-content-divider" />
 				<div className="flex gap-4">
-					<div className="flex-1 flex items-center justify-center bg-gray-50 p-4">
-						<img id="pricecardImage" src="./img.png" className="max-w-full max-h-full border" />
+					<div className="popup-content-preview">
+						<img id="pricecardImage" src={resolveImageSrc("./img/안내공지_컬러임팩트.png")} className="max-w-full max-h-full border" />
 					</div>
 					<div id="pricecardImageInfo" className="popup-content-infobox">
 						<div className="popup-content-buttons">
-							<button type="button" className="line-btn">
+							<button type="button" className="c-btn">
 								<div>인쇄하기</div>
 							</button>
-							<button type="button" className="line-btn">
+							<button type="button" className="c-btn">
 								<div>다운로드</div>
 							</button>
 						</div>
@@ -128,10 +130,10 @@ export default function LayerPopupView ({ isOpen = true, onClose }) {
 					</div>
 					<div id="pricecardImageError" className="popup-content-infobox hidden">
 						<div className="popup-content-buttons">
-							<button type="button" className="line-btn">
+							<button type="button" className="c-btn">
 								<div>인쇄하기</div>
 							</button>
-							<button type="button" className="line-btn">
+							<button type="button" className="c-btn">
 								<div>다운로드</div>
 							</button>
 						</div>

@@ -390,8 +390,28 @@ export default function AiRequestPc() {
 						</div>
 					</div>
 				</div>
-				<div style={{position: "absolute", top: "0", left: "0", zIndex: 2, padding: "4px 8px", fontSize: "14px"}}>
-					<span id="pricecardScale">1</span>×
+				<div className="absolute top-0 left-0 flex w-[810px] z-2 p-1 text-sm border-b border-gray-200 bg-white">
+					<div className="workspace-flex-row gap-2 mx-auto w-90!">
+						<div className="workspace-title">화면 확대
+							<div className="workspace-help tooltip1 ml-1" data-tooltip="· 왼쪽 편집창 영역을 클릭 후 아래의 키를 동시에 누르시면 배율을 더 세밀하게 조정하실 수 있습니다.
+							① Ctrl키와 +키 : 0.2씩 확대
+							② Ctrl키와 -키 : 0.2씩 축소">
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22ZM11 15V17H13V15H11ZM13 13.3551C14.4457 12.9248 15.5 11.5855 15.5 10C15.5 8.067 13.933 6.5 12 6.5C10.302 6.5 8.88637 7.70919 8.56731 9.31346L10.5288 9.70577C10.6656 9.01823 11.2723 8.5 12 8.5C12.8284 8.5 13.5 9.17157 13.5 10C13.5 10.8284 12.8284 11.5 12 11.5C11.4477 11.5 11 11.9477 11 12.5V14H13V13.3551Z"></path></svg>
+							</div>
+						</div>
+						<div id="selPricecardScale" className="workspace-zoom flex">
+							<button type="button" className="c-btn-secondary selected" style={{width: "80px"}}>
+								<div className="" style={{letterSpacing: "0"}}>1×</div>
+							</button>
+							<button type="button" className="c-btn-secondary" style={{width: "80px"}}>
+								<div className="" style={{letterSpacing: "0"}}>2×</div>
+							</button>
+							<button type="button" className="c-btn-secondary" style={{width: "80px"}}>
+								<div className="" style={{letterSpacing: "0"}}>3×</div>
+							</button>
+						</div>
+					</div>
+					{/* <span id="pricecardScale">1</span>× */}
 				</div>
 			</div>
 			{isPopupOpen && (

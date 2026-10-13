@@ -259,9 +259,9 @@ export default function PcSideContentsLayout({ onOpenPopup }) {
 										<option value="landscape">가로형</option>
 										<option value="portrait" >세로형</option>
 									</select>
-									<input type="text" id="pricecardRowCount" data-row="3" className="c-input w-10" />
+									<input type="text" id="pricecardRowCount" data-row="3" className="c-input text-right w-10" />
 									행
-									<input type="text" id="pricecardColCount" data-col="2" className="c-input w-10" />
+									<input type="text" id="pricecardColCount" data-col="2" className="c-input text-right w-10" />
 									열
 								</div>
 
