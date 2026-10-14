@@ -405,6 +405,7 @@ input:checked + .switch_slider:before { transform: translateX(-13px);  } */
 /* 이용현황 검색 영역 */
 .search-content { @apply flex flex-col justify-center gap-2; }
 .search-opt { @apply flex items-center gap-1; }
+.search-text { @apply flex items-center gap-3 text-sm text-[var(--text-primary)]; }
 .search-result { @apply  flex items-center gap-3 text-[var(--text-primary)]; }
 .search-btn { @apply flex items-center justify-center px-3 py-1 ring-1 ring-gray-300 rounded text-sm bg-gray-50 cursor-pointer; }
 .search-btn:hover { @apply bg-gray-100; }
@@ -414,8 +415,9 @@ input:checked + .switch_slider:before { transform: translateX(-13px);  } */
 .search-select select { @apply bg-transparent ring-0 outline-none appearance-none; }
 .search-btn-blue { @apply flex items-center justify-center px-3 py-1 ring-1 ring-[#26499d] rounded bg-[#26499d] text-white text-sm cursor-pointer; }
 
+
 /* 이용현황 테이블 영역 */
-.statics-tbl-wrap { @apply w-full overflow-x-auto my-2 border border-gray-200 bg-gray-200; }
+.statics-tbl-wrap { @apply w-full overflow-x-auto my-2 border border-gray-200 bg-gray-200 text-sm; }
 .statics-tbl { @apply w-auto border-spacing-0 border-collapse bg-white break-all whitespace-nowrap; }
 .statics-tbl th { @apply px-3 py-0.5 border border-gray-300 bg-gray-200 text-gray-600 text-center font-normal; }
 .statics-tbl td { @apply px-3 py-0.5 border border-gray-300; }

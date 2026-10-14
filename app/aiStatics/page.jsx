@@ -28,14 +28,14 @@ export default function AiStatics() {
                   </div>
                 </div>
                 <div className="search-result">
-                  <span className="search__text">누적 생성건수 : </span>
-                  <span className="search__text text_bold font-semibold">12건</span>
-                  <span className="text_gray text-gray-400 mx-2">|</span>
-                  <span className="search__text">총 결제TS머니 : </span>
-                  <span className="search__text text_bold font-semibold">4,500.0</span>
-                  <span className="text_gray text-gray-400 mx-2">|</span>
-                  <span className="search__text">총 결제TS포인트 : </span>
-                  <span className="search__text text_bold font-semibold">0.0</span>
+                  <span className="search-text">누적 생성건수 : </span>
+                  <span className="search-text font-bold">12건</span>
+                  <span className="text-xs text-gray-300 mx-2">|</span>
+                  <span className="search-text">총 결제TS머니 : </span>
+                  <span className="search-text font-bold">4,500.0</span>
+                  <span className="text-xs text-gray-300 mx-2">|</span>
+                  <span className="search-text">총 결제TS포인트 : </span>
+                  <span className="search-text font-bold">0.0</span>
                   <div className="ml-auto flex items-center gap-2">
                     <select className="c-select" name="orderBy">
                       <option value="rgstASC">이미지생성일↑</option>
