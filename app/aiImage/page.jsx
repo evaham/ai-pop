@@ -124,12 +124,12 @@ export default function AiImage() {
             </div>
             <div id="selectedPreview" className="">
               <div className="aiimage-preview-imgbox" style={{width:'100%', padding:'10px'}}>
-                <img src="" id="layerImg" className="max-w-full max-h-full" />
+                <img src="http://tdc-api-dev-3.togethers.kr:2004/ImageAI/20260928/1001_20260928_105757072_Thumb.jpg" id="layerImg" className="max-w-full max-h-full" />
               </div>
               <div className="aiimage-btn-group">
-                <button type="button" className="c-btn-primary" onclick="jsRequest()">AI생성</button>
-                <button type="button" className="c-btn" onclick="jsPrint()">인쇄하기</button>
-                <button type="button" className="c-btn" onclick="jsDownload()">다운로드</button>					            		
+                <button type="button" className="c-btn-primary">AI생성</button>
+                <button type="button" className="c-btn">인쇄하기</button>
+                <button type="button" className="c-btn">다운로드</button>					            		
               </div>
               <div className="aiimage-info-box flex flex-col">
                 <div>

@@ -173,13 +173,13 @@ export default function PopSideContentsLayout({ children }) {
                 <div className="pop-label">홍보유형</div>
                 <div className="pop-btn-group" role="tablist" aria-label="유형선택">
                   <button type="button" className="pop-btn selected">
-                    {/* <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="#374151" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5v9.2a2 2 0 0 0 .586 1.414l11.8 11.8a2 2 0 0 0 2.828 0L28.4 18.228a2 2 0 0 0 0-2.828L16.6 3.6A2 2 0 0 0 15.186 3H6a2 2 0 0 0-2 2Z"/><circle cx="9" cy="9" r="1.5"/><path d="m21 4 .7 2.3L24 7l-2.3.7L21 10l-.7-2.3L18 7l2.3-.7L21 4Z"/></svg> */}
+                    {/* <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="#374151" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M4 5v9.2a2 2 0 0 0 .586 1.414l11.8 11.8a2 2 0 0 0 2.828 0L28.4 18.228a2 2 0 0 0 0-2.828L16.6 3.6A2 2 0 0 0 15.186 3H6a2 2 0 0 0-2 2Z"/><circle cx="9" cy="9" r="1.5"/><path d="m21 4 .7 2.3L24 7l-2.3.7L21 10l-.7-2.3L18 7l2.3-.7L21 4Z"/></svg> */}
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C12.5523 2 13 2.44772 13 3C13 3.55228 12.5523 4 12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20C16.4183 20 20 16.4183 20 12C20 11.4477 20.4477 11 21 11C21.5523 11 22 11.4477 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2ZM12 6C12.5523 6 13 6.44772 13 7C13 7.55228 12.5523 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16C14.2091 16 16 14.2091 16 12C16 11.4477 16.4477 11 17 11C17.5523 11 18 11.4477 18 12C18 15.3137 15.3137 18 12 18C8.68629 18 6 15.3137 6 12C6 8.68629 8.68629 6 12 6ZM18.5713 2.10059C18.8474 2.1006 19.0712 2.32449 19.0713 2.60059V4.42969C19.0716 4.70553 19.2954 4.92866 19.5713 4.92871H21.3994C21.6754 4.92871 21.8992 5.15275 21.8994 5.42871V6.34375L20.0107 8.23242C19.6358 8.60719 19.1268 8.81824 18.5967 8.81836H16.5967L12.707 12.707C12.3165 13.0974 11.6835 13.0975 11.293 12.707C10.9027 12.3165 10.9026 11.6834 11.293 11.293L15.1826 7.4043V5.4043C15.1826 4.87411 15.3928 4.36526 15.7676 3.99023L17.6572 2.10059H18.5713Z"></path></svg>
                     상품 홍보형
                     <span className="pop-btn-description">상품이나 가격을 강조하는 디자인</span>
                   </button>
                   <button type="button" className="pop-btn">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m12 11 14-6v22l-14-6H6a2 2 0 0 1-2-2v-6a2 2 0 0 1 2-2h6Z"/><path d="M12 11v10M7 21l1 7h4l-1-7M28 13a4 4 0 0 1 0 6"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="m12 11 14-6v22l-14-6H6a2 2 0 0 1-2-2v-6a2 2 0 0 1 2-2h6Z"/><path d="M12 11v10M7 21l1 7h4l-1-7M28 13a4 4 0 0 1 0 6"/></svg>
                     {/* <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M9 17C9 17 16 18 19 21H20C20.5523 21 21 20.5523 21 20V13.937C21.8626 13.715 22.5 12.9319 22.5 12C22.5 11.0681 21.8626 10.285 21 10.063V4C21 3.44772 20.5523 3 20 3H19C16 6 9 7 9 7H5C3.89543 7 3 7.89543 3 9V15C3 16.1046 3.89543 17 5 17H6L7 22H9V17ZM11 8.6612C11.6833 8.5146 12.5275 8.31193 13.4393 8.04373C15.1175 7.55014 17.25 6.77262 19 5.57458V18.4254C17.25 17.2274 15.1175 16.4499 13.4393 15.9563C12.5275 15.6881 11.6833 15.4854 11 15.3388V8.6612ZM5 9H9V15H5V9Z"></path></svg> */}
                     안내/공지형
                     <span className="pop-btn-description">행사, 공지, 안내용 디자인</span>
@@ -188,11 +188,11 @@ export default function PopSideContentsLayout({ children }) {
                 <div className="pop-label">디자인 방향(규격)</div>
                 <div className="pop-btn-group" role="tablist" aria-label="방향선택">
                   <button type="button" className="pop-btn">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"  fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="20" height="28" rx="2"/><circle cx="20" cy="9" r="2"/><path d="m8 26 6-7 4 4 2-2 4 4"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"  fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><rect x="6" y="2" width="20" height="28" rx="2"/><circle cx="20" cy="9" r="2"/><path d="m8 26 6-7 4 4 2-2 4 4"/></svg>
                     세로형
                   </button>
                   <button type="button" className="pop-btn selected">
-                    <svg xmlns="http://www.w3.org/2000/svg"  width="32" height="32" viewBox="0 0 32 32"  fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="28" height="20" rx="2"/><circle cx="22" cy="12" r="2"/><path d="m4 23 7-7 5 5 3-3 9 8"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg"  width="32" height="32" viewBox="0 0 32 32"  fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="6" width="28" height="20" rx="2"/><circle cx="22" cy="12" r="2"/><path d="m4 23 7-7 5 5 3-3 9 8"/></svg>
                     가로형
                   </button>
                 </div>

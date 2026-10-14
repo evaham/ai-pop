@@ -94,7 +94,7 @@ export default function LayerPopupView ({ isOpen = true, onClose }) {
 					<div className="popup-preview">
 						<img id="pricecardImage" src={resolveImageSrc("./img/안내공지_컬러임팩트.png")} className="max-w-full max-h-full border" />
 					</div>
-					<div id="pricecardImageInfo" className="popup-infobox hidden">
+					<div id="pricecardImageInfo" className="popup-infobox">
 						<div className="popup-content-buttons">
 							<button type="button" className="c-btn">
 								<div>인쇄하기</div>
@@ -134,7 +134,7 @@ export default function LayerPopupView ({ isOpen = true, onClose }) {
 							<div id="pricecardImageExprDate" className="popup-infobox-text">2026-12-31 24:00까지</div>
 						</div>
 					</div>
-					<div id="pricecardImageError" className="popup-infobox">
+					<div id="pricecardImageError" className="popup-infobox hidden">
 						<div className="popup-content-buttons">
 							<button type="button" className="c-btn">
 								<div>인쇄하기</div>

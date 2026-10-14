@@ -219,19 +219,19 @@ export default function PcSideContentsLayout({ onOpenPopup }) {
               <div className="pc-fieldset">
                 <div className="pc-label">색상 테마</div>
                 <div className="pc-line-group">
-                  <button type="button" className="c-btn-secondary yellow selected">
+                  <button type="button" className="c-btn-secondary w-20 yellow selected">
                     노랑
                   </button>
-                  <button type="button" className="c-btn-secondary">
+                  <button type="button" className="c-btn-secondary w-20">
                     빨강
                   </button>
-                  <button type="button" className="c-btn-secondary">
+                  <button type="button" className="c-btn-secondary w-20">
                     초록
                   </button>
-                  <button type="button" className="c-btn-secondary">
+                  <button type="button" className="c-btn-secondary w-20">
                     파랑
                   </button>
-                  <button type="button" className="c-btn-secondary">
+                  <button type="button" className="c-btn-secondary w-20">
                     흰색
                   </button>
                 </div>
@@ -255,7 +255,7 @@ export default function PcSideContentsLayout({ onOpenPopup }) {
               <div className="pc-fieldset">
                 <div className="pc-label">반복 디자인 설정<span>(최대 24개)</span></div>
                 <div className="flex gap-2 items-center">
-									<select id="selPricecardDirection" className="pc-select">
+									<select id="selPricecardDirection" className="c-select">
 										<option value="landscape">가로형</option>
 										<option value="portrait" >세로형</option>
 									</select>

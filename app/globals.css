@@ -1,7 +1,7 @@
 @charset "UTF-8";
 @import "tailwindcss";
 
-/* @import "./ai_button.css"; */
+@import "./ai_button.css";
 
 /* 컬러칩 */
 :root {
@@ -117,9 +117,6 @@ input:checked + .switch_slider:before { transform: translateX(-13px);  } */
   45%, 85% { transform: translateY(-40%); }
   95%, 100% { transform: translateY(-80px); }
 }
-
-
-
 
 /* 레이어팝업 */
 .popup-layer { @apply fixed inset-0 z-15; }
@@ -817,7 +814,7 @@ input:checked + .switch_slider:before { transform: translateX(-13px);  } */
 .workspace-switch-check input { @apply opacity-0 w-0 h-0; }
 .workspace-switch-slider { @apply absolute cursor-pointer inset-0 bg-blue-800 rounded-full transition-all duration-300; }
 .workspace-switch-slider:before { @apply absolute content-[''] size-4 left-3.5 bottom-0.5 bg-white rounded-full transition-all duration-300; }
-input:checked + .workspace-switch-slider { @apply bg-blue-800; }
+input:checked + .workspace-switch-slider { @apply bg-gray-400; }
 input:checked + .workspace-switch-slider:before { @apply translate-x-[-12px]; }
 
 

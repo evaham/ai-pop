@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import "./globals.css";
 import "./ai_button.css";
 import TsMoney from "./components/TsMoney";
@@ -10,6 +11,8 @@ import React, { useState, useRef, useEffect } from "react";
 
 
 export default function RootLayout({ children }) {
+  const pathname = usePathname();
+  const tabClass = (href) => `level1 tab${pathname === href ? " selected" : ""}`;
   const [isDetailOpen, setIsDetailOpen] = useState(false);
   const containerRef = useRef(null);
 
@@ -36,19 +39,19 @@ export default function RootLayout({ children }) {
               <div className="tabs page-tab-inner" id="menuTab">
                 <ul className="level1 static">
                   <li role="menuitem">
-                    <Link href="/aiRequest_pop" className="level1 tab">AI POP 만들기</Link>
+                    <Link href="/aiRequest_pop" className={tabClass("/aiRequest_pop")}>AI POP 만들기</Link>
                   </li>
                   <li role="menuitem">
-                    <Link href="/aiRequest_pc" className="level1 tab">프라이스카드 만들기</Link>
+                    <Link href="/aiRequest_pc" className={tabClass("/aiRequest_pc")}>프라이스카드 만들기</Link>
                   </li>
                   <li role="menuitem">
-                    <Link href="/aiImage" className="level1 tab">AI이미지관리</Link>
+                    <Link href="/aiImage" className={tabClass("/aiImage")}>AI이미지관리</Link>
                   </li>
                   <li role="menuitem">
-                    <Link href="/aiStatics" className="level1 tab">AI이용현황</Link>
+                    <Link href="/aiStatics" className={tabClass("/aiStatics")}>AI이용현황</Link>
                   </li>
                   <li role="menuitem">
-                    <Link href="/uiView" className="level1 tab">UI 뷰</Link>
+                    <Link href="/uiView" className={tabClass("/uiView")}>UI 뷰</Link>
                   </li>
                 </ul>
                 <div className="tsmoney-info" ref={containerRef}>

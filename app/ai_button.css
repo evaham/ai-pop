@@ -1,8 +1,6 @@
 @charset "UTF-8";
 @import "tailwindcss";
 
-
-
 /* 컬러칩 */
 :root {
     --primary-50:  #F2F5FB;
@@ -78,8 +76,6 @@
 
 /* .pop-form-textarea { @apply border border-gray-300 rounded-lg p-2 inset-shadow-2xs; }
 .pop-form-textarea { @apply border border-gray-300 rounded-lg p-2 inset-shadow-2xs; } */
-
-
 
 /* 입력폼 끝 */
 .c-select { @apply flex items-center justify-center px-2 py-1.25 ring-1 ring-gray-300 rounded text-sm bg-gray-50 cursor-pointer transition; }

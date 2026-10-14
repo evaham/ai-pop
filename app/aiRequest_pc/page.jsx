@@ -338,21 +338,21 @@ export default function AiRequestPc() {
 									</div>
 									<div className="workspace-grid-td">
 										<div id="pricecardLayerOrder" className="workspace-layerbox small-scroll">
-											<button type="button" className="workspace-layerbox-btn" onClick="jsSelectLayer2(this)">
+											<button type="button" className="workspace-layerbox-btn">
 												<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M2 4C2 3.44772 2.44772 3 3 3H21C21.5523 3 22 3.44772 22 4V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V4ZM4 5V19H20V5H4ZM7 8H17V11H15V10H13V14H14.5V16H9.5V14H11V10H9V11H7V8Z"></path></svg>
 												텍스트
 												<span>
 													<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M382-221.91 135.91-468l75.66-75.65L382-373.22l366.43-366.43L824.09-664 382-221.91Z"></path></svg>
 												</span>
 											</button>
-											<button type="button" className="workspace-layerbox-btn" onClick="jsSelectLayer2(this)">
+											<button type="button" className="workspace-layerbox-btn">
 												<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M18.3641 4.22168L19.7781 5.63589L5.50012 20L4.08594 18.5857L18.3641 4.22168Z" fill="black"></path></svg>
 												선
 												<span>
 													<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M382-221.91 135.91-468l75.66-75.65L382-373.22l366.43-366.43L824.09-664 382-221.91Z"></path></svg>
 												</span>
 											</button>
-											<button type="button" className="workspace-layerbox-btn" onClick="jsSelectLayer2(this)">
+											<button type="button" className="workspace-layerbox-btn">
 												<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M2 4C2 3.44772 2.44772 3 3 3H21C21.5523 3 22 3.44772 22 4V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V4ZM4 5V19H20V5H4ZM7 8H17V11H15V10H13V14H14.5V16H9.5V14H11V10H9V11H7V8Z"></path></svg>
 												텍스트
 												<span>
@@ -360,7 +360,7 @@ export default function AiRequestPc() {
 												</span>
 
 											</button>
-											<button type="button" className="workspace-layerbox-btn" onClick="jsSelectLayer2(this)">
+											<button type="button" className="workspace-layerbox-btn">
 												<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M4 3H20C20.5523 3 21 3.44772 21 4V20C21 20.5523 20.5523 21 20 21H4C3.44772 21 3 20.5523 3 20V4C3 3.44772 3.44772 3 4 3ZM5 5V19H19V5H5Z"></path></svg>
 												사각형
 												<span>
@@ -368,14 +368,14 @@ export default function AiRequestPc() {
 												</span>
 
 											</button>
-											<button type="button" className="workspace-layerbox-btn selected" onClick="jsSelectLayer2(this)">
+											<button type="button" className="workspace-layerbox-btn selected">
 												<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M3 3C2.44772 3 2 3.44772 2 4V20C2 20.5523 2.44772 21 3 21H21C21.5523 21 22 20.5523 22 20V4C22 3.44772 21.5523 3 21 3H3ZM8 5V8H4V5H8ZM4 14V10H8V14H4ZM4 16H8V19H4V16ZM10 16H20V19H10V16ZM20 14H10V10H20V14ZM20 5V8H10V5H20Z"></path></svg>
 												할인판매가
 												<span>
 													<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M382-221.91 135.91-468l75.66-75.65L382-373.22l366.43-366.43L824.09-664 382-221.91Z"></path></svg>
 												</span>
 											</button>
-											<button type="button" className="workspace-layerbox-btn" onClick="jsSelectLayer2(this)">
+											<button type="button" className="workspace-layerbox-btn">
 												<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M4 3H20C20.5523 3 21 3.44772 21 4V20C21 20.5523 20.5523 21 20 21H4C3.44772 21 3 20.5523 3 20V4C3 3.44772 3.44772 3 4 3ZM5 5V19H19V5H5Z"></path></svg>
 												상품명
 												<span>
