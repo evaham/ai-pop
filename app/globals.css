@@ -382,15 +382,9 @@ input:checked + .switch_slider:before { transform: translateX(-13px);  } */
 
 /* 로딩 문구 */
 .item-skeleton-text { @apply relative z-1 text-[13px] font-semibold text-[#68778e]; }
-
-
-
 .item__badge.leaflet { @apply bg-[#e6fad1]; }
 .item__badge.pop { @apply bg-[#e4f3fb]; }
 .item__badge.pricecard { @apply bg-[#fff8dd]; }
-
-
-
 
 .itemlist > .item > .item__txtbox > .item__txt { @apply text-sm; }
 .itemlist > .item > .item__hoverbox { @apply absolute inset-0 flex flex-col items-center justify-center gap-1 bg-black/50 transition-opacity duration-300 ease-in-out opacity-0 hover:opacity-100; }
@@ -436,14 +430,6 @@ input:checked + .switch_slider:before { transform: translateX(-13px);  } */
 .workspace-preview { @apply h-full min-w-[385px] bg-white; }
 .workspace-flex-row { @apply flex flex-row justify-start items-center gap-2 w-full px-4 py-2 }
 .workspace-flex-col { @apply relative flex flex-col; }
-
-
-/* .workspace-scroll { @apply flex-1 } */
-/* .workspace-scroll::-webkit-scrollbar { @apply w-1; }
-.workspace-scroll::-webkit-scrollbar-thumb { @apply bg-gray-300 rounded; }
-.workspace-scroll::-webkit-scrollbar-track { @apply bg-transparent; } */
-
-
 .workspace-side-bar { @apply flex-1 relative flex flex-col border-l border-gray-300; }
 .workspace-side-group { @apply flex gap-2 w-full px-4 py-2; }
 .workspace-side-group > .c-btn-primary { @apply flex-1 py-2 text-base; }
@@ -453,36 +439,28 @@ input:checked + .switch_slider:before { transform: translateX(-13px);  } */
 .workspace-tab > .item { @apply flex-1 flex items-center justify-center -mb-px px-3 py-2 border-b border-gray-300 rounded-tr-lg rounded-tl-lg text-base text-(--text-secondary) bg-gray-100 cursor-pointer; }
 .workspace-tab > .item.selected { @apply text-blue-800 font-bold bg-white border border-gray-300 border-b-0 z-1; }
 
-
 .workspace-title { @apply flex items-center font-bold w-full py-1; }
 .workspace-title .workspace-sub-text { @apply text-sm font-medium text-gray-500 ml-2; }
-
 
 .workspace-grid-tbl { @apply grid grid-cols-[80px_auto] gap-x-1 gap-y-2 my-4;}
 .workspace-grid-th  { @apply flex items-center text-sm; }
 .workspace-grid-td  { @apply flex items-center text-sm gap-2; }
 
-
 /* 속성편집 그룹 */
 .workspace-box {@apply flex flex-col border-t border-gray-300 mx-4 py-2 px-4 border rounded-lg mb-4; }
 .workspace-box-title { @apply flex items-center text-sm font-bold -mx-4 -mt-2 px-4 py-2 rounded-t-lg bg-gray-100; }
-
 
 /* 요소추가/삭제 그룹 */
 .workspace-element-group { @apply grid grid-cols-3 w-full gap-2 flex-wrap pb-3 px-4;}
 .workspace-element-group > .c-btn-secondary { @apply justify-normal p-2 pl-5; }
 
-
 /* 레이어순서 그룹 */
 .workspace-layer-sort { @apply w-full py-2 px-4 border-t border-gray-300; }
-
-
 .workspace-line-btn { @apply flex items-center justify-center gap-2 min-w-9 h-7 px-2 py-1 ring-1 ring-gray-300 rounded text-sm cursor-pointer; }
 .workspace-line-btn svg { @apply size-4.5; }
 .workspace-line-btn:hover { @apply ring-blue-400 cursor-pointer; }
 .workspace-line-btn:active, .workspace-line-btn.selected { @apply ring-1 ring-blue-500 bg-blue-50 text-blue-700; }
 .workspace-line-btn:disabled { @apply cursor-not-allowed opacity-50; }
-
 
 .workspace-blue-btn {@apply flex flex-row items-center justify-center gap-2 w-full p-3 ring-1 ring-[#26499d] rounded bg-[#26499d] text-white cursor-pointer;}
 .workspace-blue-line-btn {@apply flex flex-row items-center justify-center gap-2 w-full p-3 ring-1 ring-[#26499d] rounded cursor-pointer;}
@@ -517,35 +495,35 @@ input:checked + .switch_slider:before { transform: translateX(-13px);  } */
     border-radius: 3px;
 } */
 
-
+/* 
 .workspace-align-btn.left {
     width: 26px;
     height: 24px;
-    /* background: url('../img/ico_align_left.png') center / 20px 20px no-repeat; */
+    background: url('../img/ico_align_left.png') center / 20px 20px no-repeat;
 }
 .workspace-align-btn.center {
     width: 26px;
     height: 24px;
-    /* background: url('../img/ico_align_center.png') center / 20px 20px no-repeat; */
+    background: url('../img/ico_align_center.png') center / 20px 20px no-repeat;
 }
 .workspace-align-btn.right {
     width: 26px;
     height: 24px;
-    /* background: url('../img/ico_align_right.png') center / 20px 20px no-repeat; */
-}
-
+    background: url('../img/ico_align_right.png') center / 20px 20px no-repeat;
+} */
+/* 
 .workspace-align-btn.left.selected {
     border-color: #2196F3;
-    /* background: #2196F3 url('../img/ico_align_left_selected.png') center / 20px 20px no-repeat; */
+    background: #2196F3 url('../img/ico_align_left_selected.png') center / 20px 20px no-repeat;
 }
 .workspace-align-btn.center.selected {
     border-color: #2196F3;
-    /* background: #2196F3 url('../img/ico_align_center_selected.png') center / 20px 20px no-repeat; */
+    background: #2196F3 url('../img/ico_align_center_selected.png') center / 20px 20px no-repeat;
 }
 .workspace-align-btn.right.selected {
     border-color: #2196F3;
-    /* background: #2196F3 url('../img/ico_align_right_selected.png') center / 20px 20px no-repeat; */
-}
+    background: #2196F3 url('../img/ico_align_right_selected.png') center / 20px 20px no-repeat;
+} */
 
 
 .workspace-zoom { @apply flex items-center cursor-pointer; }
@@ -555,15 +533,11 @@ input:checked + .switch_slider:before { transform: translateX(-13px);  } */
 .workspace-zoom .c-btn-secondary:first-child { @apply rounded-l ; }
 .workspace-zoom .c-btn-secondary:last-child { @apply rounded-r ; }
 
-
-
-
 /* 레이어순서 */
 .workspace-layerbox { @apply flex flex-col ml-1 p-1 pr-0.5 gap-1 w-full h-[136px] overflow-hidden overflow-y-auto border border-gray-300 bg-gray-300 scrollbar-gutter-stable;}
 .workspace-layerbox-btn { @apply flex items-center gap-2 px-4 py-2 ring-1 ring-gray-300 rounded bg-gray-50 cursor-pointer;}
 .workspace-layerbox-btn svg { @apply size-5;}
 .workspace-layerbox-btn > span { @apply ml-auto fill-blue-700 hidden;}
-
 .workspace-layerbox-btn:hover { @apply ring-blue-400 cursor-pointer; }
 .workspace-layerbox-btn:active, .workspace-layerbox-btn.selected { @apply ring-1 ring-blue-500 bg-blue-50 text-blue-700; }
 .workspace-layerbox-btn.selected > span { @apply block;}
@@ -1012,17 +986,13 @@ input:checked + .workspace-switch-slider:before { @apply translate-x-[-12px]; }
 .grid-table .grid-td { @apply justify-center p-1; }
 .grid-table .grid-check { @apply size-3 mr-1; }
 
-
 /* 작은 세로 스크롤 */
 .small-scroll { @apply overflow-y-auto scrollbar-gutter-stable; }
 .small-scroll::-webkit-scrollbar { @apply w-1; }
 .small-scroll::-webkit-scrollbar-thumb { @apply bg-gray-400 rounded; }
 .small-scroll::-webkit-scrollbar-track { @apply bg-transparent; }
 
-
-
 /* AI POP 만들기 */
-
 /* 사이드메뉴 */
 .pop-scroll { @apply flex-1 overflow-y-auto scrollbar-gutter-stable; }
 .pop-scroll::-webkit-scrollbar { @apply w-1; }
@@ -1081,8 +1051,6 @@ input:checked + .workspace-switch-slider:before { @apply translate-x-[-12px]; }
 
 /* 라인형 버튼 */
 .pop-line-group { @apply flex gap-2; }
-
-
 .pop-selected-group { @apply flex gap-1 text-sm; }
 .pop-selected-item { @apply text-blue-700; }
 
@@ -1214,14 +1182,10 @@ input:checked + .workspace-switch-slider:before { @apply translate-x-[-12px]; }
 .pc-btn:hover { @apply ring-blue-400 cursor-pointer; }
 .pc-btn:active, .pc-btn.selected { @apply ring-1 ring-blue-500 bg-blue-50 text-blue-700; }
 
-
-
 .pc-template-btn { @apply flex items-center justify-center gap-1 w-50 p-2 ring-1 ring-(--primary-500) rounded text-base text-white bg-(--primary-500) cursor-pointer transition; }
 .pc-template-btn svg { @apply size-5; }
 .pc-template-btn:hover { @apply bg-(--primary-600); }
 .pc-template-btn:active, .pc-template-btn.selected { @apply bg-(--primary-600); }
-
-
 
 /* 라인형 버튼 */
 .pc-line-group { @apply flex gap-2; }
