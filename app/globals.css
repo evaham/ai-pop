@@ -202,13 +202,13 @@ input:checked + .switch_slider:before { transform: translateX(-13px);  } */
 .popup-content-notice { @apply bg-[#fdfqd3] rounded-lg p-3 text-sm text-[#7a5b1e]; }
 .popup-content-close-btn { @apply absolute top-4 right-4; } */
 
-
+/* 
 .workspace-line-btn.tint {
     background-color: #dce9f5;
 }
 .workspace-line-btn.tint:hover {
     background-color: #c3d9f0;
-}
+} */
 
 
 
@@ -1037,8 +1037,8 @@ input:checked + .workspace-switch-slider:before { @apply translate-x-[-12px]; }
 
 /* 패널형 버튼 */
 .pop-btn-group { @apply flex gap-2 w-100; }
-.pop-btn { @apply flex flex-col items-center justify-center w-full h-26 ring-1 ring-gray-200 rounded-lg text-sm font-bold px-4 py-2; }
-.pop-btn svg { @apply size-9 mt-1; }
+.pop-btn { @apply flex flex-col items-center justify-center w-full h-26 ring-1 ring-gray-200 rounded-lg text-sm text-gray-700 font-bold px-4 py-2; }
+.pop-btn svg { @apply size-9 my-1; }
 .pop-btn-description { @apply text-xs text-(--text-secondary) font-medium; }
 .pop-btn:hover { @apply ring-blue-400 cursor-pointer; }
 .pop-btn:active, .pop-btn.selected { @apply ring-1 ring-blue-500 bg-blue-50 text-blue-700; }

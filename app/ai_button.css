@@ -47,12 +47,6 @@
 
 /* 버튼종류 끝 */
 
-/* 버튼크기 */
-.c-btn-sm { @apply px-2 py-1 text-xs; }
-.c-btn-md { @apply px-2 py-1 text-sm; }
-.c-btn-lg { @apply px-4 py-2 text-lg; }
-/* 버튼크기 끝 */
-
 /* 아이콘 */
 .c-btn svg,
 .c-btn svg,
