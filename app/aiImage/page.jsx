@@ -7,7 +7,8 @@ export default function AiImage() {
 			imageId: 0,
 			service: 1,
 			status: 'R',
-			thumb: '/image-cloud/resources/img/loading_transparent.gif',
+			thumb: '',
+			loading: true,
 			badge: '전단지형',
 			text: '이미지 생성중...',
 			hdTS: '',
@@ -78,9 +79,16 @@ export default function AiImage() {
             <div id="imageList" className="itemlist maxviewsize">
               {images.map((image, idx) => (
                 <div key={idx} className={`item${image.selected ? ' selected' : ''}`}>
-                  <div className="item__imgbox">
-                    <img src={image.thumb} alt={image.text} />
-                  </div>
+                  { image.loading ? (
+                    <div className="item-skeleton">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M20.7134 8.12811L20.4668 8.69379C20.2864 9.10792 19.7136 9.10792 19.5331 8.69379L19.2866 8.12811C18.8471 7.11947 18.0555 6.31641 17.0677 5.87708L16.308 5.53922C15.8973 5.35653 15.8973 4.75881 16.308 4.57612L17.0252 4.25714C18.0384 3.80651 18.8442 2.97373 19.2761 1.93083L19.5293 1.31953C19.7058 0.893489 20.2942 0.893489 20.4706 1.31953L20.7238 1.93083C21.1558 2.97373 21.9616 3.80651 22.9748 4.25714L23.6919 4.57612C24.1027 4.75881 24.1027 5.35653 23.6919 5.53922L22.9323 5.87708C21.9445 6.31641 21.1529 7.11947 20.7134 8.12811ZM2.9918 3H14V5H4V19L14 9L20 15V11H22V20.0066C22 20.5552 21.5447 21 21.0082 21H2.9918C2.44405 21 2 20.5551 2 20.0066V3.9934C2 3.44476 2.45531 3 2.9918 3ZM20 17.8284L14 11.8284L6.82843 19H20V17.8284ZM8 11C6.89543 11 6 10.1046 6 9C6 7.89543 6.89543 7 8 7C9.10457 7 10 7.89543 10 9C10 10.1046 9.10457 11 8 11Z"></path></svg>
+                      <div className="item-skeleton-text">{image.text}</div>
+                    </div>
+                  ):(
+                    <div className="item__imgbox">
+                      <img src={image.thumb} alt={image.text} />
+                    </div>
+                  )}
                   <div className="item__txtbox">
                     <span className="item__badge pop">{image.badge}</span>
                     <span className="item_txt">{image.text}</span>
@@ -124,7 +132,7 @@ export default function AiImage() {
             </div>
             <div id="selectedPreview" className="">
               <div className="aiimage-preview-imgbox" style={{width:'100%', padding:'10px'}}>
-                <img src="http://tdc-api-dev-3.togethers.kr:2004/ImageAI/20260928/1001_20260928_105757072_Thumb.jpg" id="layerImg" className="max-w-full max-h-full" />
+                <img src="http://tdc-api-dev-3.togethers.kr:2004/ImageAI/20260928/1001_20260928_105705728.jpg" id="layerImg" className="max-w-full max-h-full" />
               </div>
               <div className="aiimage-btn-group">
                 <button type="button" className="c-btn-primary">AI생성</button>
@@ -134,31 +142,31 @@ export default function AiImage() {
               <div className="aiimage-info-box flex flex-col">
                 <div>
                   <div>이미지유형</div>
-                  <div id="layerService"></div>
+                  <div id="layerService">프라이스카드</div>
                 </div>
                 <div>
                   <div>생성일</div>
-                  <div id="layerRgstDate"></div>
+                  <div id="layerRgstDate">2026-09-28 12:13</div>
                 </div>
                 <div>
                   <div>보관기간</div>
-                  <div id="layerExprDate"></div>
+                  <div id="layerExprDate">2026-10-28 12:13 까지</div>
                 </div>
                 <div>
                   <div>사용TS</div>
-                  <div id="layerTS"></div>
+                  <div id="layerTS">500.0 TS</div>
                 </div>
                 <div>
                   <div>카테고리</div>
-                  <div id="layerCategory"></div>
+                  <div id="layerCategory">상품 홍보형</div>
                 </div>
                 <div>
                   <div>레이아웃</div>
-                  <div id="layerLayout"></div>
+                  <div id="layerLayout">세로형</div>
                 </div>
               </div>
             </div>
-            <div id="creatingPreview" className="hidden">
+            <div id="creatingPreview" className="">
               <div className="aiimage-preview-imgbox" style={{width:'100%', background: '#fff', border: 'none'}}>
                 이미지 생성 중입니다... 잠시만 기다려주세요.
               </div>

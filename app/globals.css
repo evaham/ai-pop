@@ -360,10 +360,31 @@ input:checked + .switch_slider:before { transform: translateX(-13px);  } */
 .itemlist { @apply grid grid-cols-[repeat(auto-fill,minmax(151px,1fr))] gap-2 justify-center my-0 mx-auto; }
 .itemlist > .item { @apply relative overflow-hidden flex flex-col items-center gap-2 m-px p-2 border border-gray-200 rounded-lg text-sm bg-white cursor-pointer ; }
 .itemlist > .item.selected { @apply m-0 border-blue-500 bg-blue-50; }
-.itemlist > .item > .item__imgbox { @apply flex items-center justify-center size-33 p-1 bg-gray-50 border border-gray-100 rounded; }
+.itemlist > .item > .item__imgbox { @apply overflow-hidden flex items-center justify-center size-33 p-1 bg-gray-50 border border-gray-100 rounded; }
 .itemlist > .item > .item__imgbox > .thumb__img { @apply max-w-full max-h-full; }
 .itemlist > .item > .item__txtbox { @apply flex-1 flex flex-col w-full gap-1; }
 .itemlist > .item > .item__txtbox > .item__badge { @apply w-max py-[2px] pr-2 pl-[5px] rounded-full; }
+
+.itemlist > .item > .item-skeleton { @apply overflow-hidden relative flex flex-col gap-4 items-center justify-center size-33 rounded bg-gray-100;}
+.itemlist > .item > .item-skeleton > svg { @apply size-10 text-gray-400; }
+
+/* 빛이 지나가는 shimmer */
+.item-skeleton::after { @apply content-[""] absolute top-0 left-[-120%] w-[70%] h-full bg-linear-to-r from-transparent via-white/80 to-transparent animate-[imageShimmer_1.5s_infinite]; }
+
+@keyframes imageShimmer {
+  0% {
+    left: -120%;
+  }
+  100% {
+    left: 150%;
+  }
+}
+
+/* 로딩 문구 */
+.item-skeleton-text { @apply relative z-1 text-[13px] font-semibold text-[#68778e]; }
+
+
+
 .item__badge.leaflet { @apply bg-[#e6fad1]; }
 .item__badge.pop { @apply bg-[#e4f3fb]; }
 .item__badge.pricecard { @apply bg-[#fff8dd]; }
@@ -1215,4 +1236,5 @@ input:checked + .workspace-switch-slider:before { @apply translate-x-[-12px]; }
 .tab-group { @apply flex gap-2 w-100 mb-4 p-1 rounded-xl bg-gray-100;}
 .tab-btn { @apply flex-1 rounded-lg text-gray-500 font-bold px-4 py-1.5 cursor-pointer;}
 .tab-btn.selected { @apply border border-gray-300 bg-white;}
+
 
