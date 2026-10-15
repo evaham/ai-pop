@@ -62,12 +62,12 @@ export default function AiImage() {
             <div className="page-title-box">
               <div className="page-title">이미지 리스트</div>
               <form name="frmSearch" method="get" action="" className="page-function-group">
-                <select id="selObject" name="imageType" className="c-select">
+                <select id="selObject" name="imageType" className="form-select">
                   <option>-전체-</option>
                   <option>POP이미지</option>
                   <option>프라이스카드</option>									
                 </select>
-                <select id="selOrderBy" name="orderBy" className="c-select">
+                <select id="selOrderBy" name="orderBy" className="form-select">
                   <option >최근등록순</option>
                   <option>오래된순</option>
                   <option>남은보관일순↓</option>
@@ -135,9 +135,9 @@ export default function AiImage() {
                 <img src="http://tdc-api-dev-3.togethers.kr:2004/ImageAI/20260928/1001_20260928_105705728.jpg" id="layerImg" className="max-w-full max-h-full" />
               </div>
               <div className="aiimage-btn-group">
-                <button type="button" className="c-btn-primary">AI생성</button>
-                <button type="button" className="c-btn">인쇄하기</button>
-                <button type="button" className="c-btn">다운로드</button>					            		
+                <button type="button" className="form-btn-primary">AI생성</button>
+                <button type="button" className="form-btn">인쇄하기</button>
+                <button type="button" className="form-btn">다운로드</button>					            		
               </div>
               <div className="aiimage-info-box flex flex-col">
                 <div>

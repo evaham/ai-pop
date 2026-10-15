@@ -10,20 +10,20 @@ export default function AiStatics() {
             <form name="frmSearch" method="get" action="">
               <div className="search-content">
                 <div className="search-opt">
-                  <span className="search__text text-sm text-gray-700 mr-1">생성일</span>
-                  <input name="startDate" id="startDate" className="datepicker c-input hasDatepicker" value="2026-09-12" readOnly="readOnly" style={{width:"100px"}} />
+                  <span className="search__text text-sm text-gray-700">생성일</span>
+                  <input name="startDate" id="startDate" className="datepicker form-input hasDatepicker" value="2026-09-12" readOnly="readOnly" style={{width:"100px"}} />
                   <span className="text-sm text-gray-600">~</span>
-                  <input name="endDate" id="endDate" className="datepicker c-input hasDatepicker" value="2026-10-12" readOnly="readOnly" style={{width:"100px"}} />
-                  <button type="button" className="c-btn" >1개월</button>
-                  <button type="button" className="c-btn" >3개월</button>
-                  <button type="button" className="c-btn" >6개월</button>
-                  <select className="c-select" name="searchType" id="searchType">
+                  <input name="endDate" id="endDate" className="datepicker form-input hasDatepicker" value="2026-10-12" readOnly="readOnly" style={{width:"100px"}} />
+                  <button type="button" className="form-btn" >1개월</button>
+                  <button type="button" className="form-btn" >3개월</button>
+                  <button type="button" className="form-btn" >6개월</button>
+                  <select className="form-select" name="searchType" id="searchType">
                       <option value="A">-생성결과-</option>
                       <option value="S">생성완료</option>
                       <option value="F">생성실패</option>
                   </select>
-                  <div className="flex gap-1 ml-10">
-                    <button type="button" className="c-btn-primary" >검색</button>
+                  <div className="flex gap-2 ml-10">
+                    <button type="button" className="form-btn-primary" >검색</button>
                     {/* <!-- <button type="button" className="search-btn" onclick="jsReset()">초기화</button> --> */}
                   </div>
                 </div>
@@ -37,11 +37,11 @@ export default function AiStatics() {
                   <span className="search-text">총 결제TS포인트 : </span>
                   <span className="search-text font-bold">0.0</span>
                   <div className="ml-auto flex items-center gap-2">
-                    <select className="c-select" name="orderBy">
+                    <select className="form-select" name="orderBy">
                       <option value="rgstASC">이미지생성일↑</option>
                         <option value="rgstDESC" >이미지생성일↓</option>
                     </select>
-                    <button type="button" className="c-btn-primary">엑셀다운로드</button>
+                    <button type="button" className="form-btn-primary">엑셀다운로드</button>
                   </div>
                 </div>
               </div>
