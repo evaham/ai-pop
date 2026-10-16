@@ -1,5 +1,3 @@
-import '../ai_button.css';
-
 export default function UiView() {
     return (
         <div className="flex flex-col gap-2 my-4 mx-4">
