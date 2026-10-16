@@ -240,48 +240,82 @@ input:checked + .switch_slider:before { transform: translateX(-13px);  } */
 .preview-panel { @apply flex-1 flex flex-col bg-gray-50 min-h-0; }
 .preview-card { @apply flex h-full flex-col overflow-y-auto bg-white p-6 shadow-sm; }
 
-/* 공통 입력폼 */
+/* 입력폼 종류 시작 */
 .form-input { @apply inline-flex items-center justify-center min-h-7 px-2 py-1 ring-1 ring-gray-300 rounded text-sm bg-gray-50 cursor-text transition; }
-.form-input:focus { @apply ring-(--primary-500) outline-none; }
+.form-input:focus, .form-input.focus { @apply ring-(--primary-500) outline-none; }
 .form-input[type="number"]::-webkit-inner-spin-button, 
 .form-input[type="number"]::-webkit-outer-spin-button { @apply appearance-none m-0; }
 
 .form-textarea { @apply inline-flex items-center justify-center min-h-7 px-2 py-1 ring-1 ring-gray-300 rounded text-sm bg-gray-50 cursor-text transition; }
-.form-textarea:focus { @apply ring-(--primary-500) outline-none; }
-
 .form-select { @apply flex items-center justify-center px-2 py-1.25 ring-1 ring-gray-300 rounded text-sm bg-gray-50 cursor-pointer transition; }
-.form-select:focus { @apply ring-(--primary-500) outline-none; }
+/* 입력폼 종류 끝 */
 
+/* 입력폼 포커스 상태 */
+.form-input:focus,
+.form-input.focus,
+.form-textarea:focus,
+.form-textarea.focus,
+.form-select:focus,
+.form-select.focus { @apply ring-(--primary-500) outline-none; }
+
+/* 입력폼 비활성화 상태 */
+.form-input:disabled,
+.form-input.disabled,
+.form-textarea:disabled,
+.form-textarea.disabled,
+.form-select:disabled,
+.form-select.disabled { @apply bg-gray-200 ring-gray-200 cursor-not-allowed; }
+
+/* .form-select:disabled option,
+.form-select.disabled option { @apply text-gray-300; } */
+
+
+
+/* 입력폼 라벨 시작 */
 .form-label { @apply flex items-center gap-1 text-sm text-[var(--text-primary)] font-bold; }
-
 .form-byte { @apply flex items-center ml-auto text-xs tracking-tight text-(--text-secondary); }
 .form-byte > span { @apply mr-1; }
+/* 입력폼 라벨 끝 */
+
+
+
+
 
 /* 버튼종류 시작 */
 
 .form-btn {@apply flex items-center justify-center gap-1 px-2 py-1 ring-1 ring-gray-300 rounded text-sm bg-gray-50 cursor-pointer transition; }
-.form-btn:hover { @apply bg-gray-100 no-underline; }
-.form-btn:active, 
+.form-btn:hover,
+.form-btn.hovered { @apply bg-gray-100 no-underline; }
+.form-btn:active,
+.form-btn.active,
 .form-btn.selected { @apply bg-gray-200; }
 
 .form-btn-line { @apply flex items-center justify-center gap-1 px-2 py-1 ring-1 ring-gray-300 rounded text-sm cursor-pointer transition bg-transparent text-(--text-primary); }
-.form-btn-line:hover { @apply bg-(--primary-50); }
-.form-btn-line:active, 
+.form-btn-line:hover,
+.form-btn-line.hovered { @apply bg-(--primary-50); }
+.form-btn-line:active,
+.form-btn-line.active,
 .form-btn-line.selected { @apply bg-blue-50 ring-blue-500/90 text-blue-700; }
 
 .form-btn-primary { @apply flex items-center justify-center gap-1 px-2 py-1 ring-1 ring-(--primary-500) rounded text-sm text-white bg-(--primary-500) cursor-pointer transition; }
-.form-btn-primary:hover { @apply bg-(--primary-600); }
-.form-btn-primary:active, 
+.form-btn-primary:hover,
+.form-btn-primary.hovered { @apply bg-(--primary-600); }
+.form-btn-primary:active,
+.form-btn-primary.active,
 .form-btn-primary.selected { @apply bg-(--primary-600); }
 
 .form-btn-secondary { @apply flex items-center justify-center gap-1 px-2 py-1 ring-1 ring-gray-300 rounded text-sm text-(--text-primary) bg-white cursor-pointer transition; }
-.form-btn-secondary:hover { @apply ring-blue-400 cursor-pointer bg-(--primary-50); }
-.form-btn-secondary:active, 
+.form-btn-secondary:hover,
+.form-btn-secondary.hovered { @apply ring-blue-400 cursor-pointer bg-(--primary-50); }
+.form-btn-secondary:active,
+.form-btn-secondary.active,
 .form-btn-secondary.selected { @apply bg-blue-50 ring-blue-500/90 text-blue-700; }
 
 .form-btn-tertiary { @apply flex items-center justify-center gap-1 px-2 py-1 ring-1 ring-transparent rounded text-sm bg-white cursor-pointer transition; }
-.form-btn-tertiary:hover { @apply bg-gray-100; }
-.form-btn-tertiary:active, 
+.form-btn-tertiary:hover,
+.form-btn-tertiary.hovered { @apply bg-gray-100; }
+.form-btn-tertiary:active,
+.form-btn-tertiary.active,
 .form-btn-tertiary.selected { @apply ring-gray-400 bg-gray-50; }
 
 /* 버튼종류 끝 */
@@ -493,7 +527,7 @@ input:checked + .switch_slider:before { transform: translateX(-13px);  } */
 
 /* 탭 시작 */
 .workspace-tab { @apply flex w-full pt-2 pb-0 px-4 border-y border-gray-300; }
-.workspace-tab > .item { @apply flex-1 flex items-center justify-center -mb-px px-3 py-2 border-b border-gray-300 rounded-tr-lg rounded-tl-lg text-base text-(--text-secondary) bg-gray-100 cursor-pointer; }
+.workspace-tab > .item { @apply flex-1 flex items-center justify-center -mb-px px-3 py-2 border-b border-gray-300 rounded-tr-lg rounded-tl-lg text-sm text-(--text-secondary) bg-gray-100 cursor-pointer; }
 .workspace-tab > .item.selected { @apply text-blue-800 font-bold bg-white border border-gray-300 border-b-0 z-1; }
 /* 탭 끝 */
 
