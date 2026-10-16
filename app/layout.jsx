@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import "./globals.css";
-import "./ai_button.css";
 import TsMoney from "./components/TsMoney";
 
 

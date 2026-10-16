@@ -94,7 +94,7 @@ export default function LayerPopupView ({ isOpen = true, onClose }) {
 						<img id="pricecardImage" src={resolveImageSrc("./img/안내공지_컬러임팩트.png")} className="max-w-full max-h-full border" />
 					</div>
 					<div id="pricecardImageInfo" className="popup-infobox">
-						<div className="popup-content-buttons">
+						<div className="popup-infobox-group">
 							<button type="button" className="form-btn">
 								<div>인쇄하기</div>
 							</button>
@@ -134,7 +134,7 @@ export default function LayerPopupView ({ isOpen = true, onClose }) {
 						</div>
 					</div>
 					<div id="pricecardImageError" className="popup-infobox hidden">
-						<div className="popup-content-buttons">
+						<div className="popup-infobox-group">
 							<button type="button" className="form-btn">
 								<div>인쇄하기</div>
 							</button>
@@ -169,11 +169,11 @@ export default function LayerPopupView ({ isOpen = true, onClose }) {
 								<div dangerouslySetInnerHTML={{ __html: html }} />
 								<div style={{position:"absolute", top:"3px", left:"3px", fontSize:"12px"}}>0.53×</div>
 							</div>
-							<div className="popup-content-buttons" style={{marginTop:"3px", height:"26px"}}>
-								<button type="button" className="popup-templatebox-btn" data-template="21" >
+							<div className="popup-templatebox-group" style={{marginTop:"3px", height:"26px"}}>
+								<button type="button" className="form-btn-tertiary" data-template="21" >
 									가격파괴 (세로형,2×1)
 								</button>
-								<button type="button" className="popup-del-btn" data-template="21" data-title="가격파괴 (세로형,2×1)">
+								<button type="button" className="form-btn" data-template="21" data-title="가격파괴 (세로형,2×1)">
 									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M17 6H22V8H20V21C20 21.5523 19.5523 22 19 22H5C4.44772 22 4 21.5523 4 21V8H2V6H7V3C7 2.44772 7.44772 2 8 2H16C16.5523 2 17 2.44772 17 3V6ZM18 8H6V20H18V8ZM9 11H11V17H9V11ZM13 11H15V17H13V11ZM9 4V6H15V4H9Z"></path></svg>
 								</button>
 							</div>
@@ -188,11 +188,11 @@ export default function LayerPopupView ({ isOpen = true, onClose }) {
 								<div dangerouslySetInnerHTML={{ __html: html }} />
 								<div style={{position:"absolute", top:"3px", left:"3px", fontSize:"12px"}}>0.53×</div>
 							</div>
-							<div className="popup-body-buttons" style={{marginTop:"3px", height:"26px"}}>
-								<button type="button" className="popup-templatebox-btn" data-template="21" >
+							<div className="popup-templatebox-group" style={{marginTop:"3px", height:"26px"}}>
+								<button type="button" className="form-btn-tertiary" data-template="21" >
 									가격파괴 (세로형,2×1)
 								</button>
-								<button type="button" className="popup-del-btn" data-template="21" data-title="가격파괴 (세로형,2×1)">
+								<button type="button" className="form-btn" data-template="21" data-title="가격파괴 (세로형,2×1)">
 									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M17 6H22V8H20V21C20 21.5523 19.5523 22 19 22H5C4.44772 22 4 21.5523 4 21V8H2V6H7V3C7 2.44772 7.44772 2 8 2H16C16.5523 2 17 2.44772 17 3V6ZM18 8H6V20H18V8ZM9 11H11V17H9V11ZM13 11H15V17H13V11ZM9 4V6H15V4H9Z"></path></svg>
 								</button>
 							</div>

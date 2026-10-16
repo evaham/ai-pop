@@ -541,7 +541,6 @@ export default function AiStatics() {
                           
                         </td>
                       </tr>
-                    
                     </tbody>
                   </table>
                 </div>
