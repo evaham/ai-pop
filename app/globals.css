@@ -87,7 +87,7 @@
 
 html,body { 
     font-family: "Pretendard", -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif; font-weight: 500;
-    @apply text-[var(--text-primary)];
+    @apply text-(--text-primary);
 }
 /* 상위 iframe 의 크기가 1900px 이며, 내부 html의 크기는 1880px로 설정해야 아래쪽 스크롤이 이중으로 생기지 않음 */
 
@@ -266,11 +266,6 @@ input:checked + .switch_slider:before { transform: translateX(-13px);  } */
 .form-select:disabled,
 .form-select.disabled { @apply bg-gray-200 ring-gray-200 cursor-not-allowed; }
 
-/* .form-select:disabled option,
-.form-select.disabled option { @apply text-gray-300; } */
-
-
-
 /* 입력폼 라벨 시작 */
 .form-label { @apply flex items-center gap-1 text-sm text-[var(--text-primary)] font-bold; }
 .form-byte { @apply flex items-center ml-auto text-xs tracking-tight text-(--text-secondary); }
@@ -278,11 +273,7 @@ input:checked + .switch_slider:before { transform: translateX(-13px);  } */
 /* 입력폼 라벨 끝 */
 
 
-
-
-
 /* 버튼종류 시작 */
-
 .form-btn {@apply flex items-center justify-center gap-1 px-2 py-1 ring-1 ring-gray-300 rounded text-sm bg-gray-50 cursor-pointer transition; }
 .form-btn:hover,
 .form-btn.hovered { @apply bg-gray-100 no-underline; }
@@ -290,12 +281,12 @@ input:checked + .switch_slider:before { transform: translateX(-13px);  } */
 .form-btn.active,
 .form-btn.selected { @apply bg-gray-200; }
 
-.form-btn-line { @apply flex items-center justify-center gap-1 px-2 py-1 ring-1 ring-gray-300 rounded text-sm cursor-pointer transition bg-transparent text-(--text-primary); }
+/* .form-btn-line { @apply flex items-center justify-center gap-1 px-2 py-1 ring-1 ring-gray-300 rounded text-sm cursor-pointer transition bg-transparent text-(--text-primary); }
 .form-btn-line:hover,
 .form-btn-line.hovered { @apply bg-(--primary-50); }
 .form-btn-line:active,
 .form-btn-line.active,
-.form-btn-line.selected { @apply bg-blue-50 ring-blue-500/90 text-blue-700; }
+.form-btn-line.selected { @apply bg-blue-50 ring-blue-500/90 text-blue-700; } */
 
 .form-btn-primary { @apply flex items-center justify-center gap-1 px-2 py-1 ring-1 ring-(--primary-500) rounded text-sm text-white bg-(--primary-500) cursor-pointer transition; }
 .form-btn-primary:hover,
@@ -1097,8 +1088,8 @@ input:checked + .workspace-switch-slider:before { @apply translate-x-[-12px]; }
 .panel-btn:active, .panel-btn.selected { @apply ring-1 ring-blue-500 bg-blue-50 text-blue-700; }
 
 /* 이미지 버튼 */
-.panel-style-group { @apply grid grid-cols-4 gap-2; }
-.panel-style-item { @apply relative overflow-hidden flex flex-col w-full h-34 ring-1 ring-gray-200 rounded bg-gray-50 cursor-pointer; }
+.panel-style-group { @apply grid grid-cols-2 gap-2; }
+.panel-style-item { @apply relative overflow-hidden flex flex-col w-full h-48 ring-1 ring-gray-200 rounded bg-gray-50 cursor-pointer; }
 .panel-style-item .text-group { @apply relative flex flex-col mt-auto p-0.5 py-1 bg-white z-10; }
 .panel-style-item .text-group p { @apply mt-auto text-sm font-bold; }
 .panel-style-item .text-group span { @apply text-xs text-(--text-secondary) leading-tight tracking-tight; }
