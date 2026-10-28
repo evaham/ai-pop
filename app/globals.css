@@ -1187,7 +1187,6 @@ input:checked + .workspace-switch-slider:before { @apply translate-x-[-12px]; }
 .highlight-options .highlight { @apply text-xs text-center bg-[rgba(59,130,246,.85)] text-white font-bold px-2 py-1 rounded; }
 
 /* 프라이스카드 만들기 */
-
 /* 사이드메뉴 */
 .tab-group { @apply flex gap-2 w-100 mb-4 p-1 rounded-xl bg-gray-100;}
 .tab-btn { @apply flex-1 rounded-lg text-gray-500 font-bold px-4 py-1.5 cursor-pointer;}
