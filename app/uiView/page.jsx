@@ -184,7 +184,6 @@ export default function UiView() {
 
           </div>
           <div className="ml-4 mt-4 text-lg font-bold">02. 컴포넌트</div>
-
           <div className="sg-grid">
             <div className="sg-card">
               <div className="sg-card-header">
@@ -403,13 +402,164 @@ export default function UiView() {
 
 
           </div>
+          <div className="ml-4 mt-4 text-lg font-bold">02. tailwindcss 유틸리티 클래스</div>
+          <div className="sg-grid">
+            <div className="sg-card">
+              <div className="sg-card-header">
+                <div className="sg-card-title">유틸리티 클래스</div>
+              </div>
+              <div className="sg-card-body">
+                <p className="sg-card-des">기존 .form-btn* 계열 · Default, Hover, Active, Selected, Disabled</p>
+                <div>
+                  <div className="left-1 my-1 mt-1 table h-6 w-90 pb-2 pb-1 pt-3 py-0 bg-slate-950 bg-gray-950 bg-blue-100 border-black border-collapse flex-shrink flex-grow"></div>
+                  <div className="inset-shadow-white outline ease-in-out"></div>
+                </div>
+                <hr className="sg-divider" />
 
-
+              </div>
+            </div>
+            <div className="flex flex-col gap-2 p-4 border">
+              <div className="text-base">상태</div>
+              <div className="flex gap-5">
+                <div>
+                  default
+                  <FormButton variant="default">기본버튼</FormButton>
+                </div>
+                <div>
+                  hover
+                  <FormButton variant="default" hover={true}>hover 버튼</FormButton>
+                </div>
+                <div>
+                  active
+                  <FormButton variant="default" active={true}>active 버튼</FormButton>
+                </div>
+                <div>
+                  disabled
+                  <FormButton variant="default" disabled={true}>disabled 버튼</FormButton>
+                </div>
+                <div>
+                  selected
+                  <FormButton variant="default" selected={true}>selected 버튼</FormButton>
+                </div>
+              </div>
+              <div className="flex gap-5">
+                <div>
+                  <FormButton variant="primary">기본버튼</FormButton>
+                </div>
+                <div>
+                  <FormButton variant="primary" hover={true}>hover 버튼</FormButton>
+                </div>
+                <div>
+                  <FormButton variant="primary" active={true}>active 버튼</FormButton>
+                </div>
+                <div>
+                  <FormButton variant="primary" disabled={true}>disabled 버튼</FormButton>
+                </div>
+                <div>
+                  <FormButton variant="primary" selected={true}>selected 버튼</FormButton>
+                </div>
+              </div>
+              <div className="flex gap-5">
+                <div>
+                  <FormButton variant="secondary">기본버튼</FormButton>
+                </div>
+                <div>
+                  <FormButton variant="secondary" hover={true}>hover 버튼</FormButton>
+                </div>
+                <div>
+                  <FormButton variant="secondary" active={true}>active 버튼</FormButton>
+                </div>
+                <div>
+                  <FormButton variant="secondary" disabled={true}>disabled 버튼</FormButton>
+                </div>
+                <div>
+                  <FormButton variant="secondary" selected={true}>selected 버튼</FormButton>
+                </div>
+              </div>
+              <div className="flex gap-5">
+                <div>
+                  <FormButton variant="tertiary">기본버튼</FormButton>
+                </div>
+                <div>
+                  <FormButton variant="tertiary" hover={true}>hover 버튼</FormButton>
+                </div>
+                <div>
+                  <FormButton variant="tertiary" active={true}>active 버튼</FormButton>
+                </div>
+                <div>
+                  <FormButton variant="tertiary" disabled={true}>disabled 버튼</FormButton>
+                </div>
+                <div>
+                  <FormButton variant="tertiary" selected={true}>selected 버튼</FormButton>
+                </div>
+              </div>
+            </div>
+            <div className="flex flex-col gap-2 p-4 border">
+              <div className="text-base mt-4">입력폼</div>
+              <div className="flex flex-col gap-2">
+                <div className="flex gap-2">
+                  <FormInput type="text" className="w-50" placeholder="텍스트" />
+                  <FormInput type="email" className="w-50" placeholder="이메일" />
+                  <FormInput type="number" className="w-20 text-right" placeholder="숫자" />
+                  <FormInput type="password" className="w-20" placeholder="비밀번호" />
+                  <FormInput type="search" className="w-20" placeholder="검색" />
+                  <FormInput type="tel" className="w-20" placeholder="전화번호" />
+                </div>
+                <div className="flex gap-2">
+                  <div className="flex flex-col gap-2">
+                    default
+                    <FormInput type="text" className="w-50" placeholder="텍스트" />
+                  </div>
+                  <div className="flex flex-col gap-2">
+                    focus
+                    <FormInput type="text" className="w-50" placeholder="텍스트" focus={true} />
+                  </div>
+                  <div className="flex flex-col gap-2">
+                    disabled
+                    <FormInput type="text" className="w-50" placeholder="텍스트" disabled={true} />
+                  </div>
+                </div>
+                <div className="flex gap-2">
+                  <div className="flex flex-col gap-2">
+                    <FormTextarea className="w-50" rows={3} placeholder="내용을 입력하세요" />
+                  </div>
+                  <div className="flex flex-col gap-2">
+                    <FormTextarea className="w-50" rows={3} placeholder="내용을 입력하세요" focus={true} />
+                  </div>
+                  <div className="flex flex-col gap-2">
+                    <FormTextarea className="w-50" rows={3} placeholder="내용을 입력하세요" disabled={true} />
+                  </div>
+                </div>
+                <div className="flex gap-2">
+                  <div className="flex flex-col gap-2">
+                    <FormSelect className="w-50">
+                      <option value="">선택하세요</option>
+                      <option value="one">옵션 1</option>
+                      <option value="two">옵션 2</option>
+                    </FormSelect>
+                  </div>
+                  <div className="flex flex-col gap-2">
+                    <FormSelect className="w-50" focus={true}>
+                      <option value="">선택하세요</option>
+                      <option value="one">옵션 1</option>
+                      <option value="two">옵션 2</option>
+                    </FormSelect>
+                  </div>
+                  <div className="flex flex-col gap-2">
+                    <FormSelect className="w-50" disabled={true}>
+                      <option value="">선택하세요</option>
+                      <option value="one">옵션 1</option>
+                      <option value="two">옵션 2</option>
+                    </FormSelect>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
 
 
           <div className="">
-
             <main className="flex flex-col w-full">
               <div className="sg-pageheading">
                 <div>
@@ -644,9 +794,6 @@ export default function UiView() {
                   data-action="closeModal">확인</button></div>
             </div>
           </div>
-
-
-          
         </div>
       </div>
     );
