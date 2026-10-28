@@ -3224,6 +3224,18 @@
     --tw-translate-x: -12px;
     translate: var(--tw-translate-x) var(--tw-translate-y);
   }
+  .workspace-switch-check.check-on .workspace-switch-slider {
+    background-color: var(--color-gray-400);
+  }
+  .workspace-switch-check.check-on .workspace-switch-slider:before {
+    translate: -12px 0;
+  }
+  .workspace-switch-check.check-on input:checked + .workspace-switch-slider {
+    background-color: var(--color-blue-800);
+  }
+  .workspace-switch-check.check-on input:checked + .workspace-switch-slider:before {
+    translate: 0 0;
+  }
   .grid-table {
     margin-top: calc(var(--spacing) * 2);
     display: inline-grid;
