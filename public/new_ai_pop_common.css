@@ -276,6 +276,9 @@
   .mx-2 {
     margin-inline: calc(var(--spacing) * 2);
   }
+  .mx-4 {
+    margin-inline: calc(var(--spacing) * 4);
+  }
   .mx-auto {
     margin-inline: auto;
   }
@@ -287,6 +290,9 @@
   }
   .my-2 {
     margin-block: calc(var(--spacing) * 2);
+  }
+  .my-4 {
+    margin-block: calc(var(--spacing) * 4);
   }
   .-mt-px {
     margin-top: -1px;
@@ -426,6 +432,9 @@
   }
   .w-26 {
     width: calc(var(--spacing) * 26);
+  }
+  .w-30 {
+    width: calc(var(--spacing) * 30);
   }
   .w-34 {
     width: calc(var(--spacing) * 34);
@@ -1865,6 +1874,37 @@
   .form-btn:active, .form-btn.active, .form-btn.selected {
     background-color: var(--color-gray-200);
   }
+  .form-btn-line {
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing);
+    border-radius: 0.25rem;
+    background-color: transparent;
+    padding-inline: calc(var(--spacing) * 2);
+    padding-block: var(--spacing);
+    font-size: var(--text-sm);
+    line-height: var(--tw-leading, var(--text-sm--line-height));
+    color: var(--text-primary);
+    --tw-ring-shadow: var(--tw-ring-inset,) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color, currentcolor);
+    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+    --tw-ring-color: var(--color-gray-300);
+    transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, content-visibility, overlay, pointer-events;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
+  }
+  .form-btn-line:hover, .form-btn-line.hovered {
+    background-color: var(--primary-50);
+  }
+  .form-btn-line:active, .form-btn-line.active, .form-btn-line.selected {
+    background-color: var(--color-blue-50);
+    color: var(--color-blue-700);
+    --tw-ring-color: color-mix(in srgb, oklch(62.3% 0.214 259.815) 90%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      --tw-ring-color: color-mix(in oklab, var(--color-blue-500) 90%, transparent);
+    }
+  }
   .form-btn-primary {
     display: flex;
     cursor: pointer;
@@ -1950,7 +1990,7 @@
     background-color: var(--color-gray-50);
     --tw-ring-color: var(--color-gray-400);
   }
-  .form-btn svg, .form-btn svg, .form-btn-primary svg, .form-btn-secondary svg, .form-btn-tertiary svg {
+  .form-btn-line svg, .form-btn svg, .form-btn svg, .form-btn-primary svg, .form-btn-secondary svg, .form-btn-tertiary svg {
     width: calc(var(--spacing) * 5);
     height: calc(var(--spacing) * 5);
   }
@@ -3082,7 +3122,6 @@
     top: -20px;
     left: calc(50% - 5px);
     border-radius: 5px;
-    cursor: url('../img/img_sync_20x20.png') 10 10, alias;
     z-index: 10;
   }
   .workspace-preview-layer-rotate::after {

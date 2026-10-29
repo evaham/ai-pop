@@ -342,6 +342,9 @@
     .form-input[type="number"]::-webkit-outer-spin-button { @apply appearance-none m-0; } */
 
     .form-textarea { @apply inline-flex items-center justify-center min-h-7 px-2 py-1 ring-1 ring-gray-300 rounded text-sm bg-gray-50 cursor-text transition; }
+    .form-textarea:focus {}
+
+
     .form-select { @apply flex items-center justify-center px-2 py-1.25 ring-1 ring-gray-300 rounded text-sm bg-gray-50 cursor-pointer transition; }
     /* 입력폼 종류 끝 */
 
@@ -376,13 +379,13 @@
     .form-btn.active,
     .form-btn.selected { @apply bg-gray-200; }
 
-    /* .form-btn-line { @apply flex items-center justify-center gap-1 px-2 py-1 ring-1 ring-gray-300 rounded text-sm cursor-pointer transition bg-transparent text-(--text-primary); }
+    .form-btn-line { @apply flex items-center justify-center gap-1 px-2 py-1 ring-1 ring-gray-300 rounded text-sm cursor-pointer transition bg-transparent text-(--text-primary); }
     .form-btn-line:hover,
     .form-btn-line.hovered { @apply bg-(--primary-50); }
     .form-btn-line:active,
     .form-btn-line.active,
-    .form-btn-line.selected { @apply bg-blue-50 ring-blue-500/90 text-blue-700; } */
-
+    .form-btn-line.selected { @apply bg-blue-50 ring-blue-500/90 text-blue-700; }
+    
     .form-btn-primary { @apply flex items-center justify-center gap-1 px-2 py-1 ring-1 ring-(--primary-500) rounded text-sm text-white bg-(--primary-500) cursor-pointer transition; }
     .form-btn-primary:hover,
     .form-btn-primary.hovered { @apply bg-(--primary-600); }
@@ -407,6 +410,7 @@
     /* 버튼종류 끝 */
 
     /* 버튼 아이콘 시작 */
+    .form-btn-line svg,
     .form-btn svg,
     .form-btn svg,
     .form-btn-primary svg,
@@ -426,47 +430,6 @@
 
 
     .button-group { @apply flex gap-1; }
-
-
-
-
-
-
-
-    /* .templat-view-btn { @apply flex items-center justify-center ml-auto px-3 py-2 ring-1 ring-[#26499d] text-sm rounded bg-[#26499d] text-white cursor-pointer; }
-    .templat-view-btn:hover { @apply bg-[#1c3c7a] no-underline; }
-    .line-btn:active { @apply opacity-50; } */
-
-    /* 
-    .base-line-btn { @apply flex items-center ring-1 ring-gray-300 rounded-sm bg-white text-sm px-2 py-1 cursor-pointer;}
-    .base-line-btn svg { @apply w-4 h-4 mr-1; }
-    .base-line-btn:hover { @apply ring-blue-400 cursor-pointer; }
-    .base-line-btn:active, .base-line-btn.selected { @apply ring-1 ring-blue-500 bg-blue-50 text-blue-700; }
-
-
-    .line-btn { @apply flex items-center justify-center px-2 py-1 ring-1 ring-gray-300 rounded bg-white text-sm cursor-pointer; }
-    .line-btn .line-btn-name { @apply flex items-center gap-1 tracking-[-2px]; }
-    .line-btn:hover { @apply bg-gray-100 no-underline; }
-    .line-btn:active, .line-btn.selected { @apply border-gray-600 bg-gray-600 text-white; }
-
-    .base-btn { @apply flex items-center justify-center px-3 py-1 ring-1 ring-gray-300 rounded text-sm bg-gray-50 cursor-pointer; }
-    .base-btn:hover { @apply bg-gray-100 no-underline; }
-    .base-btn:active, .base-btn.selected { @apply bg-gray-200; }
-
-    .small-btn { @apply flex items-center justify-center px-2 py-1 ring-1 ring-gray-300 rounded text-sm bg-gray-50 cursor-pointer; }
-    .small-btn:hover { @apply bg-gray-100 no-underline; }
-    .small-btn:active, .small-btn.selected { @apply bg-gray-200; }
-
-    .lage-btn { @apply flex items-center justify-center px-4 py-2 ring-1 ring-gray-300 rounded text-sm bg-gray-50 cursor-pointer; }
-    .lage-btn:hover { @apply bg-gray-100 no-underline; }
-    .lage-btn:active, .lage-btn.selected { @apply bg-gray-200; }
-
-    .point-btn-blue { @apply flex items-center justify-center px-3 py-1 ring-1 ring-[#26499d] rounded bg-[#26499d] text-white text-sm cursor-pointer; }
-    .point-btn-blue:hover { @apply bg-[#1c3c7a] no-underline; }
-    .point-btn-blue:active, .point-btn-blue.selected { @apply bg-[#162d5a]; } */
-
-
-
 
 
     /* 공통 테이블 그리드 시작 */
@@ -944,7 +907,7 @@
         top: -20px;
         left: calc(50% - 5px);
         border-radius: 5px;
-        cursor: url('../img/img_sync_20x20.png') 10 10, alias;
+        /* cursor: url('../img/img_sync_20x20.png') 10 10, alias; */
         z-index: 10;
     }
     .workspace-preview-layer-rotate::after {

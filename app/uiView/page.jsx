@@ -413,6 +413,7 @@ export default function UiView() {
                 <div>
                   <div className="left-1 my-1 mt-1 table h-6 w-90 pb-2 pb-1 pt-3 py-0 bg-slate-950 bg-gray-950 bg-blue-100 border-black border-collapse flex-shrink flex-grow"></div>
                   <div className="inset-shadow-white outline ease-in-out"></div>
+                  <div className="mx-4 my-4 w-30"></div>
                 </div>
                 <hr className="sg-divider" />
 

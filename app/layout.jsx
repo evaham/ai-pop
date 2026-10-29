@@ -2,7 +2,8 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import "./globals.css";
+// import "./globals.css";
+import "./new_ai_pop_common.css";
 import TsMoney from "./components/TsMoney";
 
 
