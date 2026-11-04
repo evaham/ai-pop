@@ -3,6 +3,17 @@
 import { useEffect, useState } from "react";
 import resolveImageSrc from "../lib/resolveImageSrc";
 
+const STYLE_ITEMS = [
+  { title: 'AI 추천', desc: 'AI 추천으로 자동 생성', img: './img/ai추천.png', alt: 'AI추천' },
+  { title: '심플', desc: '밝은 배경 & 심플한 느낌', img: './img/심플_openai_썸넬.png', alt: '네추럴 심플 스타일' },
+  { title: '신선 마켓', desc: '산지직송 신선식품 느낌', img: './img/신선마켓_openai_썸넬.png', alt: '신선 마켓' },
+  { title: '컬러 임펙트', desc: '색상 대비로 시선 집중', img: './img/컬러임팩_openai_썸넬1.png', alt: '컬러 임펙트 스타일' },
+  { title: '고급 마켓', desc: '어두운 배경 & 고급스러움', img: './img/고급마켓_openai_썸넬.png', alt: '고급 마켓 스타일' },
+  { title: '칠판 일러스트', desc: '친근한 손글씨 느낌', img: './img/칠판일러_openai_썸넬.png', alt: '칠판 일러스트 스타일' },
+  { title: '손그림 일러스트', desc: '활기차고 트렌디한 느낌', img: './img/손그림일러스트_openai_썸넬2.png', alt: '손그림 일러스트 스타일' },
+  { title: '레트로 마켓', desc: '8~90년대 빈티지 감성', img: './img/레트로_openai_썸넬.png', alt: '레트로 마켓 스타일' },
+];
+
 export default function PopSideContentsLayout({ children }) {
   const [popType, setPopType] = useState('promo'); // 'promo' | 'notice'
   const DEFAULT_STYLE_LABEL = '미선택 (AI자동)';
@@ -239,86 +250,18 @@ export default function PopSideContentsLayout({ children }) {
               <div className="panel-fieldset">
                 <div className="panel-label">스타일</div>
                 <div className="panel-style-group" aria-label="스타일선택" onClick={handleStyleClick}>
-                  <button type="button" className="panel-style-item selected">
-                    <div className="icon-check">
-                      <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M382-221.91 135.91-468l75.66-75.65L382-373.22l366.43-366.43L824.09-664 382-221.91Z"></path></svg>
-                    </div>
-                    <img src={resolveImageSrc('./img/ai추천.png')} alt="AI추천" loading="lazy"/>
-                    <div className="text-group">
-                      <p>AI 추천</p>
-                      <span>AI 추천으로 자동 생성</span>
-                    </div>
-                  </button>
-                  <button type="button" className="panel-style-item">
-                    <div className="icon-check">
-                      <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M382-221.91 135.91-468l75.66-75.65L382-373.22l366.43-366.43L824.09-664 382-221.91Z"></path></svg>
-                    </div>
-                    <img src={resolveImageSrc('./img/신선마켓.png')} alt="신선 마켓" loading="lazy"/>
-                    <div className="text-group">
-                      <p>신선 마켓</p>
-                      <span>산지직송 신선식품 느낌</span>
-                    </div>
-                  </button>
-                  <button type="button" className="panel-style-item">
-                    <div className="icon-check">
-                      <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M382-221.91 135.91-468l75.66-75.65L382-373.22l366.43-366.43L824.09-664 382-221.91Z"></path></svg>
-                    </div>
-                    <img src={resolveImageSrc('./img/컬러임펙트.png')} alt="컬러 임펙트 스타일" loading="lazy"/>
-                    <div className="text-group">
-                      <p>컬러 임펙트</p>
-                      <span>색상 대비로 시선 집중</span>
-                    </div>
-                  </button>
-                  <button type="button" className="panel-style-item">
-                    <div className="icon-check">
-                      <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M382-221.91 135.91-468l75.66-75.65L382-373.22l366.43-366.43L824.09-664 382-221.91Z"></path></svg>
-                    </div>
-                    <img src={resolveImageSrc('./img/네추럴심플.png')} alt="네추럴 심플 스타일" loading="lazy"/>
-                    <div className="text-group">
-                      <p>네추럴 심플</p>
-                      <span>밝은 배경 &amp; 심플한 느낌</span>
-                    </div>
-                  </button>
-                  <button type="button" className="panel-style-item">
-                    <div className="icon-check">
-                      <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M382-221.91 135.91-468l75.66-75.65L382-373.22l366.43-366.43L824.09-664 382-221.91Z"></path></svg>
-                    </div>
-                    <img src={resolveImageSrc('./img/고급마켓.png')} alt="고급 마켓 스타일" loading="lazy"/>
-                    <div className="text-group">
-                      <p>고급 마켓</p>
-                      <span>어두운 배경 &amp; 고급스러움</span>
-                    </div>
-                  </button>
-                  <button type="button" className="panel-style-item">
-                    <div className="icon-check">
-                      <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M382-221.91 135.91-468l75.66-75.65L382-373.22l366.43-366.43L824.09-664 382-221.91Z"></path></svg>
-                    </div>
-                    <img src={resolveImageSrc('./img/칠판일러.png')} alt="칠판 일러스트 스타일" loading="lazy"/>
-                    <div className="text-group">
-                      <p>칠판 일러스트</p>
-                      <span>친근한 손글씨 느낌</span>
-                    </div>
-                  </button>
-                  <button type="button" className="panel-style-item">
-                    <div className="icon-check">
-                      <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M382-221.91 135.91-468l75.66-75.65L382-373.22l366.43-366.43L824.09-664 382-221.91Z"></path></svg>
-                    </div>
-                    <img src={resolveImageSrc('./img/팝아트일러.png')} alt="팝아트 일러스트 스타일" loading="lazy"/>
-                    <div className="text-group">
-                      <p>팝아트 일러스트</p>
-                      <span>활기차고 트렌디한 느낌</span>
-                    </div>
-                  </button>
-                  <button type="button" className="panel-style-item">
-                    <div className="icon-check">
-                      <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M382-221.91 135.91-468l75.66-75.65L382-373.22l366.43-366.43L824.09-664 382-221.91Z"></path></svg>
-                    </div>
-                    <img src={resolveImageSrc('./img/레트로마켓.png')} alt="레트로 마켓 스타일" loading="lazy"/>
-                    <div className="text-group">
-                      <p>레트로 마켓</p>
-                      <span>8~90년대 빈티지 감성</span>
-                    </div>
-                  </button>
+                  {STYLE_ITEMS.map((s, idx) => (
+                    <button type="button" key={s.img} className={idx === 0 ? 'panel-style-item selected' : 'panel-style-item'}>
+                      <div className="icon-check">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M382-221.91 135.91-468l75.66-75.65L382-373.22l366.43-366.43L824.09-664 382-221.91Z"></path></svg>
+                      </div>
+                      <img src={resolveImageSrc(s.img)} alt={s.alt} loading="lazy"/>
+                      <div className="text-group">
+                        <p>{s.title}</p>
+                        <span>{s.desc}</span>
+                      </div>
+                    </button>
+                  ))}
                 </div>
                 {/* <div className="panel-label">강조 포인트</div>
                 <div className="panel-line-group">

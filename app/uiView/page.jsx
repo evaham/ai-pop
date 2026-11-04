@@ -273,84 +273,10 @@ export default function UiView() {
                 <hr className="sg-divider" />
               </div>
             </div>
-            <div className="flex flex-col gap-2 p-4 border">
-              <div className="text-base">상태</div>
-              <div className="flex gap-5">
-                <div>
-                  default
-                  <FormButton variant="default">기본버튼</FormButton>
-                </div>
-                <div>
-                  hover
-                  <FormButton variant="default" hover={true}>hover 버튼</FormButton>
-                </div>
-                <div>
-                  active
-                  <FormButton variant="default" active={true}>active 버튼</FormButton>
-                </div>
-                <div>
-                  disabled
-                  <FormButton variant="default" disabled={true}>disabled 버튼</FormButton>
-                </div>
-                <div>
-                  selected
-                  <FormButton variant="default" selected={true}>selected 버튼</FormButton>
-                </div>
+            <div className="sg-card">
+              <div className="sg-card-header">
+                <div className="sg-card-title">입력폼</div>
               </div>
-              <div className="flex gap-5">
-                <div>
-                  <FormButton variant="primary">기본버튼</FormButton>
-                </div>
-                <div>
-                  <FormButton variant="primary" hover={true}>hover 버튼</FormButton>
-                </div>
-                <div>
-                  <FormButton variant="primary" active={true}>active 버튼</FormButton>
-                </div>
-                <div>
-                  <FormButton variant="primary" disabled={true}>disabled 버튼</FormButton>
-                </div>
-                <div>
-                  <FormButton variant="primary" selected={true}>selected 버튼</FormButton>
-                </div>
-              </div>
-              <div className="flex gap-5">
-                <div>
-                  <FormButton variant="secondary">기본버튼</FormButton>
-                </div>
-                <div>
-                  <FormButton variant="secondary" hover={true}>hover 버튼</FormButton>
-                </div>
-                <div>
-                  <FormButton variant="secondary" active={true}>active 버튼</FormButton>
-                </div>
-                <div>
-                  <FormButton variant="secondary" disabled={true}>disabled 버튼</FormButton>
-                </div>
-                <div>
-                  <FormButton variant="secondary" selected={true}>selected 버튼</FormButton>
-                </div>
-              </div>
-              <div className="flex gap-5">
-                <div>
-                  <FormButton variant="tertiary">기본버튼</FormButton>
-                </div>
-                <div>
-                  <FormButton variant="tertiary" hover={true}>hover 버튼</FormButton>
-                </div>
-                <div>
-                  <FormButton variant="tertiary" active={true}>active 버튼</FormButton>
-                </div>
-                <div>
-                  <FormButton variant="tertiary" disabled={true}>disabled 버튼</FormButton>
-                </div>
-                <div>
-                  <FormButton variant="tertiary" selected={true}>selected 버튼</FormButton>
-                </div>
-              </div>
-            </div>
-            <div className="flex flex-col gap-2 p-4 border">
-              <div className="text-base mt-4">입력폼</div>
               <div className="flex flex-col gap-2">
                 <div className="flex gap-2">
                   <FormInput type="text" className="w-50" placeholder="텍스트" />
@@ -362,27 +288,27 @@ export default function UiView() {
                 </div>
                 <div className="flex gap-2">
                   <div className="flex flex-col gap-2">
-                    default
-                    <FormInput type="text" className="w-50" placeholder="텍스트" />
+                    <label className="text-xs">Default</label>
+                    <FormInput type="text" className="w-30" placeholder="텍스트" />
                   </div>
                   <div className="flex flex-col gap-2">
-                    focus
-                    <FormInput type="text" className="w-50" placeholder="텍스트" focus={true} />
+                    <label className="text-xs">Focus</label>
+                    <FormInput type="text" className="w-30" placeholder="텍스트" focus={true} />
                   </div>
                   <div className="flex flex-col gap-2">
-                    disabled
-                    <FormInput type="text" className="w-50" placeholder="텍스트" disabled={true} />
+                    <label className="text-xs">Disabled</label>
+                    <FormInput type="text" className="w-30" placeholder="텍스트" disabled={true} />
                   </div>
                 </div>
                 <div className="flex gap-2">
                   <div className="flex flex-col gap-2">
-                    <FormTextarea className="w-50" rows={3} placeholder="내용을 입력하세요" />
+                    <FormTextarea className="w-30" rows={3} placeholder="내용을 입력하세요" />
                   </div>
                   <div className="flex flex-col gap-2">
-                    <FormTextarea className="w-50" rows={3} placeholder="내용을 입력하세요" focus={true} />
+                    <FormTextarea className="w-30" rows={3} placeholder="내용을 입력하세요" focus={true} />
                   </div>
                   <div className="flex flex-col gap-2">
-                    <FormTextarea className="w-50" rows={3} placeholder="내용을 입력하세요" disabled={true} />
+                    <FormTextarea className="w-30" rows={3} placeholder="내용을 입력하세요" disabled={true} />
                   </div>
                 </div>
                 <div className="flex gap-2">
@@ -410,7 +336,22 @@ export default function UiView() {
                 </div>
               </div>
             </div>
-
+            <div className="sg-card">
+              <div className="sg-card-title">
+                <h3>입력 폼 (Input)</h3>
+                <button type="button" class="sg-smalllink" data-action="code" data-title="입력 폼 (Input) CSS" data-code="input">CSS 코드 보기 ↗</button>
+              </div>
+              <p class="sg-card-des">기존 .form-input · .form-textarea · .form-select</p>
+              <div class="sg-form-grid">
+                <div class="sg-formcell">
+                  <label>Default</label><input class="form-input " aria-label="Default 입력" placeholder="텍스트 입력" />
+                </div>
+                <div class="sg-formcell">
+                  <label>Focus</label><input class="form-input focus" aria-label="Focus 입력" placeholder="텍스트 입력" />
+                </div>
+                
+                </div>
+                </div>
 
 
           </div>

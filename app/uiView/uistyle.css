@@ -871,20 +871,6 @@
       font-weight: 700
     }
 
-    .form-input,
-    .form-textarea,
-    .form-select {
-      width: 100%;
-      border: 0;
-      box-shadow: 0 0 0 1px #D1D5DB inset;
-      padding: 5px 8px;
-      border-radius: 4px;
-      background: #F9FAFB;
-      color: #253447;
-      font-size: 14px;
-      outline: none;
-      min-height: 28px
-    }
 
     .form-select {
       cursor: pointer
@@ -893,26 +879,6 @@
     .form-textarea {
       resize: vertical;
       min-height: 58px
-    }
-
-    .form-input:focus,
-    .form-input.focus,
-    .form-textarea:focus,
-    .form-textarea.focus,
-    .form-select:focus,
-    .form-select.focus {
-      box-shadow: 0 0 0 1px var(--primary-500) inset
-    }
-
-    .form-input:disabled,
-    .form-input.disabled,
-    .form-textarea:disabled,
-    .form-textarea.disabled,
-    .form-select:disabled,
-    .form-select.disabled {
-      background: #E5E7EB;
-      box-shadow: 0 0 0 1px #E5E7EB inset;
-      cursor: not-allowed
     }
 
     .sg-formcell .sg-error {

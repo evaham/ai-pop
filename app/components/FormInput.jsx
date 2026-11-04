@@ -8,7 +8,7 @@ export default function FormInput({
   ...props
 }) {
   const classes = [
-    "form-input",
+    "form-input w-20",
     focus && "focus",
     disabled && "disabled",
     className,
