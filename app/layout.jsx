@@ -39,7 +39,7 @@ export default function RootLayout({ children }) {
               <div className="tabs page-tab-inner" id="menuTab">
                 <ul className="level1 static">
                   <li role="menuitem">
-                    <Link href="/aiRequest_pop" className={tabClass("/aiRequest_pop")}>AI POP 만들기</Link>
+                    <Link href="/aiRequest_pop" className={tabClass("/aiRequest_pop")}>POP AI 만들기</Link>
                   </li>
                   <li role="menuitem">
                     <Link href="/aiRequest_pc" className={tabClass("/aiRequest_pc")}>프라이스카드 만들기</Link>

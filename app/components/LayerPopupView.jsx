@@ -52,7 +52,7 @@ export default function LayerPopupView ({ isOpen = true, onClose }) {
 	<div id="popupLayer" className="popup-layer">
 		<div className="popup-background"></div>
 		<button type="button" className="absolute top-3 left-1/2 -mx-16 p-1 border bg-white" onClick={cycleLayer}>레이어팝업화면 ({activeLayer})</button>
-		<div className="popup-warp">
+		<div className="popup-wrap">
 			{/* <!-- 레이어1 --> */}
 			<div id="pricecardTemplate" className={`popup-section ${activeLayer === 1 ? '' : 'hidden'}`} style={{width:"334px"}}>
 				<button type="button" className="popup-close-btn" onClick={handleClose}>

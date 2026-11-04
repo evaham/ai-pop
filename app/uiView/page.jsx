@@ -255,10 +255,22 @@ export default function UiView() {
                       <td><button type="button" className="form-btn-tertiary disabled" disabled data-action="notify"
                           data-message="Tertiary Disabled">더보기</button></td>
                     </tr>
+                    <tr>
+                      <td>line</td>
+                      <td><button type="button" className="form-btn-line" data-action="notify"
+                          data-message="Tertiary Default">더보기</button></td>
+                      <td><button type="button" className="form-btn-line hovered" data-action="notify"
+                          data-message="Tertiary Hover">더보기</button></td>
+                      <td><button type="button" className="form-btn-line active" data-action="notify"
+                          data-message="Tertiary Active">더보기</button></td>
+                      <td><button type="button" className="form-btn-line selected" data-action="notify"
+                          data-message="Tertiary Selected">더보기</button></td>
+                      <td><button type="button" className="form-btn-line disabled" disabled data-action="notify"
+                          data-message="Tertiary Disabled">더보기</button></td>
+                    </tr>
                   </tbody>
                 </table>
                 <hr className="sg-divider" />
-
               </div>
             </div>
             <div className="flex flex-col gap-2 p-4 border">
@@ -410,7 +422,7 @@ export default function UiView() {
               </div>
               <div className="sg-card-body">
                 <p className="sg-card-des">기존 .form-btn* 계열 · Default, Hover, Active, Selected, Disabled</p>
-                <div>
+                <div className="hidden">
                   <div className="left-1 my-1 mt-1 table h-6 w-90 pb-2 pb-1 pt-3 py-0 bg-slate-950 bg-gray-950 bg-blue-100 border-black border-collapse flex-shrink flex-grow"></div>
                   <div className="inset-shadow-white outline ease-in-out"></div>
                   <div className="mx-4 my-4 w-30"></div>
@@ -668,13 +680,13 @@ export default function UiView() {
                     </div>
                     <p className="sg-card-des">Checkbox · Radio · Switch (확장 예시)</p>
                     <h4>Checkbox / Radio</h4>
-                    <div className="sg-controls"><label className="sg-control-label"><input type="checkbox" checked />선택됨</label><label
+                    <div className="sg-controls"><label className="sg-control-label"><input type="checkbox" defaultChecked />선택됨</label><label
                         className="sg-control-label"><input type="checkbox"/>기본</label><label className="sg-control-label"><input
-                          type="radio" name="sg-radio" checked />선택됨</label><label className="sg-control-label"><input type="radio"
+                          type="radio" name="sg-radio" defaultChecked />선택됨</label><label className="sg-control-label"><input type="radio"
                           name="sg-radio" />기본</label></div>
                     <hr className="sg-divider" />
                     <h4>Switch</h4>
-                    <div className="sg-controls"><label className="sg-switch"><input type="checkbox" checked/><span
+                    <div className="sg-controls"><label className="sg-switch"><input type="checkbox" defaultChecked/><span
                           className="sg-switch-track"></span>On</label><label className="sg-switch"><input type="checkbox"/><span
                           className="sg-switch-track"></span>Off</label><label className="sg-switch"><input type="checkbox"
                           disabled /><span className="sg-switch-track"></span>Disabled</label></div>

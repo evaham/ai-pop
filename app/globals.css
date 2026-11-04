@@ -567,7 +567,7 @@
 
 
     /* 프라이스카드 에디터 시작 */
-    .workspace-editor { @apply flex-1 relative flex flex-col border-l border-gray-300; }
+    .workspace-editor { @apply relative flex flex-col border-l border-gray-300; }
     /* 저장버튼 그룹 시작 */
     .workspace-save-group { @apply flex gap-2 w-full px-4 py-2; }
     .workspace-save-group > .form-btn-primary { @apply flex-1 py-2 text-base; }
@@ -1190,8 +1190,8 @@
     .panel-btn:active, .panel-btn.selected { @apply ring-1 ring-blue-500 bg-blue-50 text-blue-700; }
 
     /* 이미지 버튼 */
-    .panel-style-group { @apply grid grid-cols-2 gap-2; }
-    .panel-style-item { @apply relative overflow-hidden flex flex-col w-full h-48 ring-1 ring-gray-200 rounded bg-gray-50 cursor-pointer; }
+    .panel-style-group { @apply grid grid-cols-4 gap-3; }
+    .panel-style-item { @apply relative overflow-hidden flex flex-col w-full h-36 ring-1 ring-gray-200 rounded bg-gray-50 cursor-pointer; }
     .panel-style-item .text-group { @apply relative flex flex-col mt-auto p-0.5 py-1 bg-white z-10; }
     .panel-style-item .text-group p { @apply mt-auto text-sm font-bold; }
     .panel-style-item .text-group span { @apply text-xs text-(--text-secondary) leading-tight tracking-tight; }
@@ -1275,14 +1275,17 @@
 
     /* 샘플 템플릿 리스트 */
     .sample-list-wrapper { @apply relative gap-2;}
-    .sample-list { @apply grid grid-cols-4 gap-3;}
-    .sample-list > .item { @apply flex flex-col cursor-pointer}
-    .sample-list > .item > .content { @apply overflow-hidden flex items-center justify-center w-full h-69 rounded-lg; }
-    .sample-list > .item > .content > img { @apply flex w-full h-full; }
+    
+    .sample-list-wrapper { @apply relative gap-2;}
+    .sample-list { @apply columns-4 gap-3;}
+    .sample-list > .item { @apply relative inline-flex w-full flex-col mb-3 break-inside-avoid cursor-pointer}
+    .sample-list > .item > .content { @apply overflow-hidden flex items-center justify-center w-full rounded-lg; }
+    .sample-list > .item > .content > img { @apply block w-full h-auto; }
     .sample-list > .item:hover > .content { @apply bg-black; }
     .sample-list > .item:hover > .content > img { @apply opacity-80; }
     .sample-list > .item.selected > .content { @apply bg-black; }
-    .sample-list > .item .item-description { @apply order-2 mt-1 mb-2 text-sm text-[var(--text-primary)];}
+    .sample-list > .item .item-description { @apply absolute bottom-1 left-1 text-xs text-[var(--text-primary)] bg-gray-700 py-0.5 px-1 rounded text-white z-1; }
+
 
     .pop-more-button { @apply flex items-center justify-center w-30 h-10 mt-4 mx-auto bg-gray-200 text-[var(--text-primary)] font-bold rounded-full cursor-pointer; }
     .highlight-options { @apply hidden absolute top-10 left-1 flex-wrap gap-1 z-1; }
