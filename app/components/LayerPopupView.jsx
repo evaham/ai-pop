@@ -54,7 +54,7 @@ export default function LayerPopupView ({ isOpen = true, onClose }) {
 		<button type="button" className="absolute top-3 left-1/2 -mx-16 p-1 border bg-white" onClick={cycleLayer}>레이어팝업화면 ({activeLayer})</button>
 		<div className="popup-wrap">
 			{/* <!-- 레이어1 --> */}
-			<div id="pricecardTemplate" className={`popup-section ${activeLayer === 1 ? '' : 'hidden'}`} style={{width:"334px"}}>
+			<div id="pricecardTemplate" className={`popup-section ${activeLayer === 2 ? '' : 'hidden'}`} style={{width:"334px"}}>
 				<button type="button" className="popup-close-btn" onClick={handleClose}>
 					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M10.5859 12L2.79297 4.20706L4.20718 2.79285L12.0001 10.5857L19.793 2.79285L21.2072 4.20706L13.4143 12L21.2072 19.7928L19.793 21.2071L12.0001 13.4142L4.20718 21.2071L2.79297 19.7928L10.5859 12Z"></path></svg>
 				</button>
@@ -81,7 +81,7 @@ export default function LayerPopupView ({ isOpen = true, onClose }) {
 				</div>
 			</div>
 			{/* <!-- 레이어2 --> */}
-			<div id="pricecardImageBox" className={`popup-section ${activeLayer === 2 ? '' : 'hidden'}`}>
+			<div id="pricecardImageBox" className={`popup-section ${activeLayer === 1 ? '' : 'hidden'}`}>
 				<button type="button" className="popup-close-btn" onClick={handleClose}>
 					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M10.5859 12L2.79297 4.20706L4.20718 2.79285L12.0001 10.5857L19.793 2.79285L21.2072 4.20706L13.4143 12L21.2072 19.7928L19.793 21.2071L12.0001 13.4142L4.20718 21.2071L2.79297 19.7928L10.5859 12Z"></path></svg>
 				</button>
@@ -110,11 +110,11 @@ export default function LayerPopupView ({ isOpen = true, onClose }) {
 								<div>다운로드</div>
 							</button>
 						</div>
-						<div>
-							<div className="popup-infobox-title">생성일</div>
+						<div className="flex justify-between">
+							<div className="popup-infobox-title">생성일시</div>
 							<div id="pricecardImageRgstDate" className="popup-infobox-text">2026-10-13 14:01</div>
 						</div>
-						<div>
+						{/* <div>
 							<div className="popup-infobox-title">선택유형</div>
 							<div className="popup-infobox-dl">
 								<div className="popup-infobox-dt">이미지유형</div>
@@ -124,21 +124,14 @@ export default function LayerPopupView ({ isOpen = true, onClose }) {
 								<div className="popup-infobox-dt">레이아웃</div>
 								<div id="pricecardImageLayout">세로형,3x2</div>
 							</div>
+						</div> */}
+						<div className="flex justify-between">
+							<div className="popup-infobox-title">이미지규격</div>
+							<div id="pricecardImageSize" className="popup-infobox-text">1132x1600px (2.3 MB)</div>								
 						</div>
-						<div>
-							<div className="popup-infobox-title">이미지정보</div>
-							<div className="popup-infobox-dl">
-								<div className="popup-infobox-dt">사이즈</div>
-								<div id="pricecardImageSize" className="popup-infobox-dd">1132 x 1600 px</div>								
-							</div>
-							<div className="popup-infobox-dl">
-								<div className="popup-infobox-dt">용량</div>
-								<div id="pricecardImageByte" className="popup-infobox-dd">2.3 MB</div>								
-							</div>
-						</div>
-						<div>
+						<div className="flex justify-between">
 							<div className="popup-infobox-title">보관기간</div>
-							<div id="pricecardImageExprDate" className="popup-infobox-text">2026-12-31 24:00까지</div>
+							<div id="pricecardImageExprDate" className="popup-infobox-text text-red-600">2026-12-31 24:00까지</div>
 						</div>
 					</div>
 					<div id="pricecardImageError" className="popup-infobox hidden">

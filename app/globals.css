@@ -228,7 +228,7 @@
 
     /* 이미지생성 팝업창 시작 */
     .popup-preview { @apply flex-1 flex items-center justify-center w-lg h-125 bg-gray-100 mr-3 p-4;}
-    .popup-infobox { @apply flex flex-col gap-4 w-58 text-sm; }
+    .popup-infobox { @apply flex flex-col gap-4 w-64 text-sm; }
 
     .popup-infobox-title { @apply font-bold mb-1 text-(--text-secondary);}
     .popup-infobox-text { }
@@ -243,7 +243,6 @@
     .popup-foot-help-title { @apply flex items-center gap-1 font-bold text-base; }
     .popup-foot-help-title svg { @apply w-5; }
     .popup-foot-help-list { @apply mx-2 list-disc list-inside text-sm; }
-
 
     /* 이미지생성 팝업창 끝 */
 

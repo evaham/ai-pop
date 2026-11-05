@@ -1395,7 +1395,7 @@
   }
   .popup-infobox {
     display: flex;
-    width: calc(var(--spacing) * 58);
+    width: calc(var(--spacing) * 64);
     flex-direction: column;
     gap: calc(var(--spacing) * 4);
     font-size: var(--text-sm);
