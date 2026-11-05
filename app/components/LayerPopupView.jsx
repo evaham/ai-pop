@@ -91,10 +91,18 @@ export default function LayerPopupView ({ isOpen = true, onClose }) {
 				<hr className="popup-divider" />
 				<div className="popup-body">
 					<div className="popup-preview">
-						<img id="pricecardImage" src={resolveImageSrc("./img/안내공지_컬러임팩트.png")} className="max-w-full max-h-full border" />
+						<img id="pricecardImage" src={resolveImageSrc("/img/popuptest2.png")} className="max-w-full max-h-full border" />
 					</div>
 					<div id="pricecardImageInfo" className="popup-infobox">
 						<div className="popup-infobox-group">
+							<button type="button" className="form-btn-primary">
+								<div>신규POP생성</div>
+							</button>
+							<button type="button" className="form-btn">
+								<div>옵션 수정후 재생성</div>
+							</button>
+						</div>
+						<div className="popup-infobox-group" style={{marginTop:"-5px"}}>
 							<button type="button" className="form-btn">
 								<div>인쇄하기</div>
 							</button>
@@ -150,6 +158,19 @@ export default function LayerPopupView ({ isOpen = true, onClose }) {
 								템플릿으로 저장하시면 다시 만드실 수 있습니다.
 							</div>
 						</div>
+					</div>
+				</div>
+				<div className="popup-foot">
+					<div className="popup-foot-help">
+						<div className="popup-foot-help-title">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 22C6.47715 22 2 17.5228 2 12 2 6.47715 6.47715 2 12 2 17.5228 2 22 6.47715 22 12 22 17.5228 17.5228 22 12 22ZM12 20C16.4183 20 20 16.4183 20 12 20 7.58172 16.4183 4 12 4 7.58172 4 4 7.58172 4 12 4 16.4183 7.58172 20 12 20ZM13 10.5V15H14V17H10V15H11V12.5H10V10.5H13ZM13.5 8C13.5 8.82843 12.8284 9.5 12 9.5 11.1716 9.5 10.5 8.82843 10.5 8 10.5 7.17157 11.1716 6.5 12 6.5 12.8284 6.5 13.5 7.17157 13.5 8Z"></path></svg>
+							이미지 이용안내
+						</div>
+						<ul className="popup-foot-help-list">
+							<li> AI 생성 이미지는 실제 상품과 다를 수 있으므로 사용 전 반드시 확인해 주세요.</li>
+							<li> 옵션 수정 후 재생성 시, 비용이 추가 차감됩니다.</li>
+							<li> 인쇄하기 및 다운로드는 추가 차감 없이 이용이 가능합니다.</li>
+						</ul>
 					</div>
 				</div>
 			</div>

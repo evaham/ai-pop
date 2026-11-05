@@ -227,7 +227,7 @@
     .popup-body-text { @apply text-(--text-secondary) text-sm; }
 
     /* 이미지생성 팝업창 시작 */
-    .popup-preview { @apply flex-1 flex items-center justify-center min-w-lg max-w-125 bg-gray-100 mr-3 p-4;}
+    .popup-preview { @apply flex-1 flex items-center justify-center w-lg h-125 bg-gray-100 mr-3 p-4;}
     .popup-infobox { @apply flex flex-col gap-4 w-58 text-sm; }
 
     .popup-infobox-title { @apply font-bold mb-1 text-(--text-secondary);}
@@ -237,7 +237,14 @@
     .popup-infobox-dt { }
     .popup-infobox-dt:before { @apply content-['·'] mr-1 text-gray-400;}
     .popup-infobox-dd { }
-    .popup-footer {}
+
+    .popup-foot { @apply m-4 mt-0}
+    .popup-foot-help { @apply flex flex-col gap-1 px-6 py-4 rounded-lg bg-amber-50; }
+    .popup-foot-help-title { @apply flex items-center gap-1 font-bold text-base; }
+    .popup-foot-help-title svg { @apply w-5; }
+    .popup-foot-help-list { @apply mx-2 list-disc list-inside text-sm; }
+
+
     /* 이미지생성 팝업창 끝 */
 
 
