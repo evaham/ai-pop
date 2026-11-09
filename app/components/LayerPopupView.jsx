@@ -94,7 +94,7 @@ export default function LayerPopupView ({ isOpen = true, onClose }) {
 						<img id="pricecardImage" src={resolveImageSrc("/img/popuptest2.png")} className="max-w-full max-h-full border" />
 					</div>
 					<div id="pricecardImageInfo" className="popup-infobox">
-						<div className="popup-infobox-group">
+						<div className="popup-infobox-group flex-col">
 							<button type="button" className="form-btn-primary">
 								<div>신규POP생성</div>
 							</button>
@@ -103,16 +103,16 @@ export default function LayerPopupView ({ isOpen = true, onClose }) {
 							</button>
 						</div>
 						<div className="popup-infobox-group" style={{marginTop:"-5px"}}>
-							<button type="button" className="form-btn">
+							<button type="button" className="form-btn flex-1">
 								<div>인쇄하기</div>
 							</button>
-							<button type="button" className="form-btn">
+							<button type="button" className="form-btn flex-1">
 								<div>다운로드</div>
 							</button>
 						</div>
 						<div className="flex justify-between">
 							<div className="popup-infobox-title">생성일시</div>
-							<div id="pricecardImageRgstDate" className="popup-infobox-text">2026-10-13 14:01</div>
+							<div id="pricecardImageRgstDate" className="popup-infobox-text">2026.10.13 14:01</div>
 						</div>
 						{/* <div>
 							<div className="popup-infobox-title">선택유형</div>
@@ -131,7 +131,7 @@ export default function LayerPopupView ({ isOpen = true, onClose }) {
 						</div>
 						<div className="flex justify-between">
 							<div className="popup-infobox-title">보관기간</div>
-							<div id="pricecardImageExprDate" className="popup-infobox-text text-red-600">2026-12-31 24:00까지</div>
+							<div id="pricecardImageExprDate" className="popup-infobox-text text-red-600">2026.12.31 24:00까지</div>
 						</div>
 					</div>
 					<div id="pricecardImageError" className="popup-infobox hidden">
